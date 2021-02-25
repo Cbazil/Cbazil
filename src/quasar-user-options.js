@@ -1,6 +1,6 @@
 
 import './styles/quasar.sass'
-import iconSet from 'quasar/icon-set/fontawesome-v5.js'
+import fontAwesome from 'quasar/icon-set/fontawesome-v5.js'
 import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
 import '@quasar/extras/ionicons-v4/ionicons-v4.css'
 
@@ -9,5 +9,5 @@ export default {
   config: {},
   plugins: {
   },
-  iconSet: iconSet
+  fontAwesome: fontAwesome
 }

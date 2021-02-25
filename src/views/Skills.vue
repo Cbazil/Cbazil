@@ -1,11 +1,11 @@
 <template>
-  <div id="about">
-    <h4>About Me</h4>
+  <div id="skills">
+    <h4>Skills</h4>
   </div>
 </template>
 
 <style lang="scss" scoped>
-#about {
+#skills {
   color: white;
 }
 </style>

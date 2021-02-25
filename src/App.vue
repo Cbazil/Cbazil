@@ -12,73 +12,85 @@
       </div>
       <div id="navigation" class="row">
         <div class="nav-i">
-          <q-icon
-            size="30px"
-            name="fas fa-shapes"
-            color="white"
-          />
+          <router-link to="/">
+            <q-icon
+              size="30px"
+              name="fas fa-shapes"
+              color="white"
+            />
+          </router-link>
         </div>
         <div class="nav-i">
-          <q-icon
-            size="30px"
-            name="fas fa-user-tie"
-            color="white"
-          />
+          <router-link to="/about">
+            <q-icon
+              size="30px"
+              name="fas fa-user-tie"
+              color="white"
+            />
+          </router-link>
         </div>
         <div class="nav-i">
-          <q-icon
-            size="30px"
-            name="fas fa-cubes"
-            color="white"
-          />
+          <router-link to="/skills">
+            <q-icon
+              size="30px"
+              name="fas fa-cubes"
+              color="white"
+            />
+          </router-link>
         </div>
         <div class="nav-i">
-          <q-icon
-            size="30px"
-            name="fas fa-book-reader"
-            color="white"
-          />
+          <router-link to="/experience">
+            <q-icon
+              size="30px"
+              name="fas fa-book-reader"
+              color="white"
+            />
+          </router-link>
         </div>
         <div class="nav-i">
-          <q-icon
-            size="30px"
-            name="fas fa-layer-group"
-            color="white"
-          />
+          <router-link to="/projects">
+            <q-icon
+              size="30px"
+              name="fas fa-layer-group"
+              color="white"
+            />
+          </router-link>
         </div>
       </div>
       <div id="s-links" class="row">
         <div class="link-i">
           <q-icon
-            size="xs"
+            size="20px"
             name="fab fa-linkedin"
             color="white"
           />
         </div>
         <div class="link-i">
           <q-icon
-            size="xs"
+            size="20px"
             name="fab fa-twitter"
             color="white"
           />
         </div>
         <div class="link-i">
           <q-icon
-            size="xs"
+            size="20px"
             name="fab fa-github"
             color="white"
           />
         </div>
         <div class="link-i">
           <q-icon
-            size="xs"
+            size="20px"
             name="fab fa-medium-m"
             color="white"
           />
         </div>
       </div>
     </div>
-    <div id="main-container" class="col"></div>
+    <div id="main-container" class="col">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -123,13 +135,20 @@ $grey: #353639;
   #main-container {
     // background-color: khaki;
   }
-
+  #s-links {
+    margin-bottom: 20px;
+  }
   .nav-logo, .nav-i, .link-i {
     text-align: center;
-    padding: 10px 0;
     width: 100%;
     display: block;
     cursor: pointer;
+  }
+  .link-i {
+      padding: 10px 0;
+  }
+  .nav-i {
+      padding: 20px 0;
   }
 
 }
