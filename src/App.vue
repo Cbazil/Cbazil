@@ -5,8 +5,7 @@
         <div class="nav-logo">
           <!-- <img src="" /> -->
           <div id="logo-cntr">
-            <span style="font-size: 50px; color: white; font-weight: bold">C</span>
-            <p style="margin-top: -15px; color: white;">CBAZIL</p>
+            <img src="./assets/Cbazil-logo.png" alt="Cbazil Logo">
           </div>
         </div>
       </div>
@@ -43,6 +42,15 @@
             <q-icon
               size="30px"
               name="fas fa-book-reader"
+              color="white"
+            />
+          </router-link>
+        </div>
+        <div class="nav-i">
+          <router-link to="/blogs">
+            <q-icon
+              size="30px"
+              name="fas fa-newspaper"
               color="white"
             />
           </router-link>
@@ -129,7 +137,17 @@ $grey: #353639;
     height: inherit;
     background-color: $dark;
     justify-content: space-between;
-    width: 70px;
+    width: 80px;
+  }
+
+  #logo-cntr {
+    width: inherit;
+    height: auto;
+    margin-top: 20px;
+    img {
+      width: inherit;
+      height: inherit;
+    }
   }
 
   #main-container {
