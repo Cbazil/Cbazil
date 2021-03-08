@@ -2,15 +2,17 @@
   <div id="home" class="row">
     <div id="side-nav">
       <div id="logo" class="row">
-        <div class="nav-logo">
-          <!-- <img src="" /> -->
-          <div id="logo-cntr">
-            <img src="./assets/Cbazil-logo.png" alt="Cbazil Logo">
+        <router-link to="/">
+          <div class="nav-logo">
+            <!-- <img src="" /> -->
+            <div id="logo-cntr">
+              <img src="./assets/Cbazil.png" alt="Cbazil Logo">
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
       <div id="navigation" class="row">
-        <div class="nav-i" :class="{on_page: on_home}">
+        <!-- <div class="nav-i" :class="{on_page: on_home}">
           <router-link to="/">
             <q-icon
               class="icons"
@@ -19,7 +21,7 @@
               color="white"
             />
           </router-link>
-        </div>
+        </div> -->
         <div class="nav-i" :class="{on_page: on_about}">
           <router-link to="/about">
             <q-icon
@@ -131,11 +133,27 @@ export default {
 }
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 
 $dark: #2b2c2e;
 $grey: #353639;
 $green: #7ed957;
 $blue: #5271ff;
+
+h1 {
+  font-family: 'Sriracha', cursive;
+  color: $green;
+  font-size: 90px !important;
+  line-height: 80px !important;
+}
+
+h2 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #fff;
+  font-size: 30px !important;
+}
+
 
 #home {
   background-color: $grey;
@@ -154,7 +172,7 @@ $blue: #5271ff;
   #logo-cntr {
     width: inherit;
     height: auto;
-    margin-top: 20px;
+    // margin-top: 10px;
     img {
       width: inherit;
       height: inherit;

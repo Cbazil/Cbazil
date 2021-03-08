@@ -1,6 +1,6 @@
 <template>
   <div id="experience">
-    <h4>Educations & Work Experience</h4>
+    <h1>Educations & Work Experience</h1>
   </div>
 </template>
 
