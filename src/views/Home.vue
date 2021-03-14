@@ -1,34 +1,28 @@
-
 <template>
   <div id="home">
-    <div id="h-container">
-      <h1>Hi, <span>I'm CBazil,</span> <span>Web Developer</span></h1>
-      <h2>Fullstack Developer / Freelancer</h2>
-      <br>
-      <br>
-      <img src="../assets/arrow.gif" alt="Arrow-GiF">
-      <q-btn size="20px" id="hire-btn" outline>Hire me!</q-btn>
-    </div>
-    <div id="g-container">
-      <div>
-
+      <div id="h-container">
+        <h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span></h1>
+        <h2>Fullstack Developer / Freelancer</h2>
+        <br>
+        <br>
+        <img src="../assets/arrow.gif" alt="Arrow-GiF">
+        <q-btn size="20px" id="hire-btn" outline>Hire me!</q-btn>
       </div>
-    </div>
+      <div id="g-container">
+        <div>
+        </div>
+      </div>
   </div>
   <div id="floats">
-   <img src="../assets/fire.gif" alt="Fire-GiF">
+    <img src="../assets/fire.gif" alt="Fire-GiF">
   </div>
 </template>
-
-<style lang="scss" scoped>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
-
-
 $dark: #2b2c2e;
 $grey: #353639;
 $green: #7ed957;
 $blue: #5271ff;
-
 #floats {
   img {
     position: absolute;
@@ -38,11 +32,11 @@ $blue: #5271ff;
   }
 }
 #home {
-  margin: 2vh 2vw;
+  // margin: 2vh 2vw;
   display: flex;
   #h-container {
-    margin: 12vh 2vw;
-    width: 65%;
+  margin: 16vh 4vw;
+  width: 65%;
     span {
       display: block;
     }
@@ -50,19 +44,52 @@ $blue: #5271ff;
       position: absolute;
       width: 240px;
       margin-top: -55px;
-      left: 380px;
+      left: 240px;
     }
     #hire-btn {
-      padding: 0 40px;
+      padding: 5px 40px;
       color: $green;
       font-family: 'Montserrat Alternates', sans-serif;
-      // font-size: 24px;
+      font-size: 24px;
       // border: 5px $green solid;
+    }
+    .text {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-iteration-count: 1;
+      display: inline-block;
+    }
+    .text:hover {
+    animation-name: rubberBand;
+    //  color: $blue;
+    //  animation: rubberBand 5s infinite;
+    }
+    @keyframes rubberBand {
+      from {
+        transform: scale3d(1, 1, 1);
+      }
+      30% {
+        transform: scale3d(1.25, 0.75, 1);
+      }
+      40% {
+        transform: scale3d(0.75, 1.25, 1);
+      }
+      50% {
+        transform: scale3d(1.15, 0.85, 1);
+      }
+      65% {
+        transform: scale3d(.95, 1.05, 1);
+      }
+      75% {
+        transform: scale3d(1.05, .95, 1);
+      }
+      to {
+        transform: scale3d(1, 1, 1);
+      }
     }
   }
   #g-container {
     width: 45%;
   }
 }
-
 </style>

@@ -144,8 +144,8 @@ $blue: #5271ff;
 h1 {
   font-family: 'Sriracha', cursive;
   color: $green;
-  font-size: 90px !important;
-  line-height: 80px !important;
+  font-size: 70px !important;
+  line-height: 35px !important;
 }
 
 h2 {
@@ -154,11 +154,13 @@ h2 {
   font-size: 30px !important;
 }
 
-
 #home {
   background-color: $grey;
-  width: 100wh;
-  height: 100vh;
+  position: absolute;
+  width: 100vw !important;
+  height: 100vh !important;
+  overflow: hidden;
+  margin: 0;
 
   #side-nav {
     position: relative;
@@ -167,7 +169,7 @@ h2 {
     height: inherit;
     background-color: $dark;
     justify-content: space-between;
-    width: 80px;
+    width: 60px;
   }
   #logo-cntr {
     width: inherit;
@@ -180,6 +182,7 @@ h2 {
   }
   #main-container {
     // background-color: khaki
+    position: relative;
   }
   
   #s-links {
