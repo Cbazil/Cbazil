@@ -16,88 +16,118 @@
           <router-link to="/">
             <q-icon
               class="icons"
-              size="30px"
+              size="26px"
               name="fas fa-shapes"
               color="white"
             />
           </router-link>
         </div> -->
-        <div class="nav-i" :class="{on_page: on_about}">
+        <div class="nav-i" 
+          :class="{on_page: on_about}"
+          @mouseover="hoverAbout = true"
+          @mouseleave="hoverAbout = false"
+        >
           <router-link to="/about">
             <q-icon
+              v-if="!hoverAbout"
               class="icons"
-              size="30px"
+              size="26px"
               name="fas fa-user-tie"
               color="white"
             />
+            <p v-else>Dev</p>
           </router-link>
         </div>
-        <div class="nav-i" :class="{on_page: on_skills}">
+        <div class="nav-i" 
+          :class="{on_page: on_skills}"
+          @mouseover="hoverSkills = true"
+            @mouseleave="hoverSkills = false"
+        >
           <router-link to="/skills">
             <q-icon
+              v-if="!hoverSkills"
               class="icons"
-              size="30px"
+              size="26px"
               name="fas fa-cubes"
               color="white"
             />
+            <p v-else>Skills</p>
           </router-link>
         </div>
-        <div class="nav-i" :class="{on_page: on_exp}">
+        <div class="nav-i" 
+          :class="{on_page: on_exp}"
+          @mouseover="hoverExp = true"
+          @mouseleave="hoverExp = false"
+        >
           <router-link to="/experience">
             <q-icon
+              v-if="!hoverExp"
               class="icons"
-              size="30px"
+              size="26px"
               name="fas fa-book-reader"
               color="white"
             />
+            <p v-else>Exp</p>
           </router-link>
         </div>
-        <div class="nav-i" :class="{on_page: on_blogs}">
+        <div class="nav-i" 
+          :class="{on_page: on_blogs}"
+          @mouseover="hoverBlogs = true"
+          @mouseleave="hoverBlogs = false"
+        >
           <router-link to="/blogs">
             <q-icon
+              v-if="!hoverBlogs"
               class="icons"
-              size="30px"
+              size="26px"
               name="fas fa-newspaper"
               color="white"
             />
+            <p v-else>Blogs</p>
           </router-link>
         </div>
-        <div class="nav-i" :class="{on_page: on_projects}">
+        <div class="nav-i" 
+          :class="{on_page: on_projects}"
+          @mouseover="hoverProjects = true"
+          @mouseleave="hoverProjects = false"
+        >
           <router-link to="/projects">
             <q-icon
+              v-if="!hoverProjects"
               class="icons"
-              size="30px"
+              size="26px"
               name="fas fa-layer-group"
               color="white"
             />
+            <p v-else>Projects</p>
           </router-link>
         </div>
       </div>
       <div id="s-links" class="row">
         <div class="link-i">
           <q-icon
-            size="20px"
+            size="16px"
             name="fab fa-linkedin"
             color="white"
           />
         </div>
         <div class="link-i">
           <q-icon
-            size="20px"
+            size="16px"
             name="fab fa-twitter"
             color="white"
           />
         </div>
         <div class="link-i">
           <q-icon
-            size="20px"
+            size="16px"
             name="fab fa-github"
             color="white"
           />
         </div>
         <div class="link-i">
           <q-icon
-            size="20px"
+            size="16px"
             name="fab fa-medium-m"
             color="white"
           />
@@ -111,24 +141,28 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-// import HelloWorld from './components/HelloWorld.vue'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 export default {
   name: 'Landing Page',
-
-  components: {
-    // HelloWorld
-  },
   setup() {
-   let on_home = false;
-   let on_about = false;
-   let on_skills = false;
-   let on_exp = false;
-   let on_blogs = false;
-   let on_projects = false;
+  
+   let hoverAbout = ref(false);
+   let hoverSkills = ref(false);
+   let hoverExp= ref(false);
+   let hoverBlogs = ref(false);
+   let hoverProjects = ref(false);
 
-   return { on_home, on_about, on_skills, on_exp, on_blogs, on_projects };
+   const route = useRoute()
+
+   let on_about = computed(() =>  { if (route.path == '/about') { return true } else { return false }  });
+   let on_skills = computed(() =>  { if (route.path == '/skills') { return true } else { return false }  });
+   let on_exp = computed(() =>  { if (route.path == '/experience') { return true } else { return false }  });
+   let on_blogs = computed(() =>  { if (route.path == '/blogs') { return true } else { return false }  });
+   let on_projects = computed(() =>  { if (route.path == '/projects') { return true } else { return false }  });
+
+   return { hoverAbout, hoverSkills, hoverExp, hoverBlogs, hoverProjects, on_about, on_skills, on_exp, on_blogs, on_projects };
   }
 }
 </script>
@@ -141,6 +175,10 @@ $grey: #353639;
 $green: #7ed957;
 $blue: #5271ff;
 
+body {
+  background: $grey;
+}
+
 h1 {
   font-family: 'Sriracha', cursive;
   color: $green;
@@ -151,7 +189,7 @@ h1 {
 h2 {
   font-family: 'Montserrat Alternates', sans-serif;
   color: #fff;
-  font-size: 30px !important;
+  font-size: 26px !important;
 }
 
 #home {
@@ -161,6 +199,17 @@ h2 {
   height: 100vh !important;
   overflow: hidden;
   margin: 0;
+
+  #navigation {
+    p {
+      margin: 5px 0;
+      padding: 0;
+      font-size: 11px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: $green;
+      text-decoration: none;
+    }
+  }
 
   #side-nav {
     position: relative;
@@ -186,7 +235,7 @@ h2 {
   }
   
   #s-links {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
   
   .nav-logo, .nav-i, .link-i {
@@ -202,10 +251,10 @@ h2 {
     }
   }
   .link-i {
-      padding: 10px 0;
+      padding: 5px 0;
   }
   .nav-i {
-      padding: 20px 0;
+      padding: 16px 0;
   }
 }
 </style>

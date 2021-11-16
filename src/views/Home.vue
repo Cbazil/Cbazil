@@ -6,17 +6,27 @@
         <br>
         <br>
         <img src="../assets/arrow.gif" alt="Arrow-GiF">
-        <q-btn size="20px" id="hire-btn" outline>Hire me!</q-btn>
+        <q-btn size="15px" id="hire-btn" outline>Hire me!</q-btn>
       </div>
       <div id="g-container">
-        <div>
-        </div>
+        <TicTacToe />
       </div>
   </div>
   <div id="floats">
     <img src="../assets/fire.gif" alt="Fire-GiF">
   </div>
 </template>
+
+<script>
+import TicTacToe from '@/components/TicTacToe.vue'
+
+export default {
+  components: {
+    TicTacToe
+  }
+}
+</script>
+
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 $dark: #2b2c2e;
@@ -60,6 +70,7 @@ $blue: #5271ff;
       display: inline-block;
     }
     .text:hover {
+    cursor: grabbing;
     animation-name: rubberBand;
     //  color: $blue;
     //  animation: rubberBand 5s infinite;
@@ -89,7 +100,8 @@ $blue: #5271ff;
     }
   }
   #g-container {
-    width: 45%;
+    // background: $green;
+    width: 100%;
   }
 }
 </style>
