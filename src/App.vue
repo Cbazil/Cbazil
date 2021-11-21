@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="row">
+  <div id="home"  class="row">
     <div id="side-nav">
       <div id="logo" class="row">
         <router-link to="/">
@@ -144,10 +144,15 @@
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
+import { provide } from 'vue';
+import store from '@/store';
+
 export default {
   name: 'Landing Page',
-  setup() {
-  
+  setup() { 
+
+  provide('store', store)
+
    let hoverAbout = ref(false);
    let hoverSkills = ref(false);
    let hoverExp= ref(false);

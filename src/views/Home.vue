@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <span id="home" @keydown.enter="handleScroll" tabindex="0">
       <div id="h-container">
         <h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span></h1>
         <h2>Fullstack Developer / Freelancer</h2>
@@ -11,7 +11,7 @@
       <div id="g-container">
         <TicTacToe />
       </div>
-  </div>
+  </span>
   <div id="floats">
     <img src="../assets/fire.gif" alt="Fire-GiF">
   </div>
@@ -19,10 +19,18 @@
 
 <script>
 import TicTacToe from '@/components/TicTacToe.vue'
-
+// import { onMounted } from 'vue'
 export default {
   components: {
     TicTacToe
+  },
+  setup() {
+    const handleScroll = () => {
+      console.log('Hit');
+    }
+    return {
+      handleScroll
+    }
   }
 }
 </script>
