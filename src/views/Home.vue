@@ -54,7 +54,7 @@ $blue: #5271ff;
   display: flex;
   #h-container {
   margin: 16vh 4vw;
-  width: 65%;
+  width: 70%;
     span {
       display: block;
     }

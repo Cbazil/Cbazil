@@ -12,7 +12,10 @@ const state = reactive({
     { id: 'sq8', val: '' },
     { id: 'sq9', val: '' },
   ],
+  gameOver: false,
+  playerFirst: true,
   playerTurn: true,
+  playerPlayed: false,
   playerPiece: 'tic',
   ggTop: false,
   ggLeft: false,
@@ -21,19 +24,13 @@ const state = reactive({
   ggVert: false,
   ggHori: false,
   ggDiright: false,
-  ggDileft: false,
-  keyOne: '1',
-  keyTwo: '2',
-  keyThree: '3',
-  keyFour: '4',
-  keyFive: '5',
-  keySix: '6',
-  keySeven: '7',
-  keyEight: '8',
-  keyNine: '9'
+  ggDileft: false
 })
 
 const methods = {
+  togglePlay(value) {
+    state.gameOver = value
+  },
   updateTurn(value) {
     state.playerTurn = value;
   },
@@ -56,14 +53,17 @@ const methods = {
   toggleVert() {
     state.ggVert = !state.ggVert;
   },
+  toggleBottom() {
+    state.ggBottom = !state.ggBottom;
+  },
   toggleHori() {
     state.ggHori = !state.ggHori;
   },
   toggleDiright() {
     state.ggDiright = !state.ggDiright;
   },
-  toggleDireleft() {
-    state.ggDireleft = !state.ggDireleft;
+  toggleDileft() {
+    state.ggDileft = !state.ggDileft;
   }
 }
 
