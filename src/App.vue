@@ -1,5 +1,5 @@
 <template>
-  <div id="home"  class="row">
+  <div id="home" class="row">
     <div id="side-nav">
       <div id="logo" class="row">
         <router-link to="/">
@@ -149,8 +149,7 @@ import store from '@/store';
 
 export default {
   name: 'Landing Page',
-  setup() { 
-
+  setup() {
   provide('store', store)
 
    let hoverAbout = ref(false);
@@ -217,10 +216,11 @@ h2 {
   }
 
   #side-nav {
-    position: relative;
+    position: fixed;
     display: flex;
+    z-index: 1;
     flex-direction: column;
-    height: inherit;
+    height: 100vh;
     background-color: $dark;
     justify-content: space-between;
     width: 60px;

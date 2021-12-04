@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="about" class="containers" ref="container" @keyup.up="navHome" @keyup.down="navSkills" tabindex="0">
     <div>
       <h1>About me</h1>
     </div>
@@ -10,20 +10,31 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 export default {
-  name: 'Home',
-  components: {
-    // HelloWorld
+  setup () {
+    const router = useRouter()
+
+    const navHome = () => {
+      router.push('/')
+    }
+
+    const navSkills = () => {
+      router.push('/skills')
+    }
+
+    const container = ref(null)
+
+    onMounted(() => {
+      container.value.focus()
+    })
+    return { container, navHome, navSkills}
   }
 }
 </script>
 <style lang="scss" scoped>
 #about {
-  display: flex;
-  // justify-content: center;
-  // align-items: center;
   color: white;
   img {
     width: 200px;

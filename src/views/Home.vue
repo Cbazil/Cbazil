@@ -1,35 +1,48 @@
 <template>
-  <span id="home" @keydown.enter="handleScroll" tabindex="0">
-      <div id="h-container">
-        <h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span></h1>
-        <h2>Fullstack Developer / Freelancer</h2>
-        <br>
-        <br>
-        <img src="../assets/arrow.gif" alt="Arrow-GiF">
-        <q-btn size="15px" id="hire-btn" outline>Hire me!</q-btn>
-      </div>
-      <div id="g-container">
-        <TicTacToe />
-      </div>
+  <span id="home" ref="container" @keyup.down="navAbout" tabindex="0">
+    <div id="h-container">
+      <h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span></h1>
+      <h2>Fullstack Developer / Freelancer</h2>
+      <br>
+      <br>
+      <img src="../assets/arrow.gif" alt="Arrow-GiF">
+      <q-btn size="15px" id="hire-btn" outline>Hire me!</q-btn>
+    </div>
+    <div id="g-container">
+      <TicTacToe />
+    </div>
+    <div id="floats">
+      <img src="../assets/fire.gif" alt="Fire-GiF">
+    </div>
   </span>
-  <div id="floats">
-    <img src="../assets/fire.gif" alt="Fire-GiF">
-  </div>
 </template>
 
 <script>
 import TicTacToe from '@/components/TicTacToe.vue'
-// import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
 export default {
   components: {
     TicTacToe
   },
   setup() {
-    const handleScroll = () => {
-      console.log('Hit');
+
+    const router = useRouter()
+
+    const navAbout = () => {
+      router.push('/about')
     }
+
+    const container = ref(null)
+
+    onMounted(() => {
+      container.value.focus()
+    })
+
     return {
-      handleScroll
+      navAbout,
+      container
     }
   }
 }
@@ -49,11 +62,20 @@ $blue: #5271ff;
     width: 320px;
   }
 }
+.containers {
+  display: flex;
+  position: relative;
+  margin-left: 58px; 
+  height: 100vh;
+}
+
 #home {
-  // margin: 2vh 2vw;
+  position: relative;
+  z-index: 0;
+  overflow-y: scroll;
   display: flex;
   #h-container {
-  margin: 16vh 4vw;
+  margin: 16vh 8vw;
   width: 70%;
     span {
       display: block;
@@ -62,7 +84,7 @@ $blue: #5271ff;
       position: absolute;
       width: 240px;
       margin-top: -55px;
-      left: 240px;
+      left: 280px;
     }
     #hire-btn {
       padding: 5px 40px;
