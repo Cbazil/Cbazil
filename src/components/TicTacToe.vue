@@ -505,7 +505,6 @@ $green: #7ed957;
   height: 80px;
   margin: 0px;
 }
-
 .squares {
   max-width: 110px;
   max-height: 110px;
@@ -517,7 +516,6 @@ $green: #7ed957;
   margin: 0;
   padding: 12%;
 }
-
 #grid {
   display: grid;
   background: #fff;
@@ -529,7 +527,6 @@ $green: #7ed957;
   width: 120px;
   height: 120px;
 }
-
 #ggTop {
   top: -86%;
 }
@@ -582,7 +579,6 @@ $green: #7ed957;
  text-align: center;
  margin: -12px;
 }
-
 button {
   padding: 5px 25px;
   margin: 0 5px;
@@ -590,10 +586,8 @@ button {
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 24px;
 }
-
 .turn {
   color: $green !important;
   border: none !important;
 }
-
 </style>
