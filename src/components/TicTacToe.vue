@@ -328,7 +328,7 @@ export default {
       }
       // AI plays first 
       else if(sq1 == '' && sq2 == '' && sq3 == '' && sq4 == '' && sq5 == '' && sq6 == '' && sq7 == '' && sq8 == '' && sq9 == ''){
-        let move = randumb([sqrs[4]], [sqrs[0], sqrs[2], sqrs[6], sqrs[8]]);
+        let move = randumb([sqrs[4], sqrs[0], sqrs[2], sqrs[6], sqrs[8]], [sqrs[0], sqrs[1], sqrs[3], sqrs[5], sqrs[7], sqrs[2], sqrs[6], sqrs[8]]);
         move.val = playerPiece.value === 'tac' ? 'tic' : 'tac';
       }
       else {
