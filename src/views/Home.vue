@@ -14,6 +14,8 @@
     <div id="floats">
       <img src="../assets/fire.gif" alt="Fire-GiF">
     </div>
+      <img id="arrowBL" width="35" src="../assets/arrowKeys.png" alt="">
+      <img id="arrowBR" width="35" src="../assets/arrowKeys.png" alt="">
   </span>
 </template>
 
@@ -67,16 +69,22 @@ $blue: #5271ff;
   position: relative;
   margin-left: 58px; 
   height: 100vh;
+  overflow: none;
+}
+.containers:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 #home {
   position: relative;
   z-index: 0;
-  overflow-y: scroll;
   display: flex;
   #h-container {
   margin: 16vh 8vw;
   width: 70%;
+  border: none;
     span {
       display: block;
     }
@@ -133,5 +141,28 @@ $blue: #5271ff;
     // background: $green;
     width: 100%;
   }
+  #arrowBL {
+    position: absolute;
+    left: 65px;
+    top: 94vh;
+    transform: scaleX(-1) rotate(90deg);
+    animation: bounce 1s infinite;
+  }
+  #arrowBR {
+    position: absolute;
+    right: 10px;
+    top: 93vh;
+    transform: rotate(90deg);
+    animation: bounce 1s infinite;
+  }
+  @keyframes bounce {
+    from {top: 93vh }
+    to {top: 94vh }
+  }
+}
+#home:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 </style>

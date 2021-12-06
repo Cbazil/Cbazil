@@ -135,7 +135,11 @@
       </div>
     </div>
     <div id="main-container" class="col">
-      <router-view></router-view>
+      <router-view v-slot="{ Component }">
+        <transition name="route" mode="out-in">
+          <component :is="Component"></component>
+        </transition>
+      </router-view>
     </div>
   </div>
 </template>
@@ -179,8 +183,15 @@ $grey: #353639;
 $green: #7ed957;
 $blue: #5271ff;
 
+html {
+  background-color: $grey;
+}
+
 body {
   background: $grey;
+  height: 100vh;
+  border: $grey;
+  // overflow: hidden;
 }
 
 h1 {
@@ -203,7 +214,8 @@ h2 {
   height: 100vh !important;
   overflow: hidden;
   margin: 0;
-
+  padding: 0;
+  border: $grey;
   #navigation {
     p {
       margin: 5px 0;
@@ -235,8 +247,12 @@ h2 {
     }
   }
   #main-container {
-    // background-color: khaki
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     position: relative;
+    border: none;
   }
   
   #s-links {
@@ -260,6 +276,20 @@ h2 {
   }
   .nav-i {
       padding: 16px 0;
+  }
+  .route-enter-from {
+    opacity: 0;
+    transform: translateY(-90vh);
+  }
+  .route-active-from {
+    transition: ass 0.4s ease-out;
+  }
+  .route-leave-to {
+    opacity: 0;
+    transform: translateY(90vh)
+  }
+  .route-leave-active {
+    transition: all 0.4s ease-in;
   }
 }
 </style>
