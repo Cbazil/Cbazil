@@ -1,3 +1,38 @@
 @import './quasar.variables.sass'
 @import '~quasar-styl'
 // @import '~quasar-addon-styl'
+
+.small-screen-only 
+  @media (max-width: 1080px)
+    display: block
+    // h1
+    //   font-family: 'Sriracha', cursive
+    //   color: $green
+    //   font-size: 45px !important
+    //   line-height: 20px !important
+
+    // h2
+    //   font-family: 'Montserrat Alternates', sans-serif
+    //   color: #fff
+    //   font-size: 20px !important
+
+  @media (min-width: 180px)
+    display: none
+
+.large-screen-only 
+  // background: red !important
+  @media (max-width: 1440px)
+    display: none !important
+
+  @media (min-width: 1080px)
+    display: block !important
+    // h1
+    //   font-family: 'Sriracha', cursive
+    //   color: $green
+    //   font-size: 70px !important
+    //   line-height: 35px !important
+
+    // h2
+    //   font-family: 'Montserrat Alternates', sans-serif
+    //   color: #fff
+    //   font-size: 26px !important

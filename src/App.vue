@@ -1,6 +1,6 @@
 <template>
   <div id="home" class="row">
-    <div id="side-nav">
+    <div id="nav-container">
       <div id="logo" class="row">
         <router-link to="/">
           <div class="nav-logo">
@@ -12,16 +12,6 @@
         </router-link>
       </div>
       <div id="navigation" class="row">
-        <!-- <div class="nav-i" :class="{on_page: on_home}">
-          <router-link to="/">
-            <q-icon
-              class="icons"
-              size="26px"
-              name="fas fa-shapes"
-              color="white"
-            />
-          </router-link>
-        </div> -->
         <div class="nav-i" 
           :class="{on_page: on_about}"
           @mouseover="hoverAbout = true"
@@ -191,7 +181,7 @@ body {
   background: $grey;
   height: 100vh;
   border: $grey;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 h1 {
@@ -212,7 +202,6 @@ h2 {
   position: absolute;
   width: 100vw !important;
   height: 100vh !important;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   border: $grey;
@@ -227,7 +216,7 @@ h2 {
     }
   }
 
-  #side-nav {
+  #nav-container {
     position: fixed;
     display: flex;
     z-index: 1;
@@ -272,10 +261,10 @@ h2 {
     }
   }
   .link-i {
-      padding: 5px 0;
+    padding: 5px 0;
   }
   .nav-i {
-      padding: 16px 0;
+    padding: 16px 0;
   }
   .route-enter-from {
     opacity: 0;
@@ -290,6 +279,42 @@ h2 {
   }
   .route-leave-active {
     transition: all 0.4s ease-in;
+  }
+}
+
+// Table to mobile
+@media (max-width: 767px) {
+  #nav-container {
+    flex-direction: row !important;
+    width: 100% !important;
+    height: 60px !important;
+    .nav-i, .link-i { 
+      width: auto;
+    }
+    .nav-i {
+      padding: 16px;
+    }
+    #logo-cntr {
+      width: auto !important;
+      height: 60px !important;
+      // margin-top: 10px;
+      img {
+        width: inherit;
+        height: inherit;
+      }
+    }
+    #s-links {
+      display: none;
+    }
+  } 
+}
+
+@media (max-width: 562px) {
+  h1 {
+    font-size: 42px !important;
+  }
+  h2 {
+    font-size: 18px !important;
   }
 }
 </style>

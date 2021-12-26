@@ -15,6 +15,7 @@
       <img src="../assets/fire.gif" alt="Fire-GiF">
     </div>
       <img id="arrowBL" width="35" src="../assets/arrowKeys.png" alt="">
+      <!-- <img id="arrowCnt" width="35" src="../assets/arrow-down.png" alt=""> -->
       <img id="arrowBR" width="35" src="../assets/arrowKeys.png" alt="">
   </span>
 </template>
@@ -142,18 +143,23 @@ $blue: #5271ff;
     width: 100%;
   }
   #arrowBL {
-    position: absolute;
+    position: fixed;
     left: 65px;
-    top: 94vh;
+    top: 96vh;
     transform: scaleX(-1) rotate(90deg);
     animation: bounce 1s infinite;
   }
   #arrowBR {
-    position: absolute;
+    position: fixed;
     right: 10px;
-    top: 93vh;
+    top: 96vh;
     transform: rotate(90deg);
     animation: bounce 1s infinite;
+  }
+  #arrowCnt {
+    position: absolute;
+    right: 400px;
+    top: 93vh;
   }
   @keyframes bounce {
     from {top: 93vh }
@@ -165,4 +171,59 @@ $blue: #5271ff;
   border: none;
   box-shadow: none;
 }
+
+// Table to mobile
+@media (max-width: 767px) {
+  #home {
+    width: 100vw !important;
+    margin-bottom: 10px;
+    padding-bottom: 50px;
+    display: block;
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+    #arrowBL {
+      left: -10px;
+      bottom: 0;
+    }
+    #h-container {
+      display: block;
+      margin: 100px 20px 0px 20px;
+      width: 100%;
+      #hire-btn {
+        margin-top: -45px;
+      }
+      img {
+        margin-top: -60px;
+        width: 140px;
+        left: 195px;
+      }
+    }
+    #floats {
+      position: absolute;
+      top: 360px;
+      left: 75vw;
+      width: 100vw;
+      img {
+        position: relative;
+        width: 150px;
+      }
+    }
+    #g-container {
+      position: relative;
+      padding: unset;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 562px) {
+  #h-container {
+    img {
+      width: 75px;
+    }
+  }
+}
+
 </style>

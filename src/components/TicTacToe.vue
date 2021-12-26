@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="container">
     <div id="grid">
       <div id="sq1" class="squares" @click.once="move($event)" :key="keyOne">
         <img class="pieces" v-if="squares[0].val === 'tic'" src="../assets/cross.png">
@@ -93,7 +93,6 @@ export default {
   }
 
   const playerfirst = () => {
-    store.state.playerPiece = 'tic'
     store.state.playerFirst = true
     store.state.playerPlayed = false
     resetGame()
@@ -401,6 +400,7 @@ export default {
         { id: 'sq9', val: '' },
       ]
     )
+    store.state.playerPiece = 'tic'
     store.methods.togglePlay(false)
     store.methods.updateTurn(true)
     store.state.ggTop = false
@@ -494,7 +494,7 @@ export default {
 $grey: #353639;
 $green: #7ed957;
 
-.container {
+#container {
   margin-top: 150px;
   width: 350px;
   padding: 0;
@@ -589,5 +589,12 @@ button {
 .turn {
   color: $green !important;
   border: none !important;
+}
+
+// Table to mobile
+@media (max-width: 767px) {
+ #container {
+   margin-top: 40px;
+ }
 }
 </style>
