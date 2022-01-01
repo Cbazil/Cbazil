@@ -283,7 +283,7 @@ h2 {
 }
 
 // Table to mobile
-@media (max-width: 767px) {
+@media (max-width: 830px) {
   #nav-container {
     flex-direction: row !important;
     width: 100% !important;
@@ -309,12 +309,42 @@ h2 {
   } 
 }
 
+// Mobile
 @media (max-width: 562px) {
   h1 {
     font-size: 42px !important;
   }
   h2 {
     font-size: 18px !important;
+  }
+}
+
+// Laptop responsiveness 1
+@media (max-width: 1280px) {
+  h1 {
+    font-size: 60px !important;
+  }
+  h2 {
+    font-size: 24px !important;
+  }
+}
+// Laptop responsiveness 2
+@media (max-width: 1140px) {
+   h1 {
+    font-size: 54px !important;
+  }
+  h2 {
+    font-size: 20px !important;
+  }
+}
+
+// Laptop responsiveness 3
+@media (max-width: 973px) {
+  h1 {
+    font-size: 46px !important;
+  }
+  h2 {
+    font-size: 19px !important;
   }
 }
 </style>

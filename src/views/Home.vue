@@ -173,7 +173,7 @@ $blue: #5271ff;
 }
 
 // Table to mobile
-@media (max-width: 767px) {
+@media (max-width: 830px) {
   #home {
     width: 100vw !important;
     margin-bottom: 10px;
@@ -217,12 +217,86 @@ $blue: #5271ff;
     }
   }
 }
-
+// Mobile
 @media (max-width: 562px) {
   #h-container {
     img {
-      width: 75px;
+      width: 60px !important;
     }
+  }
+}
+
+// Laptop responsiveness 1
+@media (max-width: 1280px) {
+ #h-container {
+   #hire-btn {
+     top: -20px;
+   }
+   img {
+    // top: -30px;
+    width: 190px !important;
+   }
+ }
+ #floats {
+   img {
+    width: 280px !important; 
+    right: 1vw;
+   }
+ }
+}
+
+
+// Laptop responsiveness 2
+@media (max-width: 1140px) {
+ #h-container {
+   #hire-btn {
+     top: -30px;
+   }
+   img {
+    width: 120px !important;
+   }
+ }
+ #floats {
+   img {
+    width: 220px !important; 
+    right: 1vw;
+   }
+ }
+}
+
+// Laptop responsiveness 3
+@media (max-width: 973px) {
+ #h-container {
+   #hire-btn {
+     top: -32px;
+   }
+   img {
+    width: 120px !important;
+   }
+ }
+ #floats {
+   img {
+    width: 180px !important; 
+    right: 0.2vw;
+   }
+ }
+}
+
+// MObile responsiveness 1
+@media (max-width: 425px) {
+  #h-container {
+   #hire-btn {
+     top: -32px;
+   }
+   img {
+    width: 100px !important;
+   }
+ }
+  #floats {
+    display: none;
+  }
+  #arrowBR { 
+    right: -5px !important;
   }
 }
 
