@@ -14,9 +14,9 @@
     <div id="floats">
       <img src="../assets/fire.gif" alt="Fire-GiF">
     </div>
-      <img id="arrowBL" width="35" src="../assets/arrowKeys.png" alt="">
-      <!-- <img id="arrowCnt" width="35" src="../assets/arrow-down.png" alt=""> -->
-      <img id="arrowBR" width="35" src="../assets/arrowKeys.png" alt="">
+    <img id="arrowBL" width="35" src="../assets/arrowKeys.png" alt="">
+    <!-- <img id="arrowCnt" width="35" src="../assets/arrow-down.png" alt=""> -->
+    <img id="arrowBR" width="35" src="../assets/arrowKeys.png" alt="">
   </span>
 </template>
 
@@ -151,7 +151,7 @@ $blue: #5271ff;
   }
   #arrowBR {
     position: fixed;
-    right: 10px;
+    right: 5px;
     top: 96vh;
     transform: rotate(90deg);
     animation: bounce 1s infinite;
