@@ -1,13 +1,21 @@
 <template>
-  <div id="experience" class="containers" ref="container" @keyup.up="navSkills" @keyup.down="navArticles" tabindex="0">
-    <h1>Educations & Work Experience</h1>
+  <div id="experience" ref="container" @keyup.up="navSkills" @keyup.down="navArticles" tabindex="0">
+    <PageContainer>
+      <br />
+      <h1>Educations & Work Experience</h1>
+    </PageContainer>
   </div>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import PageContainer from '@/components/Slots/PageContainer.vue'
+
 export default {
+  components: {
+    PageContainer
+  },
   setup () {
     const router = useRouter()
 
@@ -30,5 +38,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//
+#experience {
+  width: 100vw;
+  position: relative;
+  z-index: 0;
+  display: flex;
+}
+
+#experience:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
 </style>

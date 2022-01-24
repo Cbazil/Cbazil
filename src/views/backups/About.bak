@@ -1,0 +1,13 @@
+<div id="a-container">
+  <h1>About me</h1>
+  <h3>I love creating things aswell as solve problems, my interest in computer science and math has always been a big passion and driver of mine. I enjoy playing video games, reading Manga/Comics, watching anime and discovering new music. I am very goal driven and like discovering new interests as well as learning new things. I'm a honest, trustworthy, reliable, creative and an innovative person. I work well underpressure, I'm able to take initative and have strong leadership qualities.</h3>
+</div>
+<div id="g-container">
+  <TicTacToe />
+</div>
+<div id="floats">
+  <img src="../assets/fire.gif" alt="Fire-GiF">
+</div>
+<img id="arrowtwoBL" width="35" src="../assets/arrowKeys.png" alt="">
+<img id="arrowCnt" width="35" src="../assets/arrow-down.png" alt="">
+<img id="arrowtwoBR" width="35" src="../assets/arrowKeys.png" alt="">

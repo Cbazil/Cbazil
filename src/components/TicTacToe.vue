@@ -594,7 +594,20 @@ button {
 // Table to mobile
 @media (max-width: 767px) {
  #container {
-   margin-top: 40px;
- }
+    margin-top: 40px;
+    width: 300px;
+    height: 300px;
+  }
+  .pieces {
+    width: 74px;
+    height: 74px;
+  }
+  .squares {
+    max-width: 98px;
+    max-height: 98px;
+  }
+  #grid {
+    grid-gap: 6px;
+  }
 }
 </style>

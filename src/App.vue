@@ -1,6 +1,6 @@
 <template>
-  <div id="home" class="row">
-    <div id="nav-container">
+  <div id="app" class="row">
+    <nav id="nav-container">
       <div id="logo" class="row">
         <router-link to="/">
           <div class="nav-logo">
@@ -123,14 +123,14 @@
           />
         </div>
       </div>
-    </div>
-    <div id="main-container" class="col">
+    </nav>
+    <main id="main-container" class="col">
       <router-view v-slot="{ Component }">
         <transition name="route" mode="out-in">
           <component :is="Component"></component>
         </transition>
       </router-view>
-    </div>
+    </main>
   </div>
 </template>
 
@@ -197,7 +197,13 @@ h2 {
   font-size: 26px !important;
 }
 
-#home {
+h3 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #fff;
+  font-size: 21px !important;
+}
+
+#app {
   background-color: $grey;
   position: absolute;
   width: 100vw !important;
@@ -237,7 +243,7 @@ h2 {
   }
   #main-container {
     height: 100vh;
-    margin: 0;
+    margin-left: 60px;
     padding: 0;
     overflow: hidden;
     position: relative;
@@ -284,6 +290,10 @@ h2 {
 
 // Table to mobile
 @media (max-width: 830px) {
+  #main-container {
+    margin-left: 0px !important;
+    margin-top: 60px;
+  }
   #nav-container {
     flex-direction: row !important;
     width: 100% !important;
@@ -316,6 +326,9 @@ h2 {
   }
   h2 {
     font-size: 18px !important;
+  }
+  h3 {
+    font-size: 14px !important;
   }
 }
 
