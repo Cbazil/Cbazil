@@ -21,7 +21,7 @@
             <q-icon
               v-if="!hoverAbout"
               class="icons"
-              size="26px"
+              size="24px"
               name="fas fa-user-tie"
               color="white"
             />
@@ -221,7 +221,6 @@ h3 {
       text-decoration: none;
     }
   }
-
   #nav-container {
     position: fixed;
     display: flex;
@@ -319,18 +318,6 @@ h3 {
   } 
 }
 
-// Mobile
-@media (max-width: 562px) {
-  h1 {
-    font-size: 42px !important;
-  }
-  h2 {
-    font-size: 18px !important;
-  }
-  h3 {
-    font-size: 14px !important;
-  }
-}
 
 // Laptop responsiveness 1
 @media (max-width: 1280px) {
@@ -343,7 +330,7 @@ h3 {
 }
 // Laptop responsiveness 2
 @media (max-width: 1140px) {
-   h1 {
+  h1 {
     font-size: 54px !important;
   }
   h2 {
@@ -360,4 +347,25 @@ h3 {
     font-size: 19px !important;
   }
 }
+
+// Mobile
+@media (max-width: 562px) {
+  h1 {
+    font-size: 42px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  h3 {
+    font-size: 14px !important;
+  }
+}
+
+// Mobile 2
+@media (max-width: 360px) {
+  .q-icon {
+    font-size: 16px !important;
+  }
+}
+
 </style>

@@ -1,16 +1,16 @@
 <template>
   <div id="container-slot">
-    <header id="header" v-if="prefixtab">
+    <div id="header" v-if="prefixtab">
       <img id="arrowTL" width="25" height="7" src="../../assets/arrowKeys.png" alt="Left/up arrow bounces">
       <span class="indicator"><p>PRESS <span class="btn-name">UP</span> KEY TO JUMP TO {{ prefixtab.toUpperCase() }} PAGE</p></span>
       <img id="arrowTR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/up arrow bounces">
-    </header>
+    </div>
     <slot></slot>
-    <footer id="footer" v-if="suffixtab">
+    <div id="footer" v-if="suffixtab">
       <img id="arrowBL" width="25" height="7" src="../../assets/arrowKeys.png" alt="Left/down arrow bounces">
       <span class="indicator"><p>PRESS <span class="btn-name">DOWN</span> KEY TO JUMP TO {{ suffixtab.toUpperCase() }} PAGE</p></span>
       <img id="arrowBR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/down arrow bounces">
-    </footer>
+    </div>
   </div>
 </template>
 
@@ -57,29 +57,30 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #container-slot {
   width: calc(100% - 60px);
   height: 100vh;
   #header {
+    position: fixed;
+    display: flex;
     color: #7ed957;
-    position: absolute;
     width: calc(100% - 60px);
     height: 32px;
     margin-top: 20px;
     top: 0;
-    display: flex;
     justify-content: space-between;
+    animation: 2s infinite bounceT;
   }
   #footer {
-    position: absolute;
+    position: fixed;
+    display: flex;
     color: #7ed957;
     width: calc(100% - 60px);
     height: 32px;
     bottom: 0;
-    display: flex;
     justify-content: space-between;
-    animation: bounce 1s infinite;
+    animation: 2s infinite bounceB;
   }
   .indicator {
     margin-top: -10px;
@@ -106,10 +107,28 @@ export default {
   #arrowBR {
     transform: rotate(90deg);
   }
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-30px);}
-    60% {transform: translateY(-15px);}
+  
+  @keyframes bounceT {
+    0% { top: 1px; }
+    25%, 75% { top: 3px; }
+    50% { top: 5px; }
+    100% { top: 0; }
+  }
+  @keyframes bounceB {
+    0% { bottom: 1px; }
+    25%, 75% { bottom: 3px; }
+    50% { bottom: 5px; }
+    100% { bottom: 0; }
+  }
+}
+
+// Table to mobile
+@media (max-width: 830px) {
+  #header {
+    display:  none !important;
+  }
+  #footer {
+    display: none !important;
   }
 }
 </style>
