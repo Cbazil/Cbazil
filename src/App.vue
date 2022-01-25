@@ -6,7 +6,8 @@
           <div class="nav-logo">
             <!-- <img src="" /> -->
             <div id="logo-cntr">
-              <img src="./assets/Cbazil.png" alt="Cbazil Logo">
+              <img v-if="!on_home" src="./assets/Cbazil.png" alt="Cbazil Logo">
+              <img v-if="on_home" src="./assets/green.png" alt="Cbazil Logo (Green)">
             </div>
           </div>
         </router-link>
@@ -154,13 +155,14 @@ export default {
 
    const route = useRoute()
 
+   let on_home = computed(() =>  { if (route.path == '/') { return true } else { return false }  });
    let on_about = computed(() =>  { if (route.path == '/about') { return true } else { return false }  });
    let on_skills = computed(() =>  { if (route.path == '/skills') { return true } else { return false }  });
    let on_exp = computed(() =>  { if (route.path == '/experience') { return true } else { return false }  });
    let on_blogs = computed(() =>  { if (route.path == '/blogs') { return true } else { return false }  });
    let on_projects = computed(() =>  { if (route.path == '/projects') { return true } else { return false }  });
 
-   return { hoverAbout, hoverSkills, hoverExp, hoverBlogs, hoverProjects, on_about, on_skills, on_exp, on_blogs, on_projects };
+   return { hoverAbout, hoverSkills, hoverExp, hoverBlogs, hoverProjects, on_home, on_about, on_skills, on_exp, on_blogs, on_projects };
   }
 }
 </script>

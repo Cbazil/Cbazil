@@ -1,5 +1,5 @@
 <template>
-  <div id="skills" ref="container" @keyup.up="navAbout" @mousewheel.up="navAbout" @wheel="navScroll($event)" tabindex="0">
+  <div id="skills" ref="container" @keyup.up="navAbout" @keyup.down="navExp" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br />
       <h1>Skills</h1>
@@ -39,11 +39,13 @@ export default {
     onMounted(() => {
       container.value.focus()
     })
+
     return { container, navAbout, navExp, navScroll }
   }
 }
 </script>
 <style lang="scss" scoped>
+
 #skills {
   width: 100vw;
   position: relative;
