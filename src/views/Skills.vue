@@ -45,7 +45,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
 #skills {
   width: 100vw;
   position: relative;
