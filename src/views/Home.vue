@@ -27,7 +27,6 @@ export default {
     }
 
     const navScroll = (e) => {
-      console.log(e)
       if (e.deltaY > 0) {
         router.push('/about')
       }

@@ -6,6 +6,10 @@
       <img id="arrowTR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/up arrow bounces">
     </div>
     <slot></slot>
+    <div id="mobile-controlls">
+      <q-btn v-if="prefixtab" @click="handlePrevious" class="prefix-btn" size="15px" outline><q-icon name="fas fa-angle-up" /></q-btn>
+      <q-btn v-if="suffixtab" @click="handleNext" class="suffix-btn" size="15px" outline><q-icon name="fas fa-angle-down" /></q-btn>
+    </div>
     <div id="footer" v-if="suffixtab">
       <img id="arrowBL" width="25" height="7" src="../../assets/arrowKeys.png" alt="Left/down arrow bounces">
       <span class="indicator"><p>PRESS <span class="btn-name">DOWN</span> KEY TO JUMP TO {{ suffixtab.toUpperCase() }} PAGE</p></span>
@@ -16,7 +20,7 @@
 
 <script>
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
   setup () {
@@ -25,6 +29,43 @@ export default {
     const suffixtab = ref('') 
 
     const route = useRoute()
+    const router = useRouter()
+
+    const handlePrevious = () => {
+      if (route.path == '/about') {
+        router.push('/')
+      }
+      if (route.path == '/skills') {
+        router.push('/about')
+      }
+      if (route.path == '/experience') {
+        router.push('/skills')
+      }
+      if (route.path == '/blogs') {
+        router.push('/experience')
+      }
+       if (route.path == '/projects') {
+        router.push('/blogs')
+      }
+    }
+
+    const handleNext = () => {
+      if (route.path == '/') {
+        router.push('/about')
+      }
+      if (route.path == '/about') {
+        router.push('/skills')
+      }
+      if (route.path == '/skills') {
+        router.push('/experience')
+      }
+      if (route.path == '/experience') {
+        router.push('/blogs')
+      }
+      if (route.path == '/blogs') {
+        router.push('/projects')
+      }
+    }
 
     if (route.path == '/') {
       suffixtab.value = 'About'
@@ -52,7 +93,7 @@ export default {
       prefixtab.value = 'Articles'
     }
 
-    return { prefixtab, suffixtab }
+    return { prefixtab, suffixtab, handlePrevious, handleNext }
   }
 }
 </script>
@@ -120,10 +161,29 @@ export default {
     50% { bottom: 5px; }
     100% { bottom: 0; }
   }
+
+  #mobile-controlls {
+    display: none;
+  }
 }
+
+
 
 // Table to mobile
 @media (max-width: 830px) {
+  #mobile-controlls {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    .q-btn {
+      color: #7ed957;
+    }
+    .prefix-btn, .suffix-btn {
+      margin: 5px;
+    }
+  }
   #header {
     display:  none !important;
   }
