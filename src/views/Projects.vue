@@ -1,5 +1,5 @@
 <template>
-  <div id="projects"  class="containers" ref="container" @keyup.up="navArticles" tabindex="0">
+  <div id="projects"  class="containers" ref="container" @keyup.up="navArticles" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br />
       <h1>Projects</h1>
@@ -24,6 +24,12 @@ export default {
       router.push('/blogs')
     }
 
+    const navScroll = (e) => {
+      if (e.deltaY < 0) {
+        router.push('/blogs')
+      }
+    }
+
     const container = ref(null)
 
     onMounted(() => {
@@ -32,7 +38,8 @@ export default {
 
     return {
       navArticles,
-      container
+      container,
+      navScroll
     }
   }
 }

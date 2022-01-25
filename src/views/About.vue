@@ -1,5 +1,5 @@
 <template>
-  <span id="about" ref="container" @keyup.up="navHome" @keyup.down="navSkills" tabindex="0">
+  <span id="about" ref="container" @keyup.up="navHome" @keyup.down="navSkills" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br />
       <h1>About</h1>
@@ -29,12 +29,21 @@ export default {
       router.push('/skills')
     }
 
+    const navScroll = (e) => {
+      if (e.deltaY < 0) {
+        router.push('/')
+      }
+      if (e.deltaY > 0) {
+        router.push('/skills')
+      }
+    }
+
     const container = ref(null)
 
     onMounted(() => {
       container.value.focus()
     })
-    return { container, navHome, navSkills}
+    return { container, navHome, navSkills, navScroll }
   }
 }
 </script>
