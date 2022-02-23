@@ -167,8 +167,6 @@ export default {
   }
 }
 
-
-
 // Table to mobile
 @media (max-width: 830px) {
   #mobile-controlls {

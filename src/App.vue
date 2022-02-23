@@ -189,8 +189,8 @@ body {
 h1 {
   font-family: 'Sriracha', cursive;
   color: $green;
-  font-size: 70px !important;
-  line-height: 35px !important;
+  font-size: 100px !important;
+  line-height: 32px !important;
 }
 
 h2 {

@@ -1,56 +1,62 @@
 <template>
   <div id="container">
-    <div id="grid">
-      <div id="sq1" class="squares" @click.once="move($event)" :key="keyOne">
-        <img class="pieces" v-if="squares[0].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[0].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq2" class="squares"  @click.once="move($event)" :key="keyTwo">
-        <img class="pieces" v-if="squares[1].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[1].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq3" class="squares"  @click.once="move($event)" :key="keyThree">
-        <img class="pieces" v-if="squares[2].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[2].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq4" class="squares"  @click.once="move($event)" :key="keyFour">
-        <img class="pieces" v-if="squares[3].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[3].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq5" class="squares"  @click.once="move($event)" :key="keyFive">
-        <img class="pieces" v-if="squares[4].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[4].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq6" class="squares"  @click.once="move($event)" :key="keySix">
-        <img class="pieces" v-if="squares[5].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[5].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq7" class="squares"  @click.once="move($event)" :key="keySeven">
-        <img class="pieces" v-if="squares[6].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[6].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq8" class="squares"  @click.once="move($event)" :key="keyEight">
-        <img class="pieces" v-if="squares[7].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces"  v-if="squares[7].val === 'tac'" src="../assets/circle.png">
-      </div>
-      <div id="sq9" class="squares"  @click.once="move($event)" :key="keyNine">
-        <img class="pieces" v-if="squares[8].val === 'tic'" src="../assets/cross.png">
-        <img class="pieces" v-if="squares[8].val === 'tac'" src="../assets/circle.png">
+    <div id="tictactoe">
+      <h5>&lt;TicTacToe&gt;</h5>
+        <div id="grid">
+          <div id="sq1" class="squares" @click.once="move($event)" :key="keyOne">
+            <img class="pieces" v-if="squares[0].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[0].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq2" class="squares"  @click.once="move($event)" :key="keyTwo">
+            <img class="pieces" v-if="squares[1].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[1].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq3" class="squares"  @click.once="move($event)" :key="keyThree">
+            <img class="pieces" v-if="squares[2].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[2].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq4" class="squares"  @click.once="move($event)" :key="keyFour">
+            <img class="pieces" v-if="squares[3].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[3].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq5" class="squares"  @click.once="move($event)" :key="keyFive">
+            <img class="pieces" v-if="squares[4].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[4].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq6" class="squares"  @click.once="move($event)" :key="keySix">
+            <img class="pieces" v-if="squares[5].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[5].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq7" class="squares"  @click.once="move($event)" :key="keySeven">
+            <img class="pieces" v-if="squares[6].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[6].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq8" class="squares"  @click.once="move($event)" :key="keyEight">
+            <img class="pieces" v-if="squares[7].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces"  v-if="squares[7].val === 'tac'" src="../assets/circle.png">
+          </div>
+          <div id="sq9" class="squares"  @click.once="move($event)" :key="keyNine">
+            <img class="pieces" v-if="squares[8].val === 'tic'" src="../assets/cross.png">
+            <img class="pieces" v-if="squares[8].val === 'tac'" src="../assets/circle.png">
+          </div>
+        </div>
+      <h5 style="display: flex; justify-content: end;">&lt;/TicTacToe&gt;</h5>
+      <div id="winner-poles">
+        <div id="ggTop" class="ruler" v-if="ggTop"></div>
+        <div id="ggLeft" class="ruler" v-if="ggLeft"></div>
+        <div id="ggRight" class="ruler" v-if="ggRight"></div>
+        <div id="ggBottom" class="ruler" v-if="ggBottom"></div>
+        <div id="ggVert" class="ruler" v-if="ggVert"></div>
+        <div id="ggHori" class="ruler" v-if="ggHori"></div>
+        <div id="ggDiright" class="ruler" v-if="ggDiright"></div>
+        <div id="ggDileft" class="ruler" v-if="ggDileft"></div>
       </div>
     </div>
-    <div id="ggTop" class="horiPoles ruler" v-if="ggTop"></div>
-    <div id="ggLeft" class="vertPoles ruler" v-if="ggLeft"></div>
-    <div id="ggRight" class="vertPoles ruler" v-if="ggRight"></div>
-    <div id="ggBottom" class="horiPoles ruler" v-if="ggBottom"></div>
-    <div id="ggVert" class="vertPoles ruler" v-if="ggVert"></div>
-    <div id="ggHori" class="horiPoles ruler" v-if="ggHori"></div>
-    <div id="ggDiright" class="ruler" v-if="ggDiright"></div>
-    <div id="ggDileft" class="ruler" v-if="ggDileft"></div>
     <div id="game-ui">
       <h2 v-if="!gameOver">Challenge me?</h2>
       <h2 v-if="gameOver">Good Game!</h2>
-      <span v-if="!gameOver && !store.state.playerPlayed"><q-btn :class="{turn: store.state.playerFirst}" @click="playerfirst" size="15px" id="hire-btn" outline>1st</q-btn><q-btn :class="{turn: !store.state.playerFirst}"  @click.once="aiFirst" :key="keyAI" size="15px" id="hire-btn" outline>2nd</q-btn></span>
-      <span v-if="gameOver"><q-btn :class="{turn: !gameOver}" @click="resetGame" size="15px" id="hire-btn" outline>pLay again</q-btn></span>
+      <span v-if="!gameOver && !store.state.playerPlayed"><q-btn :class="{turn: store.state.playerFirst}" @click="playerfirst" size="15px" class="control-btn" outline>1st</q-btn><q-btn :class="{turn: !store.state.playerFirst}"  @click.once="aiFirst" :key="keyAI" size="15px" class="control-btn" outline>2nd</q-btn></span>
+      <span v-if="gameOver"><q-btn :class="{turn: !gameOver}" @click="resetGame" size="15px" class="control-btn" outline>pLay again</q-btn></span>
     </div>
   </div>
 </template>
@@ -491,11 +497,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 $grey: #353639;
 $green: #7ed957;
+$blue: #5271ff;
 
 #container {
-  margin-top: 150px;
+  margin-top: 40px;
   width: 350px;
   padding: 0;
   height: 350px;
@@ -517,68 +525,69 @@ $green: #7ed957;
   padding: 12%;
 }
 #grid {
+  position: relative;
   display: grid;
   background: #fff;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+}
+#winner-poles {
+  position: relative;
+  top: 0;
+  z-index: 1;
 }
 .squares {
   background: $grey;
   width: 120px;
   height: 120px;
 }
-#ggTop {
-  top: -86%;
-}
-#ggLeft {
-  top: -51.5%;
-  left: -35%;
-}
-#ggRight {
-  left: 34%;
-  top: -51.5%;
-}
-#ggBottom {
-  bottom: 17%;
-}
-#ggVert {
-  top: -51.5%;
-}
-#ggHori {
-  top: -52%;
-}
-#ggDiright {
-  top: -52%;
-  left: -18%;
-  width: 135%;
-  transform: rotate(45deg);
-}
- #ggDileft {
-  width: 135%;
-  left: -18.2%;
-  top: -52%;
-  transform: rotate(-45deg);
-} 
-// .horiPoles {
-//   transform: rotate(45deg);
-// }
-.vertPoles {
-  top: 0;
-  left: 0;
-  transform: rotate(90deg);
-}
+
 .ruler {
-  position: relative;
-  margin: 0;
-  padding: 0;
+  position: absolute;
+  margin-top: -260px;
+  width: 350px;
   height: 10px;
   background-color: $green;
 }
 
-#game-ui {
- text-align: center;
- margin: -12px;
+#ggTop {
+  top: -120px;
 }
+
+#ggBottom {
+  top: 120px;
+}
+
+#ggRight, #ggLeft, #ggVert {
+  transform: rotate(90deg);
+}
+
+#ggLeft {
+  left: -120px;
+}
+
+#ggDiright {
+  transform: rotate(45deg) scale(1.3, 1);
+}
+
+#ggDileft {
+  transform: rotate(-45deg) scale(1.3, 1);
+}
+
+#ggRight {
+  left: 120px;
+}
+
+#game-ui {
+  margin-top: -25px;
+  position: relative;
+  display: block;
+  text-align: center;
+}
+.control-btn {
+  margin-top: -35px;
+}
+
 button {
   padding: 5px 25px;
   margin: 0 5px;
