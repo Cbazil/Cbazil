@@ -571,6 +571,7 @@ $blue: #5271ff;
 }
 
 #ggDileft {
+  margin-top: -263px;
   transform: rotate(-45deg) scale(1.3, 1);
 }
 

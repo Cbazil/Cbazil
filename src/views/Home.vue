@@ -1,16 +1,21 @@
 <template>
   <span id="home" ref="container" @keyup.down="navAbout" @wheel="navScroll($event)" tabindex="0">
     <PageContainer> 
+      <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="home-container">
         <div id="home-container1">
-          <h5>&lt;h1&gt;</h5>
-            <div id="heading1"><h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span><span class="text">.</span></h1></div>
-          <h5>&lt;/h1&gt;</h5>
-          <h5>&lt;h2&gt;</h5>
-            <div id="header2"><h2>Fullstack Developer / Freelancer</h2></div>
-          <h5>&lt;/h2&gt;</h5>
+          <div id="header1-div">
+            <h5>&lt;h1&gt;</h5>
+              <div id="heading1"><h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span><span class="text">.</span></h1></div>
+            <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
+          </div>
+          <div style="width: 426px;">
+            <h5>&lt;h2&gt;</h5>
+              <div id="header2"><h2>Fullstack Developer / Freelancer</h2></div>
+            <h5 style="display: flex; justify-content: end;">&lt;/h2&gt;</h5>
+          </div>
           <div id="hire-container">
             <div>
               <h6>&lt;q-btn&gt;</h6>
@@ -29,6 +34,12 @@
         </div>
       </div>
       <br>
+      <!-- <div id="illustration">
+        <img src="../assets/cherry.png" alt="illustration" />
+      </div> -->
+      <!-- <div id="illustration-2">
+        <img src="../assets/cherry-man.png" alt="illustration-2" />
+      </div> -->
       <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
       <h5>&lt;/html&gt;</h5>
     </PageContainer>
@@ -103,11 +114,38 @@ h6 {
   line-height: 0px !important;
 }
 
+#illustration {
+  top: 20px;
+  left: 480px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  // justify-content: center;
+  img {
+    width: 360px;
+  }
+}
+
+#illustration-2 {
+  top: 400px;
+  left: 720px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  // justify-content: center;
+  img {
+    width: 360px;
+  }
+}
+
 #home-container {
   display: flex;
   margin: -35px 40px;
   width: 100%;
   #home-container1 {
+    #header1-div {
+      width: 674px;
+    }
     width: 60%;
     #heading1, #header2 {
       margin-top: -20px;
@@ -177,4 +215,62 @@ h6 {
   border: none;
   box-shadow: none;
 }
+
+// Laptop responsiveness 1
+@media (max-width: 1280px) {
+  #home-container {
+    #home-container1 {
+      #header1-div {
+        width: 620px;
+      }
+    }
+  }
+}
+
+// Laptop responsiveness 2
+@media (max-width: 1140px) {
+  #home-container {
+    #home-container1 {
+      width: 55%;
+      #header1-div {
+        width: 510px;
+      }
+    }
+    #home-container2 {
+      width: 45%;
+    }
+  }
+}
+
+// Laptop responsiveness 3
+@media (max-width: 973px) {
+  #home-container {
+    #home-container1 {
+      .hire-btns {
+        padding: 5px 20px;
+      }
+      #header1-div {
+        width: 445px;
+      }
+    }
+  }
+}
+
+// Tab and Mobile
+@media (max-width: 830px) {
+  #home-container {
+    display: block !important;
+    width: 100% !important;
+    #home-container1 {
+      width: 100%;
+      display: block !important;
+    }
+    #home-container2 {
+      z-index: 99999;
+      width: 100% !important;
+      display: block !important;
+    }
+  }
+}
+
 </style>

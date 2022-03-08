@@ -324,7 +324,7 @@ h3 {
 // Laptop responsiveness 1
 @media (max-width: 1280px) {
   h1 {
-    font-size: 60px !important;
+    font-size: 92px !important;
   }
   h2 {
     font-size: 24px !important;
@@ -333,20 +333,20 @@ h3 {
 // Laptop responsiveness 2
 @media (max-width: 1140px) {
   h1 {
-    font-size: 54px !important;
+    font-size: 74px !important;
   }
   h2 {
-    font-size: 20px !important;
+    font-size: 22px !important;
   }
 }
 
 // Laptop responsiveness 3
 @media (max-width: 973px) {
   h1 {
-    font-size: 46px !important;
+    font-size: 64px !important;
   }
   h2 {
-    font-size: 19px !important;
+    font-size: 20px !important;
   }
 }
 

@@ -1,8 +1,6 @@
 <template>
   <div id="articles" ref="container" @keyup.up="navExp" @keyup.down="navProjects" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
-      <br />
-      <h1>Articles</h1>
     </PageContainer>
   </div>
 </template>
