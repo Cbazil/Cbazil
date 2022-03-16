@@ -253,10 +253,10 @@
     </div>  
     <div id="mini-cntrs">
       <div class="mini-box" :class="{on_tool: on_vue}" @click="tool_idx = 0">
-        <img width="40" height="40" src="../assets/stacks/vue.png" alt="vuejs">
+        <img width="36" height="36" src="../assets/stacks/vue.png" alt="vuejs">
       </div>
       <div class="mini-box" :class="{on_tool: on_react}" @click="tool_idx = 1">
-        <img width="40" height="40" src="../assets/stacks/react.png" alt="reactjs">
+        <img width="36" height="36" src="../assets/stacks/react.png" alt="reactjs">
       </div>
       <div class="mini-box" :class="{on_tool: on_node}" @click="tool_idx = 2">
         <img width="35" height="35" src="../assets/stacks/node.png" alt="nodejs">
@@ -315,13 +315,13 @@ import { ref, onMounted } from 'vue'
           { image: require('../assets/stacks/vue.png'), image_alt: "vuejs", desc: "vuejs is my favourite frontend framework, it's way simplier & easy to use then the others. Came across vue in 2018 through meetups, upskilled in vuejs in 2020 1st quarter." },
           { image: require('../assets/stacks/react.png'), image_alt: "reactjs", desc: "reactjs is my 2nd frontend choice, I would enjoy working with it again. I 1st started learning it as intern at Vulcan Labs in 2019, slightly keeping up to date with new features." },
           { image: require('../assets/stacks/node.png'), image_alt: "nodejs", desc: "Was 1st introduced to nodejs in 2018 at life choices coding academy with the Code Space curriculum, found it quite challenging at first but I'm quite comfortable & experienced at it." },
-          { image: require('../assets/stacks/html.png'), image_alt: "html", desc: "Learnt all about html back in high school in 2013, I always liked the practical part of CAT so doing html was fan." },
-          { image: require('../assets/stacks/css.png'), image_alt: "css", desc: "Learnt css during my school days aswell along side html." },
+          { image: require('../assets/stacks/html.png'), image_alt: "html", desc: "Learnt all about html back in high school in 2013, I've always liked the practical part of CAT so using html was fan." },
+          { image: require('../assets/stacks/css.png'), image_alt: "css", desc: "Learnt css during my school days along side html." },
           { image: require('../assets/stacks/sass.png'), image_alt: "sass", desc: "Was 1st introducted to sass at life choices coding academy in 2018, scss is my prefer styling language." },
-          { image: require('../assets/stacks/firebase.png'), image_alt: "firebase", desc: "I learnt & looked into firebase in 2020 when I did some upskilling, I continued learning it in 2021. & is my prefered no-sql hosted solution." },
+          { image: require('../assets/stacks/firebase.png'), image_alt: "firebase", desc: "I learnt & looked into firebase in 2020 when I did some upskilling, I continued learning it in 2021 & it's my prefered no-sql hosted solution." },
           { image: require('../assets/stacks/mongodb.png'), image_alt: "mongodb", desc: "I was 1st introduced to mongodb at LCStudio in 2020, impletemented it in a learning journey set aside for the first intake of interns as a team lead." },
           { image: require('../assets/stacks/knex.png'), image_alt: "knex", desc: "I was 1st introduced to knexjs at Vulcan labs in 2019, I like that it makes SQL query building more productive & easier by just coding in javascipt. 1st choice when buidling complex API's." },
-          { image: require('../assets/stacks/postgresql.png'), image_alt: "postgresql", desc: "I was 1st introduce to postgres at Vulcan Labs in 2019, only really worked extensievly with postgresql at LCStudio. Prefer this over mysql." },
+          { image: require('../assets/stacks/postgresql.png'), image_alt: "postgresql", desc: "I was 1st introduce to postgres at Vulcan Labs in 2019, only really worked extensively with postgresql at LCStudio. I prefer this over mysql." },
           { image: require('../assets/stacks/typescript.png'), image_alt: "typescript", desc: "I was first introduced to typescript at Vulcan Labs in 2019. Been keeping in practice & it's a langauge I'd enjoy working with." },
           { image: require('../assets/stacks/three.png'), image_alt: "threejs", desc: "I was first introduced to Three.js while at LCStudio in 2020, very much intrigued with it. Completing the threejs-journey course in 2022." },
         ]
@@ -375,7 +375,7 @@ $darkgrey: #2b2c2e;
 $blue: #5271ff;
 $green: #7ed957;
   #tools-container {
-    margin-top: -80px;
+    margin-top: -45px;
     width: 100%;
     #tools-main {
       margin-top: -40px;
