@@ -4,7 +4,7 @@
       <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
-      <div id="blogs-container">
+      <div id="blogs-container" v-if="onMain">
         <div id="blogs-header">
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
@@ -14,7 +14,7 @@
         </div>
         <div id="container-content">
           <div id="blogs-container1">
-            <q-btn class="blog-btns" size="15px" outline v-for="blog in blogs" :key="blog.id"> 
+            <q-btn class="blog-btns" size="15px" outline v-for="blog in blogs" :key="blog.id" @click.prevent="toArticle(blog.id)"> 
               <q-card class="my-card" flat bordered>
                 <q-card-section horizontal>
                   <q-card-section class="q-pt-xs">
@@ -44,6 +44,7 @@
           </div>
         </div>
       </div>
+      <BlogView v-else :page="page" :handleBackToMain="handleBackToMain"/>
     </PageContainer>
   </div>
 </template>
@@ -52,10 +53,12 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import PageContainer from '@/components/Slots/PageContainer.vue'
+import BlogView from '@/components/Slots/BlogView.vue'
 
 export default {
   components: {
-    PageContainer
+    PageContainer,
+    BlogView
   },
   setup () {
     const router = useRouter()
@@ -125,8 +128,12 @@ export default {
       }
     }
 
+    const onMain = ref(true);
+
     const container = ref(null)
     const categories = ref([{ cate: 'frontend', val: true }, { cate: 'backend', val: true }])
+   
+   const page = ref(null);
 
     const cateCheck = () => {
       if (!categories.value[0].val) {
@@ -173,11 +180,19 @@ export default {
         ]
       }
     }
+    const handleBackToMain = () => {
+      page.value = null;
+      onMain.value = true;
+    }
+    const toArticle = (id) => {
+      page.value = id;
+      onMain.value = false;
+    }
 
     onMounted(() => {
       container.value.focus()
     })
-    return { container, navExp, navProjects, navScroll, categories, cateCheck, blogs}
+    return { container, navExp, navProjects, navScroll, categories, cateCheck, blogs, onMain, page, toArticle, handleBackToMain}
   }
 }
 </script>

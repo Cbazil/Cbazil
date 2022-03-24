@@ -27,7 +27,7 @@
                   side="left"
                 >
                   <div class="exp-content">
-                    I worked as a Fullstack Web Developer Teamlead in the Web Applications Department at LCStudio. Developed apps mainly in the javascript language, VueJS was used the frontend framework and did the backend with node and SQL(PostgreSQL) using knexJS.
+                    I worked as a Fullstack Web Developer Teamlead in the Web Applications Department at LCStudio. Developed apps mainly in the javascript language, VueJS was used as the frontend framework and we did the backend with node and SQL(PostgreSQL) using knexJS.
                   </div>
                   <h6 class="line-title">Stacks Used</h6>
                   <ul class="subject-list">
