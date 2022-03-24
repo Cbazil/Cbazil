@@ -45,6 +45,8 @@
         </div>
       </div>
       <BlogView v-else :page="page" :handleBackToMain="handleBackToMain"/>
+      <h5 style="margin-top: -35px;">&nbsp;&nbsp;&lt;/body&gt;</h5>
+      <h5 style="margin-top: 0px;">&lt;/html&gt;</h5>
     </PageContainer>
   </div>
 </template>
@@ -112,7 +114,35 @@ export default {
     const navScroll = (e) => {
       if (
         e.target.id == "blogs-container1" || 
+        e.target.id == "blog1" ||
+        e.target.id == "blog2" ||
+        e.target.id == "blog3" ||
+        e.target.id == "blog4" ||
+        e.target.id == "blog5" ||
+        e.target.classList == "blob-code blob-code-inner js-file-line" || 
+        e.target.classList == "blob-num js-line-number js-code-nav-line-number js-blob-rnum" ||
         e.target.classList == "text-h5 q-mt-sm q-mb-xs"  ||
+        e.target.classList == "blog-header" ||
+        e.target.classList == "one-liner" ||
+        e.target.classList == "liner-content" ||
+        e.target.classList == "blog-sub-heading" ||
+        e.target.classList == "para" ||
+        e.target.classList == "toCenter" || 
+        e.target.classList == "ulist" ||
+        e.target.classList == "pl-s" ||
+        e.target.classList == "pl-c1" ||
+        e.target.classList == "pl-c" || 
+        e.target.classList == "pl-s1" ||
+        e.target.classList == "pl-k" ||
+        e.target.classList ==  "pl-v" ||
+        e.target.classList == "pl-smi" ||
+        e.target.classList == "pl-en" || 
+        e.target.classList == "pl-kos" ||
+        e.target.classList == "pl-ent" ||
+        e.target.classList == "gist-meta" ||
+        e.target.nodeName == "A" ||
+        e.target.classList == "links" ||
+        e.target.classList == "blog-img" ||
         e.target.classList == "text-caption text-grey" ||
         e.target.classList == "q-img__image q-img__image--with-transition q-img__image--loaded" ||
         e.target.classList == "q-card__section q-card__section--vert col-5 flex flex-center" ||
@@ -192,6 +222,7 @@ export default {
     onMounted(() => {
       container.value.focus()
     })
+
     return { container, navExp, navProjects, navScroll, categories, cateCheck, blogs, onMain, page, toArticle, handleBackToMain}
   }
 }
@@ -232,6 +263,7 @@ $blue: #5271ff;
     display: flex;
     width: 100%;
     background: none;
+    margin-bottom: 32.5px;
     .blog-btns {
       color: $green;
       margin: 10px;

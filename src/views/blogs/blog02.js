@@ -19,12 +19,6 @@ module.exports = {
       content: "Today we'll go into setting up a quick RESTful API using JSON server, It's honestly one on the fastest ways to set up a server, it's quite handy when working on small projects. So this tutorial would be perfect for those working on small portfolio projects or even code challenges."
     },
     {
-      content: "We'll jump right into it, Please do NOTE that this tutorial will only focus on setting up a backend, so we won't have any client. I will be testing http requests using POSTMAN."
-    },
-    {
-      content: "First let's create ourselves a folder where we'll handle our code. I have named mine “vanilla-json-server” and the IDE of my choice will be VSCODE."
-    },
-    {
       content: "In you terminal run the following command"
     },
     {
@@ -79,14 +73,8 @@ module.exports = {
       content: "Congrats you have reached the end of the tutorial. Hope this helps you out. Comments and feedback welcome, Always willing to improve :)."
     },
     {
-      content: "Here's the LINK to project repo."
-    },
-    {
-      content: "Let me know if you require a part 2, I could include a vanilla html & js , Vue or React client. Leave a comment ;)."
-    },
-    {
-      content: "Feel free to Follow me on Twitter."
-    },
+      content: "Let me know if you require a part 2, I could include a vanilla html & js , Vue or React client. Leave a comment (On Medium)."
+    }
   ],
   graphics: [
     {

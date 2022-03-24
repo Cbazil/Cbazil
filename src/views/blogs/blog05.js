@@ -28,7 +28,7 @@ module.exports = {
       content: "In this tutorial, we'll set up an express API using Postgres as our database and Knex as the helper tool to link our node express application backend to a Postgres database."
     },
     {
-      content: "Installations for postgres are different on various Operating systems but do try the official site here."
+      content: "Be sure to have (postgresql, pgadmin) and node installed on your device. I’m expecting you to be familiar with the Express framework and most importantly have knowledge of javascript."
     },
     {
       content: "We start by initializing/creating our restful API, So run the following code inside a terminal in your desired directory."
@@ -37,37 +37,37 @@ module.exports = {
       content: "Now let's install all needed dependencies"
     },
     {
-      content: "express — Creates our restful API (li)"
+      content: "express — Creates our restful API"
     },
     {
-      content: "knex — Our javascript SQL query builder (Makes development easier as a  javascript developer) (li)"
+      content: "knex — Our javascript SQL query builder (Makes development easier as a  javascript developer)"
     },
     {
-      content: "pg — Our client to connect and talk to your Postgres database (li)"
+      content: "pg — Our client to connect and talk to your Postgres database"
     },
     {
-      content: "helmet — Extra security for express apps (li)"
+      content: "helmet — Extra security for express apps"
     },
     {
-      content: "cors — Cross domain security (li)"
+      content: "cors — Cross domain security"
     },
     {
-      content: "bcryptjs — Hashing our passwords (Any private values that need hashing) password encryption layer (li)"
+      content: "bcryptjs — Hashing our passwords (Any private values that need hashing) password encryption layer"
     },
     {
-      content: "jsonwebtoken — Access token (API route security) (li)"
+      content: "jsonwebtoken — Access token (API route security)"
     },
     {
-      content: "uuid — Generates exellent unique ID (li)"
+      content: "uuid — Generates exellent unique ID"
     },
     {
-      content: "nodemailer — sends emails (li)"
+      content: "nodemailer — sends emails"
     },
     {
-      content: "nodemon — dev dependency (recommended) (li)"
+      content: "nodemon — dev dependency (recommended)"
     },
     {
-      content: "Create an index.js file in the root of your directory and start an express server with the following code (Basic Setup) (li)"
+      content: "Create an index.js file in the root of your directory and start an express server with the following code (Basic Setup)"
     },
     {
       content: "Run the express server and view it on localhost:3000 (li)"
@@ -103,9 +103,6 @@ module.exports = {
       content: "Schemas reference to what type of data needs to be inserted into a column, Knex provides all necessary types to populate your database accordingly."
     },
     {
-      content: "Knex cheatsheet (devhints.io) — Use this as guidance when setting up your database using knex (Comes in handy)"
-    },
-    {
       content: "Address Schema (/schemas/Address.js)"
     },
     {
@@ -125,9 +122,6 @@ module.exports = {
     },
     {
       content: "Inside 02_users.js"
-    },
-    {
-      content: "If you need to pre-populate data install and usethe faker package. Make a loop of N (e.g 100 Users & 90 Addresses) then populate values into the database."
     },
     {
       content: "Now let us seed our data with the following command"
@@ -181,7 +175,7 @@ module.exports = {
       link: `<script src="https://gist.github.com/Cbazil/cb472efdfa3d028f1ff5742de342dd71.js"><\/script>`
     },
     {
-      link: `<script src="https://gist.github.com/Cbazil/cb472efdfa3d028f1ff5742de342dd71.js"><\/script>`
+      link: `<script src="https://gist.github.com/Cbazil/5f3747ddd89ed84c086e9b5197b81b0e.js"><\/script>`
     },
     {
       link: `<script src="https://gist.github.com/Cbazil/920e36acb6f95eac9693f06fccce6f0b.js"><\/script>`
@@ -234,11 +228,13 @@ module.exports = {
       content: "knex migrate:latest"
     },
     { 
-      content: "Knex migrate:rollback"
+      content: "knex migrate:rollback"
     },
     { 
-      content:  `knex seed:make 01_address.js
-                 knex seed:make 02_users.js`
+      content:  "knex seed:make 01_address.js"
+    },
+    {
+      content: " knex seed:make 02_users.js"
     },
     { 
       content: "knex seed:run"

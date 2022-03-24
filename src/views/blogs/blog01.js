@@ -18,6 +18,9 @@ module.exports = {
       content: "Make sure to include the following script element/tag in between your head tags"
     },
     {
+      content: `<script src=”https://unpkg.com/vue"><\/script>`
+    },
+    {
       content: "Vue JS uses the Dom to render data or component. To do so create a div in your body, with an ID."
     },
     {
@@ -40,12 +43,6 @@ module.exports = {
     },
     {
       content: "That's how to loop through arrays using vueJSfor looping."
-    },
-    {
-      content: "Codesandbox playground link to sauce code: https://codesandbox.io/s/vue-looping-qwzoy"
-    },
-    {
-      content: "Follow me on Twitter: https://twitter.com/cbazil Thanks for your time, and hope you've learnt something new."
     },
     {
       content: "Cheers."

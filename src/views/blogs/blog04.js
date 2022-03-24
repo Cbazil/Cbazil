@@ -3,16 +3,7 @@ module.exports = {
   headers: [],
   paragraphs: [
     {
-      content: "Hey there everyone, today I'd like to demonstrate how to host your backend server to work online. Just note that we can basically host any backend API we built to be accessible for online use among your app/API users. Instead of using a popular no-SQL or SQL database which is recommended in the production stage of your application, We'll be hosting our JSON-server from the article Setting up a quick JSON server (RESTful API) | by Chad Bosch | Cbazil.Dev | Medium I've provided."
-    },
-    {
-      content: "Clone my repo if need be: https://github.com/Cbazil/vanilla-json-server-part-1.git"
-    },
-    {
       content: "Once cloned install the dependency “json-server” and we'll be all set."
-    },
-    {
-      content: "To host our app we'll use Heroku, one of the best free options out there if not the best. Visit https://www.heroku.com/ to get started, Make sure you have an account. You have a limit of 5 projects on Heroku. Once you have reached your dashboard. Locate and click “NEW”"
     },
     {
       content: "The next window will be where you set up your app."
@@ -22,9 +13,6 @@ module.exports = {
     },
     {
       content: "Now let's download the Heroku CLI for the relevant system you operating with."
-    },
-    {
-      content: "Link: The Heroku CLI | Heroku Dev Center"
     },
     {
       content: "Once we have the CLI installed let's hop back onto the project directory."
@@ -37,9 +25,6 @@ module.exports = {
     },
     {
       content: "process.env.PORT is the port the host provides us, our Heroku port will be the URL Heroku provided our app."
-    },
-    {
-      content: "https://json-server-heroku-hosting.herokuapp.com will be in place of http://localhost:3000 (Use URL heroku gives you)"
     },
     {
       content: "Let's host our application. First, execute the following."
@@ -94,6 +79,9 @@ module.exports = {
     {
       source: require("../../assets/blogs/blog-pics/hosted-json-server3.png")
     },
+    {
+      source: require("../../assets/blogs/blog-pics/hosted-json-server4.png")
+    }
   ],
   gists: [
     {

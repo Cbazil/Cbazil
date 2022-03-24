@@ -27,19 +27,19 @@ module.exports = {
       content: "Now it's time to clear our code so that we can start making reusable components. Do the follow steps."
     },
     {
-      content: "Delete the HelloWorld Component. (li)"
+      content: "Delete the HelloWorld Component."
     },
     {
-      content: "Remove the HelloWorld component and import from the App.vue file. (li)"
+      content: "Remove the HelloWorld component and import from the App.vue file."
     },
     {
-      content: "Create New Component called Header.vue (App-bar) in components folder. Add the following code to that component. (li)"
+      content: "Create New Component called Header.vue (App-bar) in components folder. Add the following code to that component."
     },
     {
-      content: "Inside your App.vue change the code to include the following. (li)"
+      content: "Inside your App.vue change the code to include the following"
     },
     {
-      content: "Create a sub folder called inputs in your components folder. Here we will keep all our reusable components. (li)"
+      content: "Create a sub folder called inputs in your components folder. Here we will keep all our reusable components."
     },
     {
       content: "You might be asking yourself what's the point of reusing components? It's very important to be productive and save yourself some time and keep your code a bit cleaner. Consider recycling your components when you see a constant need for it through out your app. By just passing through the necessary data, You'll be all sorted and won't need to hard code the same component all the time."
@@ -51,22 +51,25 @@ module.exports = {
       content: "Create the following Files in our inputs folder"
     },
     {
-      content: "TextField.vue (li)"
+      content: "TextField.vue"
     },
     {
-      content: "SelectField.vue (li)"
+      content: "SelectField.vue"
     },
     {
-      content: "RadioField.vue (li)"
+      content: "RadioField.vue"
     },
     {
-      content: "TimeField.vue (li)"
+      content: "TimeField.vue"
     },
     {
-      content: "DateField.vue (li)"
+      content: "DateField.vue"
     },
     {
       content: "Inside TextField.vue include:"
+    },
+    {
+      content: "Inside SelectField.vue include:"
     },
     {
       content: "Inside RadioField.vue include:"
@@ -100,12 +103,6 @@ module.exports = {
     },
     {
       content: "That's how you make reusable components!, just remember all components work more or less in similar ways so don't over think yourself, okay. Feel free to pop a question if stuck."
-    },
-    {
-      content: "Find code repo here. Feel free to clone and test for yourselves."
-    },
-    {
-      content: "Follow me on Twitter @cbazil3 for updates."
     },
     {
       content: "Hope this lesson helped. Stay tuned for more tutorials."
