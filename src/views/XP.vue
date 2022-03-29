@@ -56,7 +56,7 @@
                   color="blue-8"
                 >
                   <div class="exp-content">
-                    I did some upskilling, and taught myself VueJS as well as firebase. Really started to coding for myself without any help/tutorials.
+                    I did some upskilling, and taught myself VueJS as well as firebase. Really started coding for myself without any help/tutorials.
                   </div>
                   <h6 class="line-title">Stacks Used</h6>
                   <ul class="subject-list">
