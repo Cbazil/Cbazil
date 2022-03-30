@@ -19,14 +19,14 @@
                     class="mini-container container"
                     swipeable
                     animated
-                    v-model="slide"
+                    v-model="project1"
                     :autoplay="autoplay"
-                    ref="carousel"
+                    ref="carousel_p1"
                     infinite
                   >
                     <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/first-cv1.jpg')" />
-                    <q-carousel-slide :name="2" :img-src="require('../assets/projects/first-cv2.jpg')" />
-                    <q-carousel-slide :name="3" :img-src="require('../assets/projects/first-cv3.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/first-cv2.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/first-cv3.jpg')" />
 
                     <template v-slot:control>
                       <q-carousel-control
@@ -40,15 +40,15 @@
                           style="margin-right: 4px; opacity: 0.75;"
                           color="light-green-12" 
                           icon="fa fa-angle-left"
-                          @click="$refs.carousel.previous()"
+                          @click="$refs.carousel_p1.previous()"
                         />
                         <q-btn
-                          push 
+                          push
                           dense 
                           style="4px; opacity: 0.75;"
                           color="light-green-12"
                           icon="fa fa-angle-right"
-                          @click="$refs.carousel.next()"
+                          @click="$refs.carousel_p1.next()"
                         />
                         <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
                       </q-carousel-control>
@@ -60,20 +60,153 @@
                         <h6 style="margin-top: 30px; color: white;">My First Online CV</h6>
                       </q-carousel-control>
                     </template>
+                </q-carousel>
+              </q-btn>
+              <q-btn class="proj-btns" size="15px" outline>
+                <div class="mini-container container">
+                  <img style="width: 100%; height: 100%;" src="../assets/projects/tictactoe.png" alt="Tic Tac Toe">
+                </div>
+              </q-btn>
+            </div>
+            <q-btn class="proj-btns" size="15px" outline>
+              <div class="single-container container">
+                <q-carousel
+                    swipeable
+                    animated
+                    v-model="project2"
+                    :autoplay="autoplay"
+                    style="height: 412px !important;"
+                    ref="carousel_p2"
+                    infinite
+                  >
+                    <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/h4l1.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/h4l2.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/h4l3.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/h4l4.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="5" :img-src="require('../assets/projects/h4l5.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="6" :img-src="require('../assets/projects/h4l6.jpg')" />
+
+                    <template v-slot:control>
+                      <q-carousel-control
+                        position="top-right"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          style="margin-right: 4px; opacity: 0.75;"
+                          color="light-green-12" 
+                          icon="fa fa-angle-left"
+                          @click="$refs.carousel_p2.previous()"
+                        />
+                        <q-btn
+                          push
+                          dense 
+                          style="4px; opacity: 0.75;"
+                          color="light-green-12"
+                          icon="fa fa-angle-right"
+                          @click="$refs.carousel_p2.next()"
+                        />
+                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="bottom"
+                        class="text-white rounded-borders"
+                        style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
+                      >
+                        <h6 style="margin-top: 30px; color: white;">Health4Life App (Private)</h6>
+                      </q-carousel-control>
+                    </template>
                   </q-carousel>
-                </q-btn>
-              <q-btn class="proj-btns" size="15px" outline><div class="mini-container container"></div></q-btn>
-            </div>
-            <q-btn class="proj-btns" size="15px" outline><div class="single-container container"></div></q-btn>
+              </div>
+            </q-btn>
+            <q-btn class="proj-btns" size="15px" outline>
+              <div class="single-container container">
+                <q-carousel
+                    swipeable
+                    animated
+                    v-model="project3"
+                    :autoplay="autoplay"
+                    style="height: 412px !important;"
+                    ref="carousel_p3"
+                    infinite
+                  >
+                    <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/lcadmin1.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/lcadmin2.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/lcadmin3.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/lcadmin4.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="5" :img-src="require('../assets/projects/lcadmin5.jpg')" />
+
+                    <template v-slot:control>
+                      <q-carousel-control
+                        position="top-right"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          style="margin-right: 4px; opacity: 0.75;"
+                          color="light-green-12" 
+                          icon="fa fa-angle-left"
+                          @click="$refs.carousel_p3.previous()"
+                        />
+                        <q-btn
+                          push
+                          dense
+                          style="4px; opacity: 0.75;"
+                          color="light-green-12"
+                          icon="fa fa-angle-right"
+                          @click="$refs.carousel_p3.next()"
+                        />
+                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="bottom"
+                        class="text-white rounded-borders"
+                        style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
+                      >
+                        <h6 style="margin-top: 30px; color: white;">Life Choices Admin (Private)</h6>
+                      </q-carousel-control>
+                    </template>
+                  </q-carousel>
+              </div>
+            </q-btn>
             <div class="duo-container">
-              <q-btn class="proj-btns" size="15px" outline><div class="mini-container container"></div></q-btn>
-              <q-btn class="proj-btns" size="15px" outline><div class="mini-container container"></div></q-btn>
+              <q-btn class="proj-btns" size="15px" outline>
+                <div class="mini-container container">
+                  <img style="width: 100%; height: 100%;" src="../assets/projects/gameofluck.png" alt="Game of Luck">
+                </div>
+              </q-btn>
+              <q-btn class="proj-btns" size="15px" outline>
+                <div class="mini-container container">
+                  <img style="width: 100%; height: 100%;" src="../assets/projects/doorguys.png" alt="Door Guys">
+                </div>
+              </q-btn>
             </div>
-            <q-btn class="proj-btns" size="15px" outline><div class="single-container container"></div></q-btn>
+            <q-btn class="proj-btns" size="15px" outline>
+              <div class="single-container container">
+                <img style="width: 100%; height: 100%;" src="../assets/projects/cstash.png" alt="cstash">
+              </div>
+            </q-btn>
             <div class="duo-container">
-              <q-btn class="proj-btns" size="15px" outline><div class="mini-container container"></div></q-btn>
-              <q-btn class="proj-btns" size="15px" outline><div class="mini-container container"></div></q-btn>
+              <q-btn class="proj-btns" size="15px" outline>
+                <div class="mini-container container">
+                  <img style="width: 100%; height: 100%;" src="../assets/projects/preloadcss.png" alt="Pre Load CSS">
+                </div>
+              </q-btn>
+              <q-btn class="proj-btns" size="15px" outline>
+                <div class="mini-container container">
+                  <img style="width: 100%; height: 100%;" src="../assets/projects/cstash2.png" alt="CStash2">
+                </div>
+              </q-btn>
             </div>
+             <q-btn class="proj-btns" size="15px" outline>
+              <div class="single-container container">
+                <img style="width: 100%; height: 100%;" src="../assets/projects/mycitylifestyle.png" alt="My City LifeStyle">
+              </div>
+            </q-btn>
           </div>
         </div>
       </div>
@@ -112,8 +245,13 @@ export default {
     })
 
     return {
-      slide: ref(1),
-      autoplay: ref(false),
+      project1: ref(1),
+      project2: ref(2),
+      project3: ref(3),
+      project4: ref(4),
+      project5: ref(5),
+      project6: ref(6),
+      autoplay: ref(true),
       navArticles,
       container,
       navScroll
@@ -147,7 +285,7 @@ $blue: #5271ff;
       width: 96%;
       #gallery-div {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-gap: 10px;
         height: 440px;
         padding-bottom: 100px;
@@ -156,7 +294,7 @@ $blue: #5271ff;
         .single-container {
           margin: 0;
           padding: 0;
-          width: 600px !important;
+          width: 700px !important;
         }
         .duo-container {
           display: grid;
