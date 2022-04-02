@@ -8,7 +8,7 @@
         <div id="skills-container1">
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
-            <h1 id="heading1">Skills & Stacks</h1>
+            <h1>Skills & Stacks</h1>
             <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
           </div>
           <div id="header2-div">

@@ -18,7 +18,7 @@
           @mouseover="hoverAbout = true"
           @mouseleave="hoverAbout = false"
         >
-          <router-link to="/about">
+          <router-link  to="/about">
             <q-icon
               v-if="!hoverAbout"
               class="icons"
@@ -34,7 +34,7 @@
           @mouseover="hoverSkills = true"
             @mouseleave="hoverSkills = false"
         >
-          <router-link to="/skills">
+          <router-link  to="/skills">
             <q-icon
               v-if="!hoverSkills"
               class="icons"
@@ -50,7 +50,7 @@
           @mouseover="hoverExp = true"
           @mouseleave="hoverExp = false"
         >
-          <router-link to="/experience">
+          <router-link  to="/experience">
             <q-icon
               v-if="!hoverExp"
               class="icons"
@@ -66,7 +66,7 @@
           @mouseover="hoverBlogs = true"
           @mouseleave="hoverBlogs = false"
         >
-          <router-link to="/blogs">
+          <router-link  to="/blogs">
             <q-icon
               v-if="!hoverBlogs"
               class="icons"
@@ -96,32 +96,45 @@
       </div>
       <div id="s-links" class="row">
         <div class="link-i">
-          <q-icon
-            size="16px"
-            name="fab fa-linkedin"
-            color="white"
-          />
+          <a href="https://www.linkedin.com/in/chad-bosch-b6a3b716b/">
+            <q-icon
+              size="16px"
+              name="fab fa-linkedin"
+              class="s-link-i"
+              color="white"
+              path="www.google.com"
+            />
+          </a>
         </div>
         <div class="link-i">
-          <q-icon
-            size="16px"
-            name="fab fa-twitter"
-            color="white"
-          />
+          <a href="https://twitter.com/Cbazil3">
+            <q-icon
+              size="16px"
+              name="fab fa-twitter"
+              class="s-link-i"
+              color="white"
+            />
+          </a>
         </div>
         <div class="link-i">
-          <q-icon
-            size="16px"
-            name="fab fa-github"
-            color="white"
-          />
+          <a href="https://github.com/Cbazil">
+            <q-icon
+              size="16px"
+              name="fab fa-github"
+              class="s-link-i"
+              color="white"
+            />
+          </a>
         </div>
         <div class="link-i">
-          <q-icon
-            size="16px"
-            name="fab fa-medium-m"
-            color="white"
-          />
+          <a href="https://medium.com/@cbazil">
+            <q-icon
+              size="16px"
+              name="fab fa-medium-m"
+              class="s-link-i"
+              color="white"
+            />
+          </a>
         </div>
       </div>
     </nav>
@@ -254,12 +267,17 @@ h3 {
   #s-links {
     margin-bottom: 16px;
   }
-  
+  .s-link-i:hover {
+    color: $green !important;
+  }
   .nav-logo, .nav-i, .link-i {
     text-align: center;
     width: 100%;
     display: block;
     cursor: pointer;
+  }
+  .nav-label {
+    text-decoration: none !important;
   }
   .on_page {
     background: $grey;
@@ -299,7 +317,7 @@ h3 {
     flex-direction: row !important;
     width: 100% !important;
     height: 60px !important;
-    .nav-i, .link-i { 
+    .nav-i, .link-i {
       width: auto;
     }
     .nav-i {
