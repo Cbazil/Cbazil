@@ -203,13 +203,15 @@ h1 {
   font-family: 'Sriracha', cursive;
   color: $green;
   font-size: 100px !important;
-  line-height: 32px !important;
+  line-height: 45px !important;
 }
 
 h2 {
   font-family: 'Montserrat Alternates', sans-serif;
   color: #fff;
-  font-size: 26px !important;
+  font-size: 42px !important;
+  line-height: 38px !important;
+  margin: 50px 10px;
 }
 
 h3 {

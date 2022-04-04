@@ -40,7 +40,7 @@
             <img class="pieces" v-if="squares[8].val === 'tac'" src="../assets/circle.png">
           </div>
         </div>
-      <h5 style="display: flex; justify-content: end;">&lt;/TicTacToe&gt;</h5>
+      <h5 style="display: flex; justify-content: end; margin-top: 20px !important;">&lt;/TicTacToe&gt;</h5>
       <div id="winner-poles">
         <div id="ggTop" class="ruler" v-if="ggTop"></div>
         <div id="ggLeft" class="ruler" v-if="ggLeft"></div>
@@ -528,6 +528,7 @@ $blue: #5271ff;
   position: relative;
   display: grid;
   background: #fff;
+  margin-top: -15px !important;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
 }

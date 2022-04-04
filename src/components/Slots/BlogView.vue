@@ -471,7 +471,6 @@ $blue: #5271ff;
   .links {
     color: #7ed957;
   }
-  
   h1 {
     font-size: 42px !important;
     line-height: 45px !important;
@@ -500,8 +499,8 @@ $blue: #5271ff;
   #blog-container {
     display: flex;
     width: 100%;
-    height: 480px;
-    margin: 60px 20px;
+    height: 500px;
+    margin: 55px 20px 20px 20px;
     #content-box {
       padding-right: 40px;
       overflow-y: scroll;

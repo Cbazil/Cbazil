@@ -2,11 +2,12 @@
   <div id="experience" ref="container" @keyup.up="navSkills" @keyup.down="navArticles" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br>
+      <br>
+      <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="edu-container">
         <div id="edu-title">
-          <br>
           <h5>&lt;h1&gt;</h5>
           <h1>Education & Work Experience</h1>
           <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
@@ -217,7 +218,7 @@
           </div>
         </div>
       </div>
-      <h5 style="margin-top: 55px;">&nbsp;&nbsp;&lt;/body&gt;</h5>
+      <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
       <h5 style="margin-top: 0px;">&lt;/html&gt;</h5>
     </PageContainer>
   </div>
@@ -289,24 +290,25 @@ export default {
 $green: #7ed957;
 $blue: #5271ff;
 #experience {
-  width: 100vw;
+  width: 100%;
   position: relative;
   z-index: 0;
   display: flex;
   #edu-container {
-    margin: -35px 20px;
+    margin: 0px 15px;
     width: 100%;
     #edu-title {
-      width: 80%;
+      width: 56%;
       h1 {
-        margin-left: 25px;
-        line-height: 5px !important;
+        font-size: 65px !important;
+        margin: 0px 30px;
       }
       h5 {
         margin: 20px;
       }
     }
     #timelines {
+      margin-bottom: 20px;
       .subject-list {
         font-family: 'Caveat', cursive;
         font-size: 16px;
@@ -330,12 +332,12 @@ $blue: #5271ff;
       }
       #edu-timeline {
         width: 48%;
-        height: 400px !important;
+        height: 480px !important;
         overflow-y: scroll;
       }
       #exp-timeline {
         width: 48%;
-        height: 400px !important;
+        height: 480px !important;
         overflow-y: scroll;
       }
       .exp-content {

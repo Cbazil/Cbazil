@@ -2,6 +2,8 @@
   <div id="skills" ref="container" @keyup.up="navAbout" @keyup.down="navExp" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br>
+      <br>
+      <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="skills-container">
@@ -9,12 +11,12 @@
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
             <h1>Skills & Stacks</h1>
-            <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
             <h3>Fullstack Javascript developer, develops web apps using Javascript and NodeJS framework/libraries.</h3>
-            <h5 style="display: flex; justify-content: end;">&lt;/h2&gt;</h5>
+            <h5 style="display: flex; justify-content: end; ">&lt;/h2&gt;</h5>
           </div>
           <div id="skills-div">
             <h5>&lt;Skills&gt;</h5>
@@ -50,7 +52,7 @@
                 <div class="design-lvl"></div>
               </div>
             </div>
-            <h5 style="display: flex; justify-content: end;">&lt;/Skills&gt;</h5>
+            <h5 style="display: flex; justify-content: end;  margin-top: 25px !important;">&lt;/Skills&gt;</h5>
           </div>
         </div>
         <div id="skill-container2">
@@ -115,28 +117,32 @@ $blue: #5271ff;
 
 #skills-container {
   display: flex;
-  margin: -35px 40px;
+  margin: 0px 15px;
   width: 100%;
   #skills-container1 {
     padding: 0px 25px;
-    width: 50%;
+    width: 45%;
     color: #fff;
    #header1-div {
-      margin: -10px;
-      width: 675px;
+      width: 480px;
       h1 {
-        margin: -5px 0 -5px 0;
+        font-size: 65px !important;
+        margin: -15px 25px;
       }
     }
     #header2-div {
-      width: 95%;
-      h5 {
+      width: 90%;
+      h3 {
         margin: -15px 0;
+        padding: 0 20px;
+      }
+      h5 {
+        margin: 15px 0;
         font-weight: 10px;
       }
     }
     #skills-div {
-      width: 95%; 
+      width: 100%; 
     }
     .skill {
       width: 95%;
@@ -183,7 +189,7 @@ $blue: #5271ff;
     }
   }
   #skill-container2 {
-    width: 100%;
+    width: 55%;
     margin: 40px 80px;
   }
 }

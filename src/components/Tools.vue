@@ -388,7 +388,7 @@ $green: #7ed957;
         // background: $darkgrey;
         width: 100%;
         display: grid;
-        grid-template-columns: 2fr 3fr;
+        grid-template-columns: 2fr 4fr;
       }
       .main-box {
         width: 100%;
@@ -440,6 +440,7 @@ $green: #7ed957;
       .box-tool-desc {
         display: flex;
         padding-right: 30px;
+        height: 300px;
         justify-content: center;
         align-items: center;
         h2 {

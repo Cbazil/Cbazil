@@ -2,19 +2,21 @@
   <span id="home" ref="container" @keyup.down="navAbout" @wheel="navScroll($event)" tabindex="0">
     <PageContainer> 
       <br>
+      <br>
+      <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="home-container">
         <div id="home-container1">
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
-              <div id="heading1"><h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span><span class="text">.</span></h1></div>
+            <div id="heading1"><h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span><span class="text">.</span></h1></div>
             <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
           </div>
-          <div style="width: 426px;">
+          <div style="width: 720px;">
             <h5>&lt;h2&gt;</h5>
               <div id="header2"><h2>Fullstack Developer / Freelancer</h2></div>
-            <h5 style="display: flex; justify-content: end;">&lt;/h2&gt;</h5>
+            <h5 style="display: flex; justify-content: end; margin-top: 34px !important;">&lt;/h2&gt;</h5>
           </div>
           <div id="hire-container">
             <div>
@@ -103,8 +105,9 @@ $blue: #5271ff;
 h5 {
   color: $blue;
   font-family: 'Caveat', cursive;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 0px !important;
+  margin: 0 0 35px 0;
 }
 
 h6 {
@@ -140,11 +143,11 @@ h6 {
 
 #home-container {
   display: flex;
-  margin: -35px 40px;
+  margin: 0 40px;
   width: 100%;
   #home-container1 {
     #header1-div {
-      width: 674px;
+      width: 700px;
     }
     width: 60%;
     #heading1, #header2 {
@@ -153,7 +156,7 @@ h6 {
       margin-bottom: -25px; 
     }
     #header2 {
-      margin: -35px 5px !important;
+      margin: -35px 12px !important;
     }
     .hire-btns {
       margin: 10px;

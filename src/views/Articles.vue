@@ -2,6 +2,8 @@
   <div id="articles" ref="container" @keyup.up="navExp" @keyup.down="navProjects" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br>
+      <br>
+      <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="blogs-container" v-if="onMain">
@@ -45,7 +47,7 @@
         </div>
       </div>
       <BlogView v-else :page="page" :handleBackToMain="handleBackToMain"/>
-      <h5 style="margin-top: -35px;">&nbsp;&nbsp;&lt;/body&gt;</h5>
+      <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
       <h5 style="margin-top: 0px;">&lt;/html&gt;</h5>
     </PageContainer>
   </div>
@@ -246,16 +248,16 @@ $blue: #5271ff;
 
 #blogs-container {
   display: block;
-  margin: -35px 40px;
+  margin: 0px 45px;
   width: 100%;
   #blogs-header {
     display: flex;
     width: 100%;
     #header1-div {
-      margin: -10px;
-      width: 420px;
+      width: 325px;
       h1 {
-        margin: -5px 0 -5px 0;
+       font-size: 65px !important;
+       margin: -20px 30px 15px 30px;
       }
     }
   }
@@ -263,7 +265,8 @@ $blue: #5271ff;
     display: flex;
     width: 100%;
     background: none;
-    margin-bottom: 32.5px;
+    margin-top: -20px;
+    margin-bottom: 10px;
     .blog-btns {
       color: $green;
       margin: 10px;
@@ -277,9 +280,9 @@ $blue: #5271ff;
     #blogs-container1 {
       display: grid;
       position: relative;
-      height: 450px;
+      height: 490px;
       grid-gap: 10px;
-      margin: 10px 50px;
+      margin: 5px 40px;
       overflow-y: scroll;
       grid-template-columns: 1fr 1fr;
       width: 70%;

@@ -2,6 +2,8 @@
   <span id="about" ref="container" @keyup.up="navHome" @keyup.down="navSkills" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br>
+      <br>
+      <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="about-container">
@@ -9,7 +11,7 @@
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
             <h1 id="heading1">About me</h1>
-            <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
@@ -25,7 +27,7 @@
               <li>Manga/Comics</li>
               <li>Listening to Music</li>
             </ul>
-            <h5 style="display: flex; justify-content: end;">&lt;/Hobbies&gt;</h5>
+            <h5 style="display: flex; justify-content: end; margin-top: 15px !important;">&lt;/Hobbies&gt;</h5>
           </div>
         </div>
          <div id="about-container2">
@@ -90,31 +92,35 @@ $blue: #5271ff;
 
 #about-container {
   display: flex;
-  margin: -35px 40px;
+  margin: 0px 15px;
   width: 100%;
   #about-container1 {
     padding: 0px 25px;   
     width: 60%;
     #header1-div {
-      margin: -10px;
-      width: 425px;
+      width: 320px;
       h1 {
-        margin: -5px 0 -5px 0;
+        font-size: 65px !important;
+        margin: -15px 25px;
       }
     }
     #header2-div {
-      width: 95%;
-      h5 {
+      width: 92%;
+      h3 {
         margin: -15px 0;
+        padding: 0 25px;
+      }
+      h5 {
+        margin: 15px 0;
         font-weight: 10px;
       }
     }
     #hobbies-div {
-      width: 80%;
+      width: 84%;
       ul {
         display: flex;
         flex-direction: row;
-        margin: -25px -40px;
+        margin: -20px 40px 10px -14px;
         li {
           font-size: 17px;
           list-style-type: none;

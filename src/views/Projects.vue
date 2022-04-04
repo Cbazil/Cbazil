@@ -2,11 +2,12 @@
   <div id="projects" class="containers" ref="container" @keyup.up="navArticles" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
       <br />
+      <br />
+      <br />
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="projects-container">
         <div id="proj-title">
-          <br>
           <h5>&lt;h1&gt;</h5>
           <h1 id="heading1">My Projects</h1>
           <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
@@ -24,9 +25,9 @@
                     ref="carousel_p1"
                     infinite
                   >
-                    <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/first-cv1.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/first-cv2.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/first-cv3.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/first-cv1.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/first-cv2.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/first-cv3.jpg')" />
                   
                     <template v-slot:control>
                       <q-carousel-control
@@ -107,76 +108,76 @@
             <q-btn class="proj-btns" size="15px" outline>
               <div class="single-container container">
                 <q-carousel
-                    swipeable
-                    animated
-                    v-model="project2"
-                    :autoplay="autoplay"
-                    style="height: 412px !important;"
-                    ref="carousel_p2"
-                    infinite
-                  >
-                    <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/h4l1.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/h4l2.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/h4l3.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/h4l4.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="5" :img-src="require('../assets/projects/h4l5.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="6" :img-src="require('../assets/projects/h4l6.jpg')" />
+                  swipeable
+                  animated
+                  v-model="project2"
+                  :autoplay="autoplay"
+                  style="height: 100% !important;"
+                  ref="carousel_p2"
+                  infinite
+                >
+                  <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/h4l1.jpg')" />
+                  <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/h4l2.jpg')" />
+                  <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/h4l3.jpg')" />
+                  <q-carousel-slide style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/h4l4.jpg')" />
+                  <q-carousel-slide style="border-radius: 2px;" :name="5" :img-src="require('../assets/projects/h4l5.jpg')" />
+                  <q-carousel-slide style="border-radius: 2px;" :name="6" :img-src="require('../assets/projects/h4l6.jpg')" />
 
-                    <template v-slot:control>
-                      <q-carousel-control
-                        position="top-left"
-                        :offset="[18, 18]"
-                        style="margin: 0; padding: 4px;"
+                  <template v-slot:control>
+                    <q-carousel-control
+                      position="top-left"
+                      :offset="[18, 18]"
+                      style="margin: 0; padding: 4px;"
+                    >
+                      <q-btn
+                        push 
+                        dense
+                        rounded
+                        size="18px"
+                        style="padding: 4px 12px; opacity: 0.75; z-index: 2;"
+                        color="light-green-12"
+                        @click="toggleInfoP3"
                       >
-                        <q-btn
-                          push 
-                          dense
-                          rounded
-                          size="18px"
-                          style="padding: 4px 12px; opacity: 0.75; z-index: 2;"
-                          color="light-green-12"
-                          @click="toggleInfoP3"
-                        >
-                          <q-icon
-                            size="12px"
-                            name="fa fa-solid fa-info"
-                          />
-                        </q-btn>
-                      </q-carousel-control>
-                      <q-carousel-control
-                        position="top-right"
-                        :offset="[18, 18]"
-                        style="margin: 0; padding: 4px;"
-                      >
-                        <q-btn
-                          push 
-                          dense
-                          style="margin-right: 4px; opacity: 0.75;"
-                          color="light-green-12" 
-                          icon="fa fa-angle-left"
-                          @click="$refs.carousel_p2.previous()"
+                        <q-icon
+                          size="12px"
+                          name="fa fa-solid fa-info"
                         />
-                        <q-btn
-                          push
-                          dense 
-                          style="4px; opacity: 0.75;"
-                          color="light-green-12"
-                          icon="fa fa-angle-right"
-                          @click="$refs.carousel_p2.next()"
-                        />
-                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
-                      </q-carousel-control>
-                      <q-carousel-control
-                        position="bottom"
-                        class="text-white rounded-borders"
-                        :class="{project_desc: infoP3}"
-                        style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
-                      >
-                        <h6 style="margin-top: 30px; color: white;">Health4Life App (Private)</h6>
-                        <p v-if="infoP3" style="text-transform: none; margin-top: -24px;">This is a data capturing app, that captures HIV/Health risks tests done in coummunities and schools by the Health4Life Councellors at Life Choices. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
-                      </q-carousel-control>
-                    </template>
-                  </q-carousel>
+                      </q-btn>
+                    </q-carousel-control>
+                    <q-carousel-control
+                      position="top-right"
+                      :offset="[18, 18]"
+                      style="margin: 0; padding: 4px;"
+                    >
+                      <q-btn
+                        push 
+                        dense
+                        style="margin-right: 4px; opacity: 0.75;"
+                        color="light-green-12" 
+                        icon="fa fa-angle-left"
+                        @click="$refs.carousel_p2.previous()"
+                      />
+                      <q-btn
+                        push
+                        dense 
+                        style="4px; opacity: 0.75;"
+                        color="light-green-12"
+                        icon="fa fa-angle-right"
+                        @click="$refs.carousel_p2.next()"
+                      />
+                      <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                    </q-carousel-control>
+                    <q-carousel-control
+                      position="bottom"
+                      class="text-white rounded-borders"
+                      :class="{project_desc: infoP3}"
+                      style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
+                    >
+                      <h6 style="margin-top: 30px; color: white;">Health4Life App (Private)</h6>
+                      <p v-if="infoP3" style="text-transform: none; margin-top: -24px;">This is a data capturing app, that captures HIV/Health risks tests done in coummunities and schools by the Health4Life Councellors at Life Choices. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                    </q-carousel-control>
+                  </template>
+                </q-carousel>
               </div>
             </q-btn>
             <q-btn class="proj-btns" size="15px" outline>
@@ -186,7 +187,7 @@
                     animated
                     v-model="project3"
                     :autoplay="autoplay"
-                    style="height: 412px !important;"
+                    style="height: 100% !important;"
                     ref="carousel_p3"
                     infinite
                   >
@@ -507,13 +508,13 @@ $blue: #5271ff;
   z-index: 0;
   display: flex;
   #projects-container {
-    margin: -35px 20px;
+    margin: 0px 20px;
     width: 100%;
     #proj-title {
-      width: 36%;
+      width: 25%;
       h1 {
-        margin-left: 25px;
-        line-height: 5px !important;
+        font-size: 65px !important;
+        margin: -5px 30px 15px 30px;
       }
       h5 {
         margin: 20px;
@@ -525,8 +526,9 @@ $blue: #5271ff;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-gap: 10px;
-        height: 440px;
-        padding-bottom: 100px;
+        height: 500px;
+        margin-left: 25px;
+        padding-bottom: 20px;
         overflow-x: scroll;
         overflow-y: hidden;
         .csp1 {
@@ -560,10 +562,9 @@ $blue: #5271ff;
           background-size: 100% 100%;
         }
         .single-container {
-          margin: 0;
-          padding: 0;
-          width: 700px !important;
-          height: 100%;
+          width: 875px !important;
+          height: 100% !important;
+          min-height: 100% !important;
         }
         .duo-container {
           display: grid;
@@ -573,7 +574,7 @@ $blue: #5271ff;
           .mini-container {
             margin: 0;
             padding: 0;
-            height: 200px !important;
+            height: 230px !important;
           }
         }
         .proj-btns {
@@ -584,7 +585,7 @@ $blue: #5271ff;
         .container {
           margin: 0;
           padding: 0;
-          width: 350px;
+          width: 400px;
         }
       }
       .i-icon {
