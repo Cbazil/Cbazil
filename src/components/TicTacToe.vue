@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <div id="tictactoe">
-      <h5>&lt;TicTacToe&gt;</h5>
+      <h5 style="margin-bottom: 30px !important;">&lt;TicTacToe&gt;</h5>
         <div id="grid">
           <div id="sq1" class="squares" @click.once="move($event)" :key="keyOne">
             <img class="pieces" v-if="squares[0].val === 'tic'" src="../assets/cross.png">
@@ -392,7 +392,7 @@ export default {
     move.val = playerPiece.value === 'tac' ? 'tic' : 'tac';;
   };
 
-  const resetGame = () => {
+  const resetGame = async () => {
     store.methods.updateSquares(
       [
         { id: 'sq1', val: '' },
@@ -458,9 +458,8 @@ export default {
         store.methods.updateTurn(true)
       }
     } else {
-        console.log('AI played there!')
-        var audio =  new Audio('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')
-        audio.play();
+      var audio = await new Audio('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')
+      audio.play();
     }
   }
 
@@ -545,8 +544,8 @@ $blue: #5271ff;
 
 .ruler {
   position: absolute;
-  margin-top: -260px;
-  width: 350px;
+  margin-top: -235px;
+  width: 355px;
   height: 10px;
   background-color: $green;
 }
@@ -572,7 +571,7 @@ $blue: #5271ff;
 }
 
 #ggDileft {
-  margin-top: -263px;
+  margin-top: -235px;
   transform: rotate(-45deg) scale(1.3, 1);
 }
 
@@ -602,11 +601,11 @@ button {
   border: none !important;
 }
 
-// Table to mobile
-@media (max-width: 767px) {
- #container {
-    margin-top: 40px;
-    width: 300px;
+// Laptop responsiveness 1 > mobile
+@media (max-width: 1440px) {
+  #container {
+    margin-top: 0px;
+     width: 300px;
     height: 300px;
   }
   .pieces {
@@ -620,5 +619,83 @@ button {
   #grid {
     grid-gap: 6px;
   }
+  .ruler {
+    margin-left: 13px;
+    margin-top: -202px;
+    width: 280px;
+    height: 8px;
+  }
+  #ggLeft {
+    left: -100px;
+  }
+  #ggRight {
+    left: 100px;
+  }
+  #ggTop {
+    top: -100px;
+  }
+  #ggBottom {
+    top: 100px;
+  }
+
+  #ggDileft {
+    margin-top: -202px;
+  }
 }
+
+// Mobile 2
+@media (max-width: 376px) {
+  #container {
+    margin-top: 0px;
+    width: 240px;
+    height: 240px;
+  }
+  .pieces {
+    width: 62px;
+    height: 62px;
+  }
+  .squares {
+    max-width: 78px;
+    max-height: 78px;
+  }
+  #grid {
+    grid-gap: 4px;
+  }
+  .ruler {
+    margin-left: 0px;
+    margin-top: -168px;
+    width: 240px;
+    height: 6px;
+  }
+  #ggLeft {
+    left: -78px;
+  }
+  #ggRight {
+    left: 82px;
+  }
+  #ggTop {
+    top: -82px;
+  }
+  #ggBottom {
+    top: 78px;
+  }
+  #ggDiright {
+    left: 0px;
+    top: 0px;
+  }
+  #ggDileft {
+    left: 0;
+    margin-top: -168px;
+    top: 0;
+  }
+}
+// Mobile 1
+@media (max-width: 320px) {
+  #container {
+    .ruler {
+      margin-top: -162px !important;
+    }
+  }
+}
+
 </style>

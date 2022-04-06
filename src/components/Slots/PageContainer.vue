@@ -7,8 +7,8 @@
     </div>
     <slot></slot>
     <div id="mobile-controlls">
-      <q-btn v-if="prefixtab" @click="handlePrevious" class="prefix-btn" size="15px" outline><q-icon name="fas fa-angle-up" /></q-btn>
-      <q-btn v-if="suffixtab" @click="handleNext" class="suffix-btn" size="15px" outline><q-icon name="fas fa-angle-down" /></q-btn>
+      <q-btn rounded v-if="prefixtab" @click="handlePrevious" class="prefix-btn" size="15px" outline><q-icon name="fas fa-angle-up" /></q-btn>
+      <q-btn rounded v-if="suffixtab" @click="handleNext" class="suffix-btn" size="15px" outline><q-icon name="fas fa-angle-down" /></q-btn>
     </div>
     <div id="footer" v-if="suffixtab">
       <img id="arrowBL" width="25" height="7" src="../../assets/arrowKeys.png" alt="Left/down arrow bounces">
@@ -100,6 +100,7 @@ export default {
 
 <style lang="scss">
 $grey: #353639;
+$dark: #2b2c2e;
 
 #container-slot {
   background: $grey;
@@ -177,13 +178,14 @@ $grey: #353639;
     display: flex !important;
     flex-direction: column;
     position: fixed;
-    right: 25px;
-    bottom: 25px;
+    right: 10px;
+    bottom: 20px;
     .q-btn {
       color: #7ed957;
     }
     .prefix-btn, .suffix-btn {
       margin: 5px;
+      background: $dark !important;
     }
   }
   #header {

@@ -38,8 +38,8 @@
             </q-btn>
           </div>
           <div id="blogs-container2">
-            <h2>Categories</h2>
-            <div class="q-pa-md text-white" style="margin-left: -22px;">
+            <h2 clas="margin: -20px 0; !important">Categories</h2>
+            <div class="q-pa-md text-white" style="margin-left: -20px; margin-top: -35px;">
               <q-checkbox dark v-model="categories[0].val" @click="cateCheck" :disable="!categories[1].val" style="margin-right: 14px;" label="Frontend" color="#7ed957" />
               <q-checkbox dark v-model="categories[1].val"  @click="cateCheck" :disable="!categories[0].val" label="Backend" color="#7ed957" />
             </div>

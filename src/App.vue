@@ -2,7 +2,7 @@
   <div id="app" class="row">
     <nav id="nav-container">
       <div id="logo" class="row">
-        <router-link to="/">
+        <router-link class="r-link" to="/">
           <div class="nav-logo">
             <!-- <img src="" /> -->
             <div id="logo-cntr">
@@ -18,7 +18,7 @@
           @mouseover="hoverAbout = true"
           @mouseleave="hoverAbout = false"
         >
-          <router-link  to="/about">
+          <router-link class="r-link" to="/about">
             <q-icon
               v-if="!hoverAbout"
               class="icons"
@@ -34,7 +34,7 @@
           @mouseover="hoverSkills = true"
             @mouseleave="hoverSkills = false"
         >
-          <router-link  to="/skills">
+          <router-link class="r-link"  to="/skills">
             <q-icon
               v-if="!hoverSkills"
               class="icons"
@@ -50,7 +50,7 @@
           @mouseover="hoverExp = true"
           @mouseleave="hoverExp = false"
         >
-          <router-link  to="/experience">
+          <router-link class="r-link"  to="/experience">
             <q-icon
               v-if="!hoverExp"
               class="icons"
@@ -66,7 +66,7 @@
           @mouseover="hoverBlogs = true"
           @mouseleave="hoverBlogs = false"
         >
-          <router-link  to="/blogs">
+          <router-link class="r-link"  to="/blogs">
             <q-icon
               v-if="!hoverBlogs"
               class="icons"
@@ -82,7 +82,7 @@
           @mouseover="hoverProjects = true"
           @mouseleave="hoverProjects = false"
         >
-          <router-link to="/projects">
+          <router-link class="r-link" to="/projects">
             <q-icon
               v-if="!hoverProjects"
               class="icons"
@@ -90,7 +90,7 @@
               name="fas fa-layer-group"
               color="white"
             />
-            <p v-else>Projects</p>
+            <p v-else>Apps</p>
           </router-link>
         </div>
       </div>
@@ -272,7 +272,7 @@ h3 {
   .s-link-i:hover {
     color: $green !important;
   }
-  .nav-logo, .nav-i, .link-i {
+  .nav-logo, .link-i {
     text-align: center;
     width: 100%;
     display: block;
@@ -291,7 +291,14 @@ h3 {
     padding: 5px 0;
   }
   .nav-i {
-    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+  }
+  .r-link {
+    text-decoration: none;
   }
   .route-enter-from {
     opacity: 0;
@@ -323,7 +330,8 @@ h3 {
       width: auto;
     }
     .nav-i {
-      padding: 16px;
+      width: 60px;
+      width: 60px;
     }
     #logo-cntr {
       width: auto !important;
@@ -340,43 +348,63 @@ h3 {
   } 
 }
 
+// Laptop responsiveness 1 
+@media (max-width: 1440px) {
+  h1 {
+    font-size: 84px !important;
+    line-height: 30px !important;
+  }
+  h2 {
+    font-size: 32px !important;
+  }
+}
 
-// Laptop responsiveness 1
+// Laptop responsiveness 2
 @media (max-width: 1280px) {
   h1 {
-    font-size: 92px !important;
+    font-size: 72px !important;
+  }
+  h2 {
+    font-size: 30px !important;
+  }
+}
+// Laptop responsiveness 3
+@media (max-width: 1140px) {
+  h1 {
+    font-size: 68px !important;
+  }
+  h2 {
+    font-size: 26px !important;
+  }
+}
+
+// Laptop responsiveness 4
+@media (max-width: 973px) {
+  h1 {
+    font-size: 62px !important;
   }
   h2 {
     font-size: 24px !important;
   }
 }
-// Laptop responsiveness 2
-@media (max-width: 1140px) {
+
+// Tablet
+@media (max-width: 830px) {
   h1 {
-    font-size: 74px !important;
+    font-size: 72px !important;
+  }
+  h2 {
+    font-size: 28px !important;
+  }
+}
+
+// Mobile 3
+@media (max-width: 562px) {
+  h1 {
+    font-size: 52px !important;
   }
   h2 {
     font-size: 22px !important;
-  }
-}
-
-// Laptop responsiveness 3
-@media (max-width: 973px) {
-  h1 {
-    font-size: 64px !important;
-  }
-  h2 {
-    font-size: 20px !important;
-  }
-}
-
-// Mobile
-@media (max-width: 562px) {
-  h1 {
-    font-size: 42px !important;
-  }
-  h2 {
-    font-size: 18px !important;
   }
   h3 {
     font-size: 14px !important;
@@ -384,8 +412,29 @@ h3 {
 }
 
 // Mobile 2
+@media (max-width: 426px) {
+  h1 {
+    font-size: 42px !important;
+    line-height: 20px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+    margin: 40px 5px 15px 5px;
+  }
+}
+
+// Mobile 1
 @media (max-width: 360px) {
+  h1 {
+    font-size: 34px !important;
+    line-height: 16px !important;
+  }
+  h2 {
+    font-size: 14px !important;
+    margin: 30px 10px 10px 10px;
+  }
   .q-icon {
+    margin-top: 6px;
     font-size: 16px !important;
   }
 }
