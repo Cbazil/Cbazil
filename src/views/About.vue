@@ -20,13 +20,13 @@
           </div>
           <div id="hobbies-div">
             <h5>&lt;Hobbies&gt;</h5>
-            <ul>
-              <li>Video Games</li>
-              <li>Card/Board Games</li>
-              <li>Anime</li>
-              <li>Manga/Comics</li>
-              <li>Listening to Music</li>
-            </ul>
+            <div id="hobbies">
+              <div class="hobby" >Video Games</div>
+              <div class="hobby" >Card/Board Games</div>
+              <div class="hobby" >Anime</div>
+              <div class="hobby" >Manga/Comics</div>
+              <div class="hobby" >Listening to Music</div>
+            </div>
             <h5 style="display: flex; justify-content: end; margin-top: 15px !important;">&lt;/Hobbies&gt;</h5>
           </div>
         </div>
@@ -34,8 +34,10 @@
           <tic-tac-toe />
         </div>
       </div>
-      <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-      <h5>&lt;/html&gt;</h5>
+      <div class="closing-tags">
+        <h5 class="closing-t">&nbsp;&nbsp;&lt;/body&gt;</h5>
+        <h5>&lt;/html&gt;</h5>
+      </div>
     </PageContainer>
   </span>
 </template>
@@ -48,7 +50,7 @@ import PageContainer from '@/components/Slots/PageContainer.vue'
 
 export default {
   components: {
-    TicTacToe, 
+    TicTacToe,
     PageContainer
   },
   setup () {
@@ -92,10 +94,10 @@ $blue: #5271ff;
 
 #about-container {
   display: flex;
-  margin: 0px 15px;
+  margin: 0px 10px;
   width: 100%;
   #about-container1 {
-    padding: 0px 25px;   
+    padding: 0px 10px;   
     width: 60%;
     #header1-div {
       width: 320px;
@@ -116,12 +118,12 @@ $blue: #5271ff;
       }
     }
     #hobbies-div {
-      width: 84%;
-      ul {
+      width: 760px;
+      #hobbies {
         display: flex;
         flex-direction: row;
-        margin: -20px 40px 10px -14px;
-        li {
+        margin: -15px 20px -5px 20px;
+        .hobby {
           font-size: 17px;
           list-style-type: none;
           padding: 5px 10px;
@@ -138,6 +140,223 @@ $blue: #5271ff;
   outline: none;
   border: none;
   box-shadow: none;
+}
+
+// laptop responsiveness 1 
+@media (max-width: 1440px) {
+  #about-container {
+    #about-container1 {
+      #header2-div {
+        width: 680px;
+        h3 {
+          font-size: 19.67px !important;
+          line-height: 30px !important;
+          margin: 10px 0 15px 0;
+        }
+      }
+      #hobbies-div {
+        width: 680px;
+         #hobbies {
+           .hobby {
+            font-size: 13px;
+           }
+         }
+      }
+    } 
+    #about-container2 {
+      width: 30%;
+    }
+  }
+}
+
+// Laptop responsiveness 2
+@media (max-width: 1280px) {
+  #about-container {
+    #about-container1 {
+      #header2-div {
+        width: 630px;
+      }
+      #hobbies-div {
+         #hobbies {
+            .hobby {
+              font-size: 12px;
+            }
+         }
+      }
+    }
+  }
+}
+// Laptop responsiveness 3
+@media (max-width: 1140px) {
+  #about-container {
+    #about-container1 {
+      width: 62%;
+      #header2-div {
+        width: 580px; 
+         h3 {
+          font-size: 18px;
+          line-height: 26px !important;
+         }
+      }
+      #hobbies-div {
+        width: 560px;
+         #hobbies {
+           .hobby {
+              padding: 5px;
+              margin: 4px;
+           }
+         }
+      }
+    }
+    #about-container2 {
+      width: 38%;
+    }
+  }
+}
+
+// Laptop responsiveness 4
+@media (max-width: 973px) {
+  #about-container {
+    #about-container1 {
+      #header2-div {
+        width: 500px !important;
+        h3 {
+          line-height: 22px !important;
+        }
+      }
+      #hobbies-div {
+        width: 540px;
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 830px) {
+  #about {
+    margin: -40px 10px 0px 10px !important;
+    overflow-y: scroll;
+    #about-container {
+      display: block !important;
+      #about-container1 {
+        width: 100% !important;
+        display: block !important;
+        #header2-div {
+          width: 100% !important;
+          h3 {
+            font-size: 26px !important;
+            line-height: 28px !important;
+          }
+        }
+        #hobbies-div {
+          width: 560px;
+          #hobbies {
+            .hobby {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      #about-container2 {
+        position: relative;
+        margin: 50px auto 20px auto !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center;
+      }
+    }
+    .closing-tags {
+      margin: 20px 0px !important;
+      height: 75px !important;
+    }
+  }
+}
+
+// Table 2 (Hobbies wrap)
+@media (max-width: 620px) {
+   #about {
+    #about-container {
+      #about-container1 {
+        #hobbies-div {
+          width: 460px;
+          #hobbies {
+            display: flex !important;
+            flex-direction: unset !important;
+            flex-wrap: wrap !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile 3
+@media (max-width: 562px) {
+  #about {
+    #about-container {
+      #about-container1 {
+        #header2-div {
+          h3 {
+            font-size: 18px !important;
+            line-height: 20px !important;
+          }
+        }
+        #hobbies-div {
+          width: 360px !important;
+        }
+      }
+    }
+  }
+}
+// Mobile 2
+@media (max-width: 426px) {
+  #about {
+    #about-container {
+      #about-container1 {
+        #hobbies-div {
+          width: 320px !important;
+        }
+      }
+    }
+    .closing-tags {
+      margin: 75px 0px 20px 0px !important;
+      height: 75px !important;
+    }
+  }
+}
+
+// Mobile 1
+@media (max-width: 376px) {
+  #about {
+    h5 {
+      font-size: 18px;
+      margin: 0 0 18px 0 !important;
+      line-height: 18px;
+    }
+    h6 {
+      font-size: 16px;
+      margin: 0px !important;
+    }
+    #about-container {
+      #about-container1 {
+        #header1-div {
+          margin: 0px 0px 0px 0px !important;
+          #heading1 {
+            margin: 10px 0px -15px 10px;
+          }
+        }
+        #header2-div {
+          h3 {
+            font-size: 16px !important;
+            line-height: 18px !important;
+          }
+        }
+      }
+    }
+    .closing-tags {
+      margin-top: -15px !important;
+    }
+  }
 }
 </style>
 

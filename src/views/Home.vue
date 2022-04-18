@@ -42,8 +42,10 @@
       <!-- <div id="illustration-2">
         <img src="../assets/cherry-man.png" alt="illustration-2" />
       </div> -->
-      <h5 class="closing-t">&nbsp;&nbsp;&lt;/body&gt;</h5>
-      <h5>&lt;/html&gt;</h5>
+      <div class="closing-tags">
+        <h5 class="closing-t">&nbsp;&nbsp;&lt;/body&gt;</h5>
+        <h5>&lt;/html&gt;</h5>
+      </div>
     </PageContainer>
   </span>
 </template>
@@ -256,19 +258,21 @@ h6 {
 
 // Laptop responsiveness 3
 @media (max-width: 1140px) {
-  #home-container {
-    margin-bottom: 40px;
-    #home-container1 {
-      width: 55%;
-      #header1-div {
-        width: 500px;
+  #home {
+    #home-container {
+      margin-bottom: 5px;
+      #home-container1 {
+        width: 55%;
+        #header1-div {
+          width: 500px;
+        }
+        #header2-div {
+          width: 462px;
+        }
       }
-      #header2-div {
-        width: 462px;
+      #home-container2 {
+        width: 45%;
       }
-    }
-    #home-container2 {
-      width: 45%;
     }
   }
 }
@@ -294,7 +298,7 @@ h6 {
 // Tablet
 @media (max-width: 830px) {
   #home {
-    margin: -40px 10px 100px 10px;
+    margin: -40px 10px 0px 10px !important;
     overflow-y: scroll;
     #home-container {
       display: block !important;
@@ -310,16 +314,16 @@ h6 {
         }
       }
       #home-container2 {
-        z-index: 99999;
-        margin: 50px auto 100px auto;
-        height: 440px;
+        position: relative;
+        margin: 50px auto 20px auto !important;
         width: 100% !important;
         display: flex !important;
         justify-content: center;
       }
     }
-    .closing-t {
-      margin-top: -75px !important;
+    .closing-tags {
+      margin: 20px 0px !important;
+      height: 75px !important;
     }
   }
 }
@@ -350,6 +354,9 @@ h6 {
       #home-container1 {
         #header1-div {
           width: 340px;
+          #heading1 {
+            margin: 20px 20px 0 10px !important;
+          }
         }
         #header2-div {
           width: 335px;
@@ -360,23 +367,20 @@ h6 {
           flex-direction: column;
         }
       }
-      #home-container2 {
-        margin-left: 0px;
-      }
     }
   }
 }
 
 // Mobile 1
-@media (max-width: 320px) {
+@media (max-width: 376px) {
   #home {
     h5 {
-      font-size: 14px;
+      font-size: 18px;
       margin: 0 0 18px 0 !important;
-      line-height: 14px;
+      line-height: 18px;
     }
     h6 {
-      font-size: 12px;
+      font-size: 16px;
       margin: 0px !important;
     }
     #home-container {
@@ -386,19 +390,22 @@ h6 {
         }
         #header1-div {
           margin: 0 -5px;
-          width: 265px;
+          width: 330px;
           #heading1 {
-            margin: -10px 20px -15px 10px;
+            margin: -10px 10px -15px 10px;
           }
         }
         #header2-div {
-          width: 262px;
+          width: 320px;
           margin-left: -5px !important;
           #header2 {
             margin-left: 5px !important;
           }
         }
       }
+    }
+    .closing-tags {
+      margin-top: -30px !important;
     }
   }
 }

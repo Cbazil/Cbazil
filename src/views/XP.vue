@@ -171,7 +171,7 @@
                 <q-timeline-entry heading>June 2017</q-timeline-entry>
 
                 <q-timeline-entry
-                  title="Event Title"
+                  title="Communiversity of South Africa"
                   class="event-title"
                   subtitle="January - June 2017"
                   color="light-green-12"

@@ -502,10 +502,11 @@ $green: #7ed957;
 $blue: #5271ff;
 
 #container {
-  margin-top: 40px;
+  position: relative;
+  margin: 40px 0 10px 0px;
   width: 350px;
   padding: 0;
-  height: 350px;
+  height: 375px !important;
 }
 .pieces {
   width: 80px;
@@ -586,7 +587,7 @@ $blue: #5271ff;
   text-align: center;
 }
 .control-btn {
-  margin-top: -35px;
+  margin-top: -15px;
 }
 
 button {
@@ -605,7 +606,7 @@ button {
 @media (max-width: 1440px) {
   #container {
     margin-top: 0px;
-     width: 300px;
+    width: 300px;
     height: 300px;
   }
   .pieces {
@@ -637,11 +638,19 @@ button {
   #ggBottom {
     top: 100px;
   }
-
   #ggDileft {
     margin-top: -202px;
   }
 }
+
+// Laptop responsiveness 3
+@media (max-width: 1140px) {
+  #container {
+    margin-top: -20px !important;
+  }
+}
+
+
 
 // Mobile 2
 @media (max-width: 376px) {

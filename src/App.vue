@@ -414,7 +414,7 @@ h3 {
 // Mobile 2
 @media (max-width: 426px) {
   h1 {
-    font-size: 42px !important;
+    font-size: 46px !important;
     line-height: 20px !important;
   }
   h2 {
