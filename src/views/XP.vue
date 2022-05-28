@@ -218,8 +218,10 @@
           </div>
         </div>
       </div>
-      <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-      <h5 style="margin-top: 0px;">&lt;/html&gt;</h5>
+      <div class="closing-tags">
+        <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
+        <h5 style="margin-top: 0px;">&lt;/html&gt;</h5>
+      </div>
     </PageContainer>
   </div>
 </template>
@@ -289,6 +291,7 @@ export default {
 <style lang="scss" scoped>
 $green: #7ed957;
 $blue: #5271ff;
+
 #experience {
   width: 100%;
   position: relative;
@@ -298,7 +301,7 @@ $blue: #5271ff;
     margin: 0px 15px;
     width: 100%;
     #edu-title {
-      width: 56%;
+      width: 880px !important;
       h1 {
         font-size: 65px !important;
         margin: 0px 30px;
@@ -332,12 +335,12 @@ $blue: #5271ff;
       }
       #edu-timeline {
         width: 48%;
-        height: 480px !important;
+        height: 410px !important;
         overflow-y: scroll;
       }
       #exp-timeline {
         width: 48%;
-        height: 480px !important;
+        height: 410px !important;
         overflow-y: scroll;
       }
       .exp-content {
@@ -349,26 +352,6 @@ $blue: #5271ff;
   }
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: $blue; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: $green; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #fff; 
-}
-
 .q-timeline__title {
   margin: revert !important;
 }
@@ -378,4 +361,134 @@ $blue: #5271ff;
   border: none;
   box-shadow: none;
 }
+
+@media (max-width: 1040px) {
+  #experience {
+    #edu-container {
+      #edu-title {
+        width: 700px !important;
+        h1 {
+          font-size: 50px !important;
+          margin: 0px 24px;
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 830px) {
+  #experience {
+    margin: -40px 10px 0px 10px !important;
+    position: relative;
+    display: block;
+    overflow-y: scroll;
+    #edu-container {
+      display: block !important;
+      width: 100% !important;
+      margin-left: 2px;
+      #edu-title {
+        width: 560px !important;
+        h1 {
+          font-size: 65px !important;
+          line-height: 55px !important;
+          margin: 5px 25px;
+        }
+      }
+      #timelines {
+        display: block !important;
+        width: 100% !important;
+        #edu-timeline {
+          display: block !important;
+          height: auto !important;
+          width: 100% !important;
+          margin: 20px 10px;
+          overflow-y: unset;
+        }
+        #exp-timeline {
+          display: block !important;
+          height: auto !important;
+          width: 100% !important;
+          margin: 20px 10px;
+          overflow-y: unset;
+        }
+      }
+    }
+    .closing-tags {
+      margin: 10px 0px !important;
+      height: 70px !important;
+    }
+  }
+}
+
+// Tablet 2
+@media (max-width: 740px) {
+  #experience {
+    #edu-container {
+      #edu-title {
+        width: 640px !important;
+        h1 {
+          font-size: 44px !important;
+          margin: 0px 36px;
+        }
+      }
+    }
+  }
+}
+// Tablet 3
+@media (max-width: 660px) {
+  #experience {
+    #edu-container {
+      #edu-title {
+        width: 560px !important;
+        h1 {
+          font-size: 40px !important;
+          margin: 0px 24px;
+        }
+      }
+    }
+  }
+}
+
+// Tablet 3
+@media (max-width: 580px) {
+  #experience {
+    #edu-container {
+      #edu-title {
+        width: 470px !important;
+        h1 {
+          font-size: 32px !important;
+          margin: 0px 24px;
+        }
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 426px) {
+  #experience {
+    h5 {
+      font-size: 18px;
+      margin: 0 0 18px 0 !important;
+      line-height: 18px;
+    }
+    h6 {
+      font-size: 16px;
+      margin: 0px !important;
+    }
+    #edu-container {
+      #edu-title {
+        width: 260px !important;
+        margin-left: 16px !important;
+        h1 {
+          font-size: 38px !important;
+          line-height: 34px !important;
+          margin: -5px 18px 15px 18px !important;
+        }
+      }
+    }
+  }
+}
+
 </style>

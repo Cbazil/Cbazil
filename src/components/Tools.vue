@@ -3,19 +3,21 @@
     <h5>&lt;Tools&gt;</h5>
     <div id="tools-main">
       <div class="main-box arrow-div">
-        <q-icon 
-          @click="tool_idx--"
-          v-if="tool_idx > 0"
-          size="70px"
-          style="cursor: pointer;"
-          name="fa fa-angle-left"
-          color="white"
-        />
+        <div class="arr-btns">
+          <q-icon 
+            @click="tool_idx--"
+            v-if="tool_idx > 0"
+            class="arrow-icons"
+            style="cursor: pointer;"
+            name="fa fa-angle-left"
+            color="white"
+          />
+        </div>
       </div>
       <div class="tool-desc" v-if="tool_idx == 0">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="220" height="220" :src="tools[0].image" :alt="tools[0].image_alt">
+            <img class="main-image" :src="tools[0].image" :alt="tools[0].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -34,7 +36,7 @@
       <div class="tool-desc" v-if="tool_idx == 1">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="220" height="220" :src="tools[1].image" :alt="tools[1].image_alt">
+            <img class="main-image" :src="tools[1].image" :alt="tools[1].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -53,7 +55,7 @@
       <div class="tool-desc" v-if="tool_idx == 2">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="220" height="220" :src="tools[2].image" :alt="tools[2].image_alt">
+            <img class="main-image" :src="tools[2].image" :alt="tools[2].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -72,7 +74,7 @@
       <div class="tool-desc" v-if="tool_idx == 3">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="190" height="190" :src="tools[3].image" :alt="tools[3].image_alt">
+            <img class="main-image" :src="tools[3].image" :alt="tools[3].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -91,7 +93,7 @@
       <div class="tool-desc" v-if="tool_idx == 4">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="230" height="230" :src="tools[4].image" :alt="tools[4].image_alt">
+            <img class="main-image" :src="tools[4].image" :alt="tools[4].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -110,7 +112,7 @@
       <div class="tool-desc" v-if="tool_idx == 5">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="200" height="200" :src="tools[5].image" :alt="tools[5].image_alt">
+            <img class="main-image" :src="tools[5].image" :alt="tools[5].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -129,7 +131,7 @@
       <div class="tool-desc" v-if="tool_idx == 6">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="200" height="200" :src="tools[6].image" :alt="tools[6].image_alt">
+            <img class="main-image" :src="tools[6].image" :alt="tools[6].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -148,7 +150,7 @@
       <div class="tool-desc" v-if="tool_idx == 7">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="220" height="220" :src="tools[7].image" :alt="tools[7].image_alt">
+            <img class="main-image" :src="tools[7].image" :alt="tools[7].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -167,7 +169,7 @@
       <div class="tool-desc" v-if="tool_idx == 8">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="220" height="220" :src="tools[8].image" :alt="tools[8].image_alt">
+            <img class="main-image" :src="tools[8].image" :alt="tools[8].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -186,7 +188,7 @@
       <div class="tool-desc" v-if="tool_idx == 9">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="220" height="220" :src="tools[9].image" :alt="tools[9].image_alt">
+            <img class="main-image" :src="tools[9].image" :alt="tools[9].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -205,7 +207,7 @@
       <div class="tool-desc" v-if="tool_idx == 10">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="220" height="220" :src="tools[10].image" :alt="tools[10].image_alt">
+            <img class="main-image" :src="tools[10].image" :alt="tools[10].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -224,7 +226,7 @@
       <div class="tool-desc" v-if="tool_idx == 11">
         <div class="main-box image-div">
           <div class="image-sqr">
-            <img width="260" height="260" :src="tools[11].image" :alt="tools[11].image_alt">
+            <img class="main-image" :src="tools[11].image" :alt="tools[11].image_alt">
           </div>
         </div>
         <div class="main-box box-tool-desc">
@@ -241,52 +243,54 @@
         </div>
       </div>
       <div class="main-box arrow-div">
-        <q-icon
-          @click="tool_idx++"
-          v-if="tool_idx < 11"
-          size="70px"
-          style="cursor: pointer;"
-          name="fa fa-angle-right"
-          color="white"
-        />
+        <div class="arr-btns">
+          <q-icon
+            @click="tool_idx++"
+            v-if="tool_idx < 11"
+            class="arrow-icons"
+            style="cursor: pointer;"
+            name="fa fa-angle-right"
+            color="white"
+          />
+        </div>
       </div>
     </div>  
     <div id="mini-cntrs">
       <div class="mini-box" :class="{on_tool: on_vue}" @click="tool_idx = 0">
-        <img width="36" height="36" src="../assets/stacks/vue.png" alt="vuejs">
+        <img class="pagi-img" src="../assets/stacks/vue.png" alt="vuejs">
       </div>
       <div class="mini-box" :class="{on_tool: on_react}" @click="tool_idx = 1">
-        <img width="36" height="36" src="../assets/stacks/react.png" alt="reactjs">
+        <img class="pagi-img" src="../assets/stacks/react.png" alt="reactjs">
       </div>
       <div class="mini-box" :class="{on_tool: on_node}" @click="tool_idx = 2">
-        <img width="35" height="35" src="../assets/stacks/node.png" alt="nodejs">
+        <img class="pagi-img" src="../assets/stacks/node.png" alt="nodejs">
       </div>
       <div class="mini-box" :class="{on_tool: on_html}" @click="tool_idx = 3">
-        <img width="30" height="30" src="../assets/stacks/html.png" alt="html">
+        <img class="pagi-img" src="../assets/stacks/html.png" alt="html">
       </div>
       <div class="mini-box" :class="{on_tool: on_css}" @click="tool_idx = 4">
-        <img width="36" height="36" src="../assets/stacks/css.png" alt="css">
+        <img class="pagi-img" src="../assets/stacks/css.png" alt="css">
       </div>
       <div class="mini-box" :class="{on_tool: on_sass}" @click="tool_idx = 5">
-        <img width="32" height="32" src="../assets/stacks/sass.png" alt="sass">
+        <img class="pagi-img" src="../assets/stacks/sass.png" alt="sass">
       </div>
       <div class="mini-box" :class="{on_tool: on_firebase}" @click="tool_idx = 6">
-        <img width="33" height="33" src="../assets/stacks/firebase.png" alt="firebase">
+        <img class="pagi-img" src="../assets/stacks/firebase.png" alt="firebase">
       </div>
       <div class="mini-box" :class="{on_tool: on_mongodb}" @click="tool_idx = 7">
-        <img width="32" height="32" src="../assets/stacks/mongodb.png" alt="mongodb">
+        <img class="pagi-img" src="../assets/stacks/mongodb.png" alt="mongodb">
       </div>
       <div class="mini-box" :class="{on_tool: on_knex}" @click="tool_idx = 8">
-        <img width="30" height="30" src="../assets/stacks/knex.png" alt="knexjs">
+        <img class="pagi-img" src="../assets/stacks/knex.png" alt="knexjs">
       </div>
       <div class="mini-box" :class="{on_tool: on_postgresql}" @click="tool_idx = 9">
-        <img width="32" height="32" src="../assets/stacks/postgresql.png" alt="postgres">
+        <img class="pagi-img" src="../assets/stacks/postgresql.png" alt="postgres">
       </div>
       <div class="mini-box" :class="{on_tool: on_typescript}" @click="tool_idx = 10">
-        <img width="32" height="32" src="../assets/stacks/typescript.png" alt="typescript">
+        <img class="pagi-img" src="../assets/stacks/typescript.png" alt="typescript">
       </div>
       <div class="mini-box" :class="{on_tool: on_three}" @click="tool_idx = 11">
-        <img width="37" height="37" src="../assets/stacks/three.png" alt="threejs">
+        <img class="pagi-img" src="../assets/stacks/three.png" alt="threejs">
       </div>
     </div>
     <h5 style="display: flex; justify-content: end;">&lt;/Tools&gt;</h5>
@@ -376,23 +380,29 @@ $blue: #5271ff;
 $green: #7ed957;
   #tools-container {
     margin-top: -45px;
-    width: 100%;
+    margin-left: 45px;
+    width: 700px;
     #tools-main {
+      .arrow-icons {
+        font-size: 70px;
+      }
       margin-top: -40px;
-      height: 350px;
+      margin-bottom: 10px;
       border-radius: 4px;
       display: grid;
       grid-template-columns: 1fr 8fr 1fr;
       grid-gap: 1px;
+      .arr-btns {
+        width: 70px;
+      }
       .tool-desc {
-        // background: $darkgrey;
         width: 100%;
         display: grid;
         grid-template-columns: 2fr 4fr;
       }
       .main-box {
         width: 100%;
-        height: 100%;
+        height: 350px !important;
         .image-sqr {
           display: flex;
           justify-content: center;
@@ -439,12 +449,13 @@ $green: #7ed957;
       }
       .box-tool-desc {
         display: flex;
-        padding-right: 30px;
+        padding: 30px 0px;
         height: 300px;
+        // width: 300px;
         justify-content: center;
         align-items: center;
         h2 {
-          line-height: 34px;
+          line-height: 28px !important;
           font-size: 20px !important;
         }
         // background: #fff;
@@ -458,6 +469,10 @@ $green: #7ed957;
         display: flex;
         justify-content: center;
         align-items: center;
+        .main-image {
+          width: 240px;
+          height: 240px;
+        }
       }
     }
     .on_tool {
@@ -476,9 +491,12 @@ $green: #7ed957;
         justify-content: center;
         align-items: center;
         border-radius: 2px;
-        width: 100%;
-        height: 100%;
-        // background: $darkgrey;
+        width: 35px;
+        height: 35px;
+        .pagi-img {
+          width: 35px;
+          height: 35px;
+        }
       }
     }
   }
@@ -487,4 +505,516 @@ $green: #7ed957;
     border: none;
     box-shadow: none;
   }
+
+  
+// laptop responsiveness 1 
+@media (max-width: 1440px) {
+  #tools-container {
+    width: 620px;
+    margin-left: 120px !important;
+    #tools-main {
+      .main-box {
+        height: 200px !important;
+        .image-sqr {
+          width: 200px;
+          height: 200px;
+          .main-image {
+            width: 180px;
+            height: 180px;
+          }
+        }
+      }
+    }
+    .box-tool-desc {
+      h2 {
+        font-size: 18px !important;
+        line-height: 22px !important;
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 30px;
+        height: 30px;
+        .pagi-img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+// Laptop responsiveness 2
+@media (max-width: 1280px) {
+  #tools-container {
+    width: 560px;
+    margin-left: 60px !important;
+    #tools-main {
+      .box-tool-desc {
+        h2 {
+          font-size: 16px !important;
+          line-height: 18px !important;
+        }
+      }
+      .arr-btns {
+        width: 55px;
+      }
+      .main-box {
+        .image-sqr {
+          width: 180px;
+          height: 180px;
+          .main-image {
+            width: 160px;
+            height: 160px;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 25px !important;
+        height: 25px !important;
+        .pagi-img {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
+  }
+}
+
+
+// Laptop responsiveness 3
+@media (max-width: 1180px) {
+  #tools-container {
+    width: 480px;
+    margin-left: 30px !important;
+    #tools-main {
+      .box-tool-desc {
+        h2 {
+          font-size: 14px !important;
+          line-height: 16px !important;
+        }
+      }
+      .main-box {
+        .image-sqr {
+          width: 140px;
+          height: 140px;
+          .main-image {
+            width: 120px;
+            height: 120px;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 22px !important;
+        height: 22px !important;
+        .pagi-img {
+          width: 22px !important;
+          height: 22px !important;
+        }
+      }
+    }
+  }
+}
+
+
+// Laptop responsiveness 4
+@media (max-width: 1040px) {
+   #tools-container {
+    margin-left: 10px !important;
+   }
+}
+
+// Laptop responsiveness 5
+@media (max-width: 968px) {
+  #tools-container {
+    width: 400px;
+    margin-left: 60px !important;
+    #tools-main {
+      .box-tool-desc {
+        h2 {
+          font-size: 12px !important;
+          line-height: 15px !important;
+        }
+      }
+      .main-box {
+        .image-sqr {
+          width: 120px;
+          height: 120px;
+          .main-image {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 18px !important;
+        height: 18px !important;
+        .pagi-img {
+          width: 18px !important;
+          height: 18px !important;
+        }
+      }
+    }
+  }
+}
+// Tablet
+@media (max-width: 830px) {
+  #tools-container {
+    width: 700px !important;
+    margin-left: 25px !important;
+    margin-bottom: 40px !important;
+    #tools-main {
+      .arr-btns {
+        width: 70px;
+      }
+      .tool-desc {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+      }
+      .main-box {
+        width: 100%;
+        height: 280px !important;
+        .image-sqr {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 240px;
+          height: 240px;
+          .main-image {
+            width: 220px;
+            height: 220px;
+          }
+        }
+        h2 {
+          font-size: 20px !important;
+          line-height: 24px !important;
+        }
+      }
+      .skill-name {
+        background: #fff;
+        height: 30px;
+        margin-top: 20px;
+        padding: 0;
+        text-align: center;
+        h4 {
+          font-size: 20px;
+          line-height: 30px;
+          height: 14px;
+        }
+      }
+      .skill-bar {
+        margin-top: 20px;
+        padding: 0;
+        height: 30px;
+        background: $blue;
+        width: 100%;
+        display: flex;
+        .skill-lvl {
+          width: 22%;
+          p {
+            font-size: 20px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    .box-tool-desc {
+      padding: 30px 0px !important;
+      height: 300px !important;
+      h2 {
+        line-height: 28px !important;
+        font-size: 20px !important;
+      }
+    }
+    .image-div {
+      .main-image {
+        width: 240px !important;
+        height: 240px !important;
+      }
+    }
+    #mini-cntrs {
+      height: 40px !important;
+      grid-gap: 10px !important;
+      .mini-box {
+        width: 35px !important;
+        height: 35px !important;
+        .pagi-img {
+          width: 35px !important;
+          height: 35px !important;
+        }
+      }
+    }
+  }
+}
+// Tablet 2
+@media (max-width: 740px) {
+  #tools-container {
+    width: 620px !important;
+    #tools-main {
+      .main-box {
+        height: 240px !important;
+        .image-sqr {
+          width: 200px !important;
+          height: 200px !important;
+          .main-image {
+            width: 180px !important;
+            height: 180px !important;
+          }
+        }
+      }
+    }
+    .box-tool-desc {
+      h2 {
+        font-size: 16px !important;
+        line-height: 18px !important;
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 30px !important;
+        height: 30px !important;
+        .pagi-img {
+          width: 30px !important;
+          height: 30px !important;
+        }
+      }
+    }
+  }
+}
+
+// Tablet 2
+@media (max-width: 660px) {
+  #tools-container {
+    width: 560px !important;
+    margin-left: 0px !important;
+    #tools-main {
+      .box-tool-desc {
+        h2 {
+          font-size: 16px !important;
+          line-height: 18px !important;
+        }
+      }
+      .arr-btns {
+        width: 55px;
+      }
+      .main-box {
+        .image-sqr {
+          width: 180px !important;
+          height: 180px !important;
+          .main-image {
+            width: 160px !important;
+            height: 160px !important;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 25px !important;
+        height: 25px !important;
+        .pagi-img {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
+  }
+}
+
+// Tablet 2
+@media (max-width: 580px) {
+  #tools-container {
+    width: 480px !important;
+    margin-left: 10px !important;
+    #tools-main {
+      .box-tool-desc {
+        h2 {
+          font-size: 14px !important;
+          line-height: 16px !important;
+        }
+      }
+      .main-box {
+        height: 180px !important;
+        .image-sqr {
+          width: 140px !important;
+          height: 140px !important;
+          .main-image {
+            width: 120px !important;
+            height: 120px !important;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 22px !important;
+        height: 22px !important;
+        .pagi-img {
+          width: 22px !important;
+          height: 22px !important;
+        }
+      }
+    }
+  }
+}
+// Tablet 3
+@media (max-width: 490px) {
+  #tools-container {
+    width: 430px !important;
+    margin-left: -10px !important;
+    #tools-main {
+      .box-tool-desc {
+        h2 {
+          font-size: 12px !important;
+          line-height: 14px !important;
+        }
+      }
+      .main-box {
+        height: 160px !important;
+        .image-sqr {
+          width: 120px !important;
+          height: 120px !important;
+          .main-image {
+            width: 100px !important;
+            height: 100px !important;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 18px !important;
+        height: 18px !important;
+        .pagi-img {
+          width: 18px !important;
+          height: 18px !important;
+        }
+      }
+    }
+  }
+}
+
+// Mobile 2
+@media (max-width: 440px) {
+  #tools-container {
+    width: 330px !important;
+    margin: -30px 20px 0px 20px !important;
+    #tools-main {
+      .box-tool-desc {
+        h2 {
+          font-size: 11px !important;
+          line-height: 12px !important;
+        }
+      }
+      .main-box {
+        height: 140px !important;
+        .image-sqr {
+          width: 80px !important;
+          height: 80px !important;
+          .main-image {
+            width: 75px !important;
+            height: 75px !important;
+          }
+        }
+      }
+       .skill-name {
+          height: 20px;
+          h4 {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      .skill-bar {
+        height: 20px;
+        .skill-lvl {
+          p {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      grid-gap: 4px !important;
+      .mini-box {
+        width: 20px !important;
+        height: 20px !important;
+        .pagi-img {
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+    }
+  }
+}
+
+// Mobile 1
+@media (max-width: 376px) {
+  #tools-container {
+    h5 {
+      font-size: 18px;
+      margin: 0 0 18px 0 !important;
+      line-height: 18px;
+    }
+    width: 300px !important;
+    margin: -30px 5px 0px 5px !important;
+    #tools-main {
+      margin-top: 10px;
+      .box-tool-desc {
+        h2 {
+          font-size: 10px !important;
+          line-height: 11px !important;
+        }
+      }
+      .main-box {
+        height: 120px !important;
+        .image-sqr {
+          width: 60px !important;
+          height: 60px !important;
+          .main-image {
+            width: 55px !important;
+            height: 55px !important;
+          }
+        }
+        .arrow-icons {
+          font-size: 50px !important;
+        }
+      }
+       .skill-name {
+          height: 18px;
+          h4 {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      .skill-bar {
+        height: 18px;
+        .skill-lvl {
+          p {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    #mini-cntrs {
+      .mini-box {
+        width: 18px !important;
+        height: 18px !important;
+        .pagi-img {
+          width: 18px !important;
+          height: 18px !important;
+        }
+      }
+    }
+  }
+}
+
 </style>

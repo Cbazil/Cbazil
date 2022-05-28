@@ -565,6 +565,47 @@ $blue: #5271ff;
   }
 }
 
+// Tablet
+@media (max-width: 830px) {
+  #blog-view {
+    width: 100%;
+    #blog-container {
+      display: flex;
+      width: 100%;
+      margin-left: 0px !important;
+      height: auto !important;
+      flex-direction: column-reverse;
+      #content-box {
+        overflow-y: hidden;
+        width: 100%;
+      }
+      #quick-access {
+        margin-top: 40px;
+        margin-left: -20px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 580px) {
+  #blog-view {
+    #blog-container {
+      margin-top: 0px;
+      #content-box {
+        h1 {
+          font-size: 24px !important; 
+          line-height: 28px !important;
+        }
+        .para {
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+}
+
 .toCenter {
   display: flex;
   justify-content: center;

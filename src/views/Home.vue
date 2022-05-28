@@ -1,5 +1,5 @@
 <template>
-  <span id="home" ref="container" @keyup.down="navAbout" @wheel="navScroll($event)" tabindex="0">
+  <span id="home" ref="container" :class="{hide_scroll: showCard}" @keyup.down="navAbout" @wheel="navScroll($event)" tabindex="0">
     <PageContainer> 
       <br>
       <br>
@@ -21,12 +21,14 @@
           <div id="hire-container">
             <div class="home-btns">
               <h6>&lt;q-btn&gt;</h6>
-              <q-btn class="hire-btns" size="15px" id="hire-btn" outline>Hire me!</q-btn>
+              <q-btn class="hire-btns"  @click.prevent="toggleCard" size="15px" id="hire-btn" outline>Hire me!</q-btn>
               <h6 style="display: flex; justify-content: end;">&lt;/q-btn&gt;</h6>
             </div>
             <div class="home-btns">
               <h6>&lt;q-btn&gt;</h6>
-              <q-btn class="hire-btns" size="15px" id="cv-download" outline>Download CV Document</q-btn>
+              <a style="text-decoration: none;" download="Curriculum Vitae of Chad Bosch" href="/assets/resume.pdf">
+                <q-btn class="hire-btns" size="15px" id="cv-download" outline>Download CV Document</q-btn>
+              </a>
               <h6 style="display: flex; justify-content: end;">&lt;/q-btn&gt;</h6>
             </div>
           </div>
@@ -47,6 +49,14 @@
         <h5>&lt;/html&gt;</h5>
       </div>
     </PageContainer>
+    <div id="contact-card" @click.prevent="toggleCard" v-if="showCard">
+      <q-card flat bordered>
+        <q-img
+          id="business-card"
+          src="../assets/contact.png"
+        />
+      </q-card>
+    </div>
   </span>
 </template>
 
@@ -61,9 +71,29 @@ export default {
     PageContainer,
     TicTacToe
   },
+  methods: {
+    async downloadFile() {
+      let response = await this.$http.get("../../public/resume.pdf", {
+        responseType: "arraybuffer",
+      });
+      let blob = new Blob([response.data], { type: "application/pdf" });
+      let link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.download = "resume.pdf";
+      link.click();
+    }
+  },
   setup() {
 
     const router = useRouter()
+
+    const showCard = ref(false)
+
+    const container = ref(null)
+
+    const toggleCard = () => {
+      showCard.value = !showCard.value
+    }
 
     const navAbout = () => {
       router.push('/about')
@@ -74,8 +104,7 @@ export default {
         router.push('/about')
       }
     }
-
-    const container = ref(null)
+    
 
     onMounted(() => {
       container.value.focus()
@@ -84,7 +113,9 @@ export default {
     return {
       navAbout,
       navScroll,
-      container
+      container,
+      showCard,
+      toggleCard
     }
   }
 }
@@ -99,10 +130,33 @@ $blue: #5271ff;
 
 #home {
   width: 100vw;
+  height: 100%;
   position: relative;
   z-index: 0;
   display: flex;
+  #contact-card {
+    width: 100vw;
+    height: 100% !important;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    position: absolute !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-left: -40px;
+    #business-card {
+      cursor: none;
+      width: 740px;
+      height: 400px;
+    }
+  }
 }
+
+.hide_scroll {
+  overflow-y: hidden !important;
+}
+
 
 h5 {
   color: $blue;
@@ -149,10 +203,10 @@ h6 {
   width: 100%;
   #home-container1 {
     #header1-div {
-      width: 700px;
+      width: 645px;
     }
     #header2-div {
-      width: 720px;
+      width: 670px;
     }
     width: 60%;
     #heading1, #header2 {
@@ -247,10 +301,12 @@ h6 {
 
 // Laptop responsiveness 2
 @media (max-width: 1280px) {
-  #home-container {
-    #home-container1 {
-      #header1-div {
-        width: 520px;
+  #home {
+    #home-container {
+      #home-container1 {
+        #header1-div {
+          width: 520px;
+        }
       }
     }
   }
@@ -298,8 +354,16 @@ h6 {
 // Tablet
 @media (max-width: 830px) {
   #home {
-    margin: -40px 10px 0px 10px !important;
     overflow-y: scroll;
+    #contact-card {
+      position: absolute !important;
+      padding: 0 !important;
+      width: 112vw !important;
+      #business-card {
+        width: 480px;
+        height: 300px;
+      }
+    }
     #home-container {
       display: block !important;
       width: 100% !important;
@@ -315,7 +379,7 @@ h6 {
       }
       #home-container2 {
         position: relative;
-        margin: 50px auto 20px auto !important;
+        margin: 50px auto 60px auto !important;
         width: 100% !important;
         display: flex !important;
         justify-content: center;
@@ -331,6 +395,13 @@ h6 {
 // Mobile 3
 @media (max-width: 562px) {
   #home {
+    #contact-card {
+      width: 125vw !important;
+      #business-card {
+        width: 320px;
+        height: 200px;
+      }
+    }
     #home-container {
       #home-container1 {
         #header1-div {
@@ -350,6 +421,15 @@ h6 {
 // Mobile 2
 @media (max-width: 426px) {
   #home {
+    h5 {
+      font-size: 18px;
+      margin: 0 0 18px 0 !important;
+      line-height: 18px;
+    }
+    h6 {
+      font-size: 16px;
+      margin: 0px !important;
+    }
     #home-container {
       #home-container1 {
         #header1-div {
@@ -367,6 +447,9 @@ h6 {
           flex-direction: column;
         }
       }
+      #home-container2 {
+        margin: 50px auto 20px auto !important;
+      }
     }
   }
 }
@@ -374,29 +457,23 @@ h6 {
 // Mobile 1
 @media (max-width: 376px) {
   #home {
-    h5 {
-      font-size: 18px;
-      margin: 0 0 18px 0 !important;
-      line-height: 18px;
-    }
-    h6 {
-      font-size: 16px;
-      margin: 0px !important;
-    }
     #home-container {
       #home-container1 {
         .hire-btns {
           font-size: 12px !important;
         }
+        .home-btns {
+          margin: 20px 0px;
+        }
         #header1-div {
           margin: 0 -5px;
-          width: 330px;
+          width: 260px;
           #heading1 {
             margin: -10px 10px -15px 10px;
           }
         }
         #header2-div {
-          width: 320px;
+          width: 262px;
           margin-left: -5px !important;
           #header2 {
             margin-left: 5px !important;

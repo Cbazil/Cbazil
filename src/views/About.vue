@@ -107,10 +107,11 @@ $blue: #5271ff;
       }
     }
     #header2-div {
-      width: 92%;
+      width: 90%;
       h3 {
         margin: -15px 0;
-        padding: 0 25px;
+        padding: 10px 25px;
+        line-height: 34px;
       }
       h5 {
         margin: 15px 0;
@@ -122,7 +123,7 @@ $blue: #5271ff;
       #hobbies {
         display: flex;
         flex-direction: row;
-        margin: -15px 20px -5px 20px;
+        margin: -25px 20px -5px 20px;
         .hobby {
           font-size: 17px;
           list-style-type: none;
@@ -144,44 +145,55 @@ $blue: #5271ff;
 
 // laptop responsiveness 1 
 @media (max-width: 1440px) {
-  #about-container {
-    #about-container1 {
-      #header2-div {
-        width: 680px;
-        h3 {
-          font-size: 19.67px !important;
-          line-height: 30px !important;
-          margin: 10px 0 15px 0;
+  #about {
+    #about-container {
+      #about-container1 {
+        #header2-div {
+          width: 680px;
+          h3 {
+            font-size: 19.67px !important;
+            line-height: 30px !important;
+            margin: 10px 0 15px 0;
+          }
         }
-      }
-      #hobbies-div {
-        width: 680px;
-         #hobbies {
-           .hobby {
-            font-size: 13px;
+        #hobbies-div {
+          width: 680px;
+           #hobbies {
+             margin-top: -12px !important;
+             .hobby {
+              font-size: 13px;
+             }
            }
-         }
+        }
+      } 
+      #about-container2 {
+        width: 30%;
       }
-    } 
-    #about-container2 {
-      width: 30%;
     }
   }
 }
 
 // Laptop responsiveness 2
 @media (max-width: 1280px) {
-  #about-container {
-    #about-container1 {
-      #header2-div {
-        width: 630px;
-      }
-      #hobbies-div {
-         #hobbies {
+  #about {
+    #about-container {  
+      margin-left: 14px;
+      #about-container1 {
+        #header1-div {
+          h1 {
+            margin: 5px 25px;
+          }
+        }
+        #header2-div {
+          width: 630px;
+        }
+        #hobbies-div {
+          #hobbies {
             .hobby {
               font-size: 12px;
             }
-         }
+          }
+        }
       }
     }
   }
@@ -259,7 +271,7 @@ $blue: #5271ff;
       }
       #about-container2 {
         position: relative;
-        margin: 50px auto 20px auto !important;
+        margin: 50px auto 80px auto !important;
         width: 100% !important;
         display: flex !important;
         justify-content: center;
@@ -295,6 +307,13 @@ $blue: #5271ff;
   #about {
     #about-container {
       #about-container1 {
+        #header1-div {
+          width: 280px !important;
+          h1 {
+            font-size: 58px !important;
+            margin: -5px 18px;
+          }
+        }
         #header2-div {
           h3 {
             font-size: 18px !important;
@@ -311,11 +330,30 @@ $blue: #5271ff;
 // Mobile 2
 @media (max-width: 426px) {
   #about {
+    h5 {
+      font-size: 18px;
+      margin: 0 0 18px 0 !important;
+      line-height: 18px;
+    }
+    h6 {
+      font-size: 16px;
+      margin: 0px !important;
+    }
     #about-container {
       #about-container1 {
+        #header1-div {
+          width: 210px !important;
+          h1 {
+            font-size: 42px !important;
+            margin: -5px 15px -10px 15px;
+          }
+        }
         #hobbies-div {
           width: 320px !important;
         }
+      }
+      #about-container2 {
+        margin: 50px auto 20px auto !important
       }
     }
     .closing-tags {
@@ -341,14 +379,23 @@ $blue: #5271ff;
       #about-container1 {
         #header1-div {
           margin: 0px 0px 0px 0px !important;
-          #heading1 {
-            margin: 10px 0px -15px 10px;
+          width: 190px !important;
+          h1 {
+            font-size: 38px !important;
+            margin: -5px 15px -18px 15px !important;
           }
         }
+        #hobbies-div {
+          width: 260px !important;
+           #hobbies {
+             margin-top: -10px !important;
+           }
+        }
         #header2-div {
+          width: 260px !important;
           h3 {
-            font-size: 16px !important;
-            line-height: 18px !important;
+            font-size: 14px !important;
+            line-height: 15px !important;
           }
         }
       }

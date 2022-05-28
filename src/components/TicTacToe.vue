@@ -503,7 +503,7 @@ $blue: #5271ff;
 
 #container {
   position: relative;
-  margin: 40px 0 10px 0px;
+  margin: 10px 0px;
   width: 350px;
   padding: 0;
   height: 375px !important;
@@ -651,11 +651,16 @@ button {
 }
 
 
-
 // Mobile 2
 @media (max-width: 376px) {
+  h5 {
+    font-size: 18px;
+    margin: 0 0 18px 0 !important;
+    line-height: 18px;
+  }
   #container {
     margin-top: 0px;
+    margin-left: 20px;
     width: 240px;
     height: 240px;
   }

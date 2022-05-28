@@ -34,7 +34,7 @@
           @mouseover="hoverSkills = true"
             @mouseleave="hoverSkills = false"
         >
-          <router-link class="r-link"  to="/skills">
+          <router-link class="r-link" to="/skills">
             <q-icon
               v-if="!hoverSkills"
               class="icons"
@@ -202,22 +202,42 @@ body {
 h1 {
   font-family: 'Sriracha', cursive;
   color: $green;
-  font-size: 100px !important;
-  line-height: 45px !important;
+  font-size: 90px !important;
+  line-height: 32px !important;
 }
 
 h2 {
   font-family: 'Montserrat Alternates', sans-serif;
   color: #fff;
-  font-size: 42px !important;
-  line-height: 38px !important;
-  margin: 50px 10px;
+  font-size: 38px !important;
+  line-height: 36px !important;
+  margin: 45px 10px;
 }
 
 h3 {
   font-family: 'Montserrat Alternates', sans-serif;
   color: #fff;
   font-size: 21px !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $blue; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $green; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
 }
 
 #app {
@@ -265,7 +285,11 @@ h3 {
     position: relative;
     border: none;
   }
-  
+
+  .q-timeline__title {
+    display: unset !important;
+  }
+    
   #s-links {
     margin-bottom: 16px;
   }
@@ -424,7 +448,7 @@ h3 {
 }
 
 // Mobile 1
-@media (max-width: 360px) {
+@media (max-width: 376px) {
   h1 {
     font-size: 34px !important;
     line-height: 16px !important;
@@ -433,9 +457,12 @@ h3 {
     font-size: 14px !important;
     margin: 30px 10px 10px 10px;
   }
-  .q-icon {
-    margin-top: 6px;
-    font-size: 16px !important;
+  .nav-i {
+    width: 50px !important;
+    .q-icon {
+      margin-top: 2px;
+      font-size: 16px !important;
+    }
   }
 }
 </style>

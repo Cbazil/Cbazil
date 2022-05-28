@@ -55,12 +55,14 @@
             <h5 style="display: flex; justify-content: end;  margin-top: 25px !important;">&lt;/Skills&gt;</h5>
           </div>
         </div>
-        <div id="skill-container2">
+        <div id="skills-container2">
           <Tools />
         </div>
       </div>
-      <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-      <h5>&lt;/html&gt;</h5>
+      <div class="closing-tags">
+        <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
+        <h5>&lt;/html&gt;</h5>
+      </div>
     </PageContainer>
   </div>
 </template>
@@ -131,7 +133,7 @@ $blue: #5271ff;
       }
     }
     #header2-div {
-      width: 90%;
+      width: 580px;
       h3 {
         margin: -15px 0;
         padding: 0 20px;
@@ -142,17 +144,17 @@ $blue: #5271ff;
       }
     }
     #skills-div {
-      width: 100%; 
+      width: 560px;
     }
     .skill {
-      width: 95%;
+      width: 520px;
       display: flex;
-      padding-left: 15px;
+      padding-left: 35px;
       margin: 0;
       height: 20px;
       margin-top: 40px;
       .skill-name {
-        width: 20%;
+        width: 25%;
         h4 {
           font-size: 18px;
           margin: 0;
@@ -164,7 +166,7 @@ $blue: #5271ff;
       }
       .skill-bar {
         background: $blue;
-        width: 80%;
+        width: 75%;
       }
       .js-lvl {
         background: $green !important; 
@@ -198,5 +200,352 @@ $blue: #5271ff;
   outline: none;
   border: none;
   box-shadow: none;
+}
+
+// laptop responsiveness 1 
+@media (max-width: 1440px) {
+  #skills {
+    #skills-container {
+      margin-left: 0px;
+      h3 {
+        font-size: 22px;
+        line-height: 32px;
+        margin: 5px 0px -10px 0px !important;
+      }
+      #skills-container1 {
+        width: 38%;
+        #skills-div {
+          margin-top: 30px;
+          .skill {
+            margin-top: 20px;
+          }
+        }
+        #header1-div {
+          h1 {
+            margin-top: 15px; 
+          }
+        }
+      }
+      #skills-container2 {
+        width: 62%;
+        margin: auto 0px;
+      }
+    }
+  }
+}
+// Laptop responsiveness 2
+@media (max-width: 1280px) {
+  #skills {
+    #skills-container {
+      #header2-div {
+        width: 480px;
+      }
+      #skills-div {
+        width: 485px;
+      }
+      .skill {
+        width: 455px;
+      }
+    }
+  }
+}
+
+
+// Laptop responsiveness 3
+@media (max-width: 1180px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+        width: 40% !important;
+        #header1-div {
+          width: 350px !important;
+          h1 {
+            font-size: 45px !important;
+          }
+        }
+        #header2-div {
+          width: 400px;
+          h3 {
+            font-size: 20px !important;
+            line-height: 25px;
+          }
+        }
+        #skills-div {
+          width: 400px;
+        }
+        .skill {
+          width: 390px;
+        }
+      }
+      #skills-container2 {
+        width: 60% !important;
+      }
+    }
+  }
+}
+
+// Laptop responsiveness 4
+@media (max-width: 1040px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+        #header1-div {
+           width: 320px !important;
+          h1 {
+            font-size: 40px !important;
+          }
+        }
+        #header2-div {
+          width: 340px;
+        }
+        #skills-div {
+          width: 360px;
+        }
+        .skill {
+          width: 340px;
+          .skill-name {
+            h4 {
+              font-size: 16px;
+              margin-left: -15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 830px) {
+  #skills {
+    margin: -40px 10px 0px 10px !important;
+    overflow-y: scroll;
+    #skills-container {
+      width: 100% !important;
+      display: block !important;
+      #skills-container1 {
+        margin-bottom: 70px !important;
+        width: 100% !important;
+        display: block !important;
+        #header1-div {
+          width: 480px !important;
+          h1 {
+            font-size: 65px !important;
+            margin: 5px 25px;
+          }
+        }
+        #header2-div {
+          width: 580px !important;
+          h3 {
+            margin: -15px 0;
+            padding: 0 20px;
+          }
+          h5 {
+            margin: 15px 0;
+            font-weight: 10px;
+          }
+        }
+        #skills-div {
+          width: 560px !important;
+          .skill {
+            width: 540px !important;
+            .skill-name {
+              h4 {
+                font-size: 18px;
+                margin-left: 0px;
+              }
+            }
+          }
+        }
+      }
+      #skills-container2 {
+        width: 100% !important;
+        display: block !important;
+      }
+    }
+    .closing-tags {
+      margin: 10px 0px !important;
+      height: 70px !important;
+    }
+  }
+}
+
+// Tablet 2
+@media (max-width: 740px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+         #header1-div {
+          width: 460px !important;
+          h1 {
+            font-size: 62px !important;
+            margin: 5px 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet 3
+@media (max-width: 660px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+        #header2-div {
+          width: 480px !important;
+        }
+         #skills-div {
+          width: 500px !important;
+          .skill {
+            width: 480px !important;
+          }
+         }
+      }
+    }
+  }
+}
+
+// Tablet 4
+@media (max-width: 580px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+        #header1-div {
+          width: 420px !important;
+          h1 {
+            font-size: 58px !important;
+            margin: 5px 18px;
+          }
+        }
+        #header2-div {
+          width: 420px !important;
+        }
+        #skills-div {
+          width: 430px !important;
+          .skill {
+            width: 410px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile 3
+@media (max-width: 490px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+        #header1-div {
+          width: 360px !important;
+          h1 {
+            font-size: 50px !important;
+            margin: -5px 12px;
+          }
+        }
+        #header2-div {
+          width: 360px !important;
+        }
+        #skills-div {
+          width: 360px !important;
+          .skill {
+            width: 340px !important;
+            .skill-name {
+              h4 {
+                font-size: 14px;
+              }  
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile 2
+@media (max-width: 426px) {
+  #skills {
+    h5 {
+      font-size: 18px;
+      margin: 0 0 18px 0 !important;
+      line-height: 18px;
+    }
+    h6 {
+      font-size: 16px;
+      margin: 0px !important;
+    }
+    #skills-container {
+      #skills-container1 {
+        #header1-div {
+          width: 300px !important;
+          h1 {
+            font-size: 42px !important;
+            margin: 5px 10px -10px 10px !important;
+          }
+        }
+        #header2-div {
+          width: 320px !important;
+          h3 {
+            font-size: 18px !important;
+            line-height: 22px;
+          }
+        }
+        #skills-div {
+          width: 325px !important;
+          .skill {
+            height: 16px !important;
+            width: 300px !important;
+            .skill-name {
+              width: 35%;
+              h4 {
+                font-size: 14px;
+              }  
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile 1
+@media (max-width: 376px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+        #header1-div {
+          margin-left: -5px !important;
+          width: 280px !important;
+          h1 {
+            font-size: 38px !important;
+            margin: -5px 15px -20px 15px !important;
+          }
+        }
+        #header2-div {
+          width: 270px !important;
+          h3 {
+            font-size: 18px !important;
+            margin: -5px -10px 15px 0px !important;
+            line-height: 22px;
+          }
+        }
+        #skills-div {
+          width: 270px !important;
+          margin-left: 20px;
+          .skill {
+            height: 16px !important;
+            width: 260px !important;
+            .skill-name {
+              width: 40%;
+              h4 {
+                font-size: 13px;
+              }  
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </style>

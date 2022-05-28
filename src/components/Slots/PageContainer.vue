@@ -186,6 +186,7 @@ $dark: #2b2c2e;
     .prefix-btn, .suffix-btn {
       margin: 5px;
       background: $dark !important;
+      opacity: 0.6;
     }
   }
   #header {

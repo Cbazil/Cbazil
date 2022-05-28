@@ -79,8 +79,8 @@
                         :class="{project_desc: infoP1}"
                         style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
                       >
-                        <h6 style="margin-top: 30px; color: white;">My First Online CV</h6>
-                        <p v-if="infoP1" style="text-transform: none; margin-top: -24px;">This was my very first online porfolio, I had it made before graduating from the CodeSpace course at Life Choices Coding Academy.</p>
+                        <h6 class="project_name">My First Online CV</h6>
+                        <p v-if="infoP1" class="project_details">This was my very first online porfolio, I had it made before graduating from the CodeSpace course at Life Choices Coding Academy.</p>
                       </q-carousel-control>
                     </template>
                 </q-carousel>
@@ -173,8 +173,8 @@
                       :class="{project_desc: infoP3}"
                       style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
                     >
-                      <h6 style="margin-top: 30px; color: white;">Health4Life App (Private)</h6>
-                      <p v-if="infoP3" style="text-transform: none; margin-top: -24px;">This is a data capturing app, that captures HIV/Health risks tests done in coummunities and schools by the Health4Life Councellors at Life Choices. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                      <h6 class="project_name">Health4Life App (Private)</h6>
+                      <p v-if="infoP3" class="project_details">This is a data capturing app, that captures HIV/Health risks tests done in coummunities and schools by the Health4Life Councellors at Life Choices. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
                     </q-carousel-control>
                   </template>
                 </q-carousel>
@@ -247,8 +247,8 @@
                         :class="{project_desc: infoP4}"
                         style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
                       >
-                        <h6 style="margin-top: 30px; color: white;">Life Choices Admin (Private)</h6>
-                        <p v-if="infoP4" style="text-transform: none; margin-top: -24px;">This is an admin data capturing systems app, that makes Life Choices all Digital which saves time and increases productivity within the organisation. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                        <h6 class="project_name">Life Choices Admin (Private)</h6>
+                        <p v-if="infoP4" class="project_details">This is an admin data capturing systems app, that makes Life Choices all Digital which saves time and increases productivity within the organisation. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
                       </q-carousel-control>
                     </template>
                   </q-carousel>
@@ -376,8 +376,10 @@
         </div>
       </div>
       <br>
-      <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-      <h5>&lt;/html&gt;</h5>
+      <div class="closing-tags">
+        <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
+        <h5>&lt;/html&gt;</h5>
+      </div>
     </PageContainer>
   </div>
 </template>
@@ -511,10 +513,10 @@ $blue: #5271ff;
     margin: 0px 20px;
     width: 100%;
     #proj-title {
-      width: 25%;
+      width: 420px;
       h1 {
         font-size: 65px !important;
-        margin: -5px 30px 15px 30px;
+        margin: 0px 30px 15px 30px;
       }
       h5 {
         margin: 20px;
@@ -526,7 +528,7 @@ $blue: #5271ff;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-gap: 10px;
-        height: 500px;
+        height: 420px;
         margin-left: 25px;
         padding-bottom: 20px;
         overflow-x: scroll;
@@ -562,7 +564,7 @@ $blue: #5271ff;
           background-size: 100% 100%;
         }
         .single-container {
-          width: 875px !important;
+          width: 780px !important;
           height: 100% !important;
           min-height: 100% !important;
         }
@@ -574,7 +576,7 @@ $blue: #5271ff;
           .mini-container {
             margin: 0;
             padding: 0;
-            height: 230px !important;
+            height: 196px !important;
           }
         }
         .proj-btns {
@@ -585,7 +587,7 @@ $blue: #5271ff;
         .container {
           margin: 0;
           padding: 0;
-          width: 400px;
+          width: 350px;
         }
       }
       .i-icon {
@@ -597,6 +599,14 @@ $blue: #5271ff;
         text-transform: none;
         padding: 10px;
         text-align: center;
+      }
+      .project_name {
+        margin-top: 30px;
+        color: white;
+      }
+      .project_details {
+        text-transform: none; 
+        margin-top: -24px;
       }
       .project_desc {
         height: 100% !important;
@@ -642,6 +652,103 @@ $blue: #5271ff;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #fff; 
+}
+
+// Laptop 1
+@media (max-width: 1440px) {
+  #projects {
+    #projects-container {
+      margin-left: 5px;
+      #proj-title {
+        #heading1 {
+          margin: 25px 35px !important;
+        }
+      }
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 830px) {
+  #projects {
+    margin: -40px 10px 0px 10px !important;
+    #projects-container {
+      #project-gallery {
+        width: 101%;
+      }
+    }
+    .closing-tags {
+      margin: 10px 0px !important;
+      height: 70px !important;
+    }
+  }
+}
+
+// Mobile 
+@media (max-width: 426px) {
+  #projects {
+    h5 {
+      font-size: 18px;
+      margin: 0 0 18px 0 !important;
+      line-height: 18px;
+    }
+    h6 {
+      font-size: 16px;
+      margin: 0px !important;
+    }
+    #projects-container {
+      margin-left: 20px !important;
+      #proj-title {
+        width: 240px !important;
+        #heading1 {
+          font-size: 38px !important;
+          margin: -5px 20px 16px 20px !important;
+        }
+      }
+      #project-gallery {
+        width: 126% !important;
+        margin-left: -45px !important;
+        -ms-scroll-limit-x-max: 0cm;
+        #gallery-div {
+          height: 220px !important;
+          .duo-container {
+            width: 620px !important;
+            grid-template-columns: 1fr 1fr !important;
+            .mini-container {
+              width: 303.33px !important;
+              margin: 0px;
+              padding: 0px;
+            }
+          }
+          .single-container {
+            width: 320px !important;
+            margin: 0px;
+            padding: 0px;
+          }
+          .proj-btns {
+            padding: 0.9px 0px !important;
+          }
+          .project_name {
+            margin-top: 30px !important;
+          }
+          .project_details {
+            margin-top: 20px !important;
+            line-height: 15px !important;
+            font-size: 13px !important;
+          }
+          .comingSoon {
+            line-height: 15px !important;
+            font-size: 13px !important;
+          }
+          .container {  
+            margin: 0px;
+            padding: 0px;
+            width: 320px !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 </style>
