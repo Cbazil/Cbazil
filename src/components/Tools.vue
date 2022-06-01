@@ -331,20 +331,6 @@
       }
     },
     methods: {
-      clear() {
-        this.on_vue = false;
-        this.on_react = false;
-        this.on_node = false;
-        this.on_html = false;
-        this.on_css = false;
-        this.on_sass = false;
-        this.on_firebase = false;
-        this.on_mongodb= false;
-        this.on_knex= false;
-        this.on_postgresql = false;
-        this.on_typescript = false;
-        this.on_three = false;
-      },
       tools_prev() {
         this.tool_idx = this.tool_idx - 1
       },
@@ -365,26 +351,28 @@
     mounted() {
       this.$refs.tools.focus()
       setInterval(() => { 
+        let new_tool_idx;
         if (this.tool_idx != 11) {
-          this.tool_idx = this.tool_idx + 1 
+          new_tool_idx = this.tool_idx + 1
+          this.tool_idx = new_tool_idx
         } else {
           this.tool_idx = 0
         }
       }, 15000);
     },
     updated() {
-      if (this.tool_idx == 0) { this.clear(); this.on_vue = true; }
-      if (this.tool_idx == 1) { this.clear(); this.on_react = true; }
-      if (this.tool_idx == 2) { this.clear(); this.on_node = true; }
-      if (this.tool_idx == 3) { this.clear(); this.on_html = true; }
-      if (this.tool_idx == 4) { this.clear(); this.on_css = true; }
-      if (this.tool_idx == 5) { this.clear(); this.on_sass = true; }
-      if (this.tool_idx == 6) { this.clear(); this.on_firebase = true; }
-      if (this.tool_idx == 7) { this.clear(); this.on_mongodb = true; }
-      if (this.tool_idx == 8) { this.clear(); this.on_knex = true; }
-      if (this.tool_idx == 9) { this.clear(); this.on_postgresql = true; }
-      if (this.tool_idx == 10) { this.clear(); this.on_typescript = true; }
-      if (this.tool_idx == 11) { this.clear(); this.on_three = true; }
+      if (this.tool_idx == 0) { this.on_vue = true; } else { this.on_vue = false; }
+      if (this.tool_idx == 1) { this.on_react = true; } else { this.on_react = false; }
+      if (this.tool_idx == 2) { this.on_node = true; } else { this.on_node = false; }
+      if (this.tool_idx == 3) { this.on_html = true; } else { this.on_html = false; }
+      if (this.tool_idx == 4) { this.on_css = true; } else { this.on_css = false; }
+      if (this.tool_idx == 5) { this.on_sass = true; } else { this.on_sass = false; }
+      if (this.tool_idx == 6) { this.on_firebase = true; } else { this.on_firebase = false; }
+      if (this.tool_idx == 7) { this.on_mongodb = true; } else { this.on_mongodb = false; }
+      if (this.tool_idx == 8) { this.on_knex = true; } else { this.on_knex = false; }
+      if (this.tool_idx == 9) { this.on_postgresql = true; } else { this.on_postgresql = false; }
+      if (this.tool_idx == 10) { this.on_typescript = true; } else { this.on_typescript = false; }
+      if (this.tool_idx == 11) { this.on_three = true; } else { this.on_three = false; }
     }
   }
 </script>
