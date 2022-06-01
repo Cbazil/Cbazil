@@ -291,8 +291,10 @@ h3 {
   }
     
   #s-links {
-    text-decoration: none;
     margin-bottom: 16px;
+  }
+  .s-link-i {
+    text-decoration: none;
   }
   .s-link-i:hover {
     color: $green !important;
