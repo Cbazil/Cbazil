@@ -293,9 +293,6 @@ h3 {
   #s-links {
     margin-bottom: 16px;
   }
-  .s-link-i {
-    text-decoration: none;
-  }
   .s-link-i:hover {
     color: $green !important;
   }
@@ -316,6 +313,9 @@ h3 {
   }
   .link-i {
     padding: 5px 0;
+    a {
+      text-decoration: none;
+    }
   }
   .nav-i {
     display: flex;
