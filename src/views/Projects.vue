@@ -86,23 +86,72 @@
                 </q-carousel>
               </q-btn>
               <q-btn class="proj-btns" size="15px" outline>
-                <div class="mini-container container csp1 csp" :class="{ project_desc: infoP2 }">
-                  <q-btn
-                    push
-                    dense
-                    rounded
-                    size="18px"
-                    class="i-icon"
-                    color="light-green-12"
-                    @click="toggleInfoP2"
+                <q-carousel
+                    class="mini-container container"
+                    swipeable
+                    animated
+                    v-model="project2"
+                    :autoplay="autoplay"
+                    ref="carousel_p2"
+                    infinite
                   >
-                    <q-icon
-                      size="12px"
-                      name="fa fa-solid fa-info"
-                    />
-                  </q-btn>
-                  <p v-if="infoP2" class="comingSoon">This is a Tic Tac Toe game I made from stratch, it needs updates to the AI Bot (Completed) and needs a frontend revamp.</p>
-                </div>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/tictactoe.jpg')" />
+                  
+                    <template v-slot:control>
+                      <q-carousel-control
+                        position="top-left"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          rounded
+                          size="18px"
+                          style="padding: 4px 12px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          @click="toggleInfoP2"
+                        >
+                          <q-icon
+                            size="12px"
+                            name="fa fa-solid fa-info"
+                          />
+                        </q-btn>
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="top-right"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push
+                          dense
+                          style="margin-right: 4px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12" 
+                          icon="fa fa-angle-left"
+                          @click="$refs.carousel_p2.previous()"
+                        />
+                        <q-btn
+                          push
+                          dense 
+                          style="4px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          icon="fa fa-angle-right"
+                          @click="$refs.carousel_p2.next()"
+                        />
+                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="bottom"
+                        class="text-white rounded-borders"
+                        :class="{project_desc: infoP2}"
+                        style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
+                      >
+                        <h6 class="project_name">TicTacToe AI Game</h6>
+                        <p v-if="infoP2" class="project_details">This TicTacToe Game you can find on this portfolio's home and about pages, It's a AI base game I put together.</p>
+                      </q-carousel-control>
+                    </template>
+                </q-carousel>
               </q-btn>
             </div>
             <q-btn class="proj-btns" size="15px" outline>
@@ -110,10 +159,10 @@
                 <q-carousel
                   swipeable
                   animated
-                  v-model="project2"
+                  v-model="project3"
                   :autoplay="autoplay"
                   style="height: 100% !important;"
-                  ref="carousel_p2"
+                  ref="carousel_p3"
                   infinite
                 >
                   <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/h4l1.jpg')" />
@@ -155,7 +204,7 @@
                         style="margin-right: 4px; opacity: 0.75;"
                         color="light-green-12" 
                         icon="fa fa-angle-left"
-                        @click="$refs.carousel_p2.previous()"
+                        @click="$refs.carousel_p3.previous()"
                       />
                       <q-btn
                         push
@@ -163,7 +212,7 @@
                         style="4px; opacity: 0.75;"
                         color="light-green-12"
                         icon="fa fa-angle-right"
-                        @click="$refs.carousel_p2.next()"
+                        @click="$refs.carousel_p3.next()"
                       />
                       <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
                     </q-carousel-control>
@@ -185,10 +234,10 @@
                 <q-carousel
                     swipeable
                     animated
-                    v-model="project3"
+                    v-model="project4"
                     :autoplay="autoplay"
                     style="height: 100% !important;"
-                    ref="carousel_p3"
+                    ref="carousel_p4"
                     infinite
                   >
                     <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/lcadmin1.jpg')" />
@@ -229,7 +278,7 @@
                           style="margin-right: 4px; opacity: 0.75;"
                           color="light-green-12" 
                           icon="fa fa-angle-left"
-                          @click="$refs.carousel_p3.previous()"
+                          @click="$refs.carousel_p4.previous()"
                         />
                         <q-btn
                           push
@@ -237,7 +286,7 @@
                           style="4px; opacity: 0.75;"
                           color="light-green-12"
                           icon="fa fa-angle-right"
-                          @click="$refs.carousel_p3.next()"
+                          @click="$refs.carousel_p4.next()"
                         />
                         <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
                       </q-carousel-control>
@@ -534,7 +583,7 @@ $blue: #5271ff;
         overflow-x: scroll;
         overflow-y: hidden;
         .csp1 {
-          background-image: url('../assets/projects/tictactoe.png');
+          background-image: url('../assets/projects/tictactoe.jpg');
         }
         .csp2 {
           background-image: url('../assets/projects/gameofluck.png');

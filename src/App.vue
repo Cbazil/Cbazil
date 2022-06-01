@@ -50,7 +50,7 @@
           @mouseover="hoverExp = true"
           @mouseleave="hoverExp = false"
         >
-          <router-link class="r-link"  to="/experience">
+          <router-link class="r-link" to="/experience">
             <q-icon
               v-if="!hoverExp"
               class="icons"
@@ -291,6 +291,7 @@ h3 {
   }
     
   #s-links {
+    text-decoration: none;
     margin-bottom: 16px;
   }
   .s-link-i:hover {

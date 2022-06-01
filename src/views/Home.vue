@@ -21,7 +21,7 @@
           <div id="hire-container">
             <div class="home-btns">
               <h6>&lt;q-btn&gt;</h6>
-              <q-btn class="hire-btns"  @click.prevent="toggleCard" size="15px" id="hire-btn" outline>Hire me!</q-btn>
+              <q-btn class="hire-btns" @click.prevent="toggleCard" size="15px" id="hire-btn" outline>Hire me!</q-btn>
               <h6 style="display: flex; justify-content: end;">&lt;/q-btn&gt;</h6>
             </div>
             <div class="home-btns">
@@ -53,7 +53,7 @@
       <q-card flat bordered>
         <q-img
           id="business-card"
-          src="../assets/contact.png"
+          :src="require('../assets/contact.png')"
         />
       </q-card>
     </div>
