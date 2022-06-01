@@ -452,14 +452,11 @@ export default {
     const navScroll = (e) => {
       if(e.target.classList == "q-carousel__slide" || 
         e.target.classList == "fa fa-angle-right q-icon" ||
-        e.target.classList == "fa fa-angle-left q-icon" ||
-        e.target.classList == ""
-      ) {
-        } else {
-          console.log(e.target)
-          // if (e.deltaY < 0) {
-          //   router.push('/blogs')
-          // }
+        e.target.classList == "fa fa-angle-left q-icon"
+      ) {} else {
+          if (e.deltaY < 0) {
+            router.push('/blogs')
+          }
       }
     }
 

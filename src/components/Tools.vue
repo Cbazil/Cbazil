@@ -1,11 +1,11 @@
 <template>
-  <div id="tools-container" ref="tools" @keyup.left="() => { if(tool_idx > 0) { tool_idx-- }}" @keyup.right="() => { if(tool_idx < 11) { tool_idx++ }}" tabindex="0">
+  <div id="tools-container" ref="tools" @keyup.left="keyLeft" @keyup.right="keyRight" tabindex="0">
     <h5>&lt;Tools&gt;</h5>
     <div id="tools-main">
       <div class="main-box arrow-div">
         <div class="arr-btns">
           <q-icon 
-            @click="tool_idx--"
+            @click="tools_prev"
             v-if="tool_idx > 0"
             class="arrow-icons"
             style="cursor: pointer;"
@@ -245,7 +245,7 @@
       <div class="main-box arrow-div">
         <div class="arr-btns">
           <q-icon
-            @click="tool_idx++"
+            @click="tools_next"
             v-if="tool_idx < 11"
             class="arrow-icons"
             style="cursor: pointer;"
@@ -298,7 +298,6 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
   export default {
     data() {
       return {
@@ -345,13 +344,29 @@ import { ref, onMounted } from 'vue'
         this.on_postgresql = false;
         this.on_typescript = false;
         this.on_three = false;
+      },
+      tools_prev() {
+        this.tool_idx = this.tool_idx - 1
+      },
+      tools_next() {
+        this.tool_idx = this.tool_idx + 1
+      },
+      keyLeft() { 
+        if(this.tool_idx > 0) { 
+          this.tool_idx = this.tool_idx - 1
+        }
+      },
+      keyRight() { 
+        if(this.tool_idx < 11) { 
+          this.tool_idx = this.tool_idx + 1
+        }
       }
     },
     mounted() {
+      this.$refs.tools.focus()
       setInterval(() => { 
-        this.$refs.tools.focus()
         if (this.tool_idx != 11) {
-          this.tool_idx++ 
+          this.tool_idx = this.tool_idx + 1 
         } else {
           this.tool_idx = 0
         }
