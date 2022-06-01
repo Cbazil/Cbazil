@@ -354,6 +354,7 @@ h6 {
 // Tablet
 @media (max-width: 830px) {
   #home {
+    margin: -40px 10px 0px 10px !important;
     overflow-y: scroll;
     #contact-card {
       position: absolute !important;

@@ -96,7 +96,7 @@
       </div>
       <div id="s-links" class="row">
         <div class="link-i">
-          <a href="https://www.linkedin.com/in/chad-bosch-b6a3b716b/">
+          <a href="https://www.linkedin.com/in/chad-bosch-b6a3b716b/" target="_blank">
             <q-icon
               size="16px"
               name="fab fa-linkedin"
@@ -107,7 +107,7 @@
           </a>
         </div>
         <div class="link-i">
-          <a href="https://twitter.com/Cbazil3">
+          <a href="https://twitter.com/Cbazil3" target="_blank">
             <q-icon
               size="16px"
               name="fab fa-twitter"
@@ -117,7 +117,7 @@
           </a>
         </div>
         <div class="link-i">
-          <a href="https://github.com/Cbazil">
+          <a href="https://github.com/Cbazil" target="_blank">
             <q-icon
               size="16px"
               name="fab fa-github"
@@ -127,7 +127,7 @@
           </a>
         </div>
         <div class="link-i">
-          <a href="https://medium.com/@cbazil">
+          <a href="https://medium.com/@cbazil" target="_blank">
             <q-icon
               size="16px"
               name="fab fa-medium-m"

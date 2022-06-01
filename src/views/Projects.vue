@@ -25,10 +25,9 @@
                     ref="carousel_p1"
                     infinite
                   >
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/first-cv1.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/first-cv2.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/first-cv3.jpg')" />
-                  
+                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/first-cv1.jpg')" />
+                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/first-cv2.jpg')" />
+                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/first-cv3.jpg')" />
                     <template v-slot:control>
                       <q-carousel-control
                         position="top-left"
@@ -91,12 +90,11 @@
                     swipeable
                     animated
                     v-model="project2"
-                    :autoplay="autoplay"
                     ref="carousel_p2"
                     infinite
                   >
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/tictactoe.jpg')" />
-                  
+                    <q-carousel-slide @click.prevent="project2Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/tictactoe-2.jpg')" />
+                    <q-carousel-slide @click.prevent="project2Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/tictactoe-1.jpg')" />
                     <template v-slot:control>
                       <q-carousel-control
                         position="top-left"
@@ -512,6 +510,13 @@ export default {
       infoP10.value = !infoP10.value;
     }
 
+    const project1Link = () => {
+      window.open("https://cbazil.github.io/Online-CV/index.html")
+    }
+    const project2Link = () => {
+      window.open("https://cbazil-tictactoe.web.app")
+    }
+
     return {
       project1: ref(1),
       project2: ref(2),
@@ -544,7 +549,9 @@ export default {
       infoP9,
       toggleInfoP9,
       infoP10,
-      toggleInfoP10
+      toggleInfoP10,
+      project1Link,
+      project2Link
     }
   }
 }
@@ -583,7 +590,7 @@ $blue: #5271ff;
         overflow-x: scroll;
         overflow-y: hidden;
         .csp1 {
-          background-image: url('../assets/projects/tictactoe.jpg');
+          background-image: url('../assets/projects/tictactoe.png');
         }
         .csp2 {
           background-image: url('../assets/projects/gameofluck.png');
