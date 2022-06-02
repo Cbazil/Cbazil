@@ -107,7 +107,7 @@
           </a>
         </div>
         <div class="link-i">
-          <a href="https://twitter.com/Cbazil3" target="_blank">
+          <a href="https://twitter.com/cbazil_dev" target="_blank">
             <q-icon
               size="16px"
               name="fab fa-twitter"
