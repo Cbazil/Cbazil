@@ -397,7 +397,7 @@ h6 {
 @media (max-width: 562px) {
   #home {
     #contact-card {
-      width: 125vw !important;
+      width: 100vw !important;
       #business-card {
         width: 320px;
         height: 200px;
