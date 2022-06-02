@@ -144,7 +144,7 @@ $blue: #5271ff;
     display: flex !important;
     justify-content: center;
     align-items: center;
-    margin-left: -40px;
+    margin-left: -34px;
     #business-card {
       cursor: none;
       width: 740px;
@@ -359,7 +359,8 @@ h6 {
     #contact-card {
       position: absolute !important;
       padding: 0 !important;
-      width: 112vw !important;
+      margin-left: 0px !important;
+      width: 100% !important;
       #business-card {
         width: 480px;
         height: 300px;
@@ -398,9 +399,10 @@ h6 {
   #home {
     #contact-card {
       width: 100vw !important;
+      overflow: none !important;
       #business-card {
-        width: 320px;
-        height: 200px;
+        width: 320px !important;
+        height: 200px !important;
       }
     }
     #home-container {
