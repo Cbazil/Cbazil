@@ -590,7 +590,7 @@ $blue: #5271ff;
           background-image: url('../assets/projects/tictactoe.png');
         }
         .csp2 {
-          background-image: url('../assets/projects/gameofluck.png');
+          background-image: url('../assets/projects/unluckyhole.png');
         }
         .csp3 {
           background-image: url('../assets/projects/doorguys.png');
