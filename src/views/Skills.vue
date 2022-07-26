@@ -202,6 +202,44 @@ $blue: #5271ff;
   box-shadow: none;
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+  #skills {
+    #skills-container {
+      margin-bottom: 24px;
+     h3 {
+        font-size: 30px !important;
+        line-height: 42px;
+      }
+     #skills-container1 {
+        #header1-div {
+          width: 594px;
+          h1 {
+            font-size: 84px !important;
+          }
+        }
+        #header2-div {
+          width: 740px;
+        }
+        #skills-div {
+          margin-top: 60px;
+          width: 740px;
+        }
+        .skill {
+          width: 720px;
+          height: 34px;
+          margin-top: 50px;
+          h4 {
+            margin-top: 6px;
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 // laptop responsiveness 1 
 @media (max-width: 1440px) {
   #skills {

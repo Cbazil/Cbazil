@@ -565,6 +565,18 @@ $blue: #5271ff;
   }
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+  #blog-container {
+    height: 610px !important;
+    .q-btn {
+        font-size: 20px !important;
+        margin: -10px 10px !important;
+    }
+  }
+   
+}
+
 // Tablet
 @media (max-width: 830px) {
   #blog-view {

@@ -16,6 +16,7 @@
       <img id="arrowBR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/down arrow bounces">
     </div>
   </div>
+  <div id="cursor" class="Cursor"></div>
 </template>
 
 <script>
@@ -101,6 +102,30 @@ export default {
 <style lang="scss">
 $grey: #353639;
 $dark: #2b2c2e;
+
+.Cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  transform-origin: center center;
+  mix-blend-mode: difference;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  span {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color:white;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) 
+  }
+}
+    
+  // filter url("#goo")
 
 #container-slot {
   background: $grey;

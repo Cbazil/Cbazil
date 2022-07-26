@@ -278,6 +278,35 @@ h6 {
   box-shadow: none;
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+  #home {
+    #contact-card {
+      #business-card {
+         width: 920px;
+         height: 540px;
+      }
+    }
+    #home-container {
+      margin-bottom: 20px;
+      #home-container1 {
+        .hire-btns {
+          font-size: 20px !important;
+        }
+        #header1-div {
+          width: 900px;
+        }
+        #header2-div {
+          width: 880px;
+        }
+        #header2 {
+          margin: -15px 12px !important;
+        }
+      }
+    }
+  }
+}
+
 // laptop responsiveness 1 
 @media (max-width: 1440px) {
   h5 {

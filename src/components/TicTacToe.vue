@@ -436,27 +436,29 @@ export default {
     if (playerTurn.value && event.currentTarget.children.length == 0 && (gameOver.value == false)) {
       store.state.playerPlayed = true
       store.methods.handlePlayerMove(event.currentTarget.id)
-      winnerFound(store.state.squares)
-      if (!gameOver.value) {
-        handleAIMove(store.state.squares)
+      setTimeout(() => {
         winnerFound(store.state.squares)
-      }
-      if(squares.value[0].val.length > 0
-      && squares.value[1].val.length > 0
-      && squares.value[2].val.length > 0
-      && squares.value[3].val.length > 0
-      && squares.value[4].val.length > 0
-      && squares.value[5].val.length > 0
-      && squares.value[6].val.length > 0
-      && squares.value[7].val.length > 0
-      && squares.value[8].val.length > 0
-      ) {
-        store.methods.togglePlay(true)
-      }
-      // Update squares
-      if (!gameOver.value) {
-        store.methods.updateTurn(true)
-      }
+        if (!gameOver.value) {
+          handleAIMove(store.state.squares)
+          winnerFound(store.state.squares)
+          if(squares.value[0].val.length > 0
+          && squares.value[1].val.length > 0
+          && squares.value[2].val.length > 0
+          && squares.value[3].val.length > 0
+          && squares.value[4].val.length > 0
+          && squares.value[5].val.length > 0
+          && squares.value[6].val.length > 0
+          && squares.value[7].val.length > 0
+          && squares.value[8].val.length > 0
+          ) {
+            store.methods.togglePlay(true)
+          }
+        }
+        // Update squares
+        if (!gameOver.value) {
+          store.methods.updateTurn(true)
+        }
+      }, 500)
     } else {
       var audio = await new Audio('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3')
       audio.play();
@@ -600,6 +602,55 @@ button {
 .turn {
   color: $green !important;
   border: none !important;
+}
+
+// larger laptops
+@media (min-width: 1580px) {
+  #container {
+    margin: 10px 0px;
+    padding: 0;
+    width: 480px !important;
+    height: 520px !important;
+  }
+  .pieces {
+    width: 94px;
+    height: 94px;
+  }
+  button {
+    font-size: 22px !important;
+  }
+  .squares {
+    max-width: 190px !important;
+    max-height: 190px !important;
+    width: 154px !important;
+    height: 154px !important;
+    margin: 0;
+    padding: 20% !important;
+  }
+  #grid {
+    grid-gap: 12px;
+  }
+  .ruler {
+    // margin-left: 13px;
+    margin-top: -304px;
+    width: 480px;
+    height: 16px;
+  }
+  #ggLeft {
+    left: -166px;
+  }
+  #ggRight {
+    left: 166px;
+  }
+  #ggTop {
+    top: -166px;
+  }
+  #ggBottom {
+    top: 166px;
+  }
+  #ggDileft {
+    margin-top: -303px;
+  }
 }
 
 // Laptop responsiveness 1 > mobile

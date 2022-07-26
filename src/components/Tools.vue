@@ -509,6 +509,67 @@ $green: #7ed957;
     box-shadow: none;
   }
 
+// larger laptops
+@media (min-width: 1580px) {
+  #tools-container {
+    margin-top: -15px;
+    width: 900px;
+     #tools-main {
+      .arrow-icons {
+        font-size: 84px;
+      }
+      .arr-btns {
+        width: 90px;
+      }
+      .main-box {
+        width: 100%;
+        height: 420px !important;
+        .image-sqr {
+          width: 300px;
+          height: 300px;
+        }
+      }
+      .skill-name {
+        height: 40px;
+        h4 {
+        font-size: 24px;
+        line-height: 40px;
+        font-weight: 6px;
+        height: 24px;
+        }
+      }
+      .skill-bar {
+        height: 40px;
+        .skill-lvl {
+          p {
+            font-size: 24px;
+            line-height: 40px;
+          }
+        }
+      }
+      .box-tool-desc {
+        height: 380px;
+        h2 {
+          line-height: 36px !important;
+          font-size: 24px !important;
+        }
+      }
+      
+    }
+    #mini-cntrs {
+      height: 48px;
+      margin: 20px 100px;
+      .mini-box {
+        width: 42px;
+        height: 42px;
+        .pagi-img {
+          width: 42px;
+          height: 42px;
+        }
+      }
+    }
+  }
+}
   
 // laptop responsiveness 1 
 @media (max-width: 1440px) {

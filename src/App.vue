@@ -375,6 +375,18 @@ h3 {
   } 
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+  h1 {
+    font-size: 126px !important;
+    line-height: 44px !important;
+  }
+  h2 {
+    font-size: 50px !important;
+    line-height: 36px !important;
+  }
+}
+
 // Laptop responsiveness 1 
 @media (max-width: 1440px) {
   h1 {

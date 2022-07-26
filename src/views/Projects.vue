@@ -707,6 +707,36 @@ $blue: #5271ff;
   background: #fff; 
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+  #projects {
+    #projects-container {
+      #proj-title {
+        width: 516px;
+        h1 {
+          font-size: 84px !important;
+        }
+      }
+      #project-gallery {
+        #gallery-div {
+          height: 610px !important;
+           .single-container {
+              width: 1000px !important;
+           }
+          .duo-container {
+            .mini-container {
+              height: 280px !important;
+            }
+          }
+          .container {
+            width: 480px;
+          }
+        }
+      }
+    }
+  }
+}
+
 // Laptop 1
 @media (max-width: 1440px) {
   #projects {

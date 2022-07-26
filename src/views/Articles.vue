@@ -304,6 +304,26 @@ $blue: #5271ff;
   }
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+   #articles {
+    #blogs-container {
+      #blogs-header {
+        #header1-div {
+          width: 400px;
+          h1 {
+            font-size: 84px !important;
+          }
+        }
+      }
+      #blogs-container1 {
+        height: 620px;
+      }
+    }
+   }
+}
+
+// Laptop 1
 @media (max-width: 1504px) {
   #articles {
     #blogs-container {
@@ -319,7 +339,7 @@ $blue: #5271ff;
     }
   }
 }
-// Laptop 1
+// Laptop 2
 @media (max-width: 1440px) {
   #articles {
     #blogs-container {

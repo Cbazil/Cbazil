@@ -143,6 +143,40 @@ $blue: #5271ff;
   box-shadow: none;
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+  #about {
+    #about-container {
+      margin-bottom: 12px;
+      #about-container1 {
+        #header1-div {
+          width: 420px;
+          h1 {
+            font-size: 84px !important;
+            margin: -15px 28px;
+          }
+        }
+        #header2-div {
+          width: 880px !important;
+          h3 {
+            font-size: 30px !important;
+            line-height: 42px;
+          }
+        }
+        #hobbies-div {
+          margin-top: 50px;
+          width: 880px;
+          #hobbies {
+            .hobby {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // laptop responsiveness 1 
 @media (max-width: 1440px) {
   #about {

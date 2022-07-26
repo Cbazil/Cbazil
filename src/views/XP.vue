@@ -362,6 +362,34 @@ $blue: #5271ff;
   box-shadow: none;
 }
 
+// larger laptops
+@media (min-width: 1580px) {
+  #experience {
+    #edu-container {
+      #edu-title {
+        width: 1122px !important;
+        h1 {
+          font-size: 84px !important;
+          margin: 10px 35px;
+        }
+      }
+      #timelines {
+        // .subject-list {
+        //   font-size: 20px;
+        // }
+
+        // .line-title {
+        // font-size: 28px !important;
+        // }
+         #edu-timeline, #exp-timeline {
+          height: 600px !important;
+         }
+      }
+    }
+  }
+}
+
+// Laptop 1
 @media (max-width: 1040px) {
   #experience {
     #edu-container {
