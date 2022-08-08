@@ -19,7 +19,7 @@
                   <q-carousel
                     class="mini-container container"
                     swipeable
-                    animated
+                    animate
                     v-model="project1"
                     :autoplay="autoplay"
                     ref="carousel_p1"
@@ -303,7 +303,7 @@
             </q-btn>
             <div class="duo-container">
               <q-btn class="proj-btns" size="15px" outline>
-                <div class="mini-container container csp2 csp" :class="{ project_desc: infoP5 }">
+                <!-- <div class="mini-container container csp2 csp" :class="{ project_desc: infoP5 }">
                   <q-btn
                     push
                     dense
@@ -319,7 +319,74 @@
                     />
                   </q-btn>
                   <p v-if="infoP5" class="comingSoon">I'm building a leader board "ALL ABOUT LUCK GAME" where the top 1oo scores will be showcased on a live leaderboard. Test your luck!, At the end your chances are 50/50 until your luck runs out.</p>
-                </div>
+                </div> -->
+                <q-carousel
+                    class="mini-container container"
+                    swipeable
+                    animated
+                    v-model="project5"
+                    :autoplay="autoplay"
+                    ref="carousel_p5"
+                    infinite
+                  >
+                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/unlucky_hole1.jpg')" />
+                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/unlucky_hole2.jpg')" />
+                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/unlucky_hole3.jpg')" />
+                    <template v-slot:control>
+                      <q-carousel-control
+                        position="top-left"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          rounded
+                          size="18px"
+                          style="padding: 4px 12px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          @click="toggleInfoP5"
+                        >
+                          <q-icon
+                            size="12px"
+                            name="fa fa-solid fa-info"
+                          />
+                        </q-btn>
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="top-right"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push
+                          dense
+                          style="margin-right: 4px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12" 
+                          icon="fa fa-angle-left"
+                          @click="$refs.carousel_p5.previous()"
+                        />
+                        <q-btn
+                          push
+                          dense 
+                          style="4px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          icon="fa fa-angle-right"
+                          @click="$refs.carousel_p5.next()"
+                        />
+                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="bottom"
+                        class="text-white rounded-borders"
+                        :class="{project_desc: infoP5}"
+                        style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
+                      >
+                        <h6 class="project_name">Unlucky_Hole (GameOfLuck)</h6>
+                        <p v-if="infoP5" class="project_details">Retro Leader board game, where you test how far your luck can get you before it runs out.</p>
+                      </q-carousel-control>
+                    </template>
+                </q-carousel>
               </q-btn>
               <q-btn class="proj-btns" size="15px" outline>
                 <div class="mini-container container csp3 csp" :class="{ project_desc: infoP6 }">
@@ -514,6 +581,10 @@ export default {
       window.open("https://cbazil-tictactoe.web.app")
     }
 
+    const project5Link = () => {
+      window.open("https://unlucky-hole.vercel.app")
+    }
+
     return {
       project1: ref(1),
       project2: ref(2),
@@ -548,7 +619,8 @@ export default {
       infoP10,
       toggleInfoP10,
       project1Link,
-      project2Link
+      project2Link,
+      project5Link
     }
   }
 }

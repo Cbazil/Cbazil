@@ -499,7 +499,7 @@ $blue: #5271ff;
   #blog-container {
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 417px;
     margin: 55px 20px 20px 20px;
     #content-box {
       padding-right: 40px;

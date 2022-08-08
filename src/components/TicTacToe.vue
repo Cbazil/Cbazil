@@ -589,7 +589,7 @@ $blue: #5271ff;
   text-align: center;
 }
 .control-btn {
-  margin-top: -15px;
+  margin-top: -50px;
 }
 
 button {

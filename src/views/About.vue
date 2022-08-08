@@ -15,7 +15,7 @@
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
-            <h3>I love creating things aswell as solve problems, my interest in computer science and math has always been a big passion and driver of mine. I enjoy playing video games, reading Manga/Comics, watching anime and discovering new music. I am very goal driven and like discovering new interests as well as learning new things. I'm a honest, trustworthy, reliable, creative and an innovative person. I work well underpressure, I'm able to take initative and have strong leadership qualities.</h3>
+            <h3>I am Chad Bazil Bosch (Developer, Gamer & Otaku). I love creating things aswell as solve problems, my interest in computer science and math has always been a big passion and driver of mine. I enjoy playing video games, reading Manga/Comics, watching anime and discovering new music. I am very goal driven and like discovering new interests as well as learning new things. I'm a honest, trustworthy, reliable, creative and an innovative person. I work well underpressure, I'm able to take initative and have strong leadership qualities.</h3>
             <h5 style="display: flex; justify-content: end;">&lt;/h2&gt;</h5>
           </div>
           <div id="hobbies-div">
@@ -100,7 +100,7 @@ $blue: #5271ff;
     padding: 0px 10px;   
     width: 60%;
     #header1-div {
-      width: 320px;
+      width: 330px;
       h1 {
         font-size: 65px !important;
         margin: -15px 25px;
@@ -111,7 +111,7 @@ $blue: #5271ff;
       h3 {
         margin: -15px 0;
         padding: 10px 25px;
-        line-height: 34px;
+        line-height: 30px;
       }
       h5 {
         margin: 15px 0;

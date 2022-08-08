@@ -23,7 +23,7 @@
                 <q-timeline-entry
                   title="LCStudio"
                   class="event-title"
-                  subtitle="September 2020 - Current"
+                  subtitle="September 2020 - 31 May 2022"
                   color="light-green-12"
                   side="left"
                 >
@@ -34,7 +34,7 @@
                   <ul class="subject-list">
                     <li class="subject">HTML</li>
                     <li class="subject">CSS & SASS</li>
-                    <li class="subject">Tailwind</li>
+                    <li class="subject">TailwindCSS</li>
                     <li class="subject">Vue Material</li>
                     <li class="subject">Vuetify</li>
                     <li class="subject">Quasar Framework</li>
@@ -144,7 +144,7 @@
                       <li class="subject">HTML</li>
                       <li class="subject">CSS & SASS</li>
                       <li class="subject">Bootstrap & Bulma</li>
-                      <li class="subject">Javascript, jquery & Nodejs</li>
+                      <li class="subject">Javascript, JQuery & Nodejs</li>
                     </ul>
                   </div>
                 </q-timeline-entry>
@@ -178,7 +178,7 @@
                   side="left"
                 >
                   <div class="exp-content">
-                    Attendant a community college that upskilled, helped us with career paths and with further our education (Help apply for colleges and bursaries).
+                    Attended a community college that upskilled, helped us with career paths and with further our education (Help apply for colleges and bursaries).
                   </div>
                   <h6 class="line-title">Subjects</h6>
                   <ul class="subject-list">
