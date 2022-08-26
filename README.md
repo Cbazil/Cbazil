@@ -1,4 +1,4 @@
-# cbazil
+# cbazil portfolio
 
 ## Project setup
 ```
