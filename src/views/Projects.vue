@@ -383,7 +383,7 @@
                         style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
                       >
                         <h6 class="project_name">Unlucky_Hole (GameOfLuck)</h6>
-                        <p v-if="infoP5" class="project_details">Retro Leader board game, where you test how far your luck can get you before it runs out.</p>
+                        <p v-if="infoP5" class="project_details">Retro Leader board game, where you test how far your luck can get you before it runs out. Looking for alternative database, reworking RESTful API.</p>
                       </q-carousel-control>
                     </template>
                 </q-carousel>

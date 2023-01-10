@@ -49,12 +49,36 @@
         <h5>&lt;/html&gt;</h5>
       </div>
     </PageContainer>
-    <div id="contact-card" @click.prevent="toggleCard" v-if="showCard">
+    <div id="contact-card" v-if="showCard">
       <q-card flat bordered>
-        <q-img
+        <!-- <q-img
           id="business-card"
           :src="require('../assets/contact.png')"
-        />
+        /> -->
+        <div id="business-card">
+          <div class="c-forms">
+            <img src="../assets/email.png" width="80" height="80" alt="Email logo">
+          </div>
+          <div class="c-forms">
+            <h3 class="e-title">Get in touch</h3>
+          </div>
+          <div class="c-forms">
+            <input type="text" placeholder="Name" standout class="c-input" dense outlined />
+            <input type="text" placeholder="Surname" class="c-input" dense outlined />
+          </div>
+          <div class="c-forms c-form-2">
+            <input type="email" placeholder="Email" class="c-input" dense  outlined  />
+            <input type="title" placeholder="Title" class="c-input" dense  outlined  />
+          </div>
+          <div class="c-forms">
+            <textarea rows="3" class="c-t-area" placeholder="Message"></textarea>
+          </div>
+          <div class="r-forms">
+            <div class="r-btn">
+              <q-btn outline color="green">Send</q-btn> 
+            </div>
+          </div>
+        </div>
       </q-card>
     </div>
   </span>
@@ -142,13 +166,68 @@ $blue: #5271ff;
     z-index: 10;
     position: absolute !important;
     display: flex !important;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-left: -34px;
+    position: relative;
+    display: flex;
+    justify-content: center;
     #business-card {
+      background: #2b2c2e;
+      padding: 25px;
       cursor: none;
       width: 740px;
       height: 400px;
+      display: block;
+      .c-form-2 {
+        margin-top: -4px !important;
+      }
+      .c-forms {
+        margin: 0 22px;
+        display: flex;
+        justify-content: space-around;
+        .e-title {
+          margin: 0px !important;
+          margin-top: -6px !important;
+          margin-bottom: 2px !important; 
+        }
+        .c-t-area {
+          position: relative;
+          box-shadow: none;
+          width: 100%;
+          margin: 0 4px;
+          color: #ffffff;
+          background-color: #2b2c2e;
+          border-color: #ffffff !important;
+        }
+        .c-input {
+          box-shadow: none;
+          width: 100%;
+          height: 35px;
+          margin: 4px;
+          box-sizing: border-box;
+          background-color: #2b2c2e;
+          border-color: #ffffff !important;
+          // border-radius: 2%;
+          padding: 5px; 
+          border: 1px solid #fff;
+          color: #ffffff !important;
+          margin-bottom: 12px;
+        }
+      }
+      .r-forms {
+        margin: 0 24px;
+        display: flex;
+        justify-content: space-around;
+        .r-btn {
+          height: 35px !important;
+          position: relative;
+          width: 100%;
+          margin-top: 10px;
+          display: flex;
+          justify-content: end;
+        }
+      }
     }
   }
 }
