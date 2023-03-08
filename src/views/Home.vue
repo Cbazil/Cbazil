@@ -63,7 +63,7 @@
             <h3 class="e-title">Get in touch</h3>
           </div>
           <div class="c-forms">
-            <input type="text" placeholder="Name" standout class="c-input" dense outlined required />
+            <input type="text" placeholder="Name" standout class="c-input" name="name" dense outlined required />
             <input type="text" placeholder="Surname" class="c-input" dense outlined />
           </div>
           <div class="c-forms c-form-2">
