@@ -3,7 +3,7 @@
     <div id="back-btn">
       <h6>&lt;q-btn&gt;</h6>
       <q-btn size="15px" @click.prevent="handleBackToMain" outline>back</q-btn>
-      <h6 style="display: flex; position: relative; justify-content: end;">&lt;/q-btn&gt;</h6>
+      <h6 style="display: flex; position: relative; justify-content: flex-end;">&lt;/q-btn&gt;</h6>
     </div>
     <div id="blog-container">
       <div id="content-box">

@@ -11,25 +11,25 @@
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
             <div id="heading1"><h1><span class="text">H</span><span class="text">i</span><span class="text">,</span></h1><h1><span class="text">I</span><span class="text">'</span><span class="text">m</span> <span class="text">C</span><span class="text">b</span><span class="text">a</span><span class="text">z</span><span class="text">i</span><span class="text">l</span><span class="text">,</span></h1><h1><span class="text">W</span><span class="text">e</span><span class="text">b</span> <span class="text">D</span><span class="text">e</span><span class="text">v</span><span class="text">e</span><span class="text">l</span><span class="text">o</span><span class="text">p</span><span class="text">e</span><span class="text">r</span><span class="text">.</span></h1></div>
-            <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
               <div id="header2"><h2>Fullstack Developer / Freelancer</h2></div>
-            <h5 style="display: flex; justify-content: end; margin-top: 34px !important;">&lt;/h2&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end; margin-top: 34px !important;">&lt;/h2&gt;</h5>
           </div>
           <div id="hire-container">
             <div class="home-btns">
               <h6>&lt;q-btn&gt;</h6>
               <q-btn class="hire-btns" @click.prevent="toggleCard" size="15px" id="hire-btn" outline>Hire me!</q-btn>
-              <h6 style="display: flex; justify-content: end;">&lt;/q-btn&gt;</h6>
+              <h6 style="display: flex; justify-content: flex-end;">&lt;/q-btn&gt;</h6>
             </div>
             <div class="home-btns">
               <h6>&lt;q-btn&gt;</h6>
               <a style="text-decoration: none;" download="Curriculum Vitae of Chad Bosch" href="/assets/resume.pdf">
                 <q-btn class="hire-btns" size="15px" id="cv-download" outline>Download CV Document</q-btn>
               </a>
-              <h6 style="display: flex; justify-content: end;">&lt;/q-btn&gt;</h6>
+              <h6 style="display: flex; justify-content: flex-end;">&lt;/q-btn&gt;</h6>
             </div>
           </div>
         </div>
@@ -55,30 +55,30 @@
           id="business-card"
           :src="require('../assets/contact.png')"
         /> -->
-        <div id="business-card">
+        <form id="business-card" action="https://formsubmit.co/fbf3d3a0b2807b99bc5b96e2fcbb5f50" method="POST">
           <div class="c-forms">
-            <img src="../assets/email.png" width="80" height="80" alt="Email logo">
+            <img src="../assets/email.png" width="80" height="80" alt="Email logo" >
           </div>
           <div class="c-forms">
             <h3 class="e-title">Get in touch</h3>
           </div>
           <div class="c-forms">
-            <input type="text" placeholder="Name" standout class="c-input" dense outlined />
+            <input type="text" placeholder="Name" standout class="c-input" dense outlined required />
             <input type="text" placeholder="Surname" class="c-input" dense outlined />
           </div>
           <div class="c-forms c-form-2">
-            <input type="email" placeholder="Email" class="c-input" dense  outlined  />
-            <input type="title" placeholder="Title" class="c-input" dense  outlined  />
+            <input type="email" placeholder="Email" class="c-input" name="email" dense  outlined required />
+            <input type="title" placeholder="Title" class="c-input" name="_subject" dense  outlined required />
           </div>
           <div class="c-forms">
-            <textarea rows="3" class="c-t-area" placeholder="Message"></textarea>
+            <textarea rows="3" name="message" class="c-t-area" placeholder="Message"></textarea>
           </div>
           <div class="r-forms">
             <div class="r-btn">
-              <q-btn outline color="green">Send</q-btn> 
+              <q-btn outline color="green" type="submit">Send</q-btn> 
             </div>
           </div>
-        </div>
+        </form>
       </q-card>
     </div>
   </span>
@@ -225,7 +225,7 @@ $blue: #5271ff;
           width: 100%;
           margin-top: 10px;
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
         }
       }
     }

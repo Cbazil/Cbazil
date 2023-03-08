@@ -10,7 +10,7 @@
         <div id="proj-title">
           <h5>&lt;h1&gt;</h5>
           <h1 id="heading1">My Projects</h1>
-          <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
+          <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
         </div>
         <div id="project-gallery">
           <div id="gallery-div">

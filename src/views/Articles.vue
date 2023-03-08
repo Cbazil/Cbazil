@@ -11,7 +11,7 @@
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
             <h1 id="heading1">My Blogs</h1>
-            <h5 style="display: flex; justify-content: end;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
           </div>
         </div>
         <div id="container-content">

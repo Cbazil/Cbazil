@@ -293,7 +293,7 @@
         <img class="pagi-img" src="../assets/stacks/three.png" alt="threejs">
       </div>
     </div>
-    <h5 style="display: flex; justify-content: end;">&lt;/Tools&gt;</h5>
+    <h5 style="display: flex; justify-content: flex-end;">&lt;/Tools&gt;</h5>
   </div>
 </template>
 

@@ -11,12 +11,12 @@
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
             <h1>Skills & Stacks</h1>
-            <h5 style="display: flex; justify-content: end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
             <h3>Fullstack Javascript developer, develops web apps using Javascript and NodeJS framework/libraries.</h3>
-            <h5 style="display: flex; justify-content: end; ">&lt;/h2&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end; ">&lt;/h2&gt;</h5>
           </div>
           <div id="skills-div">
             <h5>&lt;Skills&gt;</h5>
@@ -52,7 +52,7 @@
                 <div class="design-lvl"></div>
               </div>
             </div>
-            <h5 style="display: flex; justify-content: end;  margin-top: 25px !important;">&lt;/Skills&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;  margin-top: 25px !important;">&lt;/Skills&gt;</h5>
           </div>
         </div>
         <div id="skills-container2">

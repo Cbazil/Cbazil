@@ -11,12 +11,12 @@
           <div id="header1-div">
             <h5>&lt;h1&gt;</h5>
             <h1 id="heading1">About me</h1>
-            <h5 style="display: flex; justify-content: end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
             <h3>I am Chad Bazil Bosch (Developer, Gamer & Otaku). I love creating things aswell as solve problems, my interest in computer science and math has always been a big passion and driver of mine. I enjoy playing video games, reading Manga/Comics, watching anime and discovering new music. I am very goal driven and like discovering new interests as well as learning new things. I'm a honest, trustworthy, reliable, creative and an innovative person. I work well underpressure, I'm able to take initative and have strong leadership qualities.</h3>
-            <h5 style="display: flex; justify-content: end;">&lt;/h2&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;">&lt;/h2&gt;</h5>
           </div>
           <div id="hobbies-div">
             <h5>&lt;Hobbies&gt;</h5>
@@ -27,7 +27,7 @@
               <div class="hobby" >Manga/Comics</div>
               <div class="hobby" >Listening to Music</div>
             </div>
-            <h5 style="display: flex; justify-content: end; margin-top: 15px !important;">&lt;/Hobbies&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end; margin-top: 15px !important;">&lt;/Hobbies&gt;</h5>
           </div>
         </div>
          <div id="about-container2">
