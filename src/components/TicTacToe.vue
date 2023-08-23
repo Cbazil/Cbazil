@@ -109,14 +109,11 @@ export default {
 
   const randumb = (arr1, arr2) => {
     let percent = Math.ceil(Math.random() * 100);
-    // console.log(percent);
     if (percent > 70) {
       let ranNum = Math.floor(Math.random() * arr2.length);
-      // console.log('Array Two: ', ranNum);
       return arr2[ranNum];
     } else {
       let ranNum = Math.floor(Math.random() * arr1.length);
-     // console.log('Array One: ', ranNum);
       return arr1[ranNum];
     }
   };
