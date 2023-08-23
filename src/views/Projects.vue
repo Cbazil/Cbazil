@@ -13,7 +13,7 @@
           <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
         </div>
         <div id="project-gallery">
-          <div id="gallery-div">
+          <div ref="scrollContainer" @wheel.prevent="handleWheel($event)" id="gallery-div">
             <div class="duo-container">
               <q-btn class="proj-btns" size="15px" outline>
                   <q-carousel
@@ -78,8 +78,10 @@
                         :class="{project_desc: infoP1}"
                         style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
                       >
-                        <h6 class="project_name">My First Online CV</h6>
-                        <p v-if="infoP1" class="project_details">This was my very first online porfolio, I had it made before graduating from the CodeSpace course at Life Choices Coding Academy.</p>
+                        <div class="project_container"> 
+                          <h6 class="project_name">My First Online CV</h6>
+                          <p v-if="infoP1" class="project_details">This was my very first online porfolio, I had it made before graduating from the CodeSpace course at Life Choices Coding Academy.</p>
+                        </div>
                       </q-carousel-control>
                     </template>
                 </q-carousel>
@@ -145,8 +147,10 @@
                         :class="{project_desc: infoP2}"
                         style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
                       >
+                      <div class="project_container"> 
                         <h6 class="project_name">TicTacToe AI Game</h6>
                         <p v-if="infoP2" class="project_details">This TicTacToe Game you can find on this portfolio's home and about pages, It's a AI base game I put together.</p>
+                      </div>
                       </q-carousel-control>
                     </template>
                 </q-carousel>
@@ -220,8 +224,10 @@
                       :class="{project_desc: infoP3}"
                       style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
                     >
-                      <h6 class="project_name">Health4Life App (Private)</h6>
-                      <p v-if="infoP3" class="project_details">This is a data capturing app, that captures HIV/Health risks tests done in coummunities and schools by the Health4Life Councellors at Life Choices. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                      <div class="project_container"> 
+                        <h6 class="project_name">Health4Life App (Private)</h6>
+                        <p v-if="infoP3" class="project_details">This is a data capturing app, that captures HIV/Health risks tests done in coummunities and schools by the Health4Life Councellors at Life Choices. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                      </div>
                     </q-carousel-control>
                   </template>
                 </q-carousel>
@@ -294,8 +300,10 @@
                         :class="{project_desc: infoP4}"
                         style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
                       >
-                        <h6 class="project_name">Life Choices Admin (Private)</h6>
-                        <p v-if="infoP4" class="project_details">This is an admin data capturing systems app, that makes Life Choices all Digital which saves time and increases productivity within the organisation. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                        <div class="project_container"> 
+                          <h6 class="project_name">Life Choices Admin (Private)</h6>
+                          <p v-if="infoP4" class="project_details">This is an admin data capturing systems app, that makes Life Choices all Digital which saves time and increases productivity within the organisation. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                        </div>
                       </q-carousel-control>
                     </template>
                   </q-carousel>
@@ -303,23 +311,6 @@
             </q-btn>
             <div class="duo-container">
               <q-btn class="proj-btns" size="15px" outline>
-                <!-- <div class="mini-container container csp2 csp" :class="{ project_desc: infoP5 }">
-                  <q-btn
-                    push
-                    dense
-                    rounded
-                    size="18px"
-                    class="i-icon"
-                    color="light-green-12"
-                    @click="toggleInfoP5"
-                  >
-                    <q-icon
-                      size="12px"
-                      name="fa fa-solid fa-info"
-                    />
-                  </q-btn>
-                  <p v-if="infoP5" class="comingSoon">I'm building a leader board "ALL ABOUT LUCK GAME" where the top 1oo scores will be showcased on a live leaderboard. Test your luck!, At the end your chances are 50/50 until your luck runs out.</p>
-                </div> -->
                 <q-carousel
                     class="mini-container container"
                     swipeable
@@ -382,8 +373,10 @@
                         :class="{project_desc: infoP5}"
                         style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
                       >
-                        <h6 class="project_name">Unlucky_Hole (GameOfLuck)</h6>
-                        <p v-if="infoP5" class="project_details">Retro Leader board game, where you test how far your luck can get you before it runs out. Looking for alternative database, reworking RESTful API.</p>
+                        <div class="project_container"> 
+                          <h6 class="project_name">Unlucky_Hole (GameOfLuck)</h6>
+                          <p v-if="infoP5" class="project_details">Retro Leader board game, where you test how far your luck can get you before it runs out. Looking for alternative database, reworking RESTful API.</p>
+                        </div>  
                       </q-carousel-control>
                     </template>
                 </q-carousel>
@@ -404,7 +397,10 @@
                       name="fa fa-solid fa-info"
                     />
                   </q-btn>
-                  <p v-if="infoP6" class="comingSoon">I'll be building a business calucator, that returns the total price of a selected/(in-app built) graphic with specified specs. This project is private as it contains business formulas.</p>
+                  <div v-if="infoP6" class="project_container"> 
+                    <h6 class="project_name p_card">MiniUmp</h6>
+                    <p class="comingSoon">I'm building a score keeping and match fixing (Badminton) appplication, for a social group activity I participate in.</p>
+                  </div>
                 </div>
               </q-btn>
             </div>
@@ -424,7 +420,10 @@
                       name="fa fa-solid fa-info"
                     />
                   </q-btn>
-                  <p v-if="infoP7" class="comingSoon">This one I would consider to be one of the bigger projects I've decided to build, more info of this innovative project on release. Very Exited so please do stay tuned!</p>
+                   <div v-if="infoP7" class="project_container"> 
+                    <h6 class="project_name p_card">CStash</h6>
+                    <p class="comingSoon">This one I would consider to be one of the bigger projects I've decided to build, more info of this innovative project on release. Very Exited so please do stay tuned!</p>
+                   </div>
               </div>
             </q-btn>
             <div class="duo-container">
@@ -444,7 +443,10 @@
                       name="fa fa-solid fa-info"
                     />
                   </q-btn>
-                  <p v-if="infoP8" class="comingSoon">I'll be making (10-12) pre-configured templates. Still working on the full idea (Well testing if it'll work), but I think I'm on to something.</p>
+                  <div v-if="infoP8" class="project_container"> 
+                    <h6 class="project_name p_card">PreloadCSS</h6>
+                    <p class="comingSoon">I'll be making (10-12) pre-configured templates. Still working on the full idea (Well testing if it'll work), but I think I'm on to something.</p>
+                  </div>
                 </div>
               </q-btn>
               <q-btn class="proj-btns" size="15px" outline>
@@ -463,7 +465,10 @@
                       name="fa fa-solid fa-info"
                     />
                   </q-btn>
-                  <p v-if="infoP9" class="comingSoon">I see potential in this app and I've already idealize a way of scaling the app if it meets enough active users, Release 2 will provide revenue whilst it challenges/grows/supports the userbase.</p>
+                  <div v-if="infoP9" class="project_container"> 
+                    <h6 class="project_name p_card">CStash V2</h6>
+                    <p class="comingSoon">If the app scales and it meets enough active users, Release 2 will provide revenue whilst it challenges/grows/supports the userbase.</p>
+                  </div>
                 </div>
               </q-btn>
             </div>
@@ -483,7 +488,10 @@
                       name="fa fa-solid fa-info"
                     />
                   </q-btn>
-                  <p v-if="infoP10" class="comingSoon">I've always been fascinated about 3D game development, and in the year of 2023 I'll be introducing a game idea that I personally think sounds great on paper. Excited about this and just hoping it succeeds so please do stay tuned.</p>
+                  <div v-if="infoP10" class="project_container"> 
+                    <h6 class="project_name p_card">sField</h6>
+                    <p class="comingSoon">I've always been fascinated about 3D game development, and in the year of 2023 I'll be introducing a game idea that I personally think sounds great on paper. Excited about this and just hoping it succeeds so please do stay tuned.</p>
+                  </div>
               </div>
             </q-btn>
           </div>
@@ -516,18 +524,53 @@ export default {
       router.push('/blogs')
     }
 
+    const container = ref(null)
+    
     const navScroll = (e) => {
+      
       if(e.target.classList == "q-carousel__slide" || 
         e.target.classList == "fa fa-angle-right q-icon" ||
-        e.target.classList == "fa fa-angle-left q-icon"
-      ) {} else {
-          if (e.deltaY < 0) {
+        e.target.classList == "fa fa-angle-left q-icon" || 
+        e.target.classList == "single-container container csp3 csp" || 
+        e.target.classList == "single-container container csp4 csp" ||
+        e.target.classList == "single-container container csp6 csp" ||
+        e.target.classList == "single-container container csp7 csp" || 
+        e.target.classList == "mini-container container csp5 csp" ||
+        e.target.classList == "mini-container container csp3 csp" ||
+        e.target.classList == "q-btn__content text-center col items-center q-anchor--skip justify-center row" || 
+        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--outline q-btn--rectangle q-btn--actionable q-focusable q-hoverable proj-btns" ||
+        e.target.classList == "fa fa-solid fa-info q-icon" || 
+        e.target.classList == "q-carousel__control absolute absolute-bottom text-white rounded-borders" ||
+        e.target.classList == "mini-container container csp6 csp" ||
+        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense" ||
+        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle q-btn--rounded bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense" ||
+        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle q-btn--rounded bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense i-icon" || 
+        e.target.id == "gallery-div" ||
+        e.target.classList == "project_details" ||
+        e.target.classList == "q-carousel__control absolute absolute-top-left" ||
+        e.target.classList == "q-carousel__control absolute absolute-top-right" ||
+        e.target.classList == "project_container" ||
+        e.target.classList == "comingSoon" ||
+        e.target.classList == "project_name p_card" ||
+        e.target.classList == "project_name" || 
+        e.target.classList == "duo-container"      
+      ) { return } else {
+        if (e.deltaY < 0) {
             router.push('/blogs')
-          }
+        }
       }
     }
 
-    const container = ref(null)
+    const scrollContainer = ref(null);
+
+    const handleWheel = (event) => {
+      if (event.deltaY > 0) {
+        scrollContainer.value.scrollLeft += event.deltaY
+      } else {
+        scrollContainer.value.scrollLeft -= Math.abs(event.deltaY)
+      }
+    };
+
 
     const infoP1 = ref(false)
     const infoP2 = ref(false)
@@ -598,6 +641,8 @@ export default {
       navArticles,
       container,
       navScroll,
+      scrollContainer,
+      handleWheel,
       infoP1,
       toggleInfoP1,
       infoP2,
@@ -665,7 +710,7 @@ $blue: #5271ff;
           background-image: url('../assets/projects/unluckyhole.png');
         }
         .csp3 {
-          background-image: url('../assets/projects/doorguys.png');
+          background-image: url('../assets/projects/miniump.png');
         }
         .csp4 {
           background-image: url('../assets/projects/cstash.png');
@@ -677,7 +722,7 @@ $blue: #5271ff;
           background-image: url('../assets/projects/cstash2.png');
         }
         .csp7 {
-          background-image: url('../assets/projects/mycitylifestyle.png');
+          background-image: url('../assets/projects/sfield.png');
         }
         .csp {
           position: relative;
@@ -730,8 +775,7 @@ $blue: #5271ff;
         color: white;
       }
       .project_details {
-        text-transform: none; 
-        margin-top: -24px;
+        text-transform: none;
       }
       .project_desc {
         height: 100% !important;
@@ -741,6 +785,17 @@ $blue: #5271ff;
         font-size: 17px;
         font-family: cursive;
         background: rgba(0, 0, 0, .85) !important;
+          .project_container {            
+            position: relative;
+            height: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .p_card {
+              margin-top: -50px; 
+            }
+          }       
       } 
     }
   }
@@ -791,7 +846,7 @@ $blue: #5271ff;
       }
       #project-gallery {
         #gallery-div {
-          height: 610px !important;
+          height: 600px !important;
            .single-container {
               width: 1000px !important;
            }
@@ -813,6 +868,23 @@ $blue: #5271ff;
 @media (max-width: 1440px) {
   #projects {
     #projects-container {
+       #project-gallery {
+        #gallery-div {
+          height: 360px !important;
+          .single-container {
+              width: 540px !important;
+           }
+          .duo-container {
+            .mini-container {
+              width: 300px !important;
+              height: 165px !important;
+            }
+          }
+          .project_details, .comingSoon {
+            font-size: 11px;
+          }
+        }
+      }
       margin-left: 5px;
       #proj-title {
         #heading1 {

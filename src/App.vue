@@ -4,9 +4,8 @@
       <div id="logo" class="row">
         <router-link class="r-link" to="/">
           <div class="nav-logo">
-            <!-- <img src="" /> -->
             <div id="logo-cntr">
-              <img v-if="!on_home" src="./assets/Cbazil.png" alt="Cbazil Logo">
+              <img v-if="!on_home" src="./assets/cbazil.png" alt="Cbazil Logo">
               <img v-if="on_home" src="./assets/green.png" alt="Cbazil Logo (Green)">
             </div>
           </div>
@@ -96,7 +95,7 @@
       </div>
       <div id="s-links" class="row">
         <div class="link-i">
-          <a href="https://www.linkedin.com/in/chad-bosch-b6a3b716b/" target="_blank">
+          <a href="https://www.linkedin.com/in/cbazil/" target="_blank">
             <q-icon
               size="16px"
               name="fab fa-linkedin"
@@ -117,7 +116,7 @@
           </a>
         </div>
         <div class="link-i">
-          <a href="https://github.com/Cbazil" target="_blank">
+          <a href="https://github.com/cbazil" target="_blank">
             <q-icon
               size="16px"
               name="fab fa-github"

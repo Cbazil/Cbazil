@@ -21,6 +21,45 @@
                 </q-timeline-entry>
 
                 <q-timeline-entry
+                  title="CodeSpace"
+                  class="event-title"
+                  subtitle="August 2022 - Current"
+                  side="left"
+                  color="light-green-12"
+                >
+                  <div class="exp-content">
+                    I coach students in proficient javascript (Includes Frameworks) and I worked on the CodeSpace website and sub domains.
+                  </div>
+                  <h6 class="line-title">Stacks Used</h6>
+                  <ul class="subject-list">
+                    <li class="subject">VueJS</li>
+                    <li class="subject">NuxtJS</li>
+                    <li class="subject">ReactJS</li>
+                    <li class="subject">NextJS</li>
+                    <li class="subject">Bulma</li>
+                    <li class="subject">Material UI</li>
+                    <li class="subject">Supabase</li>
+                  </ul>
+                </q-timeline-entry>
+
+                  <q-timeline-entry
+                  title="ThreeJS And Start-up material"
+                  class="event-title"
+                  subtitle="December 2019 - July 2020"
+                  side="right"
+                  color="blue-8"
+                >
+                  <div class="exp-content">
+                    I did some upskilling, and underwent course material to align my passions. Worked on freelance a project as well as own <a class="links" href="/projects">applications</a> during this time.
+                  </div>
+                  <h6 class="line-title">Stacks Used</h6>
+                  <ul class="subject-list">
+                    <li class="subject">ThreeJS</li>
+                    <li class="subject">Business Studies Material</li>
+                  </ul>
+                </q-timeline-entry>
+
+                <q-timeline-entry
                   title="LCStudio"
                   class="event-title"
                   subtitle="September 2020 - 31 May 2022"
@@ -255,6 +294,9 @@ export default {
          e.target.classList == "line-title" || 
          e.target.classList == "subject" || 
          e.target.classList == "subject-list" || 
+         e.target.id == "exp-timeline" ||
+         e.target.id == "edu-timeline" ||
+         e.target.id == "timelines" ||
          e.target.classList == "q-timeline__title" || e.target.classList == "exp-content" ||
          e.target.classList == "q-timeline__content" || e.target.classList == "q-timeline__subtitle" || 
          e.target.classList == "q-timeline__dot text-secondary" || 
@@ -293,6 +335,9 @@ $green: #7ed957;
 $blue: #5271ff;
 
 #experience {
+  .links {
+    color: #7ed957;
+  }
   width: 100%;
   position: relative;
   z-index: 0;
@@ -315,6 +360,7 @@ $blue: #5271ff;
       .subject-list {
         font-family: 'Caveat', cursive;
         font-size: 16px;
+        margin-right: 20px;
         list-style-type: none;
       }
       .event-title {
@@ -335,12 +381,12 @@ $blue: #5271ff;
       }
       #edu-timeline {
         width: 48%;
-        height: 410px !important;
+        height: 400px !important;
         overflow-y: scroll;
       }
       #exp-timeline {
         width: 48%;
-        height: 410px !important;
+        height: 400px !important;
         overflow-y: scroll;
       }
       .exp-content {
@@ -382,13 +428,23 @@ $blue: #5271ff;
         // font-size: 28px !important;
         // }
          #edu-timeline, #exp-timeline {
-          height: 600px !important;
+          height: 570px !important;
          }
       }
     }
   }
 }
-
+@media (max-width: 1580px) {
+  #experience {
+    #edu-container {
+      #timelines {
+        #edu-timeline, #exp-timeline {
+          height: 350px !important;
+         }
+      }
+    }
+  }
+}
 // Laptop 1
 @media (max-width: 1040px) {
   #experience {

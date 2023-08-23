@@ -3,7 +3,6 @@
     <PageContainer> 
       <br>
       <br>
-      <br>
       <h5>&lt;html&gt;</h5>
       <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="home-container">
@@ -15,7 +14,9 @@
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
-              <div id="header2"><h2>Fullstack Developer / Freelancer</h2></div>
+              <div id="header2">
+                <h2>Fullstack Developer / Freelancer</h2>
+              </div>
             <h5 style="display: flex; justify-content: flex-end; margin-top: 34px !important;">&lt;/h2&gt;</h5>
           </div>
           <div id="hire-container">
@@ -49,13 +50,13 @@
         <h5>&lt;/html&gt;</h5>
       </div>
     </PageContainer>
-    <div id="contact-card" v-if="showCard">
+    <div id="contact-card" v-if="showCard" @click="handleCloseForm($event)">
       <q-card flat bordered>
         <!-- <q-img
           id="business-card"
           :src="require('../assets/contact.png')"
         /> -->
-        <form id="business-card" action="https://formsubmit.co/fbf3d3a0b2807b99bc5b96e2fcbb5f50" method="POST">
+        <form id="business-card" ref="emailForm" action="https://formsubmit.co/fbf3d3a0b2807b99bc5b96e2fcbb5f50" method="POST">
           <div class="c-forms">
             <img src="../assets/email.png" width="80" height="80" alt="Email logo" >
           </div>
@@ -75,6 +76,7 @@
           </div>
           <div class="r-forms">
             <div class="r-btn">
+              <q-btn outline color="grey" style="margin-right: 10px;" @click="handleCloseForm($event)">Cancel</q-btn> 
               <q-btn outline color="green" type="submit">Send</q-btn> 
             </div>
           </div>
@@ -111,10 +113,17 @@ export default {
 
     const router = useRouter()
 
+    const emailForm = ref()
+
     const showCard = ref(false)
 
     const container = ref(null)
 
+    const handleCloseForm = (event) => {
+      if (event.target.id == "contact-card" || event.target.innerText == 'CANCEL') {
+        showCard.value = false
+      }
+    }
     const toggleCard = () => {
       showCard.value = !showCard.value
     }
@@ -139,7 +148,9 @@ export default {
       navScroll,
       container,
       showCard,
-      toggleCard
+      toggleCard,
+      emailForm,
+      handleCloseForm
     }
   }
 }
@@ -161,9 +172,8 @@ $blue: #5271ff;
   #contact-card {
     width: 100vw;
     height: 100% !important;
-    cursor: pointer;
     background-color: rgba(0, 0, 0, 0.7);
-    z-index: 10;
+    z-index: 2;
     position: absolute !important;
     display: flex !important;
     justify-content: space-between;
@@ -175,8 +185,8 @@ $blue: #5271ff;
     #business-card {
       background: #2b2c2e;
       padding: 25px;
-      cursor: none;
-      width: 740px;
+      cursor: default;
+      width: 620px;
       height: 400px;
       display: block;
       .c-form-2 {
@@ -218,6 +228,7 @@ $blue: #5271ff;
       .r-forms {
         margin: 0 24px;
         display: flex;
+        cursor: pointer;
         justify-content: space-around;
         .r-btn {
           height: 35px !important;
@@ -294,7 +305,7 @@ h6 {
       margin-bottom: -25px; 
     }
     #header2 {
-      margin: -35px 12px !important;
+      margin: -40px 12px !important;
     }
     .hire-btns {
       margin: 10px;
@@ -362,8 +373,8 @@ h6 {
   #home {
     #contact-card {
       #business-card {
-         width: 920px;
-         height: 540px;
+         width: 900px;
+         height: 420px;
       }
     }
     #home-container {
@@ -471,7 +482,6 @@ h6 {
       width: 100% !important;
       #business-card {
         width: 480px;
-        height: 300px;
       }
     }
     #home-container {
@@ -510,7 +520,6 @@ h6 {
       overflow: none !important;
       #business-card {
         width: 320px !important;
-        height: 200px !important;
       }
     }
     #home-container {
@@ -532,6 +541,7 @@ h6 {
 // Mobile 2
 @media (max-width: 426px) {
   #home {
+    margin: 0 !important;
     h5 {
       font-size: 18px;
       margin: 0 0 18px 0 !important;
@@ -551,10 +561,21 @@ h6 {
         }
         #header2-div {
           width: 335px;
+          margin-top: 25px;
+          #header2 {
+            margin-left: 0px !important;
+            margin-top: -20px !important;
+            margin-bottom: -20px !important;
+            // padding: 40px -5px;
+          }
         }
         #hire-container{
           display: flex;
           align-items: center;
+          margin: 50px 0px 100px 0px;
+          justify-content: space-between;
+          height: 150px;
+          // padding: 25px 0px;
           flex-direction: column;
         }
       }
@@ -586,9 +607,6 @@ h6 {
         #header2-div {
           width: 262px;
           margin-left: -5px !important;
-          #header2 {
-            margin-left: 5px !important;
-          }
         }
       }
     }

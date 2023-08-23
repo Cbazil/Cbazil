@@ -135,6 +135,7 @@ export default {
         e.target.classList == "pl-s" ||
         e.target.classList == "desc" ||
         e.target.classList == "pl-c1" ||
+        e.target.classList == "text-caption desc text-grey" ||
         e.target.classList == "pl-c" || 
         e.target.classList == "pl-s1" ||
         e.target.classList == "pl-k" ||
@@ -144,7 +145,14 @@ export default {
         e.target.classList == "pl-kos" ||
         e.target.classList == "pl-ent" ||
         e.target.classList == "gist-meta" ||
+        e.target.classList == "q-btn__content text-center col items-center q-anchor--skip justify-center row" ||
+        e.target.classList == "q-checkbox__inner relative-position non-selectable q-checkbox__inner--truthy text-#7ed957" || 
+        e.target.classList == "q-checkbox cursor-pointer no-outline row inline no-wrap items-center q-checkbox--dark" ||
+        e.target.classList == "q-checkbox__label q-anchor--skip" ||
         e.target.nodeName == "A" ||
+        e.target.classList == "q-checkbox__svg fit absolute-full" ||
+        e.target.id == "quick-access" ||
+        e.target.id == "blogs-container2" ||
         e.target.classList == "links" ||
         e.target.classList == "blog-img" ||
         e.target.classList == "text-caption text-grey" ||
@@ -286,7 +294,7 @@ $blue: #5271ff;
     #blogs-container1 {
       display: grid;
       position: relative;
-      height: 425px;
+      height: 400px;
       grid-gap: 10px;
       margin: 5px 40px;
       overflow-y: scroll;
@@ -317,7 +325,7 @@ $blue: #5271ff;
         }
       }
       #blogs-container1 {
-        height: 620px;
+        height: 600px;
       }
     }
    }
@@ -329,6 +337,7 @@ $blue: #5271ff;
     #blogs-container {
       #container-content {
         #blogs-container1 {
+          height: 540px;
           display: block !important;
           .blog-btns {
             position: relative;
@@ -349,6 +358,11 @@ $blue: #5271ff;
           #heading1 {
             margin: 20px 25px !important;
           }
+        }
+      }
+      #container-content {
+        #blogs-container1 {
+          height: 360px;
         }
       }
     }

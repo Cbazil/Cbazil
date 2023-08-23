@@ -499,7 +499,7 @@ $blue: #5271ff;
   #blog-container {
     display: flex;
     width: 100%;
-    height: 417px;
+    height: 400px;
     margin: 55px 20px 20px 20px;
     #content-box {
       padding-right: 40px;
@@ -568,15 +568,19 @@ $blue: #5271ff;
 // larger laptops
 @media (min-width: 1580px) {
   #blog-container {
-    height: 610px !important;
+    height: 600px !important;
     .q-btn {
         font-size: 20px !important;
         margin: -10px 10px !important;
     }
   }
-   
 }
 
+@media (max-width: 1580px) {
+  #blog-container {
+    height: 360px !important;
+  }
+}
 // Tablet
 @media (max-width: 830px) {
   #blog-view {

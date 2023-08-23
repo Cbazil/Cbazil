@@ -15,7 +15,7 @@
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
-            <h3>I am Chad Bazil Bosch (Developer, Gamer & Otaku). I love creating things aswell as solve problems, my interest in computer science and math has always been a big passion and driver of mine. I enjoy playing video games, reading Manga/Comics, watching anime and discovering new music. I am very goal driven and like discovering new interests as well as learning new things. I'm a honest, trustworthy, reliable, creative and an innovative person. I work well underpressure, I'm able to take initative and have strong leadership qualities.</h3>
+            <h3>I am Chad Bazil Bosch (Developer, Gamer & Otaku). I love creating things aswell as solving problems, my interest in computer science and math has always been a big passion and driver of mine. I'm a Full Stack developer, my preferred language is Javascript. I would ideally always like to work on applications, game scripting, and producing innovative ideas.</h3>
             <h5 style="display: flex; justify-content: flex-end;">&lt;/h2&gt;</h5>
           </div>
           <div id="hobbies-div">
@@ -111,7 +111,6 @@ $blue: #5271ff;
       h3 {
         margin: -15px 0;
         padding: 10px 25px;
-        line-height: 30px;
       }
       h5 {
         margin: 15px 0;
@@ -159,8 +158,8 @@ $blue: #5271ff;
         #header2-div {
           width: 880px !important;
           h3 {
-            font-size: 30px !important;
-            line-height: 42px;
+            font-size: 34px !important;
+            line-height: 46px;
           }
         }
         #hobbies-div {
@@ -185,8 +184,8 @@ $blue: #5271ff;
         #header2-div {
           width: 680px;
           h3 {
-            font-size: 19.67px !important;
-            line-height: 30px !important;
+            font-size: 20px !important;
+            line-height: 24px !important;
             margin: 10px 0 15px 0;
           }
         }
@@ -215,11 +214,15 @@ $blue: #5271ff;
       #about-container1 {
         #header1-div {
           h1 {
-            margin: 5px 25px;
+            margin: 4px 25px;
           }
         }
         #header2-div {
           width: 630px;
+          h3 {
+            font-size: 16px;
+            line-height: 22px;
+          }
         }
         #hobbies-div {
           #hobbies {
@@ -241,7 +244,7 @@ $blue: #5271ff;
         width: 580px; 
          h3 {
           font-size: 18px;
-          line-height: 26px !important;
+          line-height: 26px;
          }
       }
       #hobbies-div {

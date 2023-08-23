@@ -583,13 +583,13 @@ $blue: #5271ff;
 }
 
 #game-ui {
-  margin-top: -25px;
+  margin-top: 5px !important;
   position: relative;
   display: block;
   text-align: center;
 }
 .control-btn {
-  margin-top: -50px;
+  margin-top: -25px;
 }
 
 button {
@@ -704,6 +704,9 @@ button {
 
 // Mobile 2
 @media (max-width: 376px) {
+  .control-btn {
+      margin-top: -10px;
+    }
   h5 {
     font-size: 18px;
     margin: 0 0 18px 0 !important;

@@ -15,7 +15,7 @@
           </div>
           <div id="header2-div">
             <h5>&lt;h2&gt;</h5>
-            <h3>Fullstack Javascript developer, develops web apps using Javascript and NodeJS framework/libraries.</h3>
+            <h3>Fullstack Javascript developer, develops web apps using Javascript and NodeJS frameworks/libraries.</h3>
             <h5 style="display: flex; justify-content: flex-end; ">&lt;/h2&gt;</h5>
           </div>
           <div id="skills-div">
@@ -52,7 +52,7 @@
                 <div class="design-lvl"></div>
               </div>
             </div>
-            <h5 style="display: flex; justify-content: flex-end;  margin-top: 25px !important;">&lt;/Skills&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;  margin-top: 35px !important;">&lt;/Skills&gt;</h5>
           </div>
         </div>
         <div id="skills-container2">
@@ -128,14 +128,14 @@ $blue: #5271ff;
    #header1-div {
       width: 480px;
       h1 {
-        font-size: 65px !important;
+        font-size: 60px !important;
         margin: -15px 25px;
       }
     }
     #header2-div {
       width: 580px;
       h3 {
-        margin: -15px 0;
+        margin: -10px 0;
         padding: 0 20px;
       }
       h5 {
@@ -149,10 +149,9 @@ $blue: #5271ff;
     .skill {
       width: 520px;
       display: flex;
-      padding-left: 35px;
-      margin: 0;
       height: 20px;
-      margin-top: 40px;
+      margin-top: 20px;
+      margin-bottom: -10px;
       .skill-name {
         width: 25%;
         h4 {
@@ -170,16 +169,16 @@ $blue: #5271ff;
       }
       .js-lvl {
         background: $green !important; 
-        width: 90%;
+        width: 85%;
         height: 100% !important;
       }
       .sql-lvl {
         background: $green !important; 
-        width: 70%;
+        width: 60%;
         height: 100% !important;
       }
       .csharp-lvl {
-        width: 35%;
+        width: 30%;
         background: $green !important; 
         height: 100% !important;
       }
@@ -207,7 +206,7 @@ $blue: #5271ff;
   #skills {
     #skills-container {
       margin-bottom: 24px;
-     h3 {
+      h3 {
         font-size: 30px !important;
         line-height: 42px;
       }

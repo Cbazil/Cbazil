@@ -28,9 +28,9 @@
         </div>
         <div class="skill-bar">
           <span class="skill-lvl">
-            <p>90%</p>
+            <p>85%</p>
           </span>
-          <div style="width: 90%; background: #7ed957; height: inherit;"></div>
+          <div style="width: 85%; background: #7ed957; height: inherit;"></div>
         </div>
       </div>
       <div class="tool-desc" v-if="tool_idx == 1">
@@ -47,9 +47,9 @@
         </div>
         <div class="skill-bar">
           <span class="skill-lvl">
-            <p>70%</p>
+            <p>75%</p>
           </span>
-          <div style="width: 70%; background: #7ed957; height: inherit;"></div>
+          <div style="width: 75%; background: #7ed957; height: inherit;"></div>
         </div>
       </div>
       <div class="tool-desc" v-if="tool_idx == 2">
@@ -199,9 +199,9 @@
         </div>
         <div class="skill-bar">
           <span class="skill-lvl">
-            <p>75%</p>
+            <p>70%</p>
           </span>
-          <div style="width: 75%; background: #7ed957; height: inherit;"></div>
+          <div style="width: 70%; background: #7ed957; height: inherit;"></div>
         </div>
       </div>
       <div class="tool-desc" v-if="tool_idx == 10">
@@ -218,9 +218,9 @@
         </div>
         <div class="skill-bar">
           <span class="skill-lvl">
-            <p>60%</p>
+            <p>45%</p>
           </span>
-          <div style="width: 60%; background: #7ed957; height: inherit;"></div>
+          <div style="width: 45%; background: #7ed957; height: inherit;"></div>
         </div>
       </div>
       <div class="tool-desc" v-if="tool_idx == 11">
@@ -237,9 +237,9 @@
         </div>
         <div class="skill-bar">
           <span class="skill-lvl">
-            <p>55%</p>
+            <p>45%</p>
           </span>
-          <div style="width: 55%; background: #7ed957; height: inherit;"></div>
+          <div style="width: 45%; background: #7ed957; height: inherit;"></div>
         </div>
       </div>
       <div class="main-box arrow-div">
