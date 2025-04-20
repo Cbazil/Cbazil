@@ -1,16 +1,11 @@
 <template>
   <div id="experience" ref="container" @keyup.up="navSkills" @keyup.down="navArticles" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
-      <br>
-      <br>
-      <br>
-      <h5>&lt;html&gt;</h5>
-      <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="edu-container">
         <div id="edu-title">
-          <h5>&lt;h1&gt;</h5>
+          <h5>&lt;title&gt;</h5>
           <h1>Education & Work Experience</h1>
-          <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
+          <h5 style="display: flex; justify-content: flex-end; margin-top: 22.5px;">&lt;/title&gt;</h5>
         </div>
         <div id="timelines">
           <div id="edu-timeline">
@@ -23,7 +18,7 @@
                 <q-timeline-entry
                   title="CodeSpace"
                   class="event-title"
-                  subtitle="August 2022 - Current"
+                  subtitle="August 2022 - May 2025"
                   side="left"
                   color="light-green-12"
                 >
@@ -257,10 +252,6 @@
           </div>
         </div>
       </div>
-      <div class="closing-tags">
-        <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-        <h5 style="margin-top: 0px;">&lt;/html&gt;</h5>
-      </div>
     </PageContainer>
   </div>
 </template>
@@ -349,7 +340,7 @@ $blue: #5271ff;
       width: 880px !important;
       h1 {
         font-size: 65px !important;
-        margin: 0px 30px;
+        margin: 25px;
       }
       h5 {
         margin: 20px;
@@ -416,7 +407,6 @@ $blue: #5271ff;
         width: 1122px !important;
         h1 {
           font-size: 84px !important;
-          margin: 10px 35px;
         }
       }
       #timelines {

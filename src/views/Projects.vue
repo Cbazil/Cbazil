@@ -1,16 +1,11 @@
 <template>
   <div id="projects" class="containers" ref="container" @keyup.up="navArticles" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
-      <br />
-      <br />
-      <br />
-      <h5>&lt;html&gt;</h5>
-      <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="projects-container">
         <div id="proj-title">
-          <h5>&lt;h1&gt;</h5>
+          <h5>&lt;title&gt;</h5>
           <h1 id="heading1">My Projects</h1>
-          <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
+          <h5 style="display: flex; justify-content: flex-end;">&lt;/title&gt;</h5>
         </div>
         <div id="project-gallery">
           <div ref="scrollContainer" @wheel.prevent="handleWheel($event)" id="gallery-div">
@@ -498,10 +493,6 @@
         </div>
       </div>
       <br>
-      <div class="closing-tags">
-        <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-        <h5>&lt;/html&gt;</h5>
-      </div>
     </PageContainer>
   </div>
 </template>
@@ -680,25 +671,25 @@ $blue: #5271ff;
   z-index: 0;
   display: flex;
   #projects-container {
-    margin: 0px 20px;
+    margin: 0px 10px !important;
     width: 100%;
     #proj-title {
       width: 420px;
       h1 {
         font-size: 65px !important;
-        margin: 0px 30px 15px 30px;
+        margin: 25px;
       }
       h5 {
         margin: 20px;
       }
     }
     #project-gallery {
-      width: 96%;
+      width: 96.5%;
       #gallery-div {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: 10px;
-        height: 420px;
+        grid-gap: 8.5px;
+        height: 426px;
         margin-left: 25px;
         padding-bottom: 20px;
         overflow-x: scroll;
@@ -738,26 +729,32 @@ $blue: #5271ff;
           height: 100% !important;
           min-height: 100% !important;
         }
+        .q-carousel__slides-container, .q-panel {
+          overflow: hidden !important;
+        }
         .duo-container {
           display: grid;
           grid-template-columns: 1fr;
           grid-template-rows: 1fr;
-          grid-gap: 10px;
+          grid-gap: 8.5px;
           .mini-container {
             margin: 0;
             padding: 0;
-            height: 196px !important;
+            overflow: hidden;
+            height: 195px !important;
           }
         }
         .proj-btns {
-          // margin: 0.5px !important;
+          margin-top: 0.5px !important;
+          margin-left: 0.5px !important;
           padding: 0.9px !important;
           color: $green;
         }
         .container {
           margin: 0;
           padding: 0;
-          width: 350px;
+          overflow: hidden;
+          width: 348px;
         }
       }
       .i-icon {
@@ -953,6 +950,7 @@ $blue: #5271ff;
             padding: 0px;
           }
           .proj-btns {
+            object-fit: contain;
             padding: 0.9px 0px !important;
           }
           .project_name {

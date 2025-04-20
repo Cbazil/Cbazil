@@ -317,7 +317,7 @@
         tools: [
           { image: require('../assets/stacks/vue.png'), image_alt: "vuejs", desc: "vuejs is my favourite frontend framework, it's way simplier & easy to use then the others. Came across vue in 2018 through meetups, upskilled in vuejs in 2020 1st quarter." },
           { image: require('../assets/stacks/react.png'), image_alt: "reactjs", desc: "reactjs is my 2nd frontend choice, I would enjoy working with it again. I 1st started learning it as intern at Vulcan Labs in 2019, slightly keeping up to date with new features." },
-          { image: require('../assets/stacks/node.png'), image_alt: "nodejs", desc: "Was 1st introduced to nodejs in 2018 at life choices coding academy with the Code Space curriculum, found it quite challenging at first but I'm quite comfortable & experienced at it." },
+          { image: require('../assets/stacks/node.png'), image_alt: "nodejs", desc: "Was 1st introduced to nodejs in 2018 at Life Choices coding academy with the Code Space curriculum, found it quite challenging at first but I'm quite comfortable & experienced at it." },
           { image: require('../assets/stacks/html.png'), image_alt: "html", desc: "Learnt all about html back in high school in 2013, I've always liked the practical part of CAT so using html was fan." },
           { image: require('../assets/stacks/css.png'), image_alt: "css", desc: "Learnt css during my school days along side html." },
           { image: require('../assets/stacks/sass.png'), image_alt: "sass", desc: "Was 1st introducted to sass at life choices coding academy in 2018, scss is my prefer styling language." },
@@ -383,7 +383,9 @@ $blue: #5271ff;
 $green: #7ed957;
   #tools-container {
     margin-top: -45px;
-    margin-left: 45px;
+    @media screen and (max-width: 1700px) {
+      margin-left: 45px;
+    }
     width: 700px;
     #tools-main {
       .arrow-icons {

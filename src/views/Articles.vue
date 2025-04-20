@@ -1,19 +1,15 @@
 <template>
   <div id="articles" ref="container" @keyup.up="navExp" @keyup.down="navProjects" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
-      <br>
-      <br>
-      <br>
-      <h5>&lt;html&gt;</h5>
-      <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="blogs-container" v-if="onMain">
         <div id="blogs-header">
           <div id="header1-div">
-            <h5>&lt;h1&gt;</h5>
+            <h5>&lt;title&gt;</h5>
             <h1 id="heading1">My Blogs</h1>
-            <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;">&lt;/title&gt;</h5>
           </div>
         </div>
+        <br>
         <div id="container-content">
           <div id="blogs-container1">
             <q-btn class="blog-btns" size="15px" outline v-for="blog in blogs" :key="blog.id" @click.prevent="toArticle(blog.id)"> 
@@ -46,10 +42,6 @@
         </div>
       </div>
       <BlogView v-else :page="page" :handleBackToMain="handleBackToMain"/>
-      <div class="closing-tags">
-        <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-        <h5 style="margin-top: 0px;">&lt;/html&gt;</h5>
-      </div>
     </PageContainer>
   </div>
 </template>
@@ -264,10 +256,10 @@ $blue: #5271ff;
     display: flex;
     width: 100%;
     #header1-div {
-      width: 325px;
+      width: 320px;
       h1 {
        font-size: 65px !important;
-       margin: -20px 30px 15px 30px;
+       margin: 25px;
       }
     }
   }

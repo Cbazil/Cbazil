@@ -278,7 +278,7 @@ h3 {
   }
   #main-container {
     height: 100vh;
-    margin-left: 60px;
+    margin-left: 45px;
     padding: 0;
     overflow: hidden;
     position: relative;

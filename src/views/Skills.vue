@@ -1,24 +1,18 @@
 <template>
   <div id="skills" ref="container" @keyup.up="navAbout" @keyup.down="navExp" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
-      <br>
-      <br>
-      <br>
-      <h5>&lt;html&gt;</h5>
-      <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="skills-container">
         <div id="skills-container1">
           <div id="header1-div">
-            <h5>&lt;h1&gt;</h5>
+            <h5>&lt;title&gt;</h5>
             <h1>Skills & Stacks</h1>
-            <h5 style="display: flex; justify-content: flex-end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;">&lt;/title&gt;</h5>
           </div>
           <div id="header2-div">
-            <h5>&lt;h2&gt;</h5>
             <h3>Fullstack Javascript developer, develops web apps using Javascript and NodeJS frameworks/libraries.</h3>
-            <h5 style="display: flex; justify-content: flex-end; ">&lt;/h2&gt;</h5>
           </div>
           <div id="skills-div">
+            <br>
             <h5>&lt;Skills&gt;</h5>
             <div class="skill">
               <div class="skill-name">
@@ -58,10 +52,6 @@
         <div id="skills-container2">
           <Tools />
         </div>
-      </div>
-      <div class="closing-tags">
-        <h5>&nbsp;&nbsp;&lt;/body&gt;</h5>
-        <h5>&lt;/html&gt;</h5>
       </div>
     </PageContainer>
   </div>
@@ -129,7 +119,7 @@ $blue: #5271ff;
       width: 480px;
       h1 {
         font-size: 60px !important;
-        margin: -15px 25px;
+        margin: 25px;
       }
     }
     #header2-div {
@@ -150,7 +140,7 @@ $blue: #5271ff;
       width: 520px;
       display: flex;
       height: 20px;
-      margin-top: 20px;
+      margin-top: 10px;
       margin-bottom: -10px;
       .skill-name {
         width: 25%;

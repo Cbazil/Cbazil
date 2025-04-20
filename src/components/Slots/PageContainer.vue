@@ -2,17 +2,33 @@
   <div id="container-slot">
     <div id="header" v-if="prefixtab">
       <img id="arrowTL" width="25" height="7" src="../../assets/arrowKeys.png" alt="Left/up arrow bounces">
-      <span class="indicator"><p>PRESS <span class="btn-name">UP</span> KEY TO JUMP TO {{ prefixtab.toUpperCase() }} PAGE</p></span>
+      <span class="indicator"><p>PRESS <span class="btn-name">
+        <q-icon 
+          class="arrow-icons"
+          style="cursor: pointer;"
+          name="fa fa-arrow-up"
+          color="#80d556"
+        />
+      </span> KEY TO JUMP TO {{ prefixtab.toUpperCase() }} PAGE</p></span>
       <img id="arrowTR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/up arrow bounces">
     </div>
-    <slot></slot>
-    <div id="mobile-controlls">
-      <q-btn rounded v-if="prefixtab" @click="handlePrevious" class="prefix-btn" size="15px" outline><q-icon name="fas fa-angle-up" /></q-btn>
-      <q-btn rounded v-if="suffixtab" @click="handleNext" class="suffix-btn" size="15px" outline><q-icon name="fas fa-angle-down" /></q-btn>
+    <div id="main-container">
+      <slot></slot>
+      <div id="mobile-controlls">
+        <q-btn rounded v-if="prefixtab" @click="handlePrevious" class="prefix-btn" size="15px" outline><q-icon name="fas fa-angle-up" /></q-btn>
+        <q-btn rounded v-if="suffixtab" @click="handleNext" class="suffix-btn" size="15px" outline><q-icon name="fas fa-angle-down" /></q-btn>
+      </div>
     </div>
     <div id="footer" v-if="suffixtab">
       <img id="arrowBL" width="25" height="7" src="../../assets/arrowKeys.png" alt="Left/down arrow bounces">
-      <span class="indicator"><p>PRESS <span class="btn-name">DOWN</span> KEY TO JUMP TO {{ suffixtab.toUpperCase() }} PAGE</p></span>
+      <span class="indicator"><p>PRESS <span class="btn-name">
+        <q-icon 
+          class="arrow-icons"
+          style="cursor: pointer;"
+          name="fa fa-arrow-down"
+          color="#80d556"
+        />
+      </span> KEY TO JUMP TO {{ suffixtab.toUpperCase() }} PAGE</p></span>
       <img id="arrowBR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/down arrow bounces">
     </div>
   </div>
@@ -130,24 +146,35 @@ $dark: #2b2c2e;
 #container-slot {
   background: $grey;
   // background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
+  margin-left: 10px;
   #header {
     position: fixed;
     display: flex;
     color: #7ed957;
-    width: calc(100% - 60px);
+    width: calc(100% - 50px);
     height: 32px;
     margin-top: 20px;
     top: 0;
     justify-content: space-between;
     animation: 2s infinite bounceT;
   }
+  #main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   #footer {
     position: fixed;
     display: flex;
     color: #7ed957;
-    width: calc(100% - 60px);
+    width: calc(100% - 50px);
     height: 32px;
     bottom: 0;
     justify-content: space-between;
@@ -159,12 +186,12 @@ $dark: #2b2c2e;
     padding: 4px 6px;
   }
   .btn-name {
-    padding: 0px 6px;
+    padding: 0px 2.75px;
     border-radius: 4px;
     margin: 0px 2px;
     height: 24px;
-    border: 2px solid #7ed957;
-    box-shadow: 0px 1px 2px;
+    border: 1.5px solid #7ed957;
+    box-shadow: 0px 2px 1px;
   }
   #arrowTL {
     transform: rotate(-90deg);

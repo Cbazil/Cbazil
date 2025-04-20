@@ -1,22 +1,15 @@
 <template>
   <span id="about" ref="container" @keyup.up="navHome" @keyup.down="navSkills" @wheel="navScroll($event)" tabindex="0">
     <PageContainer>
-      <br>
-      <br>
-      <br>
-      <h5>&lt;html&gt;</h5>
-      <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="about-container">
         <div id="about-container1">
           <div id="header1-div">
-            <h5>&lt;h1&gt;</h5>
-            <h1 id="heading1">About me</h1>
-            <h5 style="display: flex; justify-content: flex-end; margin-top: 34px !important;">&lt;/h1&gt;</h5>
+            <h5>&lt;title&gt;</h5>
+            <h1>About me</h1>
+            <h5 style="display: flex; justify-content: flex-end;">&lt;/title&gt;</h5>
           </div>
           <div id="header2-div">
-            <h5>&lt;h2&gt;</h5>
             <h3>I am Chad Bazil Bosch (Developer, Gamer & Otaku). I love creating things aswell as solving problems, my interest in computer science and math has always been a big passion and driver of mine. I'm a Full Stack developer, my preferred language is Javascript. I would ideally always like to work on applications, game scripting, and producing innovative ideas.</h3>
-            <h5 style="display: flex; justify-content: flex-end;">&lt;/h2&gt;</h5>
           </div>
           <div id="hobbies-div">
             <h5>&lt;Hobbies&gt;</h5>
@@ -33,10 +26,6 @@
          <div id="about-container2">
           <tic-tac-toe />
         </div>
-      </div>
-      <div class="closing-tags">
-        <h5 class="closing-t">&nbsp;&nbsp;&lt;/body&gt;</h5>
-        <h5>&lt;/html&gt;</h5>
       </div>
     </PageContainer>
   </span>
@@ -97,20 +86,18 @@ $blue: #5271ff;
   margin: 0px 10px;
   width: 100%;
   #about-container1 {
-    padding: 0px 10px;   
+    padding: 0px 10px;
     width: 60%;
     #header1-div {
       width: 330px;
       h1 {
-        font-size: 65px !important;
-        margin: -15px 25px;
+        margin: 25px;
       }
     }
     #header2-div {
       width: 90%;
       h3 {
-        margin: -15px 0;
-        padding: 10px 25px;
+        margin: 25px;
       }
       h5 {
         margin: 15px 0;
@@ -122,7 +109,7 @@ $blue: #5271ff;
       #hobbies {
         display: flex;
         flex-direction: row;
-        margin: -25px 20px -5px 20px;
+        margin: 25px;
         .hobby {
           font-size: 17px;
           list-style-type: none;
@@ -152,7 +139,6 @@ $blue: #5271ff;
           width: 420px;
           h1 {
             font-size: 84px !important;
-            margin: -15px 28px;
           }
         }
         #header2-div {

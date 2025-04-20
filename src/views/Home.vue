@@ -1,10 +1,6 @@
 <template>
   <span id="home" ref="container" :class="{hide_scroll: showCard}" @keyup.down="navAbout" @wheel="navScroll($event)" tabindex="0">
     <PageContainer> 
-      <br>
-      <br>
-      <h5>&lt;html&gt;</h5>
-      <h5>&nbsp;&nbsp;&lt;body&gt;</h5>
       <div id="home-container">
         <div id="home-container1">
           <div id="header1-div">
@@ -13,11 +9,11 @@
             <h5 style="display: flex; justify-content: flex-end;">&lt;/h1&gt;</h5>
           </div>
           <div id="header2-div">
-            <h5>&lt;h2&gt;</h5>
+            <h5>&lt;Profession&gt;</h5>
               <div id="header2">
                 <h2>Fullstack Developer / Freelancer</h2>
               </div>
-            <h5 style="display: flex; justify-content: flex-end; margin-top: 34px !important;">&lt;/h2&gt;</h5>
+            <h5 style="display: flex; justify-content: flex-end;">&lt;/Profession&gt;</h5>
           </div>
           <div id="hire-container">
             <div class="home-btns">
@@ -37,17 +33,6 @@
         <div id="home-container2">
           <tic-tac-toe />
         </div>
-      </div>
-      <br>
-      <!-- <div id="illustration">
-        <img src="../assets/cherry.png" alt="illustration" />
-      </div> -->
-      <!-- <div id="illustration-2">
-        <img src="../assets/cherry-man.png" alt="illustration-2" />
-      </div> -->
-      <div class="closing-tags">
-        <h5 class="closing-t">&nbsp;&nbsp;&lt;/body&gt;</h5>
-        <h5>&lt;/html&gt;</h5>
       </div>
     </PageContainer>
     <div id="contact-card" v-if="showCard" @click="handleCloseForm($event)">
@@ -253,7 +238,7 @@ h5 {
   font-family: 'Caveat', cursive;
   font-size: 14px;
   line-height: 0px !important;
-  margin: 0 0 35px 0;
+  margin: 0 0 15px 0;
 }
 
 h6 {
@@ -293,10 +278,14 @@ h6 {
   width: 100%;
   #home-container1 {
     #header1-div {
-      width: 645px;
+      width: 640px;
     }
     #header2-div {
       width: 670px;
+      h2 {
+        font-size: 48px !important;
+        margin: 35px;
+      }
     }
     width: 60%;
     #heading1, #header2 {
@@ -305,7 +294,7 @@ h6 {
       margin-bottom: -25px; 
     }
     #header2 {
-      margin: -40px 12px !important;
+      margin: auto 12px !important;
     }
     .hire-btns {
       margin: 10px;
@@ -412,7 +401,10 @@ h6 {
         width: 600px;
       }
       #header2-div {
-        width: 560px;
+        width: 530px;
+      }
+      .home-btns {
+        margin-top: 22px;
       }
     }
   }
