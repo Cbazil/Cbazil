@@ -518,50 +518,57 @@ export default {
     const container = ref(null)
     
     const navScroll = (e) => {
-      
-      if(e.target.classList == "q-carousel__slide" || 
-        e.target.classList == "fa fa-angle-right q-icon" ||
-        e.target.classList == "fa fa-angle-left q-icon" || 
-        e.target.classList == "single-container container csp3 csp" || 
-        e.target.classList == "single-container container csp4 csp" ||
-        e.target.classList == "single-container container csp6 csp" ||
-        e.target.classList == "single-container container csp7 csp" || 
-        e.target.classList == "mini-container container csp5 csp" ||
-        e.target.classList == "mini-container container csp3 csp" ||
-        e.target.classList == "q-btn__content text-center col items-center q-anchor--skip justify-center row" || 
-        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--outline q-btn--rectangle q-btn--actionable q-focusable q-hoverable proj-btns" ||
-        e.target.classList == "fa fa-solid fa-info q-icon" || 
-        e.target.classList == "q-carousel__control absolute absolute-bottom text-white rounded-borders" ||
-        e.target.classList == "mini-container container csp6 csp" ||
-        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense" ||
-        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle q-btn--rounded bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense" ||
-        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle q-btn--rounded bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense i-icon" || 
-        e.target.id == "gallery-div" ||
-        e.target.classList == "project_details" ||
-        e.target.classList == "q-carousel__control absolute absolute-top-left" ||
-        e.target.classList == "q-carousel__control absolute absolute-top-right" ||
-        e.target.classList == "project_container" ||
-        e.target.classList == "comingSoon" ||
-        e.target.classList == "project_name p_card" ||
-        e.target.classList == "project_name" || 
-        e.target.classList == "duo-container"      
-      ) { return } else {
-        if (e.deltaY < 0) {
-            router.push('/blogs')
+      if (windowWidth > 830) {
+        if(e.target.classList == "q-carousel__slide" || 
+          e.target.classList == "fa fa-angle-right q-icon" ||
+          e.target.classList == "fa fa-angle-left q-icon" || 
+          e.target.classList == "single-container container csp3 csp" || 
+          e.target.classList == "single-container container csp4 csp" ||
+          e.target.classList == "single-container container csp6 csp" ||
+          e.target.classList == "single-container container csp7 csp" || 
+          e.target.classList == "mini-container container csp5 csp" ||
+          e.target.classList == "mini-container container csp3 csp" ||
+          e.target.classList == "q-btn__content text-center col items-center q-anchor--skip justify-center row" || 
+          e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--outline q-btn--rectangle q-btn--actionable q-focusable q-hoverable proj-btns" ||
+          e.target.classList == "fa fa-solid fa-info q-icon" || 
+          e.target.classList == "q-carousel__control absolute absolute-bottom text-white rounded-borders" ||
+          e.target.classList == "mini-container container csp6 csp" ||
+          e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense" ||
+          e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle q-btn--rounded bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense" ||
+          e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--push q-btn--rectangle q-btn--rounded bg-light-green-12 text-white q-btn--actionable q-focusable q-hoverable q-btn--dense i-icon" || 
+          e.target.id == "gallery-div" ||
+          e.target.classList == "project_details" ||
+          e.target.classList == "q-carousel__control absolute absolute-top-left" ||
+          e.target.classList == "q-carousel__control absolute absolute-top-right" ||
+          e.target.classList == "project_container" ||
+          e.target.classList == "comingSoon" ||
+          e.target.classList == "project_name p_card" ||
+          e.target.classList == "project_name" || 
+          e.target.classList == "duo-container"      
+        ) { return } else {
+          if (e.deltaY < 0) {
+              router.push('/blogs')
+          }
         }
       }
     }
 
+    const windowWidth = ref(window.innerWidth);
+
     const scrollContainer = ref(null);
 
     const handleWheel = (event) => {
-      if (event.deltaY > 0) {
-        scrollContainer.value.scrollLeft += event.deltaY
+      if (windowWidth.value > 830) {
+        // Desktop: Horizontal scrolling using deltaX
+        if (event.deltaY > 0) {
+          scrollContainer.value.scrollLeft += event.deltaY;
+        } else {
+          scrollContainer.value.scrollLeft -= Math.abs(event.deltaY);
+        }
       } else {
-        scrollContainer.value.scrollLeft -= Math.abs(event.deltaY)
+        container.value.scrollTop += event.deltaY;
       }
     };
-
 
     const infoP1 = ref(false)
     const infoP2 = ref(false)
@@ -895,10 +902,66 @@ $blue: #5271ff;
 // Tablet
 @media (max-width: 830px) {
   #projects {
-    margin: -40px 10px 0px 10px !important;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    height: calc(100vh - 60px);
+    position: relative;
+    padding-top: 100px;
     #projects-container {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+      position: relative;
       #project-gallery {
-        width: 101%;
+        #gallery-div {
+          overflow-x: hidden;
+          display: flex;
+          flex-direction: column;
+          height: inherit !important;
+          .single-container {
+            width: 100% !important;
+            @media (max-width: 830px) {
+              height: 186px !important; 
+            }
+           }
+          .duo-container {
+            display: flex;
+            flex-direction: column;
+            width: 100% !important;
+            object-fit: cover;
+            .proj-btns {
+              width: 100% !important;
+              margin-bottom: 0px;
+                @media (max-width: 430px) {
+                  height: 186px !important;
+                }
+              .mini-container {
+                width: 100% !important;
+                height: 356px !important;
+                @media (max-width: 630px) {
+                  height: 270px !important;
+                }
+                @media (max-width: 430px) {
+                  height: 100% !important;
+                }
+              }
+            }
+          }
+          // .mini-container {
+          //   height: 360px !important;
+          //   width: 100% !important;
+          // }
+          .proj-btns {
+            height: 360px !important;
+            @media (max-width: 630px) {
+              height: 270px !important;
+            }
+            width: 100% !important;
+            object-fit: cover;
+          }
+        }
       }
     }
     .closing-tags {
@@ -930,28 +993,28 @@ $blue: #5271ff;
         }
       }
       #project-gallery {
-        width: 126% !important;
-        margin-left: -45px !important;
+        // width: 126% !important;
+        // margin-left: -45px !important;
         -ms-scroll-limit-x-max: 0cm;
         #gallery-div {
-          height: 220px !important;
+          // height: 220px !important;
           .duo-container {
-            width: 620px !important;
+            // width: 620px !important;
             grid-template-columns: 1fr 1fr !important;
             .mini-container {
-              width: 303.33px !important;
-              margin: 0px;
-              padding: 0px;
+              width: 186px !important;
             }
           }
           .single-container {
-            width: 320px !important;
-            margin: 0px;
+            width: 100% !important;
+            // margin: 25px;
             padding: 0px;
           }
           .proj-btns {
+            height: 182px !important;
             object-fit: contain;
-            padding: 0.9px 0px !important;
+            margin: 5px;
+            // padding: 0.9px 0px !important;
           }
           .project_name {
             margin-top: 30px !important;

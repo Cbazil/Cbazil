@@ -4,11 +4,16 @@
       <div id="edu-container">
         <div id="edu-title">
           <h5>&lt;title&gt;</h5>
-          <h1>Education & Work Experience</h1>
+          <h1>Education & Work XP</h1>
           <h5 style="display: flex; justify-content: flex-end; margin-top: 22.5px;">&lt;/title&gt;</h5>
         </div>
+
+        <div id="category-select" class="q-pa-md text-white" style="margin-left: -20px; margin-top: -35px;">
+          <q-checkbox dark v-model="categories[0].val" @click="cateExp" style="margin-right: 14px;" label="Working" color="#7ed957" />
+          <q-checkbox dark v-model="categories[1].val"  @click="cateEdu" label="Education" color="#7ed957" />
+        </div>
         <div id="timelines">
-          <div id="edu-timeline">
+          <div :class="{'edu-timeline': categories[0].val, 'edu-timeline-none': !categories[0].val}">
             <div class="q-px-lg q-pb-md">
               <q-timeline id="tl-container" :layout="layout" color="secondary">
                 <q-timeline-entry id="tl-heading" heading>
@@ -149,7 +154,7 @@
               </q-timeline>
             </div>
           </div>
-          <div id="exp-timeline">
+          <div :class="{'exp-timeline': !categories[1].val, 'exp-timeline-show': categories[1].val }">
             <div class="q-px-lg q-pb-md">
               <q-timeline id="tl-container" :layout="layout" color="secondary">
                 <q-timeline-entry id="tl-heading" heading>
@@ -278,31 +283,47 @@ export default {
     const navArticles = () => {
       router.push('/blogs')
     }
+
+    const categories = ref([{ cate: 'working', val: true }, { cate: 'education', val: false }])
+
+    const cateEdu = () => {
+        categories.value[1].val = true
+        categories.value[0].val = false
+    }
+
+    const cateExp = () => {
+      categories.value[0].val = true
+      categories.value[1].val = false
+    }
+    
+    const windowWidth = ref(window.innerWidth);
     
     const navScroll = (e) => {
-      if(e.target.id == "edu-timeline" || e.target.id == "tl-heading" || e.target.id == "tl-container" ||  e.target.classList == "q-px-lg q-pb-md"||
-         e.target.classList == "q-timeline__heading-title" ||
-         e.target.classList == "line-title" || 
-         e.target.classList == "subject" || 
-         e.target.classList == "subject-list" || 
-         e.target.id == "exp-timeline" ||
-         e.target.id == "edu-timeline" ||
-         e.target.id == "timelines" ||
-         e.target.classList == "q-timeline__title" || e.target.classList == "exp-content" ||
-         e.target.classList == "q-timeline__content" || e.target.classList == "q-timeline__subtitle" || 
-         e.target.classList == "q-timeline__dot text-secondary" || 
-         e.target.classList == "q-timeline__dot text-orange" || 
-         e.target.classList == "notranslate material-icons q-icon row items-center justify-center" ||
-         e.target.classList == "q-timeline__entry q-timeline__entry--left event-title" ||
-         e.target.classList == "q-timeline__entry q-timeline__entry--left q-timeline__entry--icon event-title" || 
-         e.target.classList =="q-timeline__entry q-timeline__entry--right q-timeline__entry--icon event-title" ||
-         e.target.classList == "q-timeline__entry q-timeline__entry--right event-title" || e.target.nodeName == "SPAN" || (e.target.nodeName == "DIV" && e.target.innerHTML == "")) {
-      } else {
-        if (e.deltaY < 0) {
-          router.push('/skills')
-        }
-        if (e.deltaY > 0) {
-          router.push('/blogs')
+      if (windowWidth > 830) {
+        if(e.target.id == "edu-timeline" || e.target.id == "tl-heading" || e.target.id == "tl-container" ||  e.target.classList == "q-px-lg q-pb-md"||
+          e.target.classList == "q-timeline__heading-title" ||
+          e.target.classList == "line-title" || 
+          e.target.classList == "subject" || 
+          e.target.classList == "subject-list" || 
+          e.target.id == "exp-timeline" ||
+          e.target.id == "edu-timeline" ||
+          e.target.id == "timelines" ||
+          e.target.classList == "q-timeline__title" || e.target.classList == "exp-content" ||
+          e.target.classList == "q-timeline__content" || e.target.classList == "q-timeline__subtitle" || 
+          e.target.classList == "q-timeline__dot text-secondary" || 
+          e.target.classList == "q-timeline__dot text-orange" || 
+          e.target.classList == "notranslate material-icons q-icon row items-center justify-center" ||
+          e.target.classList == "q-timeline__entry q-timeline__entry--left event-title" ||
+          e.target.classList == "q-timeline__entry q-timeline__entry--left q-timeline__entry--icon event-title" || 
+          e.target.classList =="q-timeline__entry q-timeline__entry--right q-timeline__entry--icon event-title" ||
+          e.target.classList == "q-timeline__entry q-timeline__entry--right event-title" || e.target.nodeName == "SPAN" || (e.target.nodeName == "DIV" && e.target.innerHTML == "")) {
+        } else {
+          if (e.deltaY < 0) {
+            router.push('/skills')
+          }
+          if (e.deltaY > 0) {
+            router.push('/blogs')
+          }
         }
       }
     }
@@ -312,7 +333,7 @@ export default {
     onMounted(() => {
       container.value.focus()
     })
-    return { container, navSkills, navArticles, navScroll, 
+    return { container, navSkills, categories, cateEdu, cateExp, navArticles, navScroll, 
       layout: computed(() => {
         return $q.screen.lt.sm ? 'dense' : ($q.screen.lt.md ? 'comfortable' : 'loose')
       }) 
@@ -333,14 +354,17 @@ $blue: #5271ff;
   position: relative;
   z-index: 0;
   display: flex;
+  #category-select {
+    display: none;
+  }
   #edu-container {
     margin: 0px 15px;
     width: 100%;
     #edu-title {
-      width: 880px !important;
+      width: 880px;
       h1 {
         font-size: 65px !important;
-        margin: 25px;
+        margin: 25px 32px;
       }
       h5 {
         margin: 20px;
@@ -370,12 +394,12 @@ $blue: #5271ff;
         font-size: 20px !important;
         padding: 18px !important;
       }
-      #edu-timeline {
+      .edu-timeline {
         width: 48%;
         height: 400px !important;
         overflow-y: scroll;
       }
-      #exp-timeline {
+      .exp-timeline {
         width: 48%;
         height: 400px !important;
         overflow-y: scroll;
@@ -417,7 +441,7 @@ $blue: #5271ff;
         // .line-title {
         // font-size: 28px !important;
         // }
-         #edu-timeline, #exp-timeline {
+         .edu-timeline, .exp-timeline {
           height: 570px !important;
          }
       }
@@ -428,7 +452,7 @@ $blue: #5271ff;
   #experience {
     #edu-container {
       #timelines {
-        #edu-timeline, #exp-timeline {
+        .edu-timeline, .exp-timeline {
           height: 350px !important;
          }
       }
@@ -440,7 +464,7 @@ $blue: #5271ff;
   #experience {
     #edu-container {
       #edu-title {
-        width: 700px !important;
+        width: 700px;
         h1 {
           font-size: 50px !important;
           margin: 0px 24px;
@@ -453,16 +477,23 @@ $blue: #5271ff;
 // Tablet
 @media (max-width: 830px) {
   #experience {
-    margin: -40px 10px 0px 10px !important;
+    padding-top: 100px;
     position: relative;
-    display: block;
-    overflow-y: scroll;
+    height: calc(100vh - 60px);
+    #category-select {
+      padding: 35px;
+      display: flex;
+    }
+
+    overflow-y: hidden;
     #edu-container {
-      display: block !important;
+      overflow-y: hidden;
       width: 100% !important;
+      height: 100%;
       margin-left: 2px;
+      padding-top: 10px;
       #edu-title {
-        width: 560px !important;
+        width: 660px;
         h1 {
           font-size: 65px !important;
           line-height: 55px !important;
@@ -470,21 +501,29 @@ $blue: #5271ff;
         }
       }
       #timelines {
-        display: block !important;
-        width: 100% !important;
-        #edu-timeline {
-          display: block !important;
-          height: auto !important;
-          width: 100% !important;
-          margin: 20px 10px;
-          overflow-y: unset;
+        .edu-timeline {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          display: block;
+          height: 55vh !important;
+          width: 100%;
         }
-        #exp-timeline {
-          display: block !important;
-          height: auto !important;
-          width: 100% !important;
-          margin: 20px 10px;
-          overflow-y: unset;
+
+        .edu-timeline-none {
+          display: none;
+        } 
+
+        .exp-timeline {
+          display: none;
+        }
+
+        .exp-timeline-show {
+          display: flex;
+          overflow-y: scroll;
+          height: 52vh;
+          width: 100%;
         }
       }
     }
@@ -500,10 +539,10 @@ $blue: #5271ff;
   #experience {
     #edu-container {
       #edu-title {
-        width: 640px !important;
+        width: 520px;
         h1 {
           font-size: 44px !important;
-          margin: 0px 36px;
+          margin: 36px;
         }
       }
     }
@@ -514,10 +553,10 @@ $blue: #5271ff;
   #experience {
     #edu-container {
       #edu-title {
-        width: 560px !important;
+        width: 460px;
         h1 {
           font-size: 40px !important;
-          margin: 0px 24px;
+          margin: 24px;
         }
       }
     }
@@ -529,7 +568,7 @@ $blue: #5271ff;
   #experience {
     #edu-container {
       #edu-title {
-        width: 470px !important;
+        width: 420px;
         h1 {
           font-size: 32px !important;
           margin: 0px 24px;

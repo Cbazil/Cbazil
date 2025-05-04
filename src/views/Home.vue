@@ -104,6 +104,8 @@ export default {
 
     const container = ref(null)
 
+    const windowWidth = ref(window.innerWidth);
+
     const handleCloseForm = (event) => {
       if (event.target.id == "contact-card" || event.target.innerText == 'CANCEL') {
         showCard.value = false
@@ -118,8 +120,10 @@ export default {
     }
 
     const navScroll = (e) => {
-      if (e.deltaY > 0) {
-        router.push('/about')
+      if (windowWidth > 830) {
+        if (e.deltaY > 0) {
+          router.push('/about')
+        }
       }
     }
     
@@ -143,8 +147,8 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-$dark: #2b2c2e;
-$grey: #353639;
+$dark: #201f23;
+$grey: #2b2c2e;
 $green: #7ed957;
 $blue: #5271ff;
 
@@ -156,11 +160,11 @@ $blue: #5271ff;
   display: flex;
   #contact-card {
     width: 100vw;
-    height: 100% !important;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
     position: absolute !important;
-    display: flex !important;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: -34px;
@@ -232,7 +236,6 @@ $blue: #5271ff;
   overflow-y: hidden !important;
 }
 
-
 h5 {
   color: $blue;
   font-family: 'Caveat', cursive;
@@ -283,18 +286,13 @@ h6 {
     #header2-div {
       width: 670px;
       h2 {
-        font-size: 48px !important;
-        margin: 35px;
+        font-size: 48px;
+        margin: 25px;
       }
     }
     width: 60%;
     #heading1, #header2 {
-      margin-top: -20px;
-      margin-left: 20px; 
-      margin-bottom: -25px; 
-    }
-    #header2 {
-      margin: auto 12px !important;
+      margin: 20px;
     }
     .hire-btns {
       margin: 10px;
@@ -377,6 +375,10 @@ h6 {
         }
         #header2-div {
           width: 880px;
+          h2 {
+            line-height: 80px;
+            margin: 35px 20px;
+          }
         }
         #header2 {
           margin: -15px 12px !important;
@@ -399,9 +401,13 @@ h6 {
     #home-container1 {
       #header1-div {
         width: 600px;
+        h2 {
+          font-size: 38px;
+          line-height: 62px;
+        }
       }
       #header2-div {
-        width: 530px;
+        width: 580px;
       }
       .home-btns {
         margin-top: 22px;
@@ -415,6 +421,7 @@ h6 {
   #home {
     #home-container {
       #home-container1 {
+        width: 60%;
         #header1-div {
           width: 520px;
         }
@@ -429,15 +436,16 @@ h6 {
     #home-container {
       margin-bottom: 5px;
       #home-container1 {
-        width: 55%;
         #header1-div {
           width: 500px;
         }
         #header2-div {
-          width: 462px;
+          width: 520px;
         }
       }
       #home-container2 {
+        display: flex;
+        justify-content: center;
         width: 45%;
       }
     }
@@ -445,18 +453,20 @@ h6 {
 }
 
 // Laptop responsiveness 4
-@media (max-width: 973px) {
-  #home-container {
-    margin-bottom: 55px;
-    #home-container1 {
-      .hire-btns {
-        padding: 5px 20px;
-      }
-      #header1-div {
-        width: 445px;
-      }
-       #header2-div {
-        width: 440px;
+@media (max-width: 1020px) {
+  #home {
+    #home-container {
+      margin-bottom: 55px;
+      #home-container1 {
+        #header1-div {
+          width: 450px;
+        }
+         #header2-div {
+          width: 460px;
+        }
+        .hire-btns {
+          padding: 5px 20px;
+        }
       }
     }
   }
@@ -465,10 +475,11 @@ h6 {
 // Tablet
 @media (max-width: 830px) {
   #home {
-    margin: -40px 0px 0px 0px !important;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: calc(100vh - 60px);
     overflow-y: scroll;
     #contact-card {
-      position: absolute !important;
       padding: 0 !important;
       margin-left: 0px !important;
       width: 100% !important;
@@ -476,21 +487,30 @@ h6 {
         width: 480px;
       }
     }
+    // .container-slot {
+    //   height: 1280px;
+    // }
     #home-container {
-      display: block !important;
-      width: 100% !important;
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       #home-container1 {
         width: 100%;
-        display: block !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
          #header1-div {
           width: 520px;
         }
+        
         #header2-div {
-          width: 500px;
+          margin: 20px 0;
+          width: 540px;
         }
       }
       #home-container2 {
-        position: relative;
+        // position: relative;
         margin: 50px auto 60px auto !important;
         width: 100% !important;
         display: flex !important;
@@ -507,20 +527,29 @@ h6 {
 // Mobile 3
 @media (max-width: 562px) {
   #home {
+    padding-top: 25px;
+    // padding-bottom: 50px;
     #contact-card {
-      width: 100vw !important;
-      overflow: none !important;
+      width: 100vw;
+      overflow: none;
       #business-card {
-        width: 320px !important;
+        width: 320px;
       }
+    }
+    .container-slot {
+      height: 1260px !important;
     }
     #home-container {
       #home-container1 {
+        margin-top: 20px !important;
         #header1-div {
           width: 400px;
         }
         #header2-div {
           width: 400px;
+          h2 {
+            margin: 0;
+          }
         }
       }
       #home-container2 {
@@ -545,6 +574,7 @@ h6 {
     }
     #home-container {
       #home-container1 {
+        margin-top: 445px;
         #header1-div {
           width: 340px;
           #heading1 {
@@ -554,12 +584,12 @@ h6 {
         #header2-div {
           width: 335px;
           margin-top: 25px;
-          #header2 {
-            margin-left: 0px !important;
-            margin-top: -20px !important;
-            margin-bottom: -20px !important;
-            // padding: 40px -5px;
-          }
+          // #header2 {
+          //   margin-left: 0px !important;
+          //   margin-top: -20px !important;
+          //   margin-bottom: -20px !important;
+          //   // padding: 40px -5px;
+          // }
         }
         #hire-container{
           display: flex;

@@ -462,8 +462,8 @@ export default {
 
 <style lang="scss" scoped>
 /* https://github.com/lonekorean/gist-syntax-themes */
-$dark: #2b2c2e;
-$grey: #353639;
+$dark: #201f23;
+$grey: #2b2c2e;
 $green: #7ed957;
 $blue: #5271ff;
 

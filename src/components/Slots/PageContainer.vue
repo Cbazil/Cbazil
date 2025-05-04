@@ -1,5 +1,5 @@
 <template>
-  <div id="container-slot">
+  <div class="container-slot" id="about-container">
     <div id="header" v-if="prefixtab">
       <img id="arrowTL" width="25" height="7" src="../../assets/arrowKeys.png" alt="Left/up arrow bounces">
       <span class="indicator"><p>PRESS <span class="btn-name">
@@ -15,8 +15,8 @@
     <div id="main-container">
       <slot></slot>
       <div id="mobile-controlls">
-        <q-btn rounded v-if="prefixtab" @click="handlePrevious" class="prefix-btn" size="15px" outline><q-icon name="fas fa-angle-up" /></q-btn>
-        <q-btn rounded v-if="suffixtab" @click="handleNext" class="suffix-btn" size="15px" outline><q-icon name="fas fa-angle-down" /></q-btn>
+        <!-- <q-btn rounded v-if="prefixtab" @click="handlePrevious" class="prefix-btn" size="15px" outline><q-icon name="fas fa-angle-up" /></q-btn>
+        <q-btn rounded v-if="suffixtab" @click="handleNext" class="suffix-btn" size="15px" outline><q-icon name="fas fa-angle-down" /></q-btn> -->
       </div>
     </div>
     <div id="footer" v-if="suffixtab">
@@ -116,8 +116,8 @@ export default {
 </script>
 
 <style lang="scss">
-$grey: #353639;
-$dark: #2b2c2e;
+$grey: #2b2c2e;
+$dark: #201f23;
 
 .Cursor {
   pointer-events: none;
@@ -143,7 +143,7 @@ $dark: #2b2c2e;
     
   // filter url("#goo")
 
-#container-slot {
+.container-slot {
   background: $grey;
   // background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
   width: calc(100% - 50px);
@@ -151,6 +151,16 @@ $dark: #2b2c2e;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+
+  // @media (max-width: 830px) {
+  //   height: 1260px;
+  // }
+
+
+  // @media (max-width: 430px) {
+  //   height: 1580px;
+  // }
+  
   margin-left: 10px;
   #header {
     position: fixed;

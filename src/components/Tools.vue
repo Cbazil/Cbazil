@@ -733,8 +733,8 @@ $green: #7ed957;
 @media (max-width: 830px) {
   #tools-container {
     width: 700px !important;
-    margin-left: 25px !important;
-    margin-bottom: 40px !important;
+    margin-top: 10px !important;
+    margin-left: 10px !important;
     #tools-main {
       .arr-btns {
         width: 70px;
@@ -859,7 +859,7 @@ $green: #7ed957;
 @media (max-width: 660px) {
   #tools-container {
     width: 560px !important;
-    margin-left: 0px !important;
+    // margin-left: 0px !important;
     #tools-main {
       .box-tool-desc {
         h2 {
@@ -897,8 +897,9 @@ $green: #7ed957;
 // Tablet 2
 @media (max-width: 580px) {
   #tools-container {
-    width: 480px !important;
-    margin-left: 10px !important;
+    width: 400px;
+    // margin-left: 10px !important;
+    margin: 0px;
     #tools-main {
       .box-tool-desc {
         h2 {
@@ -933,22 +934,27 @@ $green: #7ed957;
 // Tablet 3
 @media (max-width: 490px) {
   #tools-container {
-    width: 430px !important;
-    margin-left: -10px !important;
+    width: 400px !important;
+    
     #tools-main {
       .box-tool-desc {
         h2 {
-          font-size: 12px !important;
-          line-height: 14px !important;
+          font-size: 11px !important;
+          line-height: 12px !important;
         }
+      }
+      .tool-desc {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 5fr;
       }
       .main-box {
         height: 160px !important;
         .image-sqr {
-          width: 120px !important;
+          width: 100px !important;
           height: 120px !important;
           .main-image {
-            width: 100px !important;
+            width: 80px !important;
             height: 100px !important;
           }
         }
@@ -971,7 +977,7 @@ $green: #7ed957;
 @media (max-width: 440px) {
   #tools-container {
     width: 330px !important;
-    margin: -30px 20px 0px 20px !important;
+    // margin: -30px 20px 0px 20px !important;
     #tools-main {
       .box-tool-desc {
         h2 {
@@ -1026,12 +1032,11 @@ $green: #7ed957;
   #tools-container {
     h5 {
       font-size: 18px;
-      margin: 0 0 18px 0 !important;
       line-height: 18px;
     }
-    width: 300px !important;
-    margin: -30px 5px 0px 5px !important;
     #tools-main {
+      width: 100% !important;
+      // overflow-x: scroll;
       margin-top: 10px;
       .box-tool-desc {
         h2 {
@@ -1042,15 +1047,15 @@ $green: #7ed957;
       .main-box {
         height: 120px !important;
         .image-sqr {
-          width: 60px !important;
-          height: 60px !important;
+          width: 55px !important;
+          height: 55px !important;
           .main-image {
-            width: 55px !important;
-            height: 55px !important;
+            width: 50px !important;
+            height: 50px !important;
           }
         }
         .arrow-icons {
-          font-size: 50px !important;
+          font-size: 40px !important;
         }
       }
        .skill-name {
@@ -1082,5 +1087,12 @@ $green: #7ed957;
     }
   }
 }
+
+@media (max-width: 350px) {
+  #tools-container {
+    width: 295px !important;
+  }
+}
+
 
 </style>

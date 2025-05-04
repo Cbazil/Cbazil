@@ -8,6 +8,7 @@
             <h1>Skills & Stacks</h1>
             <h5 style="display: flex; justify-content: flex-end;">&lt;/title&gt;</h5>
           </div>
+          <br>
           <div id="header2-div">
             <h3>Fullstack Javascript developer, develops web apps using Javascript and NodeJS frameworks/libraries.</h3>
           </div>
@@ -77,12 +78,16 @@ export default {
       router.push('/experience')
     }
 
+    const windowWidth = ref(window.innerWidth);
+
     const navScroll = (e) => {
-      if (e.deltaY < 0) {
-        router.push('/about')
-      }
-      if (e.deltaY > 0) {
-        router.push('/experience')
+      if (windowWidth > 830) {
+        if (e.deltaY < 0) {
+          router.push('/about')
+        }
+        if (e.deltaY > 0) {
+          router.push('/experience')
+        }
       }
     }
 
@@ -116,7 +121,7 @@ $blue: #5271ff;
     width: 45%;
     color: #fff;
    #header1-div {
-      width: 480px;
+      width: 440px;
       h1 {
         font-size: 60px !important;
         margin: 25px;
@@ -345,20 +350,25 @@ $blue: #5271ff;
 // Tablet
 @media (max-width: 830px) {
   #skills {
-    margin: -40px 10px 0px 10px !important;
+    padding-top: 100px;
+    margin: auto 10px;
+    height: calc(100vh - 60px);
+    #main-container {
+      margin: 0 !important;
+    }
     overflow-y: scroll;
     #skills-container {
       width: 100% !important;
       display: block !important;
       #skills-container1 {
-        margin-bottom: 70px !important;
+        padding: 0px 10px !important;
         width: 100% !important;
         display: block !important;
         #header1-div {
           width: 480px !important;
           h1 {
             font-size: 65px !important;
-            margin: 5px 25px;
+            margin: 25px;
           }
         }
         #header2-div {
@@ -387,7 +397,8 @@ $blue: #5271ff;
       }
       #skills-container2 {
         width: 100% !important;
-        display: block !important;
+        display: flex;
+        // justify-content: center;
       }
     }
     .closing-tags {
@@ -406,7 +417,7 @@ $blue: #5271ff;
           width: 460px !important;
           h1 {
             font-size: 62px !important;
-            margin: 5px 22px;
+            // margin: 5px 22px;
           }
         }
       }
@@ -417,17 +428,18 @@ $blue: #5271ff;
 // Tablet 3
 @media (max-width: 660px) {
   #skills {
+    padding-top: 20px;
     #skills-container {
       #skills-container1 {
         #header2-div {
           width: 480px !important;
         }
-         #skills-div {
+        #skills-div {
           width: 500px !important;
           .skill {
             width: 480px !important;
           }
-         }
+        }
       }
     }
   }
@@ -442,7 +454,7 @@ $blue: #5271ff;
           width: 420px !important;
           h1 {
             font-size: 58px !important;
-            margin: 5px 18px;
+            margin: 18px;
           }
         }
         #header2-div {
@@ -468,7 +480,7 @@ $blue: #5271ff;
           width: 360px !important;
           h1 {
             font-size: 50px !important;
-            margin: -5px 12px;
+            // margin: -5px 12px;
           }
         }
         #header2-div {
@@ -485,6 +497,10 @@ $blue: #5271ff;
             }
           }
         }
+      }
+      #skills-container2 {
+        margin: 0;
+        padding: 0;
       }
     }
   }
@@ -505,10 +521,9 @@ $blue: #5271ff;
     #skills-container {
       #skills-container1 {
         #header1-div {
-          width: 300px !important;
+          width: 320px !important;
           h1 {
             font-size: 42px !important;
-            margin: 5px 10px -10px 10px !important;
           }
         }
         #header2-div {
@@ -543,17 +558,17 @@ $blue: #5271ff;
       #skills-container1 {
         #header1-div {
           margin-left: -5px !important;
-          width: 280px !important;
+          width: 300px !important;
           h1 {
             font-size: 38px !important;
-            margin: -5px 15px -20px 15px !important;
+            // margin: -5px 15px -20px 15px !important;
           }
         }
         #header2-div {
           width: 270px !important;
           h3 {
             font-size: 18px !important;
-            margin: -5px -10px 15px 0px !important;
+            // margin: -5px -10px 15px 0px !important;
             line-height: 22px;
           }
         }
@@ -571,6 +586,16 @@ $blue: #5271ff;
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  #skills {
+    #skills-container {
+      #skills-container1 {
+        padding: 0 5px !important;
       }
     }
   }

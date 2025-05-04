@@ -496,7 +496,7 @@ export default {
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-$grey: #353639;
+$grey: #2b2c2e;
 $green: #7ed957;
 $blue: #5271ff;
 
@@ -580,7 +580,6 @@ $blue: #5271ff;
 }
 
 #game-ui {
-  margin-top: 5px !important;
   position: relative;
   display: block;
   text-align: center;
@@ -606,23 +605,23 @@ button {
   #container {
     margin: 10px 0px;
     padding: 0;
-    width: 480px !important;
-    height: 520px !important;
+    width: 480px;
+    height: 520px;
   }
   .pieces {
     width: 94px;
     height: 94px;
   }
   button {
-    font-size: 22px !important;
+    font-size: 22px;
   }
   .squares {
-    max-width: 190px !important;
-    max-height: 190px !important;
-    width: 154px !important;
-    height: 154px !important;
+    max-width: 190px;
+    max-height: 190px;
+    width: 154px;
+    height: 154px;
     margin: 0;
-    padding: 20% !important;
+    padding: 20%;
   }
   #grid {
     grid-gap: 12px;
@@ -698,12 +697,17 @@ button {
   }
 }
 
+@media (max-width: 860px) {
+  #container {
+    margin-top: 20px !important;
+  }
+}
 
 // Mobile 2
 @media (max-width: 376px) {
   .control-btn {
-      margin-top: -10px;
-    }
+    margin-top: -10px;
+  }
   h5 {
     font-size: 18px;
     margin: 0 0 18px 0 !important;

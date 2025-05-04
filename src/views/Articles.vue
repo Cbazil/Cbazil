@@ -106,58 +106,62 @@ export default {
       router.push('/projects')
     }
 
+    const windowWidth = ref(window.innerWidth);
+
     const navScroll = (e) => {
-      if (
-        e.target.id == "blogs-container1" || 
-        e.target.id == "blog1" ||
-        e.target.id == "blog2" ||
-        e.target.id == "blog3" ||
-        e.target.id == "blog4" ||
-        e.target.id == "blog5" ||
-        e.target.classList == "blob-code blob-code-inner js-file-line" || 
-        e.target.classList == "blob-num js-line-number js-code-nav-line-number js-blob-rnum" ||
-        e.target.classList == "text-h5 q-mt-sm q-mb-xs"  ||
-        e.target.classList == "blog-header" ||
-        e.target.classList == "one-liner" ||
-        e.target.classList == "liner-content" ||
-        e.target.classList == "blog-sub-heading" ||
-        e.target.classList == "para" ||
-        e.target.classList == "toCenter" || 
-        e.target.classList == "ulist" ||
-        e.target.classList == "pl-s" ||
-        e.target.classList == "desc" ||
-        e.target.classList == "pl-c1" ||
-        e.target.classList == "text-caption desc text-grey" ||
-        e.target.classList == "pl-c" || 
-        e.target.classList == "pl-s1" ||
-        e.target.classList == "pl-k" ||
-        e.target.classList ==  "pl-v" ||
-        e.target.classList == "pl-smi" ||
-        e.target.classList == "pl-en" || 
-        e.target.classList == "pl-kos" ||
-        e.target.classList == "pl-ent" ||
-        e.target.classList == "gist-meta" ||
-        e.target.classList == "q-btn__content text-center col items-center q-anchor--skip justify-center row" ||
-        e.target.classList == "q-checkbox__inner relative-position non-selectable q-checkbox__inner--truthy text-#7ed957" || 
-        e.target.classList == "q-checkbox cursor-pointer no-outline row inline no-wrap items-center q-checkbox--dark" ||
-        e.target.classList == "q-checkbox__label q-anchor--skip" ||
-        e.target.nodeName == "A" ||
-        e.target.classList == "q-checkbox__svg fit absolute-full" ||
-        e.target.id == "quick-access" ||
-        e.target.id == "blogs-container2" ||
-        e.target.classList == "links" ||
-        e.target.classList == "blog-img" ||
-        e.target.classList == "text-caption text-grey" ||
-        e.target.classList == "q-img__image q-img__image--with-transition q-img__image--loaded" ||
-        e.target.classList == "q-card__section q-card__section--vert col-5 flex flex-center" ||
-        e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--outline q-btn--rectangle q-btn--actionable q-focusable q-hoverable blog-btns" ||
-        e.target.classList == "q-card__section q-card__section--vert q-pt-xs") {
-      } else {
-        if (e.deltaY < 0) {
-          router.push('/experience')
-        }
-        if (e.deltaY > 0) {
-          router.push('/projects')
+      if (windowWidth > 830) { 
+        if (
+          e.target.id == "blogs-container1" || 
+          e.target.id == "blog1" ||
+          e.target.id == "blog2" ||
+          e.target.id == "blog3" ||
+          e.target.id == "blog4" ||
+          e.target.id == "blog5" ||
+          e.target.classList == "blob-code blob-code-inner js-file-line" || 
+          e.target.classList == "blob-num js-line-number js-code-nav-line-number js-blob-rnum" ||
+          e.target.classList == "text-h5 q-mt-sm q-mb-xs"  ||
+          e.target.classList == "blog-header" ||
+          e.target.classList == "one-liner" ||
+          e.target.classList == "liner-content" ||
+          e.target.classList == "blog-sub-heading" ||
+          e.target.classList == "para" ||
+          e.target.classList == "toCenter" || 
+          e.target.classList == "ulist" ||
+          e.target.classList == "pl-s" ||
+          e.target.classList == "desc" ||
+          e.target.classList == "pl-c1" ||
+          e.target.classList == "text-caption desc text-grey" ||
+          e.target.classList == "pl-c" || 
+          e.target.classList == "pl-s1" ||
+          e.target.classList == "pl-k" ||
+          e.target.classList ==  "pl-v" ||
+          e.target.classList == "pl-smi" ||
+          e.target.classList == "pl-en" || 
+          e.target.classList == "pl-kos" ||
+          e.target.classList == "pl-ent" ||
+          e.target.classList == "gist-meta" ||
+          e.target.classList == "q-btn__content text-center col items-center q-anchor--skip justify-center row" ||
+          e.target.classList == "q-checkbox__inner relative-position non-selectable q-checkbox__inner--truthy text-#7ed957" || 
+          e.target.classList == "q-checkbox cursor-pointer no-outline row inline no-wrap items-center q-checkbox--dark" ||
+          e.target.classList == "q-checkbox__label q-anchor--skip" ||
+          e.target.nodeName == "A" ||
+          e.target.classList == "q-checkbox__svg fit absolute-full" ||
+          e.target.id == "quick-access" ||
+          e.target.id == "blogs-container2" ||
+          e.target.classList == "links" ||
+          e.target.classList == "blog-img" ||
+          e.target.classList == "text-caption text-grey" ||
+          e.target.classList == "q-img__image q-img__image--with-transition q-img__image--loaded" ||
+          e.target.classList == "q-card__section q-card__section--vert col-5 flex flex-center" ||
+          e.target.classList == "q-btn q-btn-item non-selectable no-outline q-btn--outline q-btn--rectangle q-btn--actionable q-focusable q-hoverable blog-btns" ||
+          e.target.classList == "q-card__section q-card__section--vert q-pt-xs") {
+        } else {
+          if (e.deltaY < 0) {
+            router.push('/experience')
+          }
+          if (e.deltaY > 0) {
+            router.push('/projects')
+          }
         }
       }
     }
@@ -255,11 +259,13 @@ $blue: #5271ff;
   #blogs-header {
     display: flex;
     width: 100%;
+    margin-left: 20px; 
     #header1-div {
+      padding-left: 7px;
       width: 320px;
       h1 {
        font-size: 65px !important;
-       margin: 25px;
+       margin: 25px 25px 30px 25px;
       }
     }
   }
@@ -345,13 +351,6 @@ $blue: #5271ff;
   #articles {
     #blogs-container {
       margin-left: 24px;
-      #blogs-header {
-        #header1-div {
-          #heading1 {
-            margin: 20px 25px !important;
-          }
-        }
-      }
       #container-content {
         #blogs-container1 {
           height: 360px;
@@ -364,9 +363,15 @@ $blue: #5271ff;
 // Tablet
 @media (max-width: 830px) {
   #articles {
-    margin: -40px 10px 0px 10px !important;
-    overflow-y: scroll;
+    margin: 0 !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    padding-top: 100px !important;
+    height: calc(100vh - 60px);
     #blogs-container {
+      #blogs-header {
+        margin-left: 0px;
+      }
       #container-content {
         display: flex !important;
         flex-direction: column-reverse;
@@ -413,6 +418,7 @@ $blue: #5271ff;
 // Mobile 2
 @media (max-width: 426px) {
   #articles {
+    padding: 25px;
     h5 {
       font-size: 18px;
       margin: 0 0 18px 0 !important;
@@ -424,17 +430,17 @@ $blue: #5271ff;
     }
     #blogs-container {
       #blogs-header {
+        margin-left:  -10px;
         #header1-div {
-          width: 198px !important;
+          width: 220px !important;
           h1 {
             font-size: 38px !important;
-            margin: -5px -20px -18px 20px !important;
           }
         }
       }
       #container-content {
-        width: 370px !important;
-        margin-left: -30px !important;
+        width: 350px !important;
+        margin-left: -20px !important;
         .q-card__section.q-card__section--vert.q-pt-xs {
           margin-left: 0px !important;
           .text-h5.q-mt-sm.q-mb-xs {
@@ -459,9 +465,19 @@ $blue: #5271ff;
 // Mobile 2
 @media (max-width: 360px) {
   #articles {
+    // padding-left: 21px;
     #blogs-container {
       #container-content {
-        width: 320px !important;
+        width: 280px !important;
+        margin-left: -5px !important;
+      }
+      #blogs-header {
+        #header1-div {
+          width: 260px !important;
+          // #heading1 {
+          //   margin: 20px 15px !important; 
+          // }
+        }
       }
     }
   }

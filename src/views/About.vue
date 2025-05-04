@@ -11,6 +11,7 @@
           <div id="header2-div">
             <h3>I am Chad Bazil Bosch (Developer, Gamer & Otaku). I love creating things aswell as solving problems, my interest in computer science and math has always been a big passion and driver of mine. I'm a Full Stack developer, my preferred language is Javascript. I would ideally always like to work on applications, game scripting, and producing innovative ideas.</h3>
           </div>
+          <br>
           <div id="hobbies-div">
             <h5>&lt;Hobbies&gt;</h5>
             <div id="hobbies">
@@ -48,17 +49,21 @@ export default {
     const navHome = () => {
       router.push('/')
     }
-
+    
     const navSkills = () => {
       router.push('/skills')
     }
+    
+    const windowWidth = ref(window.innerWidth);
 
     const navScroll = (e) => {
-      if (e.deltaY < 0) {
-        router.push('/')
-      }
-      if (e.deltaY > 0) {
-        router.push('/skills')
+      if (windowWidth > 830) {
+        if (e.deltaY < 0) {
+          router.push('/')
+        }
+        if (e.deltaY > 0) {
+          router.push('/skills')
+        }
       }
     }
 
@@ -76,6 +81,7 @@ $green: #7ed957;
 $blue: #5271ff;
 #about {
   width: 100vw;
+  height: 100%;
   position: relative;
   z-index: 0;
   display: flex;
@@ -89,9 +95,9 @@ $blue: #5271ff;
     padding: 0px 10px;
     width: 60%;
     #header1-div {
-      width: 330px;
+      width: 365px;
       h1 {
-        margin: 25px;
+        margin: 30px !important;
       }
     }
     #header2-div {
@@ -105,7 +111,7 @@ $blue: #5271ff;
       }
     }
     #hobbies-div {
-      width: 760px;
+      width: 680px;
       #hobbies {
         display: flex;
         flex-direction: row;
@@ -123,6 +129,7 @@ $blue: #5271ff;
     }
   }
 }
+
 #about:focus {
   outline: none;
   border: none;
@@ -176,11 +183,12 @@ $blue: #5271ff;
           }
         }
         #hobbies-div {
-          width: 680px;
+          width: 620px;
            #hobbies {
-             margin-top: -12px !important;
+             margin-top: -12px;
+             margin-bottom: 10px;
              .hobby {
-              font-size: 13px;
+                font-size: 13px;
              }
            }
         }
@@ -223,44 +231,55 @@ $blue: #5271ff;
 }
 // Laptop responsiveness 3
 @media (max-width: 1140px) {
-  #about-container {
-    #about-container1 {
-      width: 62%;
-      #header2-div {
-        width: 580px; 
-         h3 {
-          font-size: 18px;
-          line-height: 26px;
-         }
+  #about {
+    #about-container {
+      #about-container1 {
+        width: 62%;
+        #header2-div {
+          width: 520px;
+          h3 {
+            font-size: 18px;
+            line-height: 26px;
+          }
+        }
+        #hobbies-div {
+          width: 550px;
+          #hobbies {
+            .hobby {
+                padding: 5px;
+                margin: 4px;
+            }
+          }
+        }
       }
-      #hobbies-div {
-        width: 560px;
-         #hobbies {
-           .hobby {
-              padding: 5px;
-              margin: 4px;
-           }
-         }
+      #about-container2 {
+        display: flex;
+        justify-content: center;
+        width: 40%;
+        // width: 38%;
       }
-    }
-    #about-container2 {
-      width: 38%;
     }
   }
 }
 
 // Laptop responsiveness 4
 @media (max-width: 973px) {
-  #about-container {
-    #about-container1 {
-      #header2-div {
-        width: 500px !important;
-        h3 {
-          line-height: 22px !important;
+  #about {
+    #about-container {
+      #about-container1 {
+        #header2-div {
+          width: 460px !important;
+          h3 {
+            line-height: 22px !important;
+          }
         }
-      }
-      #hobbies-div {
-        width: 540px;
+        #hobbies-div {
+          width: 500px;
+          #hobbies {
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
       }
     }
   }
@@ -269,13 +288,19 @@ $blue: #5271ff;
 // Tablet
 @media (max-width: 830px) {
   #about {
-    margin: -40px 10px 0px 10px !important;
     overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 100px;
+    padding-bottom: 150px; 
+    height: calc(100vh - 60px);
     #about-container {
-      display: block !important;
+      // display: block;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       #about-container1 {
         width: 100% !important;
-        display: block !important;
+        // display: block !important;
         #header2-div {
           width: 100% !important;
           h3 {
@@ -310,6 +335,8 @@ $blue: #5271ff;
 // Table 2 (Hobbies wrap)
 @media (max-width: 620px) {
    #about {
+    // padding-top: 260px;
+    // padding-bottom: 150px;
     #about-container {
       #about-container1 {
         #hobbies-div {
@@ -328,13 +355,17 @@ $blue: #5271ff;
 // Mobile 3
 @media (max-width: 562px) {
   #about {
+    padding-top: 145px;
+    #about-container {
+      margin-top: 25px;
+    }
     #about-container {
       #about-container1 {
         #header1-div {
           width: 280px !important;
           h1 {
             font-size: 58px !important;
-            margin: -5px 18px;
+            margin: 18px !important;
           }
         }
         #header2-div {
@@ -368,9 +399,15 @@ $blue: #5271ff;
           width: 210px !important;
           h1 {
             font-size: 42px !important;
-            margin: -5px 15px -10px 15px;
+            // margin: -5px 15px -10px 15px;
           }
         }
+        #hobbies {
+          margin: 0;
+          margin-left: 10px;
+          margin-top: 20px !important;
+        }
+
         #hobbies-div {
           width: 320px !important;
         }
@@ -404,8 +441,8 @@ $blue: #5271ff;
           margin: 0px 0px 0px 0px !important;
           width: 190px !important;
           h1 {
-            font-size: 38px !important;
-            margin: -5px 15px -18px 15px !important;
+            font-size: 36px !important;
+            // margin: -5px 15px -18px 15px !important;
           }
         }
         #hobbies-div {
