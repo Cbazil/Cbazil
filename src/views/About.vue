@@ -292,7 +292,7 @@ $blue: #5271ff;
     overflow-x: hidden;
     padding-top: 100px;
     padding-bottom: 150px; 
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     #about-container {
       // display: block;
       display: flex;

@@ -350,14 +350,13 @@ $blue: #5271ff;
 // Tablet
 @media (max-width: 830px) {
   #skills {
-    padding-top: 100px;
-    margin: auto 10px;
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     #main-container {
       margin: 0 !important;
     }
     overflow-y: scroll;
     #skills-container {
+      padding-top: 100px;
       width: 100% !important;
       display: block !important;
       #skills-container1 {

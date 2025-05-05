@@ -12,6 +12,13 @@
       </span> KEY TO JUMP TO {{ prefixtab.toUpperCase() }} PAGE</p></span>
       <img id="arrowTR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/up arrow bounces">
     </div>
+    <div id="header" v-else>
+      <img id="arrowTL" width="25" height="7" style="transform: rotate(90deg)" src="../../assets/hireme.png" alt="Hire me">
+      <span class="indicator">
+        <p style="color: #5271ff; font-size: 18px;">Available for hire: Full-time, Contract and Freelancing.</p>
+      </span>
+      <img id="arrowTR" width="25" height="7" style="transform: rotate(90deg);" src="../../assets/hireme.png" alt="Hire me">
+    </div>
     <div id="main-container">
       <slot></slot>
       <div id="mobile-controlls">
@@ -31,6 +38,14 @@
       </span> KEY TO JUMP TO {{ suffixtab.toUpperCase() }} PAGE</p></span>
       <img id="arrowBR" width="25" height="7" src="../../assets/arrowKeys.png" alt="Right/down arrow bounces">
     </div>
+    <div id="footer" v-else>
+      <img id="arrowTL" width="25" height="7" style="transform: rotate(90deg)" src="../../assets/hireme.png" alt="Hire me">
+      <span class="indicator">
+        <p style="color: #5271ff; font-size: 18px;">Available for hire: Full-time, Contract and Freelancing.</p>
+      </span>
+      <img id="arrowTR" width="25" height="7" style="transform: rotate(90deg);" src="../../assets/hireme.png" alt="Hire me">
+    </div>
+    
   </div>
   <div id="cursor" class="Cursor"></div>
 </template>
@@ -150,7 +165,7 @@ $dark: #201f23;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  height: 100svh;
 
   // @media (max-width: 830px) {
   //   height: 1260px;

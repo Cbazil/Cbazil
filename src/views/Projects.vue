@@ -60,7 +60,7 @@
                         <q-btn
                           push
                           dense 
-                          style="4px; opacity: 0.75; z-index: 2;"
+                          style="opacity: 0.75; z-index: 2;"
                           color="light-green-12"
                           icon="fa fa-angle-right"
                           @click="$refs.carousel_p1.next()"
@@ -129,7 +129,7 @@
                         <q-btn
                           push
                           dense 
-                          style="4px; opacity: 0.75; z-index: 2;"
+                          style="opacity: 0.75; z-index: 2;"
                           color="light-green-12"
                           icon="fa fa-angle-right"
                           @click="$refs.carousel_p2.next()"
@@ -206,7 +206,7 @@
                       <q-btn
                         push
                         dense 
-                        style="4px; opacity: 0.75;"
+                        style="opacity: 0.75;"
                         color="light-green-12"
                         icon="fa fa-angle-right"
                         @click="$refs.carousel_p3.next()"
@@ -282,7 +282,7 @@
                         <q-btn
                           push
                           dense
-                          style="4px; opacity: 0.75;"
+                          style="opacity: 0.75;"
                           color="light-green-12"
                           icon="fa fa-angle-right"
                           @click="$refs.carousel_p4.next()"
@@ -355,7 +355,7 @@
                         <q-btn
                           push
                           dense 
-                          style="4px; opacity: 0.75; z-index: 2;"
+                          style="opacity: 0.75; z-index: 2;"
                           color="light-green-12"
                           icon="fa fa-angle-right"
                           @click="$refs.carousel_p5.next()"
@@ -377,48 +377,151 @@
                 </q-carousel>
               </q-btn>
               <q-btn class="proj-btns" size="15px" outline>
-                <div class="mini-container container csp3 csp" :class="{ project_desc: infoP6 }">
-                   <q-btn
-                    push
-                    dense
-                    rounded
-                    size="18px"
-                    class="i-icon"
-                    color="light-green-12"
-                    @click="toggleInfoP6"
+                <q-carousel
+                    class="mini-container container"
+                    swipeable
+                    animated
+                    v-model="project6"
+                    :autoplay="autoplay"
+                    ref="carousel_p6"
+                    infinite
                   >
-                    <q-icon
-                      size="12px"
-                      name="fa fa-solid fa-info"
-                    />
-                  </q-btn>
-                  <div v-if="infoP6" class="project_container"> 
-                    <h6 class="project_name p_card">MiniUmp</h6>
-                    <p class="comingSoon">I'm building a score keeping and match fixing (Badminton) appplication, for a social group activity I participate in.</p>
-                  </div>
-                </div>
+                    <q-carousel-slide @click.prevent="project6Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/miniump-1.webp')" />
+                    <q-carousel-slide @click.prevent="project6Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/miniump-2.webp')" />
+                    <q-carousel-slide @click.prevent="project6Link" style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/miniump-3.webp')" />
+                    
+                    <template v-slot:control>
+                      <q-carousel-control
+                        position="top-left"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          rounded
+                          size="18px"
+                          style="padding: 4px 12px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          @click="toggleInfoP6"
+                        >
+                          <q-icon
+                            size="12px"
+                            name="fa fa-solid fa-info"
+                          />
+                        </q-btn>
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="top-right"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push
+                          dense
+                          style="margin-right: 4px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12" 
+                          icon="fa fa-angle-left"
+                          @click="$refs.carousel_p6.previous()"
+                        />
+                        <q-btn
+                          push
+                          dense 
+                          style="opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          icon="fa fa-angle-right"
+                          @click="$refs.carousel_p6.next()"
+                        />
+                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="bottom"
+                        class="text-white rounded-borders"
+                        :class="{project_desc: infoP6}"
+                        style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
+                      >
+                      <div class="project_container">
+                        <h6 class="project_name p_card">MiniUmp</h6>
+                        <p v-if="infoP6" class="comingSoon">I'm building a score keeping and match fixing (Badminton) appplication, for a social group activity I participate in. (Still in development, needs refactor)</p>
+                      </div>
+                      </q-carousel-control>
+                    </template>
+                </q-carousel>
               </q-btn>
             </div>
             <q-btn class="proj-btns" size="15px" outline>
-              <div class="single-container container csp4 csp" :class="{ project_desc: infoP7 }">
-                 <q-btn
-                    push
-                    dense
-                    rounded
-                    size="18px"
-                    class="i-icon"
-                    color="light-green-12"
-                    @click="toggleInfoP7"
+              <div class="single-container container">
+                <q-carousel
+                    swipeable
+                    animated
+                    v-model="project7"
+                    :autoplay="autoplay"
+                    style="height: 100% !important;"
+                    ref="carousel_p7"
+                    infinite
                   >
-                    <q-icon
-                      size="12px"
-                      name="fa fa-solid fa-info"
-                    />
-                  </q-btn>
-                   <div v-if="infoP7" class="project_container"> 
-                    <h6 class="project_name p_card">CStash</h6>
-                    <p class="comingSoon">This one I would consider to be one of the bigger projects I've decided to build, more info of this innovative project on release. Very Exited so please do stay tuned!</p>
-                   </div>
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/codespace-1.webp')" />
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/codespace-2.webp')" />
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/codespace-3.webp')" />
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/codespace-4.webp')" />
+
+                    <template v-slot:control>
+                      <q-carousel-control
+                        position="top-left"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          rounded
+                          size="18px"
+                          style="padding: 4px 12px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          @click="toggleInfoP7"
+                        >
+                          <q-icon
+                            size="12px"
+                            name="fa fa-solid fa-info"
+                          />
+                        </q-btn>
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="top-right"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          style="margin-right: 4px; opacity: 0.75;"
+                          color="light-green-12" 
+                          icon="fa fa-angle-left"
+                          @click="$refs.carousel_p7.previous()"
+                        />
+                        <q-btn
+                          push
+                          dense
+                          style="opacity: 0.75;"
+                          color="light-green-12"
+                          icon="fa fa-angle-right"
+                          @click="$refs.carousel_p7.next()"
+                        />
+                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="bottom"
+                        class="text-white rounded-borders"
+                        :class="{project_desc: infoP7}"
+                        style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
+                      >
+                      <div  class="project_container"> 
+                        <h6 class="project_name p_card">codespace.co.za</h6>
+                        <p v-if="infoP7" class="comingSoon">I maintained and helped develop the 2024 redesigned website for the company, I followed given designs, replicated it from Adobe XD and made it reality.</p>
+                      </div>
+                      </q-carousel-control>
+                    </template>
+                  </q-carousel>
               </div>
             </q-btn>
             <div class="duo-container">
@@ -439,32 +542,81 @@
                     />
                   </q-btn>
                   <div v-if="infoP8" class="project_container"> 
-                    <h6 class="project_name p_card">PreloadCSS</h6>
-                    <p class="comingSoon">I'll be making (10-12) pre-configured templates. Still working on the full idea (Well testing if it'll work), but I think I'm on to something.</p>
+                    <h6 class="project_name p_card">CoXP</h6>
+                    <p class="comingSoon">Building an activity schedular, where you can decide whether to join activities with friends.</p>
                   </div>
                 </div>
               </q-btn>
               <q-btn class="proj-btns" size="15px" outline>
-                <div class="mini-container container csp6 csp" :class="{ project_desc: infoP9}">
-                  <q-btn
-                    push
-                    dense
-                    rounded
-                    size="18px"
-                    class="i-icon"
-                    color="light-green-12"
-                    @click="toggleInfoP9"
+                <q-carousel
+                    class="mini-container container"
+                    swipeable
+                    animated
+                    v-model="project9"
+                    :autoplay="autoplay"
+                    ref="carousel_p9"
+                    infinite
                   >
-                    <q-icon
-                      size="12px"
-                      name="fa fa-solid fa-info"
-                    />
-                  </q-btn>
-                  <div v-if="infoP9" class="project_container"> 
-                    <h6 class="project_name p_card">CStash V2</h6>
-                    <p class="comingSoon">If the app scales and it meets enough active users, Release 2 will provide revenue whilst it challenges/grows/supports the userbase.</p>
-                  </div>
-                </div>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/cstash-1.webp')" />
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/cstash-2.webp')" />
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/cstash-3.webp')" />
+                    <template v-slot:control>
+                      <q-carousel-control
+                        position="top-left"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push 
+                          dense
+                          rounded
+                          size="18px"
+                          style="padding: 4px 12px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          @click="toggleInfoP9"
+                        >
+                          <q-icon
+                            size="12px"
+                            name="fa fa-solid fa-info"
+                          />
+                        </q-btn>
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="top-right"
+                        :offset="[18, 18]"
+                        style="margin: 0; padding: 4px;"
+                      >
+                        <q-btn
+                          push
+                          dense
+                          style="margin-right: 4px; opacity: 0.75; z-index: 2;"
+                          color="light-green-12" 
+                          icon="fa fa-angle-left"
+                          @click="$refs.carousel_p9.previous()"
+                        />
+                        <q-btn
+                          push
+                          dense 
+                          style="opacity: 0.75; z-index: 2;"
+                          color="light-green-12"
+                          icon="fa fa-angle-right"
+                          @click="$refs.carousel_p9.next()"
+                        />
+                        <!-- <q-toggle dense dark color="light-green-12" v-model="autoplay" label="Auto Play" /> -->
+                      </q-carousel-control>
+                      <q-carousel-control
+                        position="bottom"
+                        class="text-white rounded-borders"
+                        :class="{project_desc: infoP9}"
+                        style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
+                      >
+                        <div class="project_container"> 
+                          <h6 class="project_name">CStash</h6>
+                          <p v-if="infoP9" class="project_details">CStash is one of my biggest passion projects yet, that might extend into enterprise later. It's a handy code saver by heart intended to be quick-access, copy-pasting great code to be reused or shared.</p>
+                        </div>
+                      </q-carousel-control>
+                    </template>
+                </q-carousel>
               </q-btn>
             </div>
              <q-btn class="proj-btns" size="15px" outline>
@@ -626,6 +778,10 @@ export default {
       window.open("https://unlucky-hole.vercel.app")
     }
 
+    const project7Link = () => {
+      window.open("https://www.codespace.co.za")
+    }
+
     return {
       project1: ref(1),
       project2: ref(2),
@@ -635,6 +791,8 @@ export default {
       project6: ref(6),
       project7: ref(7),
       project8: ref(8),
+      project8: ref(8),
+      project9: ref(9),
       autoplay: ref(true),
       navArticles,
       container,
@@ -663,7 +821,8 @@ export default {
       toggleInfoP10,
       project1Link,
       project2Link,
-      project5Link
+      project5Link,
+      project7Link
     }
   }
 }
@@ -714,7 +873,7 @@ $blue: #5271ff;
           background-image: url('../assets/projects/cstash.png');
         }
         .csp5 {
-          background-image: url('../assets/projects/preloadcss.png');
+          background-image: url('../assets/projects/co-xp.png');
         }
         .csp6 {
           background-image: url('../assets/projects/cstash2.png');
@@ -906,7 +1065,7 @@ $blue: #5271ff;
     flex-direction: column;
     overflow-y: scroll !important;
     overflow-x: hidden !important;
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     position: relative;
     padding-top: 100px;
     #projects-container {
@@ -922,9 +1081,6 @@ $blue: #5271ff;
           height: inherit !important;
           .single-container {
             width: 100% !important;
-            @media (max-width: 830px) {
-              height: 186px !important; 
-            }
            }
           .duo-container {
             display: flex;
@@ -949,10 +1105,6 @@ $blue: #5271ff;
               }
             }
           }
-          // .mini-container {
-          //   height: 360px !important;
-          //   width: 100% !important;
-          // }
           .proj-btns {
             height: 360px !important;
             @media (max-width: 630px) {
@@ -993,28 +1145,23 @@ $blue: #5271ff;
         }
       }
       #project-gallery {
-        // width: 126% !important;
-        // margin-left: -45px !important;
         -ms-scroll-limit-x-max: 0cm;
         #gallery-div {
-          // height: 220px !important;
           .duo-container {
-            // width: 620px !important;
             grid-template-columns: 1fr 1fr !important;
             .mini-container {
-              width: 186px !important;
+              width: 184px !important;
             }
           }
           .single-container {
             width: 100% !important;
-            // margin: 25px;
+            width: 184px !important;
             padding: 0px;
           }
           .proj-btns {
             height: 182px !important;
             object-fit: contain;
             margin: 5px;
-            // padding: 0.9px 0px !important;
           }
           .project_name {
             margin-top: 30px !important;

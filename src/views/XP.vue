@@ -479,7 +479,7 @@ $blue: #5271ff;
   #experience {
     padding-top: 100px;
     position: relative;
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     #category-select {
       padding: 35px;
       display: flex;
@@ -507,7 +507,7 @@ $blue: #5271ff;
           width: 100%;
           height: 100%;
           display: block;
-          height: 55vh !important;
+          height: 55svh !important;
           width: 100%;
         }
 
@@ -522,7 +522,7 @@ $blue: #5271ff;
         .exp-timeline-show {
           display: flex;
           overflow-y: scroll;
-          height: 52vh;
+          height: 52svh;
           width: 100%;
         }
       }

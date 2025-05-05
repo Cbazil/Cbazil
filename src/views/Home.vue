@@ -477,7 +477,7 @@ h6 {
   #home {
     padding-top: 50px;
     padding-bottom: 50px;
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     overflow-y: scroll;
     #contact-card {
       padding: 0 !important;

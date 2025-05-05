@@ -367,7 +367,7 @@ $blue: #5271ff;
     overflow-y: scroll !important;
     overflow-x: hidden !important;
     padding-top: 100px !important;
-    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     #blogs-container {
       #blogs-header {
         margin-left: 0px;
@@ -439,7 +439,7 @@ $blue: #5271ff;
         }
       }
       #container-content {
-        width: 350px !important;
+        width: 360px !important;
         margin-left: -20px !important;
         .q-card__section.q-card__section--vert.q-pt-xs {
           margin-left: 0px !important;
@@ -468,7 +468,7 @@ $blue: #5271ff;
     // padding-left: 21px;
     #blogs-container {
       #container-content {
-        width: 280px !important;
+        width: 300px !important;
         margin-left: -5px !important;
       }
       #blogs-header {
@@ -478,6 +478,16 @@ $blue: #5271ff;
           //   margin: 20px 15px !important; 
           // }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 335px) {
+  #articles {
+    #blogs-container {
+      #container-content {
+        width: 290px !important;
       }
     }
   }

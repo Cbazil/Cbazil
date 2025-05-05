@@ -303,7 +303,7 @@ html {
 
 body {
   background: $grey;
-  height: 100vh;
+  height: 100svh;
   border: $grey;
   overflow: hidden;
 }
@@ -355,7 +355,7 @@ h3 {
   background-color: $grey;
   position: absolute;
   width: 100vw !important;
-  height: 100vh !important;
+  height: 100svh !important;
   margin: 0;
   padding: 0;
   border: $grey;
@@ -374,7 +374,7 @@ h3 {
     display: flex;
     z-index: 1;
     flex-direction: column;
-    height: 100vh;
+    height: 100svh;
     background-color: $dark;
     justify-content: space-between;
     width: 60px;
@@ -389,7 +389,7 @@ h3 {
     }
   }
   #main-container {
-    height: 100vh;
+    height: 100svh;
     margin-left: 45px;
     padding: 0;
     // overflow: hidden;
@@ -441,14 +441,14 @@ h3 {
   }
   .route-enter-from {
     opacity: 0;
-    transform: translateY(-90vh);
+    transform: translateY(-90svh);
   }
   .route-active-from {
     transition: ass 0.4s ease-out;
   }
   .route-leave-to {
     opacity: 0;
-    transform: translateY(90vh);
+    transform: translateY(90svh);
   }
   .route-leave-active {
     transition: all 0.4s ease-in;
@@ -582,7 +582,7 @@ h3 {
       background: $dark;
       flex-direction: row;
       .nav-i {
-        margin: 0 5px;
+        margin: 0 7.5px;
       }
     }
   }
@@ -621,20 +621,36 @@ h3 {
 
 // Mobile 1
 @media (max-width: 376px) {
-  h1 {
-    font-size: 34px !important;
-    line-height: 16px !important;
-  }
-  h2 {
-    font-size: 14px !important;
-    margin: 30px 10px 10px 10px;
-  }
-  .nav-i {
-    width: 50px !important;
-    .q-icon {
-      margin-top: 2px;
-      font-size: 16px !important;
+  #app {
+    h1 {
+      font-size: 34px !important;
+      line-height: 16px !important;
+    }
+    h2 {
+      font-size: 14px !important;
+      margin: 30px 10px 10px 10px;
+    }
+    #app-nav {
+      .nav-i {
+        width: 50px !important;
+        
+        .q-icon {
+          margin-top: 2px;
+          font-size: 16px !important;
+        }
+      }
     }
   }
 }
+
+@media (max-width: 335px) {
+  #app {
+    #app-nav {
+      .nav-i { 
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
 </style>
