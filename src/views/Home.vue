@@ -380,6 +380,9 @@ h6 {
             margin: 35px 20px;
           }
         }
+        #hire-container {
+          margin-top: 25px;
+        }
         #header2 {
           margin: -15px 12px !important;
         }
