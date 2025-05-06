@@ -291,7 +291,7 @@ $blue: #5271ff;
     overflow-y: scroll;
     overflow-x: hidden;
     padding-top: 100px;
-    padding-bottom: 150px; 
+    padding-bottom: 200px; 
     height: calc(100svh - 60px);
     #about-container {
       // display: block;

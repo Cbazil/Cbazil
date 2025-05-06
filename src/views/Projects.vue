@@ -220,8 +220,8 @@
                       style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
                     >
                       <div class="project_container"> 
-                        <h6 class="project_name">Health4Life App (Private)</h6>
-                        <p v-if="infoP3" class="project_details">This is a data capturing app, that captures HIV/Health risks tests done in coummunities and schools by the Health4Life Councellors at Life Choices. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                        <h6 class="project_name large-para">Health4Life App (Private)</h6>
+                        <p v-if="infoP3" class="project_details">A data capturing app, that captures HIV/Health risks tests done in communities and schools by the Health4Life Councellors at Life Choices. Link can't be shared due to ownership and confidentiality. Though I have provided some graphs that shows some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
                       </div>
                     </q-carousel-control>
                   </template>
@@ -296,8 +296,8 @@
                         style="background: rgba(0, 0, 0, .5); height: 60px; margin: 0; padding: 0;"
                       >
                         <div class="project_container"> 
-                          <h6 class="project_name">Life Choices Admin (Private)</h6>
-                          <p v-if="infoP4" class="project_details">This is an admin data capturing systems app, that makes Life Choices all Digital which saves time and increases productivity within the organisation. Link to this app can't be shared due to ownership and confidentiality. Though I have provideded some graphs that provides some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
+                          <h6 class="project_name large-para">Life Choices Admin (Private)</h6>
+                          <p v-if="infoP4" class="project_details">An admin data capturing app, that makes Life Choices all Digital which saves time and increases productivity. Link can't be shared due to ownership and confidentiality. Though I have provided some graphs that shows some insights of what I helped built. Reference <a class="links" href="https://www.linkedin.com/in/ryangeel/">Ryan Geel</a> Managing Director of Life Choices.</p>
                         </div>
                       </q-carousel-control>
                     </template>
@@ -541,7 +541,7 @@
                       name="fa fa-solid fa-info"
                     />
                   </q-btn>
-                  <div v-if="infoP8" class="project_container"> 
+                  <div v-if="infoP8" class="project_container coxp"> 
                     <h6 class="project_name p_card">CoXP</h6>
                     <p class="comingSoon">Building an activity schedular, where you can decide whether to join activities with friends.</p>
                   </div>
@@ -635,7 +635,7 @@
                       name="fa fa-solid fa-info"
                     />
                   </q-btn>
-                  <div v-if="infoP10" class="project_container"> 
+                  <div v-if="infoP10" class="project_container sfield"> 
                     <h6 class="project_name p_card">sField</h6>
                     <p class="comingSoon">I've always been fascinated about 3D game development, and in the year of 2023 I'll be introducing a game idea that I personally think sounds great on paper. Excited about this and just hoping it succeeds so please do stay tuned.</p>
                   </div>
@@ -1166,6 +1166,9 @@ $blue: #5271ff;
           .project_name {
             margin-top: 30px !important;
           }
+          .large-para {
+            margin-top: 10px !important;
+          }
           .project_details {
             margin-top: 20px !important;
             line-height: 15px !important;
@@ -1174,6 +1177,9 @@ $blue: #5271ff;
           .comingSoon {
             line-height: 15px !important;
             font-size: 13px !important;
+          }
+          .coxp, .sfield {
+            margin-top: -40px;
           }
           .container {  
             margin: 0px;

@@ -479,13 +479,17 @@ h6 {
 @media (max-width: 830px) {
   #home {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     height: calc(100svh - 60px);
     overflow-y: scroll;
+    position: relative;
     #contact-card {
       padding: 0 !important;
-      margin-left: 0px !important;
+      margin: 0px !important;
       width: 100% !important;
+      position: fixed !important;
+      height: 100vh !important;
+      z-index: 9999;
       #business-card {
         width: 480px;
       }

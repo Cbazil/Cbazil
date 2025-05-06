@@ -592,6 +592,7 @@ $blue: #5271ff;
       height: auto !important;
       flex-direction: column-reverse;
       #content-box {
+        padding-right: 0px;
         overflow-y: hidden;
         width: 100%;
       }

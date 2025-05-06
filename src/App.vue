@@ -331,7 +331,7 @@ h3 {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7.5px;
 }
 
 /* Track */
