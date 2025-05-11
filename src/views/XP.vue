@@ -45,7 +45,7 @@
                   <q-timeline-entry
                   title="ThreeJS And Start-up material"
                   class="event-title"
-                  subtitle="December 2019 - July 2020"
+                  subtitle="June 2022 - August 2022"
                   side="right"
                   color="blue-8"
                 >

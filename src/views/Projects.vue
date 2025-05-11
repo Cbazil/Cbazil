@@ -370,7 +370,7 @@
                       >
                         <div class="project_container"> 
                           <h6 class="project_name">Unlucky_Hole (GameOfLuck)</h6>
-                          <p v-if="infoP5" class="project_details">Retro Leader board game, where you test how far your luck can get you before it runs out. Looking for alternative database, reworking RESTful API.</p>
+                          <p v-if="infoP5" class="project_details">Retro Leader board game, where you test how far your luck can get you before it runs out. Switched to Supabase for a stable hosting solution.</p>
                         </div>  
                       </q-carousel-control>
                     </template>
