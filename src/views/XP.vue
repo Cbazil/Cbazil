@@ -139,7 +139,7 @@
                 <q-timeline-entry
                   title="Learning more on Javascript"
                   class="event-title"
-                  subtitle="Feb 2019 - April 2020"
+                  subtitle="Feb 2019 - April 2019"
                   side="right"
                   color="blue-8"
                 >
@@ -151,6 +151,7 @@
                     <li class="subject">Javascript</li>
                   </ul>
                 </q-timeline-entry>
+
               </q-timeline>
             </div>
           </div>
@@ -361,10 +362,10 @@ $blue: #5271ff;
     margin: 0px 15px;
     width: 100%;
     #edu-title {
-      width: 880px;
+      width: 840px;
       h1 {
         font-size: 65px !important;
-        margin: 25px 32px;
+        margin: 23px 32px;
       }
       h5 {
         margin: 20px;
@@ -428,7 +429,6 @@ $blue: #5271ff;
   #experience {
     #edu-container {
       #edu-title {
-        width: 1122px !important;
         h1 {
           font-size: 84px !important;
         }
@@ -451,6 +451,9 @@ $blue: #5271ff;
 @media (max-width: 1580px) {
   #experience {
     #edu-container {
+      #edu-title {
+         width: 680px;
+      }
       #timelines {
         .edu-timeline, .exp-timeline {
           height: 350px !important;
@@ -464,7 +467,7 @@ $blue: #5271ff;
   #experience {
     #edu-container {
       #edu-title {
-        width: 700px;
+        width: 560px;
         h1 {
           font-size: 50px !important;
           margin: 0px 24px;
