@@ -20,9 +20,15 @@
                     ref="carousel_p1"
                     infinite
                   >
-                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/first-cv1.jpg')" />
-                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/first-cv2.jpg')" />
-                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/first-cv3.jpg')" />
+                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="1">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/first-cv1.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="2">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/first-cv2.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide @click.prevent="project1Link" style="border-radius: 2px; height: inherit !important;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/first-cv3.jpg')" />
+                    </q-carousel-slide>
                     <template v-slot:control>
                       <q-carousel-control
                         position="top-left"
@@ -90,8 +96,12 @@
                     ref="carousel_p2"
                     infinite
                   >
-                    <q-carousel-slide @click.prevent="project2Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/tictactoe-2.jpg')" />
-                    <q-carousel-slide @click.prevent="project2Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/tictactoe-1.jpg')" />
+                    <q-carousel-slide @click.prevent="project2Link" style="border-radius: 2px; height: inherit !important;" :name="1">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/tictactoe-2.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide @click.prevent="project2Link" style="border-radius: 2px; height: inherit !important;" :name="2">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/tictactoe-1.jpg')" />
+                    </q-carousel-slide>
                     <template v-slot:control>
                       <q-carousel-control
                         position="top-left"
@@ -162,12 +172,24 @@
                   ref="carousel_p3"
                   infinite
                 >
-                  <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/h4l1.jpg')" />
-                  <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/h4l2.jpg')" />
-                  <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/h4l3.jpg')" />
-                  <q-carousel-slide style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/h4l4.jpg')" />
-                  <q-carousel-slide style="border-radius: 2px;" :name="5" :img-src="require('../assets/projects/h4l5.jpg')" />
-                  <q-carousel-slide style="border-radius: 2px;" :name="6" :img-src="require('../assets/projects/h4l6.jpg')" />
+                  <q-carousel-slide style="border-radius: 2px;" :name="1">
+                    <img loading="lazy" class="carousel-img" :src="require('../assets/projects/h4l1.jpg')" />
+                  </q-carousel-slide>
+                  <q-carousel-slide style="border-radius: 2px;" :name="2">
+                    <img loading="lazy" class="carousel-img" :src="require('../assets/projects/h4l2.jpg')" />
+                  </q-carousel-slide>
+                  <q-carousel-slide style="border-radius: 2px;" :name="3">
+                    <img loading="lazy" class="carousel-img" :src="require('../assets/projects/h4l3.jpg')" />
+                  </q-carousel-slide>
+                  <q-carousel-slide style="border-radius: 2px;" :name="4">
+                    <img loading="lazy" class="carousel-img" :src="require('../assets/projects/h4l4.jpg')" />
+                  </q-carousel-slide>
+                  <q-carousel-slide style="border-radius: 2px;" :name="5">
+                    <img loading="lazy" class="carousel-img" :src="require('../assets/projects/h4l5.jpg')" />
+                  </q-carousel-slide>
+                  <q-carousel-slide style="border-radius: 2px;" :name="6">
+                    <img loading="lazy" class="carousel-img" :src="require('../assets/projects/h4l6.jpg')" />
+                  </q-carousel-slide>
 
                   <template v-slot:control>
                     <q-carousel-control
@@ -239,11 +261,21 @@
                     ref="carousel_p4"
                     infinite
                   >
-                    <q-carousel-slide style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/lcadmin1.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/lcadmin2.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/lcadmin3.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/lcadmin4.jpg')" />
-                    <q-carousel-slide style="border-radius: 2px;" :name="5" :img-src="require('../assets/projects/lcadmin5.jpg')" />
+                    <q-carousel-slide style="border-radius: 2px;" :name="1">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/lcadmin1.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px;" :name="2">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/lcadmin2.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/lcadmin3.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px;" :name="4">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/lcadmin4.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px;" :name="5">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/lcadmin5.jpg')" />
+                    </q-carousel-slide>
 
                     <template v-slot:control>
                       <q-carousel-control
@@ -315,9 +347,15 @@
                     ref="carousel_p5"
                     infinite
                   >
-                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/unlucky_hole1.jpg')" />
-                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/unlucky_hole2.jpg')" />
-                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/unlucky_hole3.jpg')" />
+                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="1">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/unlucky_hole1.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="2">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/unlucky_hole2.jpg')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide @click.prevent="project5Link" style="border-radius: 2px; height: inherit !important;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/unlucky_hole3.jpg')" />
+                    </q-carousel-slide>
                     <template v-slot:control>
                       <q-carousel-control
                         position="top-left"
@@ -386,9 +424,24 @@
                     ref="carousel_p6"
                     infinite
                   >
-                    <q-carousel-slide @click.prevent="project6Link" style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/miniump-1.webp')" />
-                    <q-carousel-slide @click.prevent="project6Link" style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/miniump-2.webp')" />
-                    <q-carousel-slide @click.prevent="project6Link" style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/miniump-3.webp')" />
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-1.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="2">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-2.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-3.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-4.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-5.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-6.webp')" />
+                    </q-carousel-slide>
                     
                     <template v-slot:control>
                       <q-carousel-control
@@ -442,7 +495,7 @@
                       >
                       <div class="project_container">
                         <h6 class="project_name p_card">MiniUmp</h6>
-                        <p v-if="infoP6" class="comingSoon">I'm building a score keeping and match fixing (Badminton) appplication, for a social group activity I participate in. (Still in development, needs refactor)</p>
+                        <p v-if="infoP6" class="comingSoon">I'm building a score keeping and match fixing (Badminton) appplication, for a social group activity I participate in. (2nd wave of updates coming soon...)</p>
                       </div>
                       </q-carousel-control>
                     </template>
@@ -456,14 +509,22 @@
                     animated
                     v-model="project7"
                     :autoplay="autoplay"
-                    style="height: 100% !important;"
+                    style="height: 100%;"
                     ref="carousel_p7"
                     infinite
                   >
-                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="1" :img-src="require('../assets/projects/codespace-1.webp')" />
-                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="2" :img-src="require('../assets/projects/codespace-2.webp')" />
-                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="3" :img-src="require('../assets/projects/codespace-3.webp')" />
-                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="4" :img-src="require('../assets/projects/codespace-4.webp')" />
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="1">
+                      <img loading="lazy" class="carousel-img" style="object-fit: cover !important; height: inherit !important;"  :src="require('../assets/projects/codespace-1.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="2">
+                      <img loading="lazy" class="carousel-img" style="object-fit: cover !important; height: inherit !important;" :src="require('../assets/projects/codespace-2.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="3">
+                      <img loading="lazy" class="carousel-img" style="object-fit: cover !important; height: inherit !important;" :src="require('../assets/projects/codespace-3.png')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide  @click.prevent="project7Link" style="border-radius: 2px;" :name="4">
+                      <img loading="lazy" class="carousel-img" style="object-fit: cover !important; height: inherit !important;" :src="require('../assets/projects/codespace-4.png')" />
+                    </q-carousel-slide>
 
                     <template v-slot:control>
                       <q-carousel-control
@@ -542,24 +603,54 @@
                     />
                   </q-btn>
                   <div v-if="infoP8" class="project_container coxp"> 
-                    <h6 class="project_name p_card">CoXP</h6>
-                    <p class="comingSoon">Building an activity schedular, where you can decide whether to join activities with friends.</p>
+                    <h6 class="project_name p_card">GatherWeek</h6>
+                    <p class="comingSoon">Previously code named: Co-XP, now named GatherWeek. Building an activity schedular, where you can decide whether to join activities with friends.</p>
                   </div>
                 </div>
               </q-btn>
               <q-btn class="proj-btns" size="15px" outline>
+                <div class="mini-container container csp7 csp" :class="{ project_desc: infoP10 }">
+                  <q-btn
+                      push
+                      dense
+                      rounded
+                      size="18px"
+                      class="i-icon"
+                      color="light-green-12"
+                      @click="toggleInfoP10"
+                    >
+                      <q-icon
+                        size="12px"
+                        name="fa fa-solid fa-info"
+                      />
+                    </q-btn>
+                    <div v-if="infoP10" class="project_container sfield"> 
+                      <h6 class="project_name p_card">Resume</h6>
+                      <p class="comingSoon">Will be making a new Resume, with new theme.</p>
+                    </div>
+                </div>
+              </q-btn>
+            </div>
+             <q-btn class="proj-btns" size="15px" outline>
+                <div class="single-container container csp9 csp" :class="{ project_desc: infoP9 }">
                 <q-carousel
-                    class="mini-container container"
                     swipeable
                     animated
                     v-model="project9"
                     :autoplay="autoplay"
+                    style="height: 100% !important;"
                     ref="carousel_p9"
                     infinite
                   >
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1" :img-src="require('../assets/projects/cstash-1.webp')" />
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="2" :img-src="require('../assets/projects/cstash-2.webp')" />
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3" :img-src="require('../assets/projects/cstash-3.webp')" />
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="1">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/websenses-1.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="2">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/websenses-2.webp')" />
+                    </q-carousel-slide>
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                      <img loading="lazy" class="carousel-img" :src="require('../assets/projects/websenses-3.webp')" />
+                    </q-carousel-slide>
                     <template v-slot:control>
                       <q-carousel-control
                         position="top-left"
@@ -611,34 +702,12 @@
                         style="background: rgba(0, 0, 0, .6); height: 60px; margin: 0; padding: 0;"
                       >
                         <div class="project_container"> 
-                          <h6 class="project_name">CStash</h6>
-                          <p v-if="infoP9" class="project_details">CStash is one of my biggest passion projects yet, that might extend into enterprise later. It's a handy code saver by heart intended to be quick-access, copy-pasting great code to be reused or shared.</p>
+                          <h6 class="project_name ">WebSenses</h6>
+                          <p v-if="infoP9" class="project_details">WebSenses Digital Handbook is your helpful guide to understanding frontend code and concepts. Learn the INs and OUTs of web development, with laymen terms for anyone's understanding.</p>
                         </div>
                       </q-carousel-control>
                     </template>
                 </q-carousel>
-              </q-btn>
-            </div>
-             <q-btn class="proj-btns" size="15px" outline>
-              <div class="single-container container csp7 csp" :class="{ project_desc: infoP10 }">
-                <q-btn
-                    push
-                    dense
-                    rounded
-                    size="18px"
-                    class="i-icon"
-                    color="light-green-12"
-                    @click="toggleInfoP10"
-                  >
-                    <q-icon
-                      size="12px"
-                      name="fa fa-solid fa-info"
-                    />
-                  </q-btn>
-                  <div v-if="infoP10" class="project_container sfield"> 
-                    <h6 class="project_name p_card">sField</h6>
-                    <p class="comingSoon">I've always been fascinated about 3D game development, and in the year of 2023 I'll be introducing a game idea that I personally think sounds great on paper. Excited about this and just hoping it succeeds so please do stay tuned.</p>
-                  </div>
               </div>
             </q-btn>
           </div>
@@ -778,6 +847,10 @@ export default {
       window.open("https://unlucky-hole.vercel.app")
     }
 
+    const project6Link = () => {
+      window.open("https://mini-mns.vercel.app/")
+    }
+
     const project7Link = () => {
       window.open("https://www.codespace.co.za")
     }
@@ -822,6 +895,7 @@ export default {
       project1Link,
       project2Link,
       project5Link,
+      project6Link,
       project7Link
     }
   }
@@ -836,6 +910,9 @@ $blue: #5271ff;
   position: relative;
   z-index: 0;
   display: flex;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+  padding-bottom: calc(1.5rem + 48px);
   #projects-container {
     margin: 0px 10px !important;
     width: 100%;
@@ -850,36 +927,37 @@ $blue: #5271ff;
       }
     }
     #project-gallery {
-      width: 96.5%;
+      width: 95%;
       #gallery-div {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: 8.5px;
+        grid-gap: 8.5px; 
         height: 426px;
         margin-left: 25px;
-        padding-bottom: 20px;
         overflow-x: scroll;
         overflow-y: hidden;
+        margin-top: 12px !important; /* push horizontal items down from top */
+        box-sizing: border-box;
         .csp1 {
           background-image: url('../assets/projects/tictactoe.png');
         }
         .csp2 {
           background-image: url('../assets/projects/unluckyhole.png');
         }
-        .csp3 {
-          background-image: url('../assets/projects/miniump.png');
-        }
+        // .csp3 {
+        //   background-image: url('../assets/projects/miniump.png');
+        // }
         .csp4 {
           background-image: url('../assets/projects/cstash.png');
         }
         .csp5 {
-          background-image: url('../assets/projects/co-xp.png');
+          background-image: url('../assets/projects/gatherweek.png');
         }
         .csp6 {
           background-image: url('../assets/projects/cstash2.png');
         }
         .csp7 {
-          background-image: url('../assets/projects/sfield.png');
+          background-image: url('../assets/projects/resume_latest.png');
         }
         .csp {
           position: relative;
@@ -891,12 +969,39 @@ $blue: #5271ff;
           background-size: 100% 100%;
         }
         .single-container {
-          width: 780px !important;
+          width: 348px !important;
           height: 100% !important;
           min-height: 100% !important;
         }
         .q-carousel__slides-container, .q-panel {
           overflow: hidden !important;
+        }
+        /* unified carousel image rule */
+        .carousel-img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          max-width: none;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 2px;
+          box-sizing: border-box;
+        }
+        .q-carousel__slide {
+          height: 100% !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 !important;
+        }
+        .mini-container .q-carousel__slides-container,
+        .single-container .q-carousel__slides-container,
+        .q-carousel__slides {
+          height: 100% !important;
+        }
+        .proj-btns {
+          border: 2px solid $green !important;
+          background-clip: padding-box;
         }
         .duo-container {
           display: grid;
@@ -922,6 +1027,8 @@ $blue: #5271ff;
           overflow: hidden;
           width: 348px;
         }
+        /* carousel control z-index overrides removed (reverted) */
+        
       }
       .i-icon {
         margin: 5px; 
@@ -940,7 +1047,18 @@ $blue: #5271ff;
       .project_details {
         text-transform: none;
       }
-      .project_desc {
+      /* ensure project_container contents are centered by default */
+      .project_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 12px;
+      }
+        .project_desc {
         height: 100% !important;
         padding: 0 10px !important;
         padding-top: 20px !important;
@@ -959,6 +1077,11 @@ $blue: #5271ff;
               margin-top: -50px; 
             }
           }       
+            /* ensure the info button remains clickable above the dark overlay */
+            .i-icon {
+              position: relative;
+              z-index: 20;
+            }
       } 
     }
   }
@@ -995,6 +1118,35 @@ $blue: #5271ff;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #fff; 
+}
+
+/* Targeted scrollbar for the horizontal gallery (WebKit)
+   - height controls the x-axis scrollbar size
+   - use axis-specific pseudo-classes where available
+*/
+#gallery-div::-webkit-scrollbar {
+  height: 12px;
+}
+#gallery-div::-webkit-scrollbar-track {
+  background: $blue;
+}
+#gallery-div::-webkit-scrollbar-thumb {
+  background: $green;
+  border-radius: 8px;
+  border: 2px solid rgba(0,0,0,0.06);
+}
+#gallery-div::-webkit-scrollbar-thumb:horizontal {
+  background: $green;
+}
+#gallery-div::-webkit-scrollbar-thumb:vertical {
+  background: transparent;
+}
+
+/* Firefox fallback (no axis-specific styling available) */
+#gallery-div {
+  scrollbar-width: thin;
+  scrollbar-color: $green $blue;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 // larger laptops
@@ -1068,6 +1220,7 @@ $blue: #5271ff;
     height: calc(100svh - 60px);
     position: relative;
     padding-top: 100px;
+    width: 100vw;
     #projects-container {
       display: flex;
       flex-direction: column;

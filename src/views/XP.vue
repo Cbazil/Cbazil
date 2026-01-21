@@ -605,6 +605,11 @@ $blue: #5271ff;
         }
       }
     }
+    #timelines {
+      .edu-timeline, .exp-timeline-show {
+        height: 51svh !important;
+      }
+    }
   }
 }
 

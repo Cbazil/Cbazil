@@ -355,7 +355,7 @@ $blue: #5271ff;
 // Mobile 3
 @media (max-width: 562px) {
   #about {
-    padding-top: 145px;
+    padding-top: 75px;
     #about-container {
       margin-top: 25px;
     }

@@ -576,14 +576,22 @@ h3 {
     #app-nav {
       justify-content: center;
       height: 60px;
-      position: relative;
+      /* pin mobile nav to viewport bottom so it's always visible */
+      position: fixed;
+      left: 0;
       bottom: 0;
+      width: 100%;
+      z-index: 9999;
       display: flex;
       background: $dark;
       flex-direction: row;
       .nav-i {
         margin: 0 7.5px;
       }
+    }
+    /* ensure main content doesn't sit behind the fixed nav */
+    #main-container {
+      padding-bottom: 72px; /* nav height + small buffer */
     }
   }
   h1 {
