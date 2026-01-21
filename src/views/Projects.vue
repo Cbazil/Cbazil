@@ -433,13 +433,13 @@
                     <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
                       <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-3.webp')" />
                     </q-carousel-slide>
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="4">
                       <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-4.webp')" />
                     </q-carousel-slide>
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="5">
                       <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-5.webp')" />
                     </q-carousel-slide>
-                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="3">
+                    <q-carousel-slide style="border-radius: 2px; height: inherit !important;" :name="6">
                       <img loading="lazy" class="carousel-img" :src="require('../assets/projects/miniump-6.webp')" />
                     </q-carousel-slide>
                     
@@ -495,7 +495,7 @@
                       >
                       <div class="project_container">
                         <h6 class="project_name p_card">MiniUmp</h6>
-                        <p v-if="infoP6" class="comingSoon">I'm building a score keeping and match fixing (Badminton) appplication, for a social group activity I participate in. (2nd wave of updates coming soon...)</p>
+                        <p v-if="infoP6" class="comingSoon">I'm building a score keeping and match fixing (Badminton) application, for a social group activity I participate in. (2nd wave of updates coming soon...)</p>
                       </div>
                       </q-carousel-control>
                     </template>
