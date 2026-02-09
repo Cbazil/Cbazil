@@ -10,11 +10,8 @@ My name is Chad Bazil Bosch, I am a very passionate individual who seeks to solv
   <a href="https://twitter.com/cbazil_dev" style="text-decoration: none;" target="_blank">
     <img alt="Twitter" src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?&style=flat-circle&logo=x&logoColor=white" height="25" />
   </a> 
-  <a href="https://www.linkedin.com/in/cbazil" target="_blank" 
-    style="display:inline-flex; align-items:center; text-decoration: none; background-color:#0076b3; color:#ffffff; padding:0px 3px; border-radius:4px;">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
-        alt="LinkedIn" height="25" />
-    <span style="margin-top: 1.6px; font-family:Helvetica, Arial, sans-serif; font-size:15px; font-weight:350; margin-left:3px; margin-right:6px;">LinkedIn</span>
+  <a href="https://www.linkedin.com/in/cbazil" style="text-decoration: none;" target="_blank">
+    <img alt="LinkedIn" src="https://img.shields.io/badge/in Linkedin-0077B5?style=flat&logo=linkedin&logoColor=white" height="25" />
   </a>
 </p>
 
