@@ -23,12 +23,12 @@ My name is Chad Bazil Bosch, I am a very passionate individual who seeks to solv
   <img src="https://img.shields.io/badge/-Vite-18181B?style=flat&logo=vite" height="25">
   <img src="https://img.shields.io/badge/-HTML-18181B?style=flat&logo=html5" height="25">
   <img src="https://img.shields.io/badge/-CSS-18181B?style=flat&logo=css" height="25">
-  <img src="https://img.shields.io/badge/-TailwindCSS-18181B?style=flat&logo=tailwindcss" height="25">
+  <img src="https://img.shields.io/badge/-Tailwind-18181B?style=flat&logo=tailwindcss" height="25">
   <img src="https://img.shields.io/badge/-Figma-18181B?style=flat&logo=figma" height="25">
   <img src="https://img.shields.io/badge/-PWA-18181B?style=flat&logo=pwa&logoColor=purple" height="25">
   <img src="https://img.shields.io/badge/-Pinia-18181B?style=flat&logo=pinia" height="25">
   <img src="https://img.shields.io/badge/-ThreeJS-18181B?style=flat&logo=three.js" height="25">
-  <img src="https://img.shields.io/badge/-vercel-18181B?style=flat&logo=vercel" height="25">
+  <img src="https://img.shields.io/badge/-Vercel-18181B?style=flat&logo=vercel" height="25">
 </p>
 
 ## Familiar Stacks & Tools
@@ -37,10 +37,10 @@ My name is Chad Bazil Bosch, I am a very passionate individual who seeks to solv
   <img src="https://img.shields.io/badge/-Next.js-18181B?style=flat&logo=next.js" height="25">
   <img src="https://img.shields.io/badge/-Nuxt-18181B?style=flat&logo=nuxt" height="25">
   <img src="https://img.shields.io/badge/-MongoDB-18181B?style=flat&logo=mongodb" height="25">
-  <img src="https://img.shields.io/badge/-Postgresql-18181B?style=flat&logo=postgresql" height="25">
+  <img src="https://img.shields.io/badge/-PostgreSQL-18181B?style=flat&logo=postgresql" height="25">
   <img src="https://img.shields.io/badge/-express-18181B?style=flat&logo=expressjs" height="25">
-  <img src="https://img.shields.io/badge/-typescript-18181B?style=flat&logo=typescript" height="25">
-  <img src="https://img.shields.io/badge/-unocss-18181B?style=flat&logo=unocss" height="25">
+  <img src="https://img.shields.io/badge/-Typescript-18181B?style=flat&logo=typescript" height="25">
+  <img src="https://img.shields.io/badge/-Unocss-18181B?style=flat&logo=unocss" height="25">
   <img src="https://img.shields.io/badge/-sass-18181B?style=flat&logo=sass" height="25">
   <img src="https://img.shields.io/badge/-mui-18181B?style=flat&logo=mui" height="25">
   <img src="https://img.shields.io/badge/-vuetify-18181B?style=flat&logo=vuetify" height="25">
