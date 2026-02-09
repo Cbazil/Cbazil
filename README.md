@@ -18,16 +18,16 @@ My name is Chad Bazil Bosch, I am a very passionate individual who seeks to solv
 ## Go to Stacks & Tools
 <p>
   <img src="https://img.shields.io/badge/-JavaScript-18181B?style=flat&logo=javascript" height="25">
-  <img src="https://img.shields.io/badge/-Vue.js-18181B?style=flat&logo=vue.js" height="25">
+  <img src="https://img.shields.io/badge/-VueJS-18181B?style=flat&logo=vue.js" height="25">
   <img src="https://img.shields.io/badge/-Supabase-18181B?style=flat&logo=supabase" height="25">
   <img src="https://img.shields.io/badge/-Vite-18181B?style=flat&logo=vite" height="25">
-  <img src="https://img.shields.io/badge/-html5-18181B?style=flat&logo=html5" height="25">
-  <img src="https://img.shields.io/badge/-css3-18181B?style=flat&logo=css" height="25">
+  <img src="https://img.shields.io/badge/-HTML-18181B?style=flat&logo=html5" height="25">
+  <img src="https://img.shields.io/badge/-CSS-18181B?style=flat&logo=css" height="25">
   <img src="https://img.shields.io/badge/-TailwindCSS-18181B?style=flat&logo=tailwindcss" height="25">
   <img src="https://img.shields.io/badge/-Figma-18181B?style=flat&logo=figma" height="25">
   <img src="https://img.shields.io/badge/-PWA-18181B?style=flat&logo=pwa&logoColor=purple" height="25">
   <img src="https://img.shields.io/badge/-Pinia-18181B?style=flat&logo=pinia" height="25">
-  <img src="https://img.shields.io/badge/-Threejs-18181B?style=flat&logo=three.js" height="25">
+  <img src="https://img.shields.io/badge/-ThreeJS-18181B?style=flat&logo=three.js" height="25">
   <img src="https://img.shields.io/badge/-vercel-18181B?style=flat&logo=vercel" height="25">
 </p>
 
