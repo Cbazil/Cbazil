@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@font-face { 
+  font-family: 'Junegull'; 
+  src: url('/fonts/junegull.otf') format('opentype');
+  font-style: normal; 
+  font-display: swap; 
+}
+
+@font-face { 
+  font-family: 'Rubadt'; 
+  src: url('/fonts/rubadt.ttf') format('truetype');
+  font-style: normal; 
+  background: red !important;
+  color: red;
+  font-display: swap; 
+}
+
+@custom-variant hover (&:hover);
+
+h1, p {
+  font-family: 'Junegull'
+} 
+
+h2, h3, .link { 
+  font-family: 'Rubadt', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}

@@ -38,7 +38,7 @@ My name is Chad Bazil Bosch, I am a very passionate individual who seeks to solv
   <img src="https://img.shields.io/badge/-Nuxt-18181B?style=flat&logo=nuxt" height="25">
   <img src="https://img.shields.io/badge/-MongoDB-18181B?style=flat&logo=mongodb" height="25">
   <img src="https://img.shields.io/badge/-PostgreSQL-18181B?style=flat&logo=postgresql" height="25">
-  <img src="https://img.shields.io/badge/-express-18181B?style=flat&logo=expressjs" height="25">
+  <img src="https://img.shields.io/badge/-express-18181B?style=flat&logo=express" height="25">
   <img src="https://img.shields.io/badge/-Typescript-18181B?style=flat&logo=typescript" height="25">
   <img src="https://img.shields.io/badge/-Unocss-18181B?style=flat&logo=unocss" height="25">
   <img src="https://img.shields.io/badge/-sass-18181B?style=flat&logo=sass" height="25">
