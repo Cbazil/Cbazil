@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Rut from "@/pages/Rut.vue";
 import Bio from "@/pages/resources/Bio.vue";
+import Cue from "@/pages/resources/Cue.vue";
 import ExP from "@/pages/resources/ExP.vue";
 import Diy from "@/pages/resources/Diy.vue";
 import Lab from "@/pages/resources/Lab.vue";
@@ -17,6 +18,7 @@ const router = createRouter({
       component: Resources,
       children: [
         { path: "/about", name: "About", component: Bio },
+        { path: "/skills", name: "Skills", component: Cue },
         { path: "/experience", name: "Experience", component: ExP },
         { path: "/blog", name: "D-I-Y", component: Diy },
         { path: "/projects", name: "Projects", component: Lab },
