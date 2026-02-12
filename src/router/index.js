@@ -20,7 +20,7 @@ const router = createRouter({
         { path: "/about", name: "About", component: Bio },
         { path: "/skills", name: "Skills", component: Cue },
         { path: "/experience", name: "Experience", component: ExP },
-        { path: "/blog", name: "D-I-Y", component: Diy },
+        { path: "/blog", name: "Blog", component: Diy },
         { path: "/projects", name: "Projects", component: Lab },
       ],
     },

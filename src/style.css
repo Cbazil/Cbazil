@@ -18,10 +18,14 @@
 
 @custom-variant hover (&:hover);
 
-h1, p {
+h1, h2 {
   font-family: 'Junegull'
 } 
 
-h2, h3, .link { 
+p, .base {
+  font-family: 'Inter';
+}
+
+.link { 
   font-family: 'Rubadt', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
