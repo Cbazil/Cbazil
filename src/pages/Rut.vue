@@ -9,7 +9,7 @@
         >
           <img
             src="/images/logo.svg"
-            class="w-28 h-28 mr-3 mt-2"
+            class="w-22 h-22 xl:w-28 xl:h-28 mr-3 xl:mt-2"
             alt="Ice Cold Phoenix Image"
           />
           Cb@z!l
@@ -76,8 +76,7 @@
         </li>
       </ul>
     </div>
-    <div class="flex justify-center items-center space-x-4 w-1/9">
-      <!-- Left Text -->
+    <div class="flex justify-center items-center mt-32 space-x-4 w-1/9">
       <div class="flex flex-col items-center">
         <span class="text-white base font-thin">D</span>
         <span class="text-white base font-thin">E</span>
@@ -89,9 +88,9 @@
         <span class="text-white base font-thin">E</span>
         <span class="text-white base font-thin">R</span>
       </div>
-      <!-- Vertical Line -->
+
       <div class="h-48 border-l border-white/40"></div>
-      <!-- Right Text -->
+
       <div class="flex flex-col items-center">
         <span class="text-white base font-thin">I</span>
         <span class="text-white base font-thin">N</span>
