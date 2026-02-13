@@ -4,9 +4,9 @@
       v-if="showOverlay"
       class="relative bg-stone-900 text-white lg:px-32 xl:px-58 h-[100dvh]"
     >
-      <nav class="flex flex-row justify-between items-center h-34">
+      <nav class="relative flex flex-row justify-between items-center h-34">
         <div
-          class="flex flex-row items-center bg-gradient-to-tr from-blue-900 @custom-variant hover (&:hover); via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+          class="flex flex-row items-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
         >
           <img
             src="/images/logo.svg"
@@ -15,26 +15,47 @@
           />
           <h2 class="text-4xl">{{ path }}</h2>
         </div>
-        <div class="flex flex-row items-center">
+
+        <div
+          class="absolute left-1/2 -translate-x-1/2 w-max flex flex-row items-center"
+        >
           <button
             class="px-3.5 mr-1 text-stone-900 flex items-center justify-center rounded-r-md rounded-bl-md rounded-tl-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300"
           >
             LB
           </button>
-          <div v-for="(opt, idx) in options" :key="idx">
+
+          <div
+            v-for="(opt, idx) in options"
+            :key="idx"
+            class="flex items-center"
+          >
+            <!-- outer pill keeps the new positioning and padding -->
             <span
-              class="link text-[1.75rem] mx-1 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)] hover:text-emerald-400"
-              :class="{ 'text-emerald-500': control.selectedOption == opt }"
+              @mouseover="playOver"
+              @click="onOptionClick(opt)"
+              role="button"
+              tabindex="0"
+              class="px-1 py-0.5 rounded-sm inline-flex items-center group"
+              :class="{ 'cursor-pointer': control.selectedOption != opt }"
             >
-              {{ opt }}
+              <!-- inner span restores the old gradient text while inheriting layout -->
+              <span
+                class="link text-[1.75rem] bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent group-hover:text-emerald-400"
+                :class="{ 'text-emerald-500!': control.selectedOption == opt }"
+              >
+                {{ opt }}
+              </span>
             </span>
           </div>
+
           <button
             class="px-3.5 ml-1 text-stone-900 flex items-center justify-center rounded-l-md rounded-br-md rounded-tr-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300"
           >
             RB
           </button>
         </div>
+
         <div class="flex flex-row items-center">
           <a
             v-for="social in socialLinks"
@@ -44,8 +65,6 @@
             class="relative group w-10 h-10"
           >
             <div
-              @mouseover="handleOver"
-              @click="handleClick"
               class="absolute inset-0 transition-opacity duration-300 [mask-repeat:no-repeat] [mask-size:contain]"
               :style="{
                 maskImage: `url('https://api.iconify.design/${social.icon}.svg')`,
@@ -55,15 +74,10 @@
               <div
                 class="absolute inset-0 bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
               ></div>
-
               <div
                 class="absolute inset-0 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               ></div>
             </div>
-
-            <div
-              class="absolute inset-0 pointer-events-none filter drop-shadow-[0_0_2px_rgba(180,240,255,1)]"
-            ></div>
           </a>
         </div>
       </nav>
@@ -231,6 +245,12 @@ const handleOver = (val) => {
   if (hovering.value === val) return; // already hovered — skip replay
   hovering.value = val;
   playOver();
+};
+
+const onOptionClick = (opt) => {
+  // ensure click sound starts immediately (trusted gesture), then update state
+  handleClick();
+  control.selectedOption = opt;
 };
 
 const handlePrevPage = () => {

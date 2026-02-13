@@ -23,7 +23,7 @@ export const socialLinks = [
 
 export const pageOptions = {
   bio: ["Profession", "Personal"],
-  skills: ["Soft", "Hard"],
+  skills: ["Hard", "Soft"],
   experience: ["Work", "Education"],
   blog: ["All", "Frontend", "Backend"],
   projects: ["Featured", "Micro"],

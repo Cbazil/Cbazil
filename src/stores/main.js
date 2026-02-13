@@ -1,10 +1,19 @@
 import { defineStore } from "pinia";
 
-export const useControlStore = defineStore("control", () => {
-  state: () => {
-    return {
-      page: undefined,
-      selectedOption: undefined,
-    };
-  };
+export const useControlStore = defineStore("control", {
+  state: () => ({
+    page: undefined,
+    selectedOption: undefined,
+  }),
+  actions: {
+    setPage(p) {
+      this.page = p;
+    },
+    setSelectedOption(opt) {
+      this.selectedOption = opt;
+    },
+    clearSelectedOption() {
+      this.selectedOption = undefined;
+    },
+  },
 });
