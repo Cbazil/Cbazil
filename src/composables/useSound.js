@@ -4,7 +4,6 @@ export const useLinkover = () => {
 
   return () => {
     audio.currentTime = 0;
-    // Adding .catch() prevents the "Uncaught in Promise" error in the console
     audio.play().catch(() => {
       // Silently fail if browser hasn't been "unlocked" yet
     });

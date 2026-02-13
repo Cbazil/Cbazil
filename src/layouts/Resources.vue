@@ -15,7 +15,26 @@
           />
           <h2 class="text-4xl">{{ path }}</h2>
         </div>
-        <div class="flex flex-row items-center"></div>
+        <div class="flex flex-row items-center">
+          <button
+            class="px-3.5 mr-1 text-stone-900 flex items-center justify-center rounded-r-md rounded-bl-md rounded-tl-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300"
+          >
+            LB
+          </button>
+          <div v-for="(opt, idx) in options" :key="idx">
+            <span
+              class="link text-[1.75rem] mx-1 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)] hover:text-emerald-400"
+              :class="{ 'text-emerald-500': control.selectedOption == opt }"
+            >
+              {{ opt }}
+            </span>
+          </div>
+          <button
+            class="px-3.5 ml-1 text-stone-900 flex items-center justify-center rounded-l-md rounded-br-md rounded-tr-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300"
+          >
+            RB
+          </button>
+        </div>
         <div class="flex flex-row items-center">
           <a
             v-for="social in socialLinks"
@@ -137,12 +156,19 @@
 import { ref, computed, watch, onMounted, onUnmounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
-import { socialLinks } from "@/composables/data.js";
+import { pageOptions, socialLinks } from "@/composables/data.js";
+import { useControlStore } from "@/stores/main.js";
+
+const control = useControlStore();
 
 const route = useRoute();
 const router = useRouter();
 
 const path = computed(() => route.name);
+
+const options = computed(() => pageOptions[path.value.toLowerCase()] || []);
+
+console;
 
 const pageNum = computed(() => {
   if (path.value == "Bio") return 1;
@@ -201,9 +227,9 @@ watch(
 const playOver = useLinkover();
 
 const handleOver = (val) => {
-  if (val) {
-    hovering.value = val;
-  }
+  if (!val) return;
+  if (hovering.value === val) return; // already hovered — skip replay
+  hovering.value = val;
   playOver();
 };
 

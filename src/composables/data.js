@@ -20,3 +20,11 @@ export const socialLinks = [
     path: "https://medium.com/@cbazil",
   },
 ];
+
+export const pageOptions = {
+  bio: ["Profession", "Personal"],
+  skills: ["Soft", "Hard"],
+  experience: ["Work", "Education"],
+  blog: ["All", "Frontend", "Backend"],
+  projects: ["Featured", "Micro"],
+};
