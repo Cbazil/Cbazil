@@ -2,10 +2,10 @@
   <transition name="overlay">
     <div
       v-if="showOverlay"
-      class="relative bg-stone-900 text-white px-4 lg:px-32 xl:px-58 h-[100dvh]"
+      class="relative bg-stone-900 text-white px-4 lg:px-32 xl:px-58 h-[100dvh] flex flex-col"
     >
       <nav
-        class="relative flex flex-row justify-between items-center h-24 md:h-34"
+        class="relative flex flex-row justify-between items-center h-24 md:h-34 shrink-0"
       >
         <div
           class="flex flex-row items-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
@@ -152,7 +152,16 @@
         aria-hidden="true"
       />
 
-      <router-view :key="$route.fullPath" />
+      <!--
+        flex-1 min-h-0: fills remaining space between nav and bottom of viewport
+        pb-20 on mobile: clears the absolute mobile footer (~60px at bottom-1.5)
+        pb-28 on md+: clears the absolute desktop footer (bottom-14 ~56px + content ~28px)
+      -->
+      <div class="flex-1 min-h-0 overflow-y-auto pb-20 md:pb-28">
+        <router-view :key="$route.fullPath" />
+      </div>
+
+      <!-- Desktop Footer -->
       <footer
         class="hidden md:flex flex-col absolute bottom-6 md:bottom-14 left-0 w-full px-6 lg:px-32 xl:px-58 md:flex-row items-center justify-between gap-6"
       >
@@ -234,7 +243,7 @@
         </section>
       </footer>
 
-      <!-- Mobile Version (App like) -->
+      <!-- Mobile Footer -->
       <footer
         class="flex md:hidden flex-col w-[300px] bottom-1.5 absolute left-1/2 -translate-x-1/2"
       >

@@ -18,7 +18,7 @@
 
 @custom-variant hover (&:hover);
 
-h1, h2 {
+h1, h2, .hl {
   font-family: 'Junegull'
 } 
 
