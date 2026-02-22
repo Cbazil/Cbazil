@@ -157,7 +157,9 @@
         pb-20 on mobile: clears the absolute mobile footer (~60px at bottom-1.5)
         pb-28 on md+: clears the absolute desktop footer (bottom-14 ~56px + content ~28px)
       -->
-      <div class="flex-1 min-h-0 overflow-y-auto pb-20 md:pb-28">
+      <div
+        class="flex-1 min-h-0 mb-20 overflow-y-auto md:overflow-hidden md:pb-28"
+      >
         <router-view :key="$route.fullPath" />
       </div>
 

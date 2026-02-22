@@ -16,6 +16,10 @@
   font-display: swap; 
 }
 
+@theme {
+  --breakpoint-xs: 440px;
+}
+
 @custom-variant hover (&:hover);
 
 h1, h2, .hl {
