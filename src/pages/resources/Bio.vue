@@ -290,7 +290,7 @@
           </section>
           <img
             src="/images/badminton.svg"
-            class="w-full object-contain transform mt-5 lg:mt-10 scale-95"
+            class="w-full object-contain transform mt-5 lg:mt-10 xl:-mt-0.5 scale-95"
             :class="{
               'transform scale-135 mt-45!':
                 personalClicked && personalSelect === 'Badminton',
