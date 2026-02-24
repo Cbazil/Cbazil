@@ -14,11 +14,15 @@ export const useControlStore = defineStore("control", {
     },
     toggleInventory() {
       this.openInventory = !this.openInventory;
+      this.openInventory
+        ? ((this.mTechSelection = ""), (this.eTechSelection = "ReactJS"))
+        : ((this.eTechSelection = ""), (this.mTechSelection = "VueJS"));
     },
     setSelectedOption(opt) {
       this.selectedOption = opt;
     },
     setMTechSelection(val) {
+      this.openInventory = false;
       this.mTechSelection = val;
     },
     setETechSelection(val) {

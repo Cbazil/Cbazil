@@ -6,15 +6,15 @@
     >
       <article
         v-if="control.openInventory"
-        class="relative h-full flex flex-row -mt-10 justify-around items-start px-7 xl:px-56 pt-10"
+        class="relative h-full flex flex-row -mt-10 justify-around items-start px-7 lg:px-14 xl:px-56 pt-10"
       >
         <section
-          class="w-[380px] h-[300px] flex flex-row flex-wrap rounded-lg p-2"
+          class="w-[370px] h-[260px] flex flex-row flex-wrap rounded-lg p-2"
         >
           <div
             v-for="(n, idx) of et"
             :key="idx"
-            class="w-20 h-20 rounded-sm mx-1 cursor-pointer flex items-center justify-center bg-transparent bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+            class="w-18 h-18 xl:w-20 xl:w-20 rounded-sm mx-1 cursor-pointer flex items-center justify-center bg-transparent bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
           >
             <span
               @click.prevent="control.setETechSelection(n.title)"
@@ -40,27 +40,105 @@
           </div>
         </section>
 
-        <section class="relative w-[320px] h-24/25 mt-1">
-          <div
-            class="w-20 h-20 rounded-sm mx-auto bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
-          >
-            1
+        <section class="relative w-[320px] h-24/25 mt-0.5">
+          <div class="flex justify-center">
+            <span
+              class="flex w-18 h-18 items-center justify-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat bg-stone-900 rounded-sm"
+            >
+              <span
+                v-if="eSelected"
+                class="block size-12 cursor-pointer transition-colors duration-200 bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100"
+                :style="{
+                  mask: `url('https://api.iconify.design/simple-icons/${eSelected}.svg') center/contain no-repeat`,
+                  WebkitMask: `url('https://api.iconify.design/simple-icons/${eSelected}.svg') center/contain no-repeat`,
+                }"
+              />
+            </span>
           </div>
-          <div
-            class="w-70 h-45 rounded-sm mx-1 mt-4 mx-auto bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
-          >
-            2
+          <div class="w-70 h-45 rounded-sm p-3 mx-1 mt-2 mx-auto">
+            <div
+              class="bg-gradient-to-tr from-blue-900 text-center via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+            >
+              <h2 class="text-xl">{{ eTitle }}</h2>
+            </div>
+            <h3 class="text-md text-center font-thin">{{ eDesc }}</h3>
           </div>
         </section>
       </article>
-      <article v-else class="relative h-full flex flex-row">Bigger</article>
-      <nav>
-        <section>
-          <div>
-            <span></span>
+      <article v-else class="relative h-full flex flex-row">
+        <div class="px-34 flex flex-row w-full justify-around">
+          <div
+            class="w-65 h-65 xl:w-75 xl:h-75 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat p-px"
+          >
+            <span
+              v-if="mSelected"
+              class="flex items-center justify-center w-full h-full bg-stone-900 rounded-sm"
+            >
+              <span
+                class="block size-32 xl:size-44 cursor-pointer transition-colors duration-200 bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100"
+                :style="{
+                  mask: `url('https://api.iconify.design/simple-icons/${mSelected}.svg') center/contain no-repeat`,
+                  WebkitMask: `url('https://api.iconify.design/simple-icons/${mSelected}.svg') center/contain no-repeat`,
+                }"
+              />
+            </span>
           </div>
-          <div>
-            <span></span>
+          <div class="w-105 xl:w-125 h-65 xl:h-75 p-5 rounded-sm">
+            <div
+              class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+            >
+              <h2 class="text-4xl">{{ mTitle }}</h2>
+            </div>
+            <br />
+            <h3 class="text-xl xl:text-2xl font-thin">{{ mDesc }}</h3>
+          </div>
+        </div>
+      </article>
+      <nav>
+        <section class="flex justify-center mb-3 gap-1">
+          <div
+            class="w-4/11 xl:w-3/11 h-7 -ml-8 mx-1 relative"
+            style="transform: skewX(-14deg) translateZ(0)"
+          >
+            <div
+              class="absolute inset-0 bg-[image:var(--background-image-gradient-border)] bg-no-repea"
+            ></div>
+            <div class="absolute inset-[2px] bg-slate-900"></div>
+            <div class="absolute inset-[2px] overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+                style="transform: skewX(0deg)"
+                :style="{ width: comfort + '%' }"
+              />
+            </div>
+            <p
+              class="absolute inset-0 flex items-center justify-center text-white text-sm font-medium z-10"
+              style="transform: skewX(14deg)"
+            >
+              Comfort
+            </p>
+          </div>
+
+          <div
+            class="w-4/11 xl:w-3/11 h-7 mx-1 relative"
+            style="transform: skewX(14deg) translateZ(0)"
+          >
+            <div
+              class="absolute inset-0 bg-[image:var(--background-image-gradient-border)]"
+            ></div>
+            <div class="absolute inset-[2px] bg-slate-900"></div>
+            <div class="absolute inset-[2px] overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+                :style="{ width: mastery + '%' }"
+              />
+            </div>
+            <p
+              class="absolute inset-0 flex items-center justify-center text-white text-sm font-medium z-10"
+              style="transform: skewX(-14deg)"
+            >
+              Mastery
+            </p>
           </div>
         </section>
         <section class="flex w-full flex-row justify-center">
@@ -68,7 +146,7 @@
             class="font-medium pt-1.5 mt-12 leading-none transition-colors duration-300"
             :class="{ 'text-emerald-500': hovering == 'slide' }"
           >
-            Pause
+            PAUSE
           </span>
           <button
             @mouseover="handleOver('slide')"
@@ -80,7 +158,7 @@
           <div
             v-for="(n, idx) of mt"
             :key="idx"
-            class="w-20 h-20 rounded-sm mx-1 cursor-pointer bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+            class="w-18 h-18 xl:w-20 xl:h-20 rounded-sm mx-1 cursor-pointer bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
           >
             <span
               @click.prevent="control.setMTechSelection(n.title)"
@@ -133,33 +211,110 @@
       v-if="control.selectedOption === 'Soft'"
       class="flex flex-col w-full h-[62dvh] xl:h-[70dvh]"
     >
-      Soft
+      <section class="relative px-34 flex flex-row flex-wrap">
+        <article
+          v-for="(n, idx) of ss"
+          :key="idx"
+          class="w-[46%] flex flex-row overflow-hidden mb-5 mx-2 h-20 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repea"
+        >
+          <div
+            class="flex w-20 h-full bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] justify-center items-center"
+          >
+            <Icon
+              :icon="`streamline-freehand:${n.icon}`"
+              class="size-10 text-stone-900"
+            />
+          </div>
+          <div
+            class="flex flex-1 uppercase text-xl justify-center items-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+          >
+            {{ n.skill }}
+          </div>
+        </article>
+      </section>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, watch, onUnmounted } from "vue";
 import { useControlStore } from "@/stores/main.js";
 
 import {
   extraTechnologies as et,
   mainTechnologies as mt,
+  softSkills as ss,
 } from "@/composables/data.js";
 
 const control = useControlStore();
 
 const hovering = ref("");
+const mSelected = ref("");
+const eSelected = ref("");
+const mTitle = ref("");
+const eTitle = ref("");
+const mDesc = ref("");
+const eDesc = ref("");
+const mTag = ref("");
+const eTag = ref("");
+const comfort = ref("");
+const mastery = ref("");
 
 const handleOver = (val) => {
   hovering.value = val;
 };
 
 onMounted(() => {
+  const getMItem = mt.find((i) => i.title == control.mTechSelection);
+  const getEItem = et.find((i) => i.title == control.eTechSelection);
+  mSelected.value = getMItem.icon;
+  mTitle.value = getMItem.title;
+  mDesc.value = getMItem.description;
+  mTag.value = getMItem.tag;
+  eSelected.value = getEItem.icon;
+  eTitle.value = getEItem.title;
+  eDesc.value = getEItem.description;
+  eTag.value = getEItem.tag;
+  comfort.value = getMItem.comfort;
+  mastery.value = getMItem.mastery;
+
   control.selectedOption = "Hard";
 });
 
+watch(
+  () => control.mTechSelection,
+  (newVal) => {
+    const getMItem = mt.find((i) => i.title === newVal);
+    if (getMItem) {
+      mSelected.value = getMItem.icon;
+      mTitle.value = getMItem.title;
+      mDesc.value = getMItem.description;
+      mTag.value = getMItem.tag;
+      comfort.value = getMItem.comfort;
+      mastery.value = getMItem.mastery;
+    }
+  }
+);
+
+watch(
+  () => control.eTechSelection,
+  (newVal) => {
+    const getEItem = et.find((i) => i.title === newVal);
+    if (getEItem) {
+      eSelected.value = getEItem.icon;
+      eTitle.value = getEItem.title;
+      eDesc.value = getEItem.description;
+      eTag.value = getEItem.tag;
+      comfort.value = getEItem.comfort;
+      mastery.value = getEItem.mastery;
+    }
+  }
+);
+
 onUnmounted(() => {
   control.selectedOption = undefined;
+  control.openInventory = false;
+  control.mTechSelection = "VueJS";
+  control.eTechSelection = "ReactJS";
 });
 </script>
