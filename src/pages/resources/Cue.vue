@@ -6,15 +6,15 @@
     >
       <article
         v-if="control.openInventory"
-        class="relative h-full flex flex-row -mt-10 justify-around items-start px-7 lg:px-14 xl:px-56 pt-10"
+        class="relative w-full h-full flex flex-col-reverse md:flex-row md:-mt-10 justify-center md:justify-around items-center md:items-start px-7 lg:px-14 xl:px-4 pt-10"
       >
         <section
-          class="w-[370px] h-[260px] flex flex-row flex-wrap rounded-lg p-2"
+          class="w-[275px] md:w-[370px] h-[260px] flex flex-row flex-wrap justify-center rounded-lg p-2"
         >
           <div
             v-for="(n, idx) of et"
             :key="idx"
-            class="w-18 h-18 xl:w-20 xl:w-20 rounded-sm mx-1 cursor-pointer flex items-center justify-center bg-transparent bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+            class="md:w-14 md:h-14 lg:w-18 lg:h-18 xl:w-20 xl:w-20 rounded-sm mx-1 cursor-pointer flex items-center justify-center bg-transparent bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
           >
             <span
               @click.prevent="control.setETechSelection(n.title)"
@@ -43,7 +43,7 @@
         <section class="relative w-[320px] h-24/25 mt-0.5">
           <div class="flex justify-center">
             <span
-              class="flex w-18 h-18 items-center justify-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat bg-stone-900 rounded-sm"
+              class="flex md:w-14 md:h-14 lg:w-18 lg:h-18 items-center justify-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat bg-stone-900 rounded-sm"
             >
               <span
                 v-if="eSelected"
@@ -66,16 +66,18 @@
         </section>
       </article>
       <article v-else class="relative h-full flex flex-row">
-        <div class="px-34 flex flex-row w-full justify-around">
+        <div
+          class="md:px-34 flex flex-col-reverse md:flex-row w-full justify-center md:justify-around"
+        >
           <div
-            class="w-65 h-65 xl:w-75 xl:h-75 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat p-px"
+            class="w-45 h-45 md:w-65 md:h-65 xl:w-75 xl:h-75 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat p-px"
           >
             <span
               v-if="mSelected"
               class="flex items-center justify-center w-full h-full bg-stone-900 rounded-sm"
             >
               <span
-                class="block size-32 xl:size-44 cursor-pointer transition-colors duration-200 bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100"
+                class="block size-22 md:size-32 xl:size-44 cursor-pointer transition-colors duration-200 bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100"
                 :style="{
                   mask: `url('https://api.iconify.design/simple-icons/${mSelected}.svg') center/contain no-repeat`,
                   WebkitMask: `url('https://api.iconify.design/simple-icons/${mSelected}.svg') center/contain no-repeat`,
@@ -95,55 +97,54 @@
         </div>
       </article>
       <nav>
-        <section class="flex justify-center mb-3 gap-1">
+        <section
+          class="flex flex-col px-8 md:flex-row justify-center mb-3 relative z-0 gap-2"
+        >
           <div
-            class="w-4/11 xl:w-3/11 h-7 -ml-8 mx-1 relative"
-            style="transform: skewX(-14deg) translateZ(0)"
+            class="w-full md:w-3/10 lg:w-4/11 xl:w-3/11 h-7 mx-1 relative md:skew-x-[-14deg] [transform:translateZ(0)]"
           >
             <div
-              class="absolute inset-0 bg-[image:var(--background-image-gradient-border)] bg-no-repea"
-            ></div>
-            <div class="absolute inset-[2px] bg-slate-900"></div>
-            <div class="absolute inset-[2px] overflow-hidden">
-              <div
-                class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-                style="transform: skewX(0deg)"
-                :style="{ width: comfort + '%' }"
-              />
+              class="absolute inset-0 bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+            >
+              <div class="absolute inset-[2px] bg-slate-900"></div>
+              <div class="absolute inset-[2px] overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+                  :style="{ width: comfort + '%' }"
+                />
+              </div>
             </div>
             <p
-              class="absolute inset-0 flex items-center justify-center text-white text-sm font-medium z-10"
-              style="transform: skewX(14deg)"
+              class="absolute inset-0 flex items-center justify-center text-white text-sm font-medium z-10 md:skew-x-[14deg]"
             >
               Comfort
             </p>
           </div>
 
           <div
-            class="w-4/11 xl:w-3/11 h-7 mx-1 relative"
-            style="transform: skewX(14deg) translateZ(0)"
+            class="w-full md:w-3/10 lg:w-4/11 xl:w-3/11 h-7 mx-1 relative md:skew-x-[14deg] [transform:translateZ(0)]"
           >
             <div
-              class="absolute inset-0 bg-[image:var(--background-image-gradient-border)]"
-            ></div>
-            <div class="absolute inset-[2px] bg-slate-900"></div>
-            <div class="absolute inset-[2px] overflow-hidden">
-              <div
-                class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-                :style="{ width: mastery + '%' }"
-              />
+              class="absolute inset-0 bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+            >
+              <div class="absolute inset-[2px] bg-stone-900"></div>
+              <div class="absolute inset-[2px] overflow-hidden">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+                  :style="{ width: mastery + '%' }"
+                />
+              </div>
             </div>
-            <p
-              class="absolute inset-0 flex items-center justify-center text-white text-sm font-medium z-10"
-              style="transform: skewX(-14deg)"
+            <span
+              class="absolute inset-0 flex items-center justify-center text-white text-sm font-medium z-10 md:skew-x-[-14deg]"
             >
               Mastery
-            </p>
+            </span>
           </div>
         </section>
         <section class="flex w-full flex-row justify-center">
           <span
-            class="font-medium pt-1.5 mt-12 leading-none transition-colors duration-300"
+            class="hidden md:flex font-medium pt-1.5 mt-12 leading-none transition-colors duration-300"
             :class="{ 'text-emerald-500': hovering == 'slide' }"
           >
             PAUSE
@@ -151,14 +152,14 @@
           <button
             @mouseover="handleOver('slide')"
             @mouseleave="hovering = ''"
-            class="w-10 h-7 flex mt-12 items-center justify-center h-7 px-1 mx-2 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
+            class="hidden md:flex w-10 h-7 mt-12 items-center justify-center h-7 px-1 mx-2 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
           >
             P
           </button>
           <div
             v-for="(n, idx) of mt"
             :key="idx"
-            class="w-18 h-18 xl:w-20 xl:h-20 rounded-sm mx-1 cursor-pointer bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+            class="md:w-14 md:h-14 lg:w-18 lg:h-18 xl:w-20 xl:h-20 rounded-sm mx-1 cursor-pointer bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
           >
             <span
               @click.prevent="control.setMTechSelection(n.title)"
@@ -194,12 +195,12 @@
             @click.prevent="control.toggleInventory()"
             @mouseover="handleOver('inventory')"
             @mouseleave="hovering = ''"
-            class="flex shrink-0 mt-12 mx-2 w-10 h-7 items-center justify-center px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
+            class="hidden md:flex shrink-0 mt-12 mx-2 w-10 h-7 items-center justify-center px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
           >
             <span class="font-normal">I</span>
           </button>
           <span
-            class="leading-none mt-12 pt-1.5 truncate transition-colors duration-300"
+            class="hidden md:flex leading-none mt-12 pt-1.5 truncate transition-colors duration-300"
             :class="{ 'text-emerald-500': hovering == 'inventory' }"
           >
             INVENTORY
@@ -211,11 +212,13 @@
       v-if="control.selectedOption === 'Soft'"
       class="flex flex-col w-full h-[62dvh] xl:h-[70dvh]"
     >
-      <section class="relative px-34 flex flex-row flex-wrap">
+      <section
+        class="relative px-12 mt-6 md:mt-2 sm:px-20 md:px-34 flex flex-row flex-wrap"
+      >
         <article
           v-for="(n, idx) of ss"
           :key="idx"
-          class="w-[46%] flex flex-row overflow-hidden mb-5 mx-2 h-20 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repea"
+          class="w-full md:w-[46%] flex flex-row overflow-hidden mb-5 md:mx-2 h-20 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repea"
         >
           <div
             class="flex w-20 h-full bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] justify-center items-center"
