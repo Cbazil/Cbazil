@@ -35,4 +35,33 @@ p, .base {
   font-family: 'Rubadt', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-html { @apply bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 text-white; height: 100%; }
+html { 
+  @apply bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 text-white; 
+  height: 100%; 
+}
+
+/* Custom Scrollbar - Global */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* invisible track for minimalism */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.6); /* neutral gray */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.9); /* stronger on hover */
+  transition: background 0.3s ease;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.5) rgba(0, 0, 0, 0.3);
+}
