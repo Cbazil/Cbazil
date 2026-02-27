@@ -273,3 +273,57 @@ export const softSkills = [
   },
   { skill: "Empthy", icon: "business-deal-handshake" },
 ];
+
+export const workXP = [
+  {
+    company: "Self-Employed and Growth Journey",
+    occupation: "Passion Projects & Freelance",
+    period: "Dec 2025- Current",
+  },
+  {
+    company: "CodeSpace",
+    occupation: "Web Developer & Code Coach",
+    period: "Aug 2022- May 2025",
+  },
+  {
+    company: "Growth Journey",
+    occupation: "ThreeJS and Startup Studies",
+    period: "Jun 2022- August 2022",
+  },
+  {
+    company: "Life Choices",
+    occupation: "Web Applications Developer Team Lead",
+    period: "Sep 2020 - May 2022",
+  },
+  {
+    company: "Growth Journey",
+    occupation: "VueJS Studies",
+    period: "Dec 2019 - July 2020",
+  },
+  {
+    company: "Vulcan Labs",
+    occupation: "Software Developer Intern",
+    period: "May 2019 - Oct 2019",
+  },
+  {
+    company: "Growth Journey",
+    occupation: "JavaScript Studies",
+    period: "Feb 2019 - Apr 2019",
+  },
+  {
+    company: "Cyber Pitstop",
+    occupation: "Computer Assistant Volunteer",
+    period: "Jan 2014 - Jan 2020",
+  },
+];
+
+export const EduXP = [
+  {
+    institute: "Life Choices Academy",
+    course: "Web Development (CodeSpace)",
+    period: "Aug 2018 - Feb 2019",
+  },
+  {
+    institute: "College of Cape Town",
+  },
+];

@@ -28,11 +28,7 @@
             LB
           </button>
 
-          <div
-            v-for="(opt, idx) in options"
-            :key="idx"
-            class="flex items-center"
-          >
+          <div v-for="(opt, idx) in options" :key="idx" class="flex items-center">
             <span
               @mouseover="playOver"
               @click="onOptionClick(opt)"
@@ -111,13 +107,7 @@
             </template>
           </transition-group>
 
-          <transition-group
-            v-else
-            appear
-            name="social-links"
-            tag="div"
-            class="contents"
-          >
+          <transition-group v-else appear name="social-links" tag="div" class="contents">
             <a
               v-for="(social, idx) in socialLinks"
               :key="idx"
@@ -157,9 +147,7 @@
         pb-20 on mobile: clears the absolute mobile footer (~60px at bottom-1.5)
         pb-28 on md+: clears the absolute desktop footer (bottom-14 ~56px + content ~28px)
       -->
-      <div
-        class="flex-1 min-h-0 mb-20 overflow-y-auto md:overflow-hidden md:pb-28"
-      >
+      <div class="flex-1 min-h-0 mb-20 overflow-y-auto md:overflow-hidden md:pb-28">
         <router-view :key="$route.fullPath" />
       </div>
 
@@ -208,9 +196,7 @@
           &copy; 2026 Built by Cbazil
         </p>
 
-        <section
-          class="flex flex-1 gap-1 items-center justify-center md:justify-end"
-        >
+        <section class="flex flex-1 gap-1 items-center justify-center md:justify-end">
           <span
             class="font-medium leading-none transition-colors duration-300"
             :class="{ 'text-emerald-500': hovering == 'enter' }"
@@ -332,7 +318,7 @@
 import { ref, computed, watch, onMounted, onUnmounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
-import { pageOptions, socialLinks } from "@/composables/data.js";
+import { pageOptions, socialLinks } from "@/lib/data.js";
 import { useControlStore } from "@/stores/main.js";
 
 const control = useControlStore();
@@ -516,4 +502,3 @@ const hovering = ref("");
   transition-delay: calc(var(--i) * 35ms);
 }
 </style>
-

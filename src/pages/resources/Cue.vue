@@ -45,7 +45,7 @@
         >
           <div class="flex justify-center">
             <span
-              class="flex w-14 h-14 lg:w-18 lg:h-18 items-center justify-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat bg-stone-900 rounded-sm"
+              class="flex w-14 h-14 lg:w-18 lg:h-18 items-center justify-center -ml-8 bg-[image:var(--background-image-gradient-border)] bg-no-repeat bg-stone-900 rounded-sm"
             >
               <span
                 v-if="eSelected"
@@ -57,9 +57,7 @@
               />
             </span>
           </div>
-          <div
-            class="w-full md:w-70 h-auto md:h-45 rounded-sm p-3 mx-auto md:mx-1 mt-2"
-          >
+          <div class="w-full md:w-70 h-auto md:h-45 rounded-sm p-3 mx-auto md:mx-1 mt-2">
             <div
               class="bg-gradient-to-tr from-blue-900 text-center via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
             >
@@ -82,7 +80,7 @@
             <div
               class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
             >
-              <h2 class="text-4xl mt-6 md:mt-0">{{ mTitle }}</h2>
+              <h2 class="text-3xl md:text-4xl mt-6 md:mt-0">{{ mTitle }}</h2>
             </div>
             <br />
             <h3 class="text-xl xl:text-2xl font-thin">{{ mDesc }}</h3>
@@ -229,7 +227,7 @@
       class="flex flex-col w-full h-[62dvh] xl:h-[70dvh]"
     >
       <section
-        class="relative px-4 sm:px-8 md:px-12 lg:px-20 xl:px-34 mt-6 md:mt-0 md:overflow-hidden flex flex-row flex-wrap justify-center"
+        class="relative px-4 sm:px-8 md:px-12 lg:px-20 xl:px-34 mt-6 md:mt-0 lg:overflow-hidden flex flex-row flex-wrap justify-center"
       >
         <article
           v-for="(n, idx) of ss"
@@ -263,7 +261,7 @@ import {
   extraTechnologies as et,
   mainTechnologies as mt,
   softSkills as ss,
-} from "@/composables/data.js";
+} from "@/lib/data.js";
 
 const control = useControlStore();
 

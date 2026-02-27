@@ -4,9 +4,7 @@
       v-if="control.selectedOption == 'Profession'"
       class="flex flex-col-reverse md:flex-row"
     >
-      <div
-        class="relative w-full md:w-1/2 flex -mt-5 h-[64dvh] xl:h-[70dvh] flex-col"
-      >
+      <div class="relative w-full md:w-1/2 flex -mt-5 h-[64dvh] xl:h-[70dvh] flex-col">
         <div
           class="relative w-full md:w-1/2 h-1/3 transform mt-15 md:mt-0"
           :class="{
@@ -23,8 +21,8 @@
             </div>
             <br />
             <p class="font-thin">
-              Building Software is a huge drive for me, having the ability be
-              creative and contribute at solving problems.
+              Building Software is a huge drive for me, having the ability be creative and
+              contribute at solving problems.
             </p>
           </section>
 
@@ -54,8 +52,8 @@
             </div>
             <br />
             <p class="font-thin">
-              Planning in anything is key to success, mapping out the
-              fundamentals is what I follow.
+              Planning in anything is key to success, mapping out the fundamentals is what
+              I follow.
             </p>
           </section>
           <img
@@ -84,8 +82,8 @@
             </div>
             <br />
             <p class="font-thin">
-              I have plenty experience in teaching and mentoring others. I love
-              seeing growth in individuals and teams.
+              I have plenty experience in teaching and mentoring others. I love seeing
+              growth in individuals and teams.
             </p>
           </section>
           <img
@@ -102,11 +100,11 @@
       <div class="w-full md:w-1/2">
         <br />
         <p class="text-lg mt-10 md:mt-0 sm:text-xl xl:text-2xl font-thin">
-          As a developer, I aim to build, solve and resolve. I innovate by
-          keeping things simple, effective and relatively close to standard
-          approaches. I am very client & MVP focused, meeting their needs and
-          capable of advising where needed. I work well under pressure and
-          independently, keen on sharing ideas; growing myself and others.
+          As a developer, I aim to build, solve and resolve. I innovate by keeping things
+          simple, effective and relatively close to standard approaches. I am very client
+          & MVP focused, meeting their needs and capable of advising where needed. I work
+          well under pressure and independently, keen on sharing ideas; growing myself and
+          others.
         </p>
         <div class="relative hidden md:flex items-center mt-5">
           <div
@@ -126,8 +124,7 @@
               <span
                 class="link text-[1.3rem] md:text-[1.5rem] bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent group-hover:text-emerald-400"
                 :class="{
-                  'text-emerald-500! cursor-pointer':
-                    professionSelect == item.title,
+                  'text-emerald-500! cursor-pointer': professionSelect == item.title,
                 }"
               >
                 {{ item.title }}
@@ -151,24 +148,17 @@
         </div>
       </div>
     </div>
-    <div
-      v-if="control.selectedOption == 'Personal'"
-      class="flex flex-col md:flex-row"
-    >
+    <div v-if="control.selectedOption == 'Personal'" class="flex flex-col md:flex-row">
       <div class="w-full md:w-1/2">
         <p class="text-lg mt-15 md:mt-0 sm:text-xl xl:text-2xl font-thin pt-2">
-          I am introverted by nature, I have been said to have this silent
-          confident, where I communicate when needed. I love being creative and
-          having some friendly competition. I enjoy hiking, badminton, music,
-          chess, yu-gi-oh and online video games. I value honesty and the love
-          for passions and goals (Dreamers who will not Quit).
+          I am introverted by nature, I have been said to have this silent confident,
+          where I communicate when needed. I love being creative and having some friendly
+          competition. I enjoy hiking, badminton, music, chess, yu-gi-oh and online video
+          games. I value honesty and the love for passions and goals (Dreamers who will
+          not Quit).
         </p>
         <div class="relative hidden md:flex items-center mt-10">
-          <div
-            v-for="(item, idx) of personalItems"
-            :key="idx"
-            class="flex items-center"
-          >
+          <div v-for="(item, idx) of personalItems" :key="idx" class="flex items-center">
             <p
               class="absolute left-0 text-lg xl:text-2xl mt-30 xl:mt-35 font-thin"
               v-if="personalSelect == item.title"
@@ -187,8 +177,7 @@
               <span
                 class="link text-[1.3rem] md:text-[1.5rem] bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent group-hover:text-emerald-400"
                 :class="{
-                  'text-emerald-500! cursor-pointer':
-                    personalSelect == item.title,
+                  'text-emerald-500! cursor-pointer': personalSelect == item.title,
                 }"
               >
                 {{ item.title }}
@@ -224,8 +213,8 @@
             </div>
             <br />
             <p class="font-thin">
-              I love any activity that allows some competitiveness through
-              strategy and going against others.
+              I love any activity that allows some competitiveness through strategy and
+              going against others.
             </p>
           </section>
           <img
@@ -254,8 +243,8 @@
             </div>
             <br />
             <p class="font-thin">
-              I enjoy various kinds of music, whether rock, pop, rap or even
-              gospel especial ones with meaningful lyrics.
+              I enjoy various kinds of music, whether rock, pop, rap or even gospel
+              especial ones with meaningful lyrics.
             </p>
           </section>
           <img
@@ -284,8 +273,8 @@
             </div>
             <br />
             <p class="font-thin">
-              I enjoy badminton, I do try and attend each week, this keeps my
-              physically body active
+              I enjoy badminton, I do try and attend each week, this keeps my physically
+              body active
             </p>
           </section>
           <img
@@ -307,7 +296,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import { useControlStore } from "@/stores/main.js";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
-import { personalItems, professionItems } from "@/composables/data.js";
+import { personalItems, professionItems } from "@/lib/data.js";
 
 const control = useControlStore();
 
