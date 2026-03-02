@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h3>D-I-Y</h3>
-  </div>
+    <div>
+        <h3>D-I-Y</h3>
+    </div>
 </template>
 
 <script setup>
@@ -10,10 +10,10 @@ import { useControlStore } from "@/stores/main.js";
 const control = useControlStore();
 
 onMounted(() => {
-  control.selectedOption = "All";
+    control.selectedOption = "All";
 });
 
 onUnmounted(() => {
-  control.selectedOption = undefined;
+    control.selectedOption = undefined;
 });
 </script>

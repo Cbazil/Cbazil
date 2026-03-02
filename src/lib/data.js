@@ -40,7 +40,7 @@ export const personalItems = [
   },
   {
     title: "Music",
-    info: "I enjoy various kinds of music, whether rock, pop, rap or even gospel especial ones with meaningful lyrics.",
+    info: "I enjoy various kinds of music, whether rock, pop, rap or even gospel, especial ones with meaningful lyrics.",
   },
 ];
 
@@ -276,54 +276,95 @@ export const softSkills = [
 
 export const workXP = [
   {
-    company: "Self-Employed and Growth Journey",
+    company: "Self-Employed",
     occupation: "Passion Projects & Freelance",
-    period: "Dec 2025- Current",
+    logo: "portrait.svg",
+    bg: "stone-990",
+    scale: 200,
+    period: "Dec 2025 - Current",
   },
   {
     company: "CodeSpace",
     occupation: "Web Developer & Code Coach",
-    period: "Aug 2022- May 2025",
+    logo: "codespace.jpg",
+    bg: "white",
+    scale: 100,
+    period: "Aug 2022 - May 2025",
   },
   {
     company: "Growth Journey",
     occupation: "ThreeJS and Startup Studies",
-    period: "Jun 2022- August 2022",
+    logo: "portrait.svg",
+    bg: "stone-900",
+    scale: 200,
+    period: "Jun 2022 - Aug 2022",
   },
   {
     company: "Life Choices",
     occupation: "Web Applications Developer Team Lead",
+    logo: "lifechoices.png",
+    bg: "[#1a1818]",
+    scale: 86,
     period: "Sep 2020 - May 2022",
   },
   {
     company: "Growth Journey",
     occupation: "VueJS Studies",
-    period: "Dec 2019 - July 2020",
+    logo: "portrait.svg",
+    bg: "stone-900",
+    scale: 200,
+    period: "Dec 2019 - Jul 2020",
   },
   {
     company: "Vulcan Labs",
     occupation: "Software Developer Intern",
+    logo: "valcanlabs.jpeg",
+    bg: "white",
+    scale: 90,
     period: "May 2019 - Oct 2019",
   },
   {
     company: "Growth Journey",
     occupation: "JavaScript Studies",
+    logo: "portrait.svg",
+    bg: "stone-900",
+    scale: 200,
     period: "Feb 2019 - Apr 2019",
   },
   {
     company: "Cyber Pitstop",
     occupation: "Computer Assistant Volunteer",
+    logo: "cyberpitstop.png",
+    bg: "white",
+    scale: 90,
     period: "Jan 2014 - Jan 2020",
   },
 ];
 
-export const EduXP = [
+export const eduXP = [
   {
     institute: "Life Choices Academy",
     course: "Web Development (CodeSpace)",
     period: "Aug 2018 - Feb 2019",
   },
   {
+    institute: "Free Code Camp",
+    course: "Web Fundamentals",
+    period: "Mar 2018 - Jun 2018",
+  },
+  {
     institute: "College of Cape Town",
+    course: "Cisco Propel 3",
+    period: "Aug 2017 - Oct 2017",
+  },
+  {
+    institute: "Communiversity",
+    course: "Bridge Course",
+    period: "Jan 2017 - Jul 2017",
+  },
+  {
+    institute: "Crestway",
+    course: "High School",
+    period: "Jan 2012 - Dec 2016",
   },
 ];
