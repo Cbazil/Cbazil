@@ -303,7 +303,7 @@ export const workXP = [
     company: "Life Choices",
     occupation: "Web Applications Developer Team Lead",
     logo: "lifechoices.png",
-    bg: "[#1a1818]",
+    bg: "stone-900",
     scale: 86,
     period: "Sep 2020 - May 2022",
   },

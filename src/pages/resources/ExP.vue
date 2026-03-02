@@ -14,23 +14,36 @@
                         @wheel.prevent="handleWheel"
                     >
                         <div class="flex items-start pt-5 px-10 min-w-max">
+                            <div
+                                class="w-24 h-px bg-gradient-to-r from-sky-200 to-blue-900 mt-10 shrink-0"
+                            />
                             <template v-for="(x, idx) in workXP" :key="idx">
-                                <!-- Work Item -->
                                 <div
                                     class="flex flex-col items-center w-44 shrink-0"
                                 >
                                     <div
                                         class="w-20 h-20 p-2 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
-                                        :class="`bg-${x.bg}`"
+                                        :style="{
+                                            backgroundColor: x.bg.startsWith(
+                                                '[',
+                                            )
+                                                ? x.bg.slice(1, -1)
+                                                : x.bg,
+                                        }"
                                     >
-                                        <img
-                                            :src="`/images/${x.logo}`"
-                                            class="w-full h-full object-cover"
-                                            :style="{
-                                                transform: `rotate(-45deg) scale(${x.scale / 100})`,
-                                            }"
-                                            alt="Company Logo"
-                                        />
+                                        <div
+                                            class="w-full h-full overflow-hidden"
+                                            :class="`bg-${x.bg}`"
+                                        >
+                                            <img
+                                                :src="`/images/${x.logo}`"
+                                                class="w-full h-full object-cover"
+                                                :style="{
+                                                    transform: `rotate(-45deg) scale(${x.scale / 100})`,
+                                                }"
+                                                alt="Company Logo"
+                                            />
+                                        </div>
                                     </div>
                                     <div class="mt-6 text-center">
                                         <div
@@ -50,11 +63,10 @@
                                     </div>
                                 </div>
 
-                                <!-- Connecting Line (between items, not after last) -->
                                 <div
                                     v-if="idx < workXP.length - 1"
-                                    class="w-24 h-px bg-gradient-to-r from-sky-200 to-blue-900 mt-8 shrink-0"
-                                ></div>
+                                    class="w-24 h-px bg-gradient-to-r from-sky-200 to-blue-900 mt-10 shrink-0"
+                                />
                             </template>
                         </div>
                     </div>
