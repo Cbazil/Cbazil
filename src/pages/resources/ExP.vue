@@ -1,9 +1,10 @@
 <template>
     <div class="relative w-full overflow-x-hidden">
+        <!-- Desktop: large diamond above timeline -->
         <Teleport to="body">
             <div
                 v-if="expandedPos && selectedWork"
-                class="fixed z-[9999] pointer-events-none"
+                class="fixed z-[9999] pointer-events-none hidden md:block"
                 :style="{
                     left: expandedPos.x + 'px',
                     top: expandedPos.y + 'px',
@@ -33,8 +34,110 @@
             </div>
         </Teleport>
 
+        <!-- Mobile: tap overlay -->
+        <Teleport to="body">
+            <Transition name="overlay-fade">
+                <div
+                    v-if="mobileOverlay && selectedWork"
+                    class="fixed inset-0 z-[9998] flex flex-col md:hidden"
+                    style="background: rgba(0, 0, 0, 0.92)"
+                    @click.self="mobileOverlay = false"
+                >
+                    <!-- Fixed close button -->
+                    <button
+                        class="fixed top-3 right-4 text-gray-400 text-2xl p-2 z-20 leading-none"
+                        @click="mobileOverlay = false"
+                    >
+                        ✕
+                    </button>
+
+                    <!-- Scrollable content — truly symmetric -->
+                    <div
+                        class="flex-1 overflow-y-auto flex flex-col items-center pt-12 pb-8"
+                        style="padding-left: 24px; padding-right: 24px"
+                    >
+                        <!-- Diamond -->
+                        <div
+                            class="flex items-center justify-center w-36 h-36 shrink-0"
+                        >
+                            <div
+                                class="w-24 h-24 p-1.5 mb-3 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
+                                :style="{
+                                    backgroundColor: bgColor(selectedWork.bg),
+                                }"
+                            >
+                                <div
+                                    class="w-full h-full overflow-hidden"
+                                    :style="{
+                                        backgroundColor: bgColor(
+                                            selectedWork.bg,
+                                        ),
+                                    }"
+                                >
+                                    <img
+                                        :src="`/images/${selectedWork.logo}`"
+                                        class="w-full h-full object-cover"
+                                        :style="{
+                                            transform: `rotate(-45deg) scale(${selectedWork.scale / 100})`,
+                                        }"
+                                        alt="Logo"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="w-full mt-4" style="max-width: 100%">
+                            <div
+                                class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] mb-1 text-center"
+                            >
+                                <h3 class="hl text-xl font-bold">
+                                    {{
+                                        control.selectedOption === "Work"
+                                            ? control.workXPSelection
+                                            : control.eduXPSelection
+                                    }}
+                                </h3>
+                            </div>
+                            <p
+                                class="font-thin text-xs text-gray-300 text-center mb-2"
+                                v-if="
+                                    control.selectedOption === 'Work'
+                                        ? wSelectedPeriod
+                                        : eSelectedPeriod
+                                "
+                                v-html="
+                                    (control.selectedOption === 'Work'
+                                        ? wSelectedPeriod
+                                        : eSelectedPeriod
+                                    ).replace(' - ', ' – ')
+                                "
+                            />
+                            <p class="text-sm text-center mb-2">
+                                {{
+                                    control.selectedOption === "Work"
+                                        ? wSelectedOccupation
+                                        : eSelectedOccupation
+                                }}
+                            </p>
+                            <p
+                                class="font-thin text-xs text-gray-300 text-center leading-relaxed"
+                            >
+                                {{
+                                    control.selectedOption === "Work"
+                                        ? wSelectedDesc
+                                        : eSelectedDesc
+                                }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </Transition>
+        </Teleport>
+
         <!-- WORK -->
         <div v-if="control.selectedOption === 'Work'">
+            <!-- Desktop info panel -->
             <div class="w-full h-[35dvh] hidden md:flex flex-row justify-end">
                 <div class="flex items-center w-5/9 h-full">
                     <span
@@ -58,9 +161,56 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Mobile: vertical timeline (centered) -->
+            <div class="flex flex-col md:hidden py-4 items-center">
+                <template v-for="(x, idx) in workXP" :key="x.company">
+                    <!-- connector line above (skip first) -->
+                    <div
+                        v-if="idx > 0"
+                        class="w-px h-8 bg-gradient-to-b from-sky-700 to-blue-900"
+                    />
+                    <!-- diamond wrapper: extra padding so rotate doesn't clip -->
+                    <div
+                        class="flex items-center justify-center w-36 h-36 cursor-pointer"
+                        @click="toggleSelectMobile(x, x.company, 'work')"
+                    >
+                        <div
+                            class="w-24 h-24 p-1.5 mb-3 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
+                            :style="{ backgroundColor: bgColor(x.bg) }"
+                        >
+                            <div class="w-full h-full overflow-hidden">
+                                <img
+                                    :src="`/images/${x.logo}`"
+                                    class="w-full h-full object-cover"
+                                    :style="{
+                                        transform: `rotate(-45deg) scale(${x.scale / 100})`,
+                                    }"
+                                    alt="Logo"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- info under diamond -->
+                    <div class="text-center mt-1 mb-1 px-4">
+                        <div
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)]"
+                        >
+                            <h3 class="hl text-base font-bold">
+                                {{ x.company }}
+                            </h3>
+                        </div>
+                        <span class="font-thin text-gray-300 text-sm">{{
+                            x.period
+                        }}</span>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Desktop: horizontal scroll -->
             <div
                 ref="scrollEl"
-                class="overflow-x-scroll overflow-y-hidden w-full h-[33dvh] md:h-[64dvh] scrollbar-hide"
+                class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[64dvh] scrollbar-hide"
                 @wheel.prevent="handleWheel"
             >
                 <div class="flex items-start pt-5 px-10 min-w-max">
@@ -128,6 +278,7 @@
 
         <!-- EDUCATION -->
         <div v-if="control.selectedOption === 'Education'">
+            <!-- Desktop info panel -->
             <div class="w-full h-[35dvh] hidden md:flex flex-row justify-end">
                 <div class="flex items-center w-5/9 h-full">
                     <span
@@ -151,9 +302,53 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Mobile: vertical timeline (centered) -->
+            <div class="flex flex-col md:hidden py-4 items-center">
+                <template v-for="(x, idx) in eduXP" :key="x.institute">
+                    <div
+                        v-if="idx > 0"
+                        class="w-px h-8 bg-gradient-to-b from-sky-700 to-blue-900"
+                    />
+                    <div
+                        class="flex items-center justify-center w-36 h-36 cursor-pointer"
+                        @click="toggleSelectMobile(x, x.institute, 'edu')"
+                    >
+                        <div
+                            class="w-24 h-24 p-1.5 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
+                            :style="{ backgroundColor: bgColor(x.bg) }"
+                        >
+                            <div class="w-full h-full overflow-hidden">
+                                <img
+                                    :src="`/images/${x.logo}`"
+                                    class="w-full h-full object-cover"
+                                    :style="{
+                                        transform: `rotate(-45deg) scale(${x.scale / 100})`,
+                                    }"
+                                    alt="Logo"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-1 mb-1 px-4">
+                        <div
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)]"
+                        >
+                            <h3 class="hl text-base font-bold">
+                                {{ x.institute }}
+                            </h3>
+                        </div>
+                        <span class="font-thin text-gray-300 text-sm">{{
+                            x.period
+                        }}</span>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Desktop: horizontal scroll -->
             <div
                 ref="scrollEl"
-                class="overflow-x-scroll overflow-y-hidden w-full h-[33dvh] md:h-[64dvh] scrollbar-hide"
+                class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[64dvh] scrollbar-hide"
                 @wheel.prevent="handleWheel"
             >
                 <div class="flex items-start pt-5 px-10 min-w-max">
@@ -239,6 +434,7 @@ const scrollEl = ref(null);
 const diamondEls = reactive({});
 const expandedPos = ref(null);
 const selectedWork = ref(null);
+const mobileOverlay = ref(false);
 let selectingInProgress = false;
 let stopInnerWatch = null;
 
@@ -273,6 +469,7 @@ const deselect = () => {
     control.eduXPSelection = null;
     expandedPos.value = null;
     selectedWork.value = null;
+    mobileOverlay.value = false;
 };
 
 const handleWheel = (e) => {
@@ -283,6 +480,7 @@ const handleWheel = (e) => {
     }
 };
 
+// Desktop: scroll to center + show large diamond above
 const toggleSelect = (item, key, type) => {
     const currentSel =
         type === "work" ? control.workXPSelection : control.eduXPSelection;
@@ -339,6 +537,19 @@ const toggleSelect = (item, key, type) => {
     }
 };
 
+// Mobile: just set selection and open overlay
+const toggleSelectMobile = (item, key, type) => {
+    if (type === "work") {
+        control.workXPSelection = key;
+        control.eduXPSelection = null;
+    } else {
+        control.eduXPSelection = key;
+        control.workXPSelection = null;
+    }
+    selectedWork.value = { ...item, id: key };
+    mobileOverlay.value = true;
+};
+
 const selectDefault = (tabVal) => {
     if (stopInnerWatch) {
         stopInnerWatch();
@@ -346,7 +557,6 @@ const selectDefault = (tabVal) => {
     }
 
     deselect();
-
     Object.keys(diamondEls).forEach((k) => delete diamondEls[k]);
 
     const defaultKey = tabVal === "Work" ? "Self-Employed" : "ThreeJS Journey";
@@ -375,6 +585,7 @@ const selectDefault = (tabVal) => {
     });
 };
 
+// Tab switches
 watch(
     () => control.selectedOption,
     (newVal) => selectDefault(newVal),
@@ -421,6 +632,14 @@ onUnmounted(() => {
     animation: diamondGrow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
+.mobile-diamond-show {
+    width: 160px;
+    height: 160px;
+    transform: rotate(45deg);
+    transform-origin: center center;
+    animation: diamondGrow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
 @keyframes diamondGrow {
     from {
         width: 80px;
@@ -434,5 +653,14 @@ onUnmounted(() => {
         opacity: 1;
         transform: rotate(45deg);
     }
+}
+
+.overlay-fade-enter-active,
+.overlay-fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+.overlay-fade-enter-from,
+.overlay-fade-leave-to {
+    opacity: 0;
 }
 </style>
