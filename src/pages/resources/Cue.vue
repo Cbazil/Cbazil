@@ -14,7 +14,7 @@
                     <div
                         v-for="(n, idx) of et"
                         :key="idx"
-                        class="w-14 h-14 md:w-14 md:h-14 lg:w-18 lg:h-18 xl:w-20 xl:h-20 rounded-sm mx-1 cursor-pointer flex items-center justify-center bg-transparent bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        class="w-14 h-14 md:w-14 md:h-14 lg:w-18 lg:h-18 2xl:w-20 2xl:h-20 rounded-sm mx-1 cursor-pointer flex items-center justify-center bg-transparent bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
                     >
                         <span
                             @click.prevent="control.setETechSelection(n.title)"

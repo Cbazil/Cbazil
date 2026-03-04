@@ -7,6 +7,8 @@ export const useControlStore = defineStore("control", {
     openInventory: false,
     mTechSelection: "VueJS",
     eTechSelection: "ReactJS",
+    workXPSelection: "Self-Employed",
+    eduXPSelection: "ThreeJS Journey",
   }),
   actions: {
     setPage(p) {
@@ -27,6 +29,12 @@ export const useControlStore = defineStore("control", {
     },
     setETechSelection(val) {
       this.eTechSelection = val;
+    },
+    setWorkXPSelection(val) {
+      this.workXPSelection = val;
+    },
+    setEduXPSelection(val) {
+      this.eduXPSelection = val;
     },
     clearSelectedOption() {
       this.selectedOption = undefined;

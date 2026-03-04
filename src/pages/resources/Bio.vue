@@ -57,7 +57,7 @@
                             <h3 class="hl text-lg text-lg">Plan</h3>
                         </div>
                         <br />
-                        <h3 class="font-thin">
+                        <h3 class="font-thin!">
                             Planning in anything is key to success, mapping out
                             the fundamentals is what I follow.
                         </h3>
@@ -89,7 +89,7 @@
                             <h3 class="hl text-lg text-lg">Coach</h3>
                         </div>
                         <br />
-                        <h3 class="font-thin">
+                        <h3 class="font-thin!">
                             I have plenty experience in teaching and mentoring
                             others. I love seeing growth in individuals and
                             teams.
@@ -149,12 +149,12 @@
                                 {{ item.title }}
                             </span>
                         </span>
-                        <p
-                            class="absolute left-0 mt-30 text-lg font-thin"
+                        <h3
+                            class="absolute left-0 mt-30 text-xl font-thin"
                             v-if="professionSelect == item.title"
                         >
                             {{ item.info }}
-                        </p>
+                        </h3>
                     </div>
                     <button
                         @click="handleCloseProfession"
@@ -189,7 +189,7 @@
                         class="flex items-center"
                     >
                         <h3
-                            class="absolute left-0 text-lg xl:text-2xl mt-30 xl:mt-35 font-thin"
+                            class="absolute left-0 text-xl 2xl:text-2xl mt-30 xl:mt-35 font-thin"
                             v-if="personalSelect == item.title"
                         >
                             {{ item.info }}
