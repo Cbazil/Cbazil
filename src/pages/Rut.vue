@@ -134,29 +134,29 @@
             class="absolute bottom-5 right-6 sm:relative sm:bottom-auto sm:right-auto flex justify-center items-center mt-20 space-x-2 sm:space-x-4 w-1/9"
         >
             <div class="flex flex-col items-center">
-                <span class="text-white base font-thin">D</span>
-                <span class="text-white base font-thin">E</span>
-                <span class="text-white base font-thin">V</span>
-                <span class="text-white base font-thin">E</span>
-                <span class="text-white base font-thin">L</span>
-                <span class="text-white base font-thin">O</span>
-                <span class="text-white base font-thin">P</span>
-                <span class="text-white base font-thin">E</span>
-                <span class="text-white base font-thin">R</span>
+                <span class="text-white font-thin">D</span>
+                <span class="text-white font-thin">E</span>
+                <span class="text-white font-thin">V</span>
+                <span class="text-white font-thin">E</span>
+                <span class="text-white font-thin">L</span>
+                <span class="text-white font-thin">O</span>
+                <span class="text-white font-thin">P</span>
+                <span class="text-white font-thin">E</span>
+                <span class="text-white font-thin">R</span>
             </div>
 
             <div class="h-48 border-l border-white/40" />
 
             <div class="flex flex-col items-center">
-                <span class="text-white base font-thin">I</span>
-                <span class="text-white base font-thin">N</span>
-                <span class="text-white base font-thin">N</span>
-                <span class="text-white base font-thin">O</span>
-                <span class="text-white base font-thin">V</span>
-                <span class="text-white base font-thin">A</span>
-                <span class="text-white base font-thin">T</span>
-                <span class="text-white base font-thin">O</span>
-                <span class="text-white base font-thin">R</span>
+                <span class="text-white font-thin">I</span>
+                <span class="text-white font-thin">N</span>
+                <span class="text-white font-thin">N</span>
+                <span class="text-white font-thin">O</span>
+                <span class="text-white font-thin">V</span>
+                <span class="text-white font-thin">A</span>
+                <span class="text-white font-thin">T</span>
+                <span class="text-white font-thin">O</span>
+                <span class="text-white font-thin">R</span>
             </div>
         </div>
 

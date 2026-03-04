@@ -100,14 +100,14 @@
 
                     <!-- Icon section - SECOND on mobile (bottom), FIRST on desktop (left) -->
                     <div
-                        class="w-40 h-40 mb-4 md:mb-0 sm:w-45 sm:h-45 md:w-65 md:h-65 2xl:w-75 2xl:h-75 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat p-px"
+                        class="w-30 h-30 mb-4 md:mb-0 sm:w-45 sm:h-45 md:w-65 md:h-65 2xl:w-75 2xl:h-75 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat p-px"
                     >
                         <span
                             v-if="mSelected"
                             class="flex items-center justify-center w-full h-full bg-stone-900 rounded-sm"
                         >
                             <span
-                                class="block size-20 sm:size-22 md:size-32 2xl:size-44 cursor-pointer transition-colors duration-200 bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100"
+                                class="block size-18 sm:size-22 md:size-32 2xl:size-44 cursor-pointer transition-colors duration-200 bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100"
                                 :style="{
                                     mask: `url('https://api.iconify.design/simple-icons/${mSelected}.svg') center/contain no-repeat`,
                                     WebkitMask: `url('https://api.iconify.design/simple-icons/${mSelected}.svg') center/contain no-repeat`,
@@ -244,7 +244,7 @@
         </div>
         <div
             v-if="control.selectedOption === 'Soft'"
-            class="flex flex-col w-full h-[62dvh] xl:h-[70dvh]"
+            class="flex flex-col w-full h-auto xl:h-[70dvh]"
         >
             <section
                 class="relative px-4 sm:px-8 md:px-12 lg:px-20 xl:px-34 mt-6 md:mt-0 lg:overflow-hidden flex flex-row flex-wrap justify-center"
