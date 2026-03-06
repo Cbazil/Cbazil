@@ -18,7 +18,7 @@
                 >
                     <section class="flex flex-col md:hidden">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-lg text-lg">Develop</h3>
                         </div>
@@ -42,7 +42,7 @@
                     />
                 </div>
                 <div
-                    class="relative w-full md:w-1/2 h-1/3 mt-75 xs:mt-155 md:mt-0 md:self-end"
+                    class="relative w-full md:w-1/2 h-1/3 mt-85 xs:mt-155 md:mt-0 md:self-end"
                     :class="{
                         hidden:
                             professionClicked && professionSelect !== 'Plan',
@@ -52,7 +52,7 @@
                 >
                     <section class="flex w-full flex-col md:hidden">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-lg text-lg">Plan</h3>
                         </div>
@@ -74,7 +74,7 @@
                     />
                 </div>
                 <div
-                    class="relative w-full md:w-1/2 h-1/3 mt-70 xs:mt-155 md:mt-10 transform"
+                    class="relative w-full md:w-1/2 h-1/3 mt-90 xs:mt-155 md:mt-10 transform"
                     :class="{
                         hidden:
                             professionClicked && professionSelect !== 'Coach',
@@ -84,7 +84,7 @@
                 >
                     <section class="flex flex-col md:hidden">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-lg text-lg">Coach</h3>
                         </div>
@@ -241,7 +241,7 @@
                 >
                     <section class="flex flex-col md:hidden">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-lg">Gaming</h3>
                         </div>
@@ -271,7 +271,7 @@
                 >
                     <section class="flex flex-col md:hidden mt-25 xs:mt-55">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-lg">Music</h3>
                         </div>
@@ -293,7 +293,7 @@
                     />
                 </div>
                 <div
-                    class="relative w-full md:w-1/2 h-1/3 mt-80 md:-mt-30 md:self-end"
+                    class="relative w-full md:w-1/2 h-1/3 mt-85 md:-mt-30 md:self-end"
                     :class="{
                         hidden:
                             personalClicked && personalSelect !== 'Badminton',
@@ -301,9 +301,9 @@
                             personalClicked && personalSelect === 'Badminton',
                     }"
                 >
-                    <section class="flex flex-col md:hidden mt-25 xs:mt-140">
+                    <section class="flex flex-col md:hidden mt-35 xs:mt-140">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-lg">Badminton</h3>
                         </div>

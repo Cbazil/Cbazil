@@ -34,7 +34,7 @@
                         <!-- Info -->
                         <div class="w-full" style="max-width: 100%">
                             <div
-                                class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] mb-3 text-center"
+                                class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent mb-3 text-center"
                             >
                                 <h3 class="hl text-xl font-bold">
                                     {{ mobileSelected.title }}
@@ -167,12 +167,8 @@
             </article>
 
             <!-- Mobile: vertical centered list -->
-            <div class="flex flex-col md:hidden w-full py-4 items-center">
+            <div class="flex flex-col md:hidden w-full py-4 items-center gap-4">
                 <template v-for="(i, idx) of blogs" :key="idx">
-                    <div
-                        v-if="idx > 0"
-                        class="w-px h-6 bg-gradient-to-b from-sky-700 to-blue-900"
-                    />
                     <div
                         class="relative w-64 cursor-pointer rounded-sm group"
                         @click="selectBlogMobile(i)"
@@ -291,12 +287,8 @@
             </article>
 
             <!-- Mobile: vertical centered list -->
-            <div class="flex flex-col md:hidden w-full py-4 items-center">
+            <div class="flex flex-col md:hidden w-full py-4 items-center gap-4">
                 <template v-for="(i, idx) of frontendBlogs" :key="idx">
-                    <div
-                        v-if="idx > 0"
-                        class="w-px h-6 bg-gradient-to-b from-sky-700 to-blue-900"
-                    />
                     <div
                         class="relative w-64 cursor-pointer rounded-sm group"
                         @click="selectBlogMobile(i)"
@@ -415,12 +407,8 @@
             </article>
 
             <!-- Mobile: vertical centered list -->
-            <div class="flex flex-col md:hidden w-full py-4 items-center">
+            <div class="flex flex-col md:hidden w-full py-4 items-center gap-4">
                 <template v-for="(i, idx) of backendBlogs" :key="idx">
-                    <div
-                        v-if="idx > 0"
-                        class="w-px h-6 bg-gradient-to-b from-sky-700 to-blue-900"
-                    />
                     <div
                         class="relative w-64 cursor-pointer rounded-sm group"
                         @click="selectBlogMobile(i)"

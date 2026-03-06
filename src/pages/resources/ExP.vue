@@ -89,7 +89,7 @@
                         <!-- Info -->
                         <div class="w-full mt-4" style="max-width: 100%">
                             <div
-                                class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] mb-1 text-center"
+                                class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent mb-1 text-center"
                             >
                                 <h3 class="hl text-xl font-bold">
                                     {{
@@ -192,7 +192,7 @@
                     <!-- info under diamond -->
                     <div class="text-center mt-1 mb-1 px-4">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-base font-bold">
                                 {{ x.company }}
@@ -250,7 +250,7 @@
                                 }"
                             >
                                 <div
-                                    class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                                    class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                                 >
                                     <h3
                                         class="hl text-lg font-bold whitespace-nowrap"
@@ -328,7 +328,7 @@
                     </div>
                     <div class="text-center mt-1 mb-1 px-4">
                         <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)]"
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
                             <h3 class="hl text-base font-bold">
                                 {{ x.institute }}
@@ -386,7 +386,7 @@
                                 }"
                             >
                                 <div
-                                    class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                                    class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                                 >
                                     <h3
                                         class="hl text-lg font-bold whitespace-nowrap"
