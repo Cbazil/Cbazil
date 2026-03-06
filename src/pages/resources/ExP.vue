@@ -45,7 +45,7 @@
                 >
                     <!-- Fixed close button -->
                     <button
-                        class="fixed top-3 right-4 text-gray-400 text-2xl p-2 z-20 leading-none"
+                        class="fixed top-5 right-4 text-red-500 text-2xl p-2 z-20 leading-none"
                         @click="mobileOverlay = false"
                     >
                         ✕
@@ -146,13 +146,11 @@
                         v-html="wSelectedPeriod.replace(' - ', '<br> - <br>')"
                     />
                     <div class="px-6">
-                        <div
-                            class="bg-gradient-to-tr mb-2 from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                        <h3
+                            class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
-                            <h3 class="hl text-2xl font-bold whitespace-nowrap">
-                                {{ control.workXPSelection }}
-                            </h3>
-                        </div>
+                            {{ control.workXPSelection }}
+                        </h3>
                         <span class="text-lg">{{ wSelectedOccupation }}</span>
                         <br />
                         <span class="font-thin text-md">{{
@@ -287,13 +285,11 @@
                         v-html="eSelectedPeriod.replace(' - ', '<br> - <br>')"
                     />
                     <div class="px-6">
-                        <div
-                            class="bg-gradient-to-tr mb-2 from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                        <h3
+                            class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
-                            <h3 class="hl text-2xl font-bold whitespace-nowrap">
-                                {{ control.eduXPSelection }}
-                            </h3>
-                        </div>
+                            {{ control.eduXPSelection }}
+                        </h3>
                         <span class="text-lg">{{ eSelectedOccupation }}</span>
                         <br />
                         <span class="font-thin text-md">{{

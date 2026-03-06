@@ -61,11 +61,11 @@
                     <div
                         class="w-full md:w-70 h-auto md:h-45 rounded-sm p-3 mx-auto md:mx-1 mt-2"
                     >
-                        <div
-                            class="bg-gradient-to-tr from-blue-900 text-center via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                        <h2
+                            class="hl text-xl text-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
-                            <h2 class="text-xl">{{ eTitle }}</h2>
-                        </div>
+                            {{ eTitle }}
+                        </h2>
                         <h3 class="text-md text-center font-thin">
                             {{ eDesc }}
                         </h3>
@@ -85,13 +85,11 @@
                     <div
                         class="w-full max-w-md md:w-105 2xl:w-125 h-auto md:h-65 2xl:h-75 md:p-5 rounded-sm mb-6 md:mb-0"
                     >
-                        <div
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                        <h2
+                            class="hl text-3xl md:text-4xl mt-6 md:mt-0 bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                         >
-                            <h2 class="text-3xl md:text-4xl mt-6 md:mt-0">
-                                {{ mTitle }}
-                            </h2>
-                        </div>
+                            {{ mTitle }}
+                        </h2>
                         <br />
                         <h3 class="text-xl 2xl:text-2xl font-thin">
                             {{ mDesc }}

@@ -9,6 +9,9 @@ export const useControlStore = defineStore("control", {
     eTechSelection: "ReactJS",
     workXPSelection: "Self-Employed",
     eduXPSelection: "ThreeJS Journey",
+    allBlogSelection: "Learn HTML",
+    frontendBlogSelection: "Learn HTML",
+    backendBlogSelection: "PostgreSQL API",
   }),
   actions: {
     setPage(p) {
@@ -35,6 +38,15 @@ export const useControlStore = defineStore("control", {
     },
     setEduXPSelection(val) {
       this.eduXPSelection = val;
+    },
+    setAllBlogSelection(val) {
+      this.allBlogSelection = val;
+    },
+    setFrontendBlogSelection(val) {
+      this.frontendBlogSelection = val;
+    },
+    setBackendBlogSelection(val) {
+      this.backendBlogSelection = val;
     },
     clearSelectedOption() {
       this.selectedOption = undefined;
