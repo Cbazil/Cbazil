@@ -413,7 +413,7 @@ export const blogs = [
     img: "html_fundamentals.png",
     desc: "Read my article on HTML Fundamentals, it allows you to understand and learn HTML is a manner that makes the most sense. Written for anyone open to learn what it intails, content is written in laymen terms, excluding the complexity of techinical jargon that often confuses us.",
     type: "frontend",
-    tags: ["HTML", "Frontend"],
+    tags: ["HTML", "Frontend", "Coaching", "Scenario"],
     link: "https://medium.com/cbazil-dev/learn-about-html-the-easy-way-scenario-based-d1b9a494a852",
     date: "9 Feb 2026",
   },

@@ -1,13 +1,87 @@
 <template>
     <div>
+        <!-- Mobile overlay (Global Mobile) -->
+        <Teleport to="body">
+            <Transition name="overlay-fade">
+                <div
+                    v-if="mobileOverlay && mobileSelected"
+                    class="fixed inset-0 z-[9998] flex flex-col md:hidden"
+                    style="background: rgba(0, 0, 0, 0.92)"
+                    @click.self="mobileOverlay = false"
+                >
+                    <button
+                        class="fixed top-5 right-4 text-red-500 text-2xl p-2 z-20 leading-none"
+                        @click="mobileOverlay = false"
+                    >
+                        ✕
+                    </button>
+
+                    <div
+                        class="flex-1 overflow-y-auto flex flex-col items-center pt-16 pb-10"
+                        style="padding-left: 24px; padding-right: 24px"
+                    >
+                        <div
+                            class="w-full max-w-sm mt-4 p-1 rounded-sm overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        >
+                            <div
+                                class="relative w-full aspect-[17/9] bg-stone-900 rounded-sm overflow-hidden"
+                            >
+                                <img
+                                    class="w-full h-full object-fill"
+                                    :src="mobileSelected.image"
+                                    :alt="mobileSelected.title"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="w-full max-w-sm mt-6 text-center">
+                            <h3
+                                class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                            >
+                                {{ mobileSelected.title }}
+                            </h3>
+                            <p class="mt-3 text-white/85 font-thin">
+                                {{ mobileSelected.description }}
+                            </p>
+                        </div>
+
+                        <div
+                            class="w-full max-w-sm flex flex-wrap justify-center gap-2 mt-4"
+                        >
+                            <span
+                                v-for="tag in mobileSelected.tags"
+                                :key="tag"
+                                class="bg-blue-400/90 text-white rounded-full py-0.5 px-3 text-xs font-medium backdrop-blur-sm"
+                            >
+                                {{ tag }}
+                            </span>
+                        </div>
+
+                        <a
+                            v-if="mobileSelected.link"
+                            :href="mobileSelected.link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm mt-5"
+                        >
+                            <Icon icon="mdi:link-variant" class="size-4" />
+                            {{ mobileSelected.linkLabel }}
+                        </a>
+                    </div>
+                </div>
+            </Transition>
+        </Teleport>
+
         <article v-if="control.selectedOption === 'Featured'">
-            <div class="flex flex-row justify-center h-[62dvh] w-full">
+            <div
+                class="hidden md:flex flex-row justify-center h-[62dvh] w-full"
+            >
                 <!-- Main large card: WebSenses -->
                 <section
-                    class="relative w-[70%] h-full p-1 rounded-sm overflow-hidden mr-2 bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                    class="relative w-[70%] h-full p-1 rounded-sm overflow-hidden mr-2 bg-[image:var(--background-image-gradient-border)] bg-no-repeat group border-2 border-transparent hover:border-emerald-500 transition-colors duration-300"
                 >
                     <img
-                        class="inset-0 w-full h-full object-cover"
+                        class="inset-0 w-full h-full object-fill"
                         src="/images/websenses.png"
                         alt="WebSenses"
                     />
@@ -17,12 +91,7 @@
                         class="absolute bottom-3 left-0 right-0 flex flex-wrap justify-center gap-2 px-3"
                     >
                         <span
-                            v-for="tag in [
-                                'Website',
-                                'LMS',
-                                'Payments',
-                                'Coaching',
-                            ]"
+                            v-for="tag in featuredCards[0].tags"
                             :key="tag"
                             class="bg-blue-400/90 text-white rounded-full py-0.5 px-4 text-sm font-medium backdrop-blur-sm"
                         >
@@ -32,7 +101,7 @@
 
                     <!-- Overlay -->
                     <div
-                        class="absolute inset-0 z-10 flex flex-col justify-center items-center p-3 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300 group"
+                        class="absolute inset-0 z-10 flex flex-col justify-center items-center p-3 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
                     >
                         <img
                             src="/images/websenses-fi.png"
@@ -47,8 +116,8 @@
                         <p
                             class="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2"
                         >
-                            Online learning platform, learn to understand
-                            frontend development.
+                            Digital handbook, enroll to understand frontend
+                            development.
                         </p>
                         <a
                             href="https://www.websenses.co.za"
@@ -66,10 +135,10 @@
                 <section class="flex flex-col w-[24%] h-full gap-1">
                     <!-- Card 1: CodeSpace -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group hover:bg-none hover:border-2 hover:border-emerald-500"
                     >
                         <img
-                            class="w-full h-full object-cover"
+                            class="w-full h-full object-fill"
                             src="/images/codespace.png"
                             alt="CodeSpace"
                         />
@@ -79,7 +148,7 @@
                             class="absolute bottom-1.5 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
                         >
                             <span
-                                v-for="tag in ['Website', 'Maintainence']"
+                                v-for="tag in featuredCards[1].tags"
                                 :key="tag"
                                 class="bg-blue-400/90 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
                             >
@@ -89,7 +158,7 @@
 
                         <!-- Overlay -->
                         <div
-                            class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300 group"
+                            class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
                         >
                             <img
                                 src="/images/codespace-fi.png"
@@ -123,7 +192,7 @@
 
                     <!-- Card 2: MiniUMP -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group hover:border-2 hover:border-emerald-500"
                     >
                         <img
                             class="w-full h-full object-cover"
@@ -136,7 +205,7 @@
                             class="absolute bottom-1.5 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
                         >
                             <span
-                                v-for="tag in ['App', 'Algorithm', 'SASS']"
+                                v-for="tag in featuredCards[2].tags"
                                 :key="tag"
                                 class="bg-blue-400/90 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
                             >
@@ -146,7 +215,7 @@
 
                         <!-- Overlay -->
                         <div
-                            class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300 group"
+                            class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
                         >
                             <img
                                 src="/images/miniump-fi.svg"
@@ -163,21 +232,12 @@
                             >
                                 Match-Making & Score Keeping
                             </span>
-                            <!-- <a
-                                href="#"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2"
-                            >
-                                <Icon icon="mdi:link-variant" class="size-3.5" />
-                                Visit
-                            </a> -->
                         </div>
                     </div>
 
                     <!-- Card 3: Cbazil -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group hover:border-2 hover:border-emerald-500"
                     >
                         <img
                             class="w-full h-full object-cover"
@@ -190,7 +250,7 @@
                             class="absolute bottom-1.5 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
                         >
                             <span
-                                v-for="tag in ['App', 'Portfolio']"
+                                v-for="tag in featuredCards[3].tags"
                                 :key="tag"
                                 class="bg-blue-400/90 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
                             >
@@ -200,7 +260,7 @@
 
                         <!-- Overlay -->
                         <div
-                            class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300 group"
+                            class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
                         >
                             <img
                                 src="/images/cbazil-fi.png"
@@ -215,7 +275,7 @@
                             <span
                                 class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1"
                             >
-                                Legacy Portfolio Site (Older projects)
+                                Legacy Portfolio (Older projects)
                             </span>
                             <a
                                 href="https://cbazil.vercel.app/"
@@ -233,15 +293,212 @@
                     </div>
                 </section>
             </div>
+
+            <!-- Mobile: same Projects card style, tap opens overlay -->
+            <div class="flex md:hidden flex-col w-full py-6 items-center gap-6">
+                <template v-for="card in featuredCards" :key="card.key">
+                    <div
+                        class="relative w-[88vw] max-w-md p-0.5 rounded-sm overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat cursor-pointer"
+                        @click="openMobileOverlay(card)"
+                    >
+                        <div
+                            class="relative w-full aspect-[17/9] bg-stone-900 rounded-sm overflow-hidden"
+                        >
+                            <img
+                                class="w-full h-full object-fill"
+                                :src="card.image"
+                                :alt="card.title"
+                            />
+                            <div
+                                class="absolute bottom-2 left-0 right-0 flex flex-wrap justify-center gap-1.5 px-3"
+                            >
+                                <span
+                                    v-for="tag in card.tags"
+                                    :key="tag"
+                                    class="bg-blue-400/90 text-white rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm"
+                                >
+                                    {{ tag }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
         </article>
-        <article v-if="control.selectedOption === 'Micro'"></article>
+
+        <article v-if="control.selectedOption === 'Micro'">
+            <div class="relative flex flex-row h-[62dvh] w-full">
+                <section class="w-1/4">
+                    <div class="flex flex-row items-center gap-2">
+                        <div
+                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        >
+                            <Icon
+                                class="w-10 h-10 text-sky-200"
+                                icon="game-icons:tic-tac-toe"
+                            />
+                        </div>
+                        <h4
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                        >
+                            Tic Tac Toe
+                        </h4>
+                    </div>
+                    <br />
+                    <div class="flex flex-row items-center gap-2">
+                        <div
+                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        >
+                            <Icon
+                                class="w-10 h-10 text-sky-200"
+                                icon="game-icons:hole"
+                            />
+                        </div>
+                        <h4
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                        >
+                            Unlucky Hole
+                        </h4>
+                    </div>
+                    <br />
+                    <div class="flex flex-row items-center gap-2">
+                        <div
+                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        >
+                            <Icon
+                                class="w-10 h-10 text-sky-200"
+                                icon="game-icons:mailed-fist"
+                            />
+                        </div>
+                        <h4
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                        >
+                            Rock Paper Scissors
+                        </h4>
+                    </div>
+                    <br />
+                    <div class="flex flex-row items-center gap-2">
+                        <div
+                            class="px-1 pb-1 pt-0 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                        >
+                            <Icon
+                                class="w-10 h-10 text-sky-200"
+                                icon="game-icons:chess-knight"
+                            />
+                        </div>
+                        <h4
+                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                        >
+                            Chess
+                        </h4>
+                    </div>
+                </section>
+                <section class="w-1/2 h-full flex justify-center items-center">
+                    <TicTacToe v-if="true" />
+                    <UnluckyHole v-if="false" />
+                    <RockPaperScissors v-if="false" />
+                    <Chess v-if="false" />
+                </section>
+                <section class="w-1/4">
+                    <h4
+                        class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                    >
+                        Options
+                    </h4>
+                    <br />
+                    <div class="flex flex-row justify-between items-center">
+                        <div>Turn: First</div>
+                        <button
+                            class="cursor-pointer w-8 h-5 rounded-full bg-stone-600 relative transition-colors duration-300"
+                            :class="{ 'bg-emerald-500': turnToggle }"
+                            @click="turnToggle = !turnToggle"
+                        >
+                            <span
+                                class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-500 transition-transform duration-300"
+                                :class="{ 'translate-x-3': turnToggle }"
+                            />
+                        </button>
+                    </div>
+                    <br />
+                    <div class="flex flex-row justify-between items-center">
+                        <div>Varient: Normal</div>
+                        <button
+                            class="cursor-pointer w-8 h-5 rounded-full bg-stone-600 relative transition-colors duration-300"
+                            :class="{ 'bg-emerald-500': varientToggle }"
+                            @click="varientToggle = !varientToggle"
+                        >
+                            <span
+                                class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-500 transition-transform duration-300"
+                                :class="{ 'translate-x-3': varientToggle }"
+                            />
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </article>
     </div>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useControlStore } from "@/stores/main.js";
+import TicTacToe from "@/components/games/TicTacToe.vue";
+import UnluckyHole from "@/components/games/UnluckyHole.vue";
+import RockPaperScissors from "@/components/games/RockPaperScissors.vue";
+import Chess from "@/components/games/Chess.vue";
+
 const control = useControlStore();
+
+const mobileOverlay = ref(false);
+const mobileSelected = ref(null);
+
+const turnToggle = ref(false);
+const varientToggle = ref(false);
+
+const featuredCards = [
+    {
+        key: "websenses",
+        title: "WebSenses",
+        description:
+            "Digital handbook, enroll to understand frontend development.",
+        image: "/images/websenses.png",
+        tags: ["Website", "LMS", "Payments", "Coaching"],
+        link: "https://www.websenses.co.za",
+        linkLabel: "Visit www.websenses.co.za",
+    },
+    {
+        key: "codespace",
+        title: "CodeSpace",
+        description: "Website Redesign and Maintenance",
+        image: "/images/codespace.png",
+        tags: ["Website", "Maintainence"],
+        link: "https://www.codespace.co.za",
+        linkLabel: "Visit www.codespace.co.za",
+    },
+    {
+        key: "miniump",
+        title: "MiniUMP",
+        description: "Match-Making & Score Keeping",
+        image: "/images/miniump.png",
+        tags: ["App", "Algorithm", "SASS"],
+        link: null,
+        linkLabel: "",
+    },
+    {
+        key: "cbazil",
+        title: "Cbazil",
+        description: "Legacy Portfolio Site (Older projects)",
+        image: "/images/cbazil.png",
+        tags: ["App", "Portfolio"],
+        link: "https://cbazil.vercel.app/",
+        linkLabel: "Visit cbazil.vercel.app",
+    },
+];
+
+function openMobileOverlay(card) {
+    mobileSelected.value = card;
+    mobileOverlay.value = true;
+}
 
 onMounted(() => {
     control.selectedOption = "Featured";
@@ -251,3 +508,14 @@ onUnmounted(() => {
     control.selectedOption = undefined;
 });
 </script>
+
+<style scoped>
+.overlay-fade-enter-active,
+.overlay-fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+.overlay-fade-enter-from,
+.overlay-fade-leave-to {
+    opacity: 0;
+}
+</style>

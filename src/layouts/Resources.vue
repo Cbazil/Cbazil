@@ -153,9 +153,18 @@
 
             <div
                 v-if="linksOpened && isSmallerThanSm"
-                class="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-20 pointer-events-auto"
+                class="fixed inset-0 z-20 pointer-events-auto"
+                style="background: rgba(0, 0, 0, 0.92)"
                 aria-hidden="true"
-            />
+            >
+                <div
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none px-6 text-center"
+                >
+                    <span class="base font-thin text-white text-center">
+                        Find me on these playforms
+                    </span>
+                </div>
+            </div>
 
             <!--
         flex-1 min-h-0: fills remaining space between nav and bottom of viewport
