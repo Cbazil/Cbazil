@@ -12,6 +12,7 @@ export const useControlStore = defineStore("control", {
     allBlogSelection: "Learn HTML",
     frontendBlogSelection: "Learn HTML",
     backendBlogSelection: "PostgreSQL API",
+    microGameSelection: "Tic Tac Toe",
   }),
   actions: {
     setPage(p) {
@@ -44,6 +45,9 @@ export const useControlStore = defineStore("control", {
     },
     setFrontendBlogSelection(val) {
       this.frontendBlogSelection = val;
+    },
+    setMicroGameSelection(val) {
+      this.microGameSelection = val;
     },
     setBackendBlogSelection(val) {
       this.backendBlogSelection = val;

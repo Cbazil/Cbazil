@@ -173,7 +173,7 @@
                             <span
                                 class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1"
                             >
-                                Website Redesign and Maintenance
+                                Redesign & Maintenance (2022/25)
                             </span>
                             <a
                                 href="https://www.codespace.co.za"
@@ -329,75 +329,180 @@
         <article v-if="control.selectedOption === 'Micro'">
             <div class="relative flex flex-row h-[62dvh] w-full">
                 <section class="w-1/4">
-                    <div class="flex flex-row items-center gap-2">
+                    <div
+                        class="flex flex-row items-center gap-2 cursor-pointer"
+                        @mouseover="setMicroHover('Tic Tac Toe')"
+                        @mouseleave="clearMicroHover"
+                        @click.stop="selectMicroGame('Tic Tac Toe')"
+                    >
                         <div
-                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection === 'Tic Tac Toe' ||
+                                microHover === 'Tic Tac Toe'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
                         >
                             <Icon
-                                class="w-10 h-10 text-sky-200"
+                                class="w-10 h-10 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection ===
+                                        'Tic Tac Toe' ||
+                                    microHover === 'Tic Tac Toe'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
                                 icon="game-icons:tic-tac-toe"
                             />
                         </div>
                         <h4
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                            class="transition-all duration-200 hover:text-emerald-500"
+                            :class="
+                                control.microGameSelection === 'Tic Tac Toe' ||
+                                microHover === 'Tic Tac Toe'
+                                    ? 'text-emerald-500'
+                                    : 'bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent'
+                            "
                         >
                             Tic Tac Toe
                         </h4>
                     </div>
                     <br />
-                    <div class="flex flex-row items-center gap-2">
+                    <div
+                        class="flex flex-row items-center gap-2 cursor-pointer"
+                        @mouseover="setMicroHover('Unlucky Hole')"
+                        @mouseleave="clearMicroHover"
+                        @click.stop="selectMicroGame('Unlucky Hole')"
+                    >
                         <div
-                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection === 'Unlucky Hole' ||
+                                microHover === 'Unlucky Hole'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
                         >
                             <Icon
-                                class="w-10 h-10 text-sky-200"
+                                class="w-10 h-10 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection ===
+                                        'Unlucky Hole' ||
+                                    microHover === 'Unlucky Hole'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
                                 icon="game-icons:hole"
                             />
                         </div>
                         <h4
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                            class="transition-all duration-200 hover:text-emerald-500"
+                            :class="
+                                control.microGameSelection === 'Unlucky Hole' ||
+                                microHover === 'Unlucky Hole'
+                                    ? 'text-emerald-500'
+                                    : 'bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent'
+                            "
                         >
                             Unlucky Hole
                         </h4>
                     </div>
                     <br />
-                    <div class="flex flex-row items-center gap-2">
+                    <div
+                        class="flex flex-row items-center gap-2 cursor-pointer"
+                        @mouseover="setMicroHover('Rock Paper Scissors')"
+                        @mouseleave="clearMicroHover"
+                        @click.stop="selectMicroGame('Rock Paper Scissors')"
+                    >
                         <div
-                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                            class="p-1 w-14 h-14 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection ===
+                                    'Rock Paper Scissors' ||
+                                microHover === 'Rock Paper Scissors'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
                         >
                             <Icon
-                                class="w-10 h-10 text-sky-200"
+                                class="w-10 h-10 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection ===
+                                        'Rock Paper Scissors' ||
+                                    microHover === 'Rock Paper Scissors'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
                                 icon="game-icons:mailed-fist"
                             />
                         </div>
                         <h4
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                            class="transition-all duration-200 hover:text-emerald-500"
+                            :class="
+                                control.microGameSelection ===
+                                    'Rock Paper Scissors' ||
+                                microHover === 'Rock Paper Scissors'
+                                    ? 'text-emerald-500'
+                                    : 'bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent'
+                            "
                         >
                             Rock Paper Scissors
                         </h4>
                     </div>
                     <br />
-                    <div class="flex flex-row items-center gap-2">
+                    <div
+                        class="flex flex-row items-center gap-2 cursor-pointer"
+                        @mouseover="setMicroHover('Chess')"
+                        @mouseleave="clearMicroHover"
+                        @click.stop="selectMicroGame('Chess')"
+                    >
                         <div
-                            class="px-1 pb-1 pt-0 w-14 h-14 flex justify-center rounded-sm items-center bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                            class="px-1 pb-0 w-14 h-14 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection === 'Chess' ||
+                                microHover === 'Chess'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
                         >
                             <Icon
-                                class="w-10 h-10 text-sky-200"
+                                class="w-10 h-10 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection === 'Chess' ||
+                                    microHover === 'Chess'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
                                 icon="game-icons:chess-knight"
                             />
                         </div>
                         <h4
-                            class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                            class="transition-all duration-200 hover:text-emerald-500"
+                            :class="
+                                control.microGameSelection === 'Chess' ||
+                                microHover === 'Chess'
+                                    ? 'text-emerald-500'
+                                    : 'bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent'
+                            "
                         >
                             Chess
                         </h4>
                     </div>
                 </section>
-                <section class="w-1/2 h-full flex justify-center items-center">
-                    <TicTacToe v-if="true" />
-                    <UnluckyHole v-if="false" />
-                    <RockPaperScissors v-if="false" />
-                    <Chess v-if="false" />
+                <section class="w-1/2 h-full flex justify-center">
+                    <TicTacToe
+                        v-if="control.microGameSelection === 'Tic Tac Toe'"
+                    />
+                    <UnluckyHole
+                        v-if="control.microGameSelection === 'Unlucky Hole'"
+                    />
+                    <RockPaperScissors
+                        v-if="
+                            control.microGameSelection === 'Rock Paper Scissors'
+                        "
+                    />
+                    <Chess v-if="control.microGameSelection === 'Chess'" />
                 </section>
                 <section class="w-1/4">
                     <h4
@@ -454,6 +559,20 @@ const mobileSelected = ref(null);
 
 const turnToggle = ref(false);
 const varientToggle = ref(false);
+const microHover = ref(null);
+
+const setMicroHover = (game) => {
+    microHover.value = game;
+};
+
+const clearMicroHover = () => {
+    microHover.value = null;
+};
+
+const selectMicroGame = (game) => {
+    microHover.value = game;
+    control.setMicroGameSelection(game);
+};
 
 const featuredCards = [
     {
@@ -469,7 +588,7 @@ const featuredCards = [
     {
         key: "codespace",
         title: "CodeSpace",
-        description: "Website Redesign and Maintenance",
+        description: "Redesign & Maintenance (2022/25)",
         image: "/images/codespace.png",
         tags: ["Website", "Maintainence"],
         link: "https://www.codespace.co.za",
