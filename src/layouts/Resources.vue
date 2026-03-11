@@ -8,7 +8,7 @@
                 class="relative flex flex-row justify-between items-center h-24 md:h-34 shrink-0"
             >
                 <div
-                    class="flex flex-row items-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_1px_rgba(180,240,255,1)] drop-shadow-[0_0_4px_rgba(120,200,255,0.9)] drop-shadow-[0_0_8px_rgba(80,160,255,0.6)]"
+                    class="flex flex-row items-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                 >
                     <img
                         src="/images/logo.svg"
@@ -23,7 +23,7 @@
                 >
                     <button
                         @click="selectPrevOption"
-                        class="hidden lg:block px-3.5 mr-1 text-stone-900 flex items-center justify-center rounded-r-md rounded-bl-md rounded-tl-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300"
+                        class="hidden lg:block px-3.5 mr-1 text-stone-900 flex items-center justify-center rounded-r-md rounded-bl-md rounded-tl-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300"
                     >
                         LB
                     </button>
@@ -58,7 +58,7 @@
 
                     <button
                         @click="selectNextOption"
-                        class="hidden lg:block px-3.5 ml-1 text-stone-900 flex items-center justify-center rounded-l-md rounded-br-md rounded-tr-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300"
+                        class="hidden lg:block px-3.5 ml-1 text-stone-900 flex items-center justify-center rounded-l-md rounded-br-md rounded-tr-[18px] bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300"
                     >
                         RB
                     </button>
@@ -161,16 +161,11 @@
                     class="absolute inset-0 flex items-center justify-center pointer-events-none px-6 text-center"
                 >
                     <span class="base font-thin text-white text-center">
-                        Find me on these playforms
+                        Find me on these platforms
                     </span>
                 </div>
             </div>
 
-            <!--
-        flex-1 min-h-0: fills remaining space between nav and bottom of viewport
-        pb-20 on mobile: clears the absolute mobile footer (~60px at bottom-1.5)
-        pb-28 on md+: clears the absolute desktop footer (bottom-14 ~56px + content ~28px)
-      -->
             <div
                 class="flex-1 min-h-0 mb-20 overflow-y-auto md:overflow-hidden md:pb-28"
             >
@@ -189,14 +184,16 @@
                         @click="handlePrevPage"
                         @mouseover="handleOver('backspace')"
                         @mouseleave="hovering = null"
-                        class="flex shrink-0 items-center justify-center h-7 px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
+                        class="flex shrink-0 items-center justify-center h-7 px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
                     >
                         <span class="font-normal">BACKSPACE</span>
                     </button>
                     <span
                         v-if="pageNum > 1"
                         class="leading-none truncate transition-colors duration-300"
-                        :class="{ 'text-emerald-500': hovering == 'backspace' }"
+                        :class="{
+                            'text-emerald-500': hovering == 'backspace',
+                        }"
                     >
                         PREVIOUS
                     </span>
@@ -205,7 +202,7 @@
                             @mouseover="handleOver('esc')"
                             @mouseleave="hovering = null"
                             @click="handleClick"
-                            class="flex shrink-0 items-center justify-center ml-2 h-7 px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
+                            class="flex shrink-0 items-center justify-center ml-2 h-7 px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
                         >
                             <span class="font-normal">ESC</span>
                         </button>
@@ -236,8 +233,8 @@
                     <button
                         @mouseover="handleOver('enter')"
                         @mouseleave="hovering = null"
-                        @click="handleClick"
-                        class="flex items-center justify-center h-7 px-1 mr-2 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
+                        @click="openContact"
+                        class="flex items-center justify-center h-7 px-1 mr-2 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
                     >
                         ENTER
                     </button>
@@ -254,7 +251,7 @@
                         @click="handleNextPage"
                         @mouseover="handleOver('next')"
                         @mouseleave="hovering = null"
-                        class="flex items-center justify-center h-7 px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white filter drop-shadow-[0_0_1px_rgba(180,240,255,1)_0_0_4px_rgba(120,200,255,0.9)] transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
+                        class="flex items-center justify-center h-7 px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
                     >
                         SPACE
                     </button>
@@ -306,9 +303,10 @@
                         </button>
                     </router-link>
 
+                    <!-- Mobile contact button -->
                     <section class="relative group w-1/4 h-10 pt-2.5">
                         <button
-                            @click="handleClick"
+                            @click="openContact"
                             class="absolute inset-0 transition-opacity duration-300 [mask-repeat:no-repeat] [mask-size:16px] [mask-position:center]"
                             style="
                                 -webkit-mask-image: url(&quot;https://api.iconify.design/streamline:chat-bubble-text-square.svg&quot;);
@@ -343,6 +341,10 @@
                     &copy; 2026 Built by Cbazil
                 </p>
             </footer>
+            <Contact
+                v-if="control.contactOpen"
+                class="fixed inset-0 z-[9999]"
+            />
         </div>
     </transition>
 </template>
@@ -353,6 +355,7 @@ import { useRoute, useRouter } from "vue-router";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
 import { pageOptions, socialLinks } from "@/lib/data.js";
 import { useControlStore } from "@/stores/main.js";
+import Contact from "@/components/Contact.vue";
 
 const control = useControlStore();
 
@@ -363,8 +366,6 @@ const path = computed(() => route.name);
 
 const options = computed(() => pageOptions[path.value.toLowerCase()] || []);
 
-console;
-
 const pageNum = computed(() => {
     if (path.value == "Bio") return 1;
     if (path.value == "Skills") return 2;
@@ -374,6 +375,11 @@ const pageNum = computed(() => {
 });
 
 const showOverlay = ref(false);
+
+const openContact = () => {
+    handleClick();
+    control.contactOpen = true;
+};
 
 // navigate options (left/right)
 const selectNextOption = () => {
@@ -397,7 +403,15 @@ const selectPrevOption = () => {
 };
 
 const handleKeyPress = (event) => {
-    // Left/Right navigate options; Up/Down keep page navigation
+    // While contact is open, only allow Escape to close it
+    if (control.contactOpen) {
+        if (event.key === "Escape") {
+            event.preventDefault();
+            control.contactOpen = false;
+        }
+        return;
+    }
+
     if (event.key === "ArrowRight") {
         event.preventDefault();
         selectNextOption();
@@ -414,8 +428,9 @@ const handleKeyPress = (event) => {
         event.preventDefault();
         router.push("/");
     } else if (event.key === "Enter") {
+        console.log("Enter");
         event.preventDefault();
-        // open modal
+        control.contactOpen = true;
     }
 };
 
@@ -452,7 +467,7 @@ const playOver = useLinkover();
 
 const handleOver = (val) => {
     if (!val) return;
-    if (hovering.value === val) return; // already hovered — skip replay
+    if (hovering.value === val) return;
     hovering.value = val;
     playOver();
 };
@@ -460,7 +475,6 @@ const handleOver = (val) => {
 const linksOpened = ref(false);
 
 const onOptionClick = (opt) => {
-    // ensure click sound starts immediately (trusted gesture), then update state
     handleClick();
     control.selectedOption = opt;
 };
@@ -511,7 +525,6 @@ const hovering = ref("");
     }
 }
 
-/* social links slide down when opened, slide up when closed */
 .social-links-enter-from,
 .social-links-leave-to {
     transform: translateY(-10px);
@@ -531,7 +544,6 @@ const hovering = ref("");
         opacity 220ms ease;
 }
 
-/* per-item stagger using CSS variable --i (index) */
 .social-item {
     transition:
         transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1),

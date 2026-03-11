@@ -51,7 +51,7 @@
                             <span
                                 v-for="tag in mobileSelected.tags"
                                 :key="tag"
-                                class="bg-blue-400/90 text-white rounded-full py-0.5 px-3 text-xs font-medium backdrop-blur-sm"
+                                class="bg-blue-200 text-white rounded-full py-0.5 px-3 text-xs font-medium backdrop-blur-sm"
                             >
                                 {{ tag }}
                             </span>
@@ -93,7 +93,7 @@
                         <span
                             v-for="tag in featuredCards[0].tags"
                             :key="tag"
-                            class="bg-blue-400/90 text-white rounded-full py-0.5 px-4 text-sm font-medium backdrop-blur-sm"
+                            class="bg-blue-200 text-white rounded-full py-0.5 px-4 text-sm font-medium backdrop-blur-sm"
                         >
                             {{ tag }}
                         </span>
@@ -150,7 +150,7 @@
                             <span
                                 v-for="tag in featuredCards[1].tags"
                                 :key="tag"
-                                class="bg-blue-400/90 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
+                                class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
                             >
                                 {{ tag }}
                             </span>
@@ -207,7 +207,7 @@
                             <span
                                 v-for="tag in featuredCards[2].tags"
                                 :key="tag"
-                                class="bg-blue-400/90 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
+                                class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
                             >
                                 {{ tag }}
                             </span>
@@ -252,7 +252,7 @@
                             <span
                                 v-for="tag in featuredCards[3].tags"
                                 :key="tag"
-                                class="bg-blue-400/90 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
+                                class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
                             >
                                 {{ tag }}
                             </span>
@@ -315,7 +315,7 @@
                                 <span
                                     v-for="tag in card.tags"
                                     :key="tag"
-                                    class="bg-blue-400/90 text-white rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm"
+                                    class="bg-blue-200 text-white rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm"
                                 >
                                     {{ tag }}
                                 </span>
@@ -327,7 +327,208 @@
         </article>
 
         <article v-if="control.selectedOption === 'Micro'">
-            <div class="relative flex flex-row h-[62dvh] w-full">
+            <!-- Mobile -->
+            <div class="md:hidden w-full mt-6">
+                <div class="flex items-center justify-center gap-2 mb-3">
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection === 'Tic Tac Toe' ||
+                                microHover === 'Tic Tac Toe'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
+                            @click.stop="selectMicroGame('Tic Tac Toe')"
+                            @mouseover="setMicroHover('Tic Tac Toe')"
+                            @mouseleave="clearMicroHover"
+                        >
+                            <Icon
+                                class="w-8 h-8 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection ===
+                                        'Tic Tac Toe' ||
+                                    microHover === 'Tic Tac Toe'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
+                                icon="game-icons:tic-tac-toe"
+                            />
+                        </button>
+
+                        <button
+                            class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection === 'Unlucky Hole' ||
+                                microHover === 'Unlucky Hole'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
+                            @click.stop="selectMicroGame('Unlucky Hole')"
+                            @mouseover="setMicroHover('Unlucky Hole')"
+                            @mouseleave="clearMicroHover"
+                        >
+                            <Icon
+                                class="w-8 h-8 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection ===
+                                        'Unlucky Hole' ||
+                                    microHover === 'Unlucky Hole'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
+                                icon="game-icons:hole"
+                            />
+                        </button>
+
+                        <button
+                            class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection ===
+                                    'Rock Paper Scissors' ||
+                                microHover === 'Rock Paper Scissors'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
+                            @click.stop="selectMicroGame('Rock Paper Scissors')"
+                            @mouseover="setMicroHover('Rock Paper Scissors')"
+                            @mouseleave="clearMicroHover"
+                        >
+                            <Icon
+                                class="w-8 h-8 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection ===
+                                        'Rock Paper Scissors' ||
+                                    microHover === 'Rock Paper Scissors'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
+                                icon="game-icons:mailed-fist"
+                            />
+                        </button>
+
+                        <button
+                            class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                            :class="
+                                control.microGameSelection === 'Chess' ||
+                                microHover === 'Chess'
+                                    ? 'border-2 border-emerald-500'
+                                    : 'bg-[image:var(--background-image-gradient-border)]'
+                            "
+                            @click.stop="selectMicroGame('Chess')"
+                            @mouseover="setMicroHover('Chess')"
+                            @mouseleave="clearMicroHover"
+                        >
+                            <Icon
+                                class="w-8 h-8 transition-colors duration-200"
+                                :class="
+                                    control.microGameSelection === 'Chess' ||
+                                    microHover === 'Chess'
+                                        ? 'text-emerald-500'
+                                        : 'text-sky-200'
+                                "
+                                icon="game-icons:chess-knight"
+                            />
+                        </button>
+                    </div>
+
+                    <button
+                        class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
+                        @click="microOptionsOverlay = true"
+                    >
+                        <Icon icon="mdi:cog" class="w-8 h-8 text-sky-200" />
+                    </button>
+                </div>
+
+                <div class="w-full flex justify-center min-h-[56dvh]">
+                    <TicTacToe
+                        v-if="control.microGameSelection === 'Tic Tac Toe'"
+                        ref="ticTacToeRef"
+                    />
+                    <UnluckyHole
+                        v-if="control.microGameSelection === 'Unlucky Hole'"
+                    />
+                    <RockPaperScissors
+                        v-if="
+                            control.microGameSelection === 'Rock Paper Scissors'
+                        "
+                    />
+                    <Chess v-if="control.microGameSelection === 'Chess'" />
+                </div>
+
+                <Teleport to="body">
+                    <Transition name="overlay-fade">
+                        <div
+                            v-if="microOptionsOverlay"
+                            class="fixed inset-0 z-[9998] flex flex-col md:hidden"
+                            style="background: rgba(0, 0, 0, 0.92)"
+                            @click.self="microOptionsOverlay = false"
+                        >
+                            <button
+                                class="fixed top-5 right-4 text-red-500 text-2xl p-2 z-20 leading-none"
+                                @click="microOptionsOverlay = false"
+                            >
+                                ✕
+                            </button>
+
+                            <div
+                                class="flex-1 overflow-y-auto flex flex-col justify-start px-6 mt-6"
+                            >
+                                <h4
+                                    class="hl text-2xl text-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                                >
+                                    Options
+                                </h4>
+                                <br />
+                                <div
+                                    class="flex flex-row justify-between items-center text-white"
+                                >
+                                    <div>
+                                        Turn: {{ turnToggle ? "2nd" : "1st" }}
+                                    </div>
+                                    <button
+                                        class="cursor-pointer w-8 h-5 rounded-full bg-stone-600 relative transition-colors duration-300"
+                                        :class="{
+                                            'bg-emerald-500': turnToggle,
+                                        }"
+                                        @click="toggleTurn"
+                                    >
+                                        <span
+                                            class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-500 transition-transform duration-300"
+                                            :class="{
+                                                'translate-x-3': turnToggle,
+                                            }"
+                                        />
+                                    </button>
+                                </div>
+                                <br />
+                                <div
+                                    class="flex flex-row justify-between items-center text-white"
+                                >
+                                    <div>Variant: {{ store.variant }}</div>
+                                    <button
+                                        class="cursor-pointer w-8 h-5 rounded-full bg-stone-600 relative transition-colors duration-300"
+                                        :class="{
+                                            'bg-emerald-500': variantToggle,
+                                        }"
+                                        @click="variantToggle = !variantToggle"
+                                    >
+                                        <span
+                                            class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-500 transition-transform duration-300"
+                                            :class="{
+                                                'translate-x-3': variantToggle,
+                                            }"
+                                        />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </Transition>
+                </Teleport>
+            </div>
+
+            <!-- Desktop -->
+            <div class="relative hidden md:flex flex-row h-[62dvh] w-full">
                 <section class="w-1/4">
                     <div
                         class="flex flex-row items-center gap-2 cursor-pointer"
@@ -493,6 +694,7 @@
                 <section class="w-1/2 h-full flex justify-center">
                     <TicTacToe
                         v-if="control.microGameSelection === 'Tic Tac Toe'"
+                        ref="ticTacToeRef"
                     />
                     <UnluckyHole
                         v-if="control.microGameSelection === 'Unlucky Hole'"
@@ -512,11 +714,11 @@
                     </h4>
                     <br />
                     <div class="flex flex-row justify-between items-center">
-                        <div>Turn: First</div>
+                        <div>Turn: {{ turnToggle ? "2nd" : "1st" }}</div>
                         <button
                             class="cursor-pointer w-8 h-5 rounded-full bg-stone-600 relative transition-colors duration-300"
                             :class="{ 'bg-emerald-500': turnToggle }"
-                            @click="turnToggle = !turnToggle"
+                            @click="toggleTurn"
                         >
                             <span
                                 class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-500 transition-transform duration-300"
@@ -526,15 +728,15 @@
                     </div>
                     <br />
                     <div class="flex flex-row justify-between items-center">
-                        <div>Varient: Normal</div>
+                        <div>Variant: {{ variant }}</div>
                         <button
                             class="cursor-pointer w-8 h-5 rounded-full bg-stone-600 relative transition-colors duration-300"
-                            :class="{ 'bg-emerald-500': varientToggle }"
-                            @click="varientToggle = !varientToggle"
+                            :class="{ 'bg-emerald-500': variantToggle }"
+                            @click="handleChangeVarient"
                         >
                             <span
                                 class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-500 transition-transform duration-300"
-                                :class="{ 'translate-x-3': varientToggle }"
+                                :class="{ 'translate-x-3': variantToggle }"
                             />
                         </button>
                     </div>
@@ -545,21 +747,40 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, nextTick, onMounted, onUnmounted } from "vue";
 import { useControlStore } from "@/stores/main.js";
+import { useTicTacToeStore } from "@/stores/tictactoe.js";
 import TicTacToe from "@/components/games/TicTacToe.vue";
 import UnluckyHole from "@/components/games/UnluckyHole.vue";
 import RockPaperScissors from "@/components/games/RockPaperScissors.vue";
 import Chess from "@/components/games/Chess.vue";
 
 const control = useControlStore();
+const tictactoe = useTicTacToeStore();
+
+const variant = computed(() => {
+    return tictactoe.variant;
+});
+
+const ticTacToeRef = ref(null);
 
 const mobileOverlay = ref(false);
 const mobileSelected = ref(null);
-
-const turnToggle = ref(false);
-const varientToggle = ref(false);
+const turnToggle = computed(() => !tictactoe.playerFirst);
+const variantToggle = ref(false);
 const microHover = ref(null);
+const microOptionsOverlay = ref(false);
+
+const toggleTurn = () => {
+    if (tictactoe.playerFirst) {
+        tictactoe.playerFirst = false;
+        ticTacToeRef.value?.resetGame();
+        nextTick(() => ticTacToeRef.value?.aiFirst());
+    } else {
+        tictactoe.playerFirst = true;
+        ticTacToeRef.value?.resetGame();
+    }
+};
 
 const setMicroHover = (game) => {
     microHover.value = game;
@@ -571,7 +792,14 @@ const clearMicroHover = () => {
 
 const selectMicroGame = (game) => {
     microHover.value = game;
+    tictactoe.playerFirst = true;
+    ticTacToeRef.value?.resetGame();
     control.setMicroGameSelection(game);
+};
+
+const handleChangeVarient = () => {
+    tictactoe.variant = variant.value === "Normal" ? "Infinite" : "Normal";
+    variantToggle.value = !variantToggle.value;
 };
 
 const featuredCards = [

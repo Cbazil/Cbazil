@@ -2,7 +2,8 @@ import { defineStore } from "pinia";
 
 export const useTicTacToeStore = defineStore("tictactoe", {
   state: () => ({
-    varient: "noraml",
+    variant: "Normal",
+    moveHistory: [],
     squares: [
       { id: "sq1", val: "" },
       { id: "sq2", val: "" },
@@ -28,4 +29,51 @@ export const useTicTacToeStore = defineStore("tictactoe", {
     ggDiright: false,
     ggDileft: false,
   }),
+  actions: {
+    updateSquares(squares) {
+      this.squares = squares;
+    },
+    updateTurn(turn) {
+      this.playerTurn = turn;
+    },
+    togglePlay(over) {
+      this.gameOver = over;
+    },
+    toggleTop() {
+      this.ggTop = true;
+    },
+    toggleLeft() {
+      this.ggLeft = true;
+    },
+    toggleRight() {
+      this.ggRight = true;
+    },
+    toggleBottom() {
+      this.ggBottom = true;
+    },
+    toggleVert() {
+      this.ggVert = true;
+    },
+    toggleHori() {
+      this.ggHori = true;
+    },
+    toggleDiright() {
+      this.ggDiright = true;
+    },
+    toggleDileft() {
+      this.ggDileft = true;
+    },
+    clearSquare(id) {
+      this.squares = this.squares.map((s) =>
+        s.id === id ? { ...s, val: "" } : s,
+      );
+    },
+    handlePlayerMove(id) {
+      const square = this.squares.find((s) => s.id === id);
+      if (square && square.val === "") {
+        square.val = this.playerPiece;
+        this.playerTurn = false;
+      }
+    },
+  },
 });

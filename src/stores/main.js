@@ -5,6 +5,7 @@ export const useControlStore = defineStore("control", {
     page: undefined,
     selectedOption: undefined,
     openInventory: false,
+    contactOpen: false,
     mTechSelection: "VueJS",
     eTechSelection: "ReactJS",
     workXPSelection: "Self-Employed",
