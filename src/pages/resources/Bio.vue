@@ -29,7 +29,6 @@
                             problems.
                         </h3>
                     </section>
-
                     <img
                         src="/images/laptop.svg"
                         class="w-full object-contain -mt-2.5 transform scale-90 md:scale-90"
@@ -343,6 +342,13 @@ const personalClicked = ref(false);
 const professionSelect = ref("");
 const professionClicked = ref(false);
 
+const playOver = useLinkover();
+const handleClick = useBtnClick();
+
+// Ordered item lists for keyboard nav
+const professionKeys = professionItems.map((i) => i.title); // ['Develop','Plan','Coach']
+const personalKeys = personalItems.map((i) => i.title);     // ['Gaming','Music','Badminton']
+
 const handleSelect = (type, opt) => {
     handleClick();
     if (type === "Personal") {
@@ -354,9 +360,6 @@ const handleSelect = (type, opt) => {
         professionSelect.value = opt;
     }
 };
-
-const playOver = useLinkover();
-const handleClick = useBtnClick();
 
 const handleCloseProfession = () => {
     handleClick();
@@ -370,21 +373,109 @@ const handleClosePersonal = () => {
     personalSelect.value = "";
 };
 
-const handleOver = () => {
-    playOver();
+const handleOver = () => playOver();
+const handleLeave = () => {
+    if (!personalClicked.value) personalSelect.value = "";
 };
 
-const handleLeave = (val) => {
-    if (!personalClicked.value) {
-        personalSelect.value = "";
+// ── Keyboard navigation ──────────────────────────────────────────────────────
+// We emit a custom event so Resources.vue can decide whether to let the
+// ArrowDown/ArrowUp bubble up to its own page-navigation handler.
+// Strategy: the Bio component captures keydown on the window during its
+// lifetime and calls event.stopImmediatePropagation() when it handles the key
+// itself, preventing the Resources layout handler from also firing.
+
+const handleKeydown = (e) => {
+    const tab = control.selectedOption; // 'Profession' | 'Personal'
+
+    // Left / Right — cycle items within active tab
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        const keys = tab === "Profession" ? professionKeys : personalKeys;
+        const clicked = tab === "Profession" ? professionClicked.value : personalClicked.value;
+        if (!clicked) return; // no item selected yet, let Resources handle tabs
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        const current = tab === "Profession" ? professionSelect.value : personalSelect.value;
+        const idx = keys.indexOf(current);
+        const next =
+            e.key === "ArrowRight"
+                ? keys[(idx + 1) % keys.length]
+                : keys[(idx - 1 + keys.length) % keys.length];
+
+        handleSelect(tab, next);
+        return;
+    }
+
+    // Down arrow
+    if (e.key === "ArrowDown" || e.key === " ") {
+        if (tab === "Profession") {
+            if (!professionClicked.value) {
+                // First down: select first profession item
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                handleSelect("Profession", professionKeys[0]);
+                return;
+            }
+            // Already on an item — let Resources handle (go next page)
+            return;
+        }
+
+        if (tab === "Personal") {
+            if (!personalClicked.value) {
+                // First down on personal: select first personal item
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                handleSelect("Personal", personalKeys[0]);
+                return;
+            }
+            // Already on an item — let Resources handle (go next page)
+            return;
+        }
+    }
+
+    // Up arrow
+    if (e.key === "ArrowUp" || e.key === "Backspace") {
+        if (tab === "Profession") {
+            if (professionClicked.value) {
+                // Deselect item, stay on Profession
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                handleCloseProfession();
+                return;
+            }
+            // No item selected — let Resources handle (go prev page / home)
+            return;
+        }
+
+        if (tab === "Personal") {
+            if (personalClicked.value) {
+                // Deselect item, stay on Personal
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                handleClosePersonal();
+                return;
+            } else {
+                // Switch back up to Profession tab
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                handleClick();
+                control.selectedOption = "Profession";
+                return;
+            }
+        }
     }
 };
 
 onMounted(() => {
     control.selectedOption = "Profession";
+    // Use capture phase so we fire before Resources' keydown listener
+    window.addEventListener("keydown", handleKeydown, true);
 });
 
 onUnmounted(() => {
+    window.removeEventListener("keydown", handleKeydown, true);
     control.selectedOption = undefined;
 });
 </script>

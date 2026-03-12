@@ -2,9 +2,37 @@
     <transition name="contact-overlay">
         <div
             v-if="control.contactOpen"
-            class="fixed inset-0 z-[100] text-white px-4 lg:px-32 2xl:px-58 flex flex-col h-[100dvh]"
+            class="fixed inset-0 z-[99999] text-white px-4 lg:px-32 2xl:px-58 flex flex-col h-[100dvh]"
             style="background: rgba(0, 0, 0, 0.92)"
         >
+            <!-- Close button — desktop -->
+            <div
+                class="hidden md:flex items-center gap-1 absolute top-13.5 left-4 lg:left-32 2xl:right-58"
+            >
+                <button
+                    @click="control.contactOpen = false"
+                    @mouseover="hovering = 'esc'"
+                    @mouseleave="hovering = null"
+                    class="flex shrink-0 items-center justify-center h-7 px-1 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
+                >
+                    <span class="font-normal">ESC</span>
+                </button>
+                <span
+                    class="leading-none whitespace-nowrap transition-colors duration-300"
+                    :class="{ 'text-emerald-500': hovering === 'esc' }"
+                >
+                    BACK
+                </span>
+            </div>
+
+            <!-- Close button — mobile -->
+            <button
+                class="md:hidden fixed top-5 right-4 text-red-500 text-2xl p-2 z-20 leading-none"
+                @click="control.contactOpen = false"
+            >
+                ✕
+            </button>
+
             <div class="h-[77dvh] flex flex-col items-center justify-end mt-24">
                 <article
                     ref="conversationRef"
@@ -215,7 +243,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick } from "vue";
+import { ref, computed, watch, nextTick, onMounted, onUnmounted } from "vue";
 import { useControlStore } from "@/stores/main.js";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
 import {
@@ -234,6 +262,7 @@ const control = useControlStore();
 const playOver = useLinkover();
 const handleClick = useBtnClick();
 
+const hovering = ref(null);
 const type = ref("findout");
 const subject = ref("general");
 const message = ref("");
@@ -244,6 +273,7 @@ const emailError = ref("");
 const messageError = ref("");
 const loading = ref(false);
 const downloadRef = ref(null);
+const conversationRef = ref(null);
 
 const questions = [
     "Does he know fullstack?",
@@ -255,7 +285,12 @@ const questions = [
 
 let typingInterval = null;
 
-const conversationRef = ref(null);
+const handleKeydown = (e) => {
+    if (e.key === "Escape") control.contactOpen = false;
+};
+
+onMounted(() => window.addEventListener("keydown", handleKeydown));
+onUnmounted(() => window.removeEventListener("keydown", handleKeydown));
 
 const scrollToBottom = async () => {
     await nextTick();
@@ -335,25 +370,19 @@ const handleFindout = async (question) => {
         );
 
         const data = await response.json();
-        console.log("Gemini raw response:", JSON.stringify(data, null, 2));
 
         if (data.promptFeedback?.blockReason) {
-            console.error("Blocked:", data.promptFeedback.blockReason);
             return "Response was blocked.";
         }
-
         if (data.error) {
-            console.error("API error:", data.error.message);
             return `API error: ${data.error.message}`;
         }
-
         if (data.candidates?.[0]?.content?.parts?.[0]?.text) {
             return data.candidates[0].content.parts[0].text;
         }
 
         return "Sorry, I couldn't find an answer for that.";
     } catch (e) {
-        console.error("Gemini fetch error:", e);
         return "Something went wrong, please try again.";
     }
 };
@@ -386,7 +415,7 @@ const handleSubmit = async () => {
             const response = await handleFindout(question);
             conversation.value[conversation.value.length - 1].response =
                 response;
-            scrollToBottom(); // scroll again when response arrives
+            scrollToBottom();
         } catch (e) {
             conversation.value[conversation.value.length - 1].response =
                 "Something went wrong, please try again.";
@@ -403,7 +432,7 @@ const handleSubmit = async () => {
             // TODO: send freelance quote email
         }
         conversation.value.push({ question: null, response: getResponse() });
-
+        scrollToBottom();
         message.value = "";
         senderEmail.value = "";
         activeQuestion.value = null;
@@ -463,3 +492,30 @@ const placeholder = computed(() => {
     return "Write your message...";
 });
 </script>
+
+<style scoped>
+.contact-overlay-enter-active {
+    animation: contact-expand 1.5s forwards;
+}
+.contact-overlay-leave-active {
+    animation: contact-collapse 0.6s forwards;
+}
+
+@keyframes contact-expand {
+    from {
+        clip-path: circle(0% at 14% 7%);
+    }
+    to {
+        clip-path: circle(150% at 14% 7%);
+    }
+}
+
+@keyframes contact-collapse {
+    from {
+        clip-path: circle(150% at 14% 7%);
+    }
+    to {
+        clip-path: circle(0% at 14% 7%);
+    }
+}
+</style>

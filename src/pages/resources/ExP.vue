@@ -4,7 +4,7 @@
         <Teleport to="body">
             <div
                 v-if="expandedPos && selectedWork"
-                class="fixed z-[9999] pointer-events-none hidden md:block"
+                class="fixed z-[500] pointer-events-none hidden md:block"
                 :style="{
                     left: expandedPos.x + 'px',
                     top: expandedPos.y + 'px',
@@ -14,7 +14,10 @@
             >
                 <div
                     :key="selectedWork.id"
-                    class="diamond-growing p-[6px] bg-[image:var(--background-image-gradient-border)] bg-no-repeat rounded-sm"
+                    class="diamond-growing p-[6px] bg-[image:var(--background-image-gradient-border)] bg-no-repeat rounded-sm transition-shadow duration-300"
+                    :class="{
+                        'shadow-[0_0_0_2px_#10b981]': navMode === 'item',
+                    }"
                     :style="{ backgroundColor: bgColor(selectedWork.bg) }"
                 >
                     <div
@@ -39,24 +42,20 @@
             <Transition name="overlay-fade">
                 <div
                     v-if="mobileOverlay && selectedWork"
-                    class="fixed inset-0 z-[9998] flex flex-col md:hidden"
+                    class="fixed inset-0 z-[499] flex flex-col md:hidden"
                     style="background: rgba(0, 0, 0, 0.92)"
                     @click.self="mobileOverlay = false"
                 >
-                    <!-- Fixed close button -->
                     <button
                         class="fixed top-5 right-4 text-red-500 text-2xl p-2 z-20 leading-none"
                         @click="mobileOverlay = false"
                     >
                         ✕
                     </button>
-
-                    <!-- Scrollable content — truly symmetric -->
                     <div
                         class="flex-1 overflow-y-auto flex flex-col items-center pt-12 pb-8"
                         style="padding-left: 24px; padding-right: 24px"
                     >
-                        <!-- Diamond -->
                         <div
                             class="flex items-center justify-center w-36 h-36 shrink-0"
                         >
@@ -85,8 +84,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Info -->
                         <div class="w-full mt-4" style="max-width: 100%">
                             <div
                                 class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent mb-1 text-center"
@@ -137,7 +134,6 @@
 
         <!-- WORK -->
         <div v-if="control.selectedOption === 'Work'">
-            <!-- Desktop info panel -->
             <div class="w-full h-[35dvh] hidden md:flex flex-row justify-end">
                 <div class="flex items-center w-5/9 h-full">
                     <span
@@ -160,15 +156,12 @@
                 </div>
             </div>
 
-            <!-- Mobile: vertical timeline (centered) -->
             <div class="flex flex-col md:hidden py-4 items-center">
                 <template v-for="(x, idx) in workXP" :key="x.company">
-                    <!-- connector line above (skip first) -->
                     <div
                         v-if="idx > 0"
                         class="w-px h-8 bg-gradient-to-b from-sky-700 to-blue-900"
                     />
-                    <!-- diamond wrapper: extra padding so rotate doesn't clip -->
                     <div
                         class="flex items-center justify-center w-36 h-36 cursor-pointer"
                         @click="toggleSelectMobile(x, x.company, 'work')"
@@ -189,7 +182,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- info under diamond -->
                     <div class="text-center mt-1 mb-1 px-4">
                         <div
                             class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
@@ -205,7 +197,6 @@
                 </template>
             </div>
 
-            <!-- Desktop: horizontal scroll -->
             <div
                 ref="scrollEl"
                 class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[64dvh] scrollbar-hide"
@@ -260,8 +251,9 @@
                                 </div>
                                 <span
                                     class="font-thin text-gray-300 text-lg whitespace-nowrap"
-                                    >{{ x.period }}</span
                                 >
+                                    {{ x.period }}
+                                </span>
                             </div>
                         </div>
                         <div
@@ -276,7 +268,6 @@
 
         <!-- EDUCATION -->
         <div v-if="control.selectedOption === 'Education'">
-            <!-- Desktop info panel -->
             <div class="w-full h-[35dvh] hidden md:flex flex-row justify-end">
                 <div class="flex items-center w-5/9 h-full">
                     <span
@@ -299,7 +290,6 @@
                 </div>
             </div>
 
-            <!-- Mobile: vertical timeline (centered) -->
             <div class="flex flex-col md:hidden py-4 items-center">
                 <template v-for="(x, idx) in eduXP" :key="x.institute">
                     <div
@@ -341,7 +331,6 @@
                 </template>
             </div>
 
-            <!-- Desktop: horizontal scroll -->
             <div
                 ref="scrollEl"
                 class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[64dvh] scrollbar-hide"
@@ -396,8 +385,9 @@
                                 </div>
                                 <span
                                     class="font-thin text-gray-300 text-lg whitespace-nowrap"
-                                    >{{ x.period }}</span
                                 >
+                                    {{ x.period }}
+                                </span>
                             </div>
                         </div>
                         <div
@@ -476,7 +466,6 @@ const handleWheel = (e) => {
     }
 };
 
-// Desktop: scroll to center + show large diamond above
 const toggleSelect = (item, key, type) => {
     const currentSel =
         type === "work" ? control.workXPSelection : control.eduXPSelection;
@@ -523,17 +512,25 @@ const toggleSelect = (item, key, type) => {
 
         container.scrollTo({ left: clampedScroll, behavior: "smooth" });
 
-        setTimeout(() => {
+        // Use scrollend if supported, fallback to timeout
+        const onScrollEnd = () => {
             syncPos(key);
             selectingInProgress = false;
-        }, 430);
+            container.removeEventListener("scrollend", onScrollEnd);
+            clearTimeout(fallback);
+        };
+        const fallback = setTimeout(() => {
+            container.removeEventListener("scrollend", onScrollEnd);
+            syncPos(key);
+            selectingInProgress = false;
+        }, 500);
+        container.addEventListener("scrollend", onScrollEnd, { once: true });
     } else {
         nextTick(() => syncPos(key));
         selectingInProgress = false;
     }
 };
 
-// Mobile: just set selection and open overlay
 const toggleSelectMobile = (item, key, type) => {
     if (type === "work") {
         control.workXPSelection = key;
@@ -581,10 +578,82 @@ const selectDefault = (tabVal) => {
     });
 };
 
-// Tab switches
+// ── Keyboard navigation ──────────────────────────────────────────────────────
+// Two modes: 'tab' (← → switch tabs) | 'item' (← → cycle items within tab)
+// ↓ enters item mode, ↑ returns to tab mode (or falls through if already in tab mode)
+
+const navMode = ref("tab");
+
+const handleKeydown = (e) => {
+    const tag = document.activeElement?.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+    const tab = control.selectedOption;
+    const isWork = tab === "Work";
+
+    // ArrowDown — enter item mode (fall through if already in item mode → next page)
+    if (e.key === "ArrowDown") {
+        if (navMode.value === "tab") {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            navMode.value = "item";
+        }
+        return;
+    }
+
+    // ArrowUp — return to tab mode, or fall through to Resources (prev page)
+    if (e.key === "ArrowUp") {
+        if (navMode.value === "item") {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            navMode.value = "tab";
+            return;
+        }
+        // tab mode — fall through to Resources
+        return;
+    }
+
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation();
+
+    if (navMode.value === "tab") {
+        // Switch between Work and Education
+        control.selectedOption = isWork ? "Education" : "Work";
+    } else {
+        // Cycle items within current tab
+        const list = isWork ? workXP : eduXP;
+        const currentKey = isWork
+            ? control.workXPSelection
+            : control.eduXPSelection;
+        const type = isWork ? "work" : "edu";
+        const getKey = (item) => (isWork ? item.company : item.institute);
+
+        const idx = list.findIndex((i) => getKey(i) === currentKey);
+        if (idx === -1) return;
+
+        const nextIdx =
+            e.key === "ArrowRight"
+                ? (idx + 1) % list.length
+                : (idx - 1 + list.length) % list.length;
+
+        const nextItem = list[nextIdx];
+        toggleSelect(nextItem, getKey(nextItem), type);
+    }
+};
+
+// ── Lifecycle ────────────────────────────────────────────────────────────────
+
 watch(
     () => control.selectedOption,
-    (newVal) => selectDefault(newVal),
+    (newVal) => {
+        navMode.value = "tab";
+        selectDefault(newVal);
+    },
 );
 
 onMounted(() => {
@@ -609,10 +678,12 @@ onMounted(() => {
         },
         { immediate: true },
     );
+    document.addEventListener("keydown", handleKeydown, true);
 });
 
 onUnmounted(() => {
     if (stopInnerWatch) stopInnerWatch();
+    document.removeEventListener("keydown", handleKeydown, true);
     control.selectedOption = undefined;
     control.workXPSelection = null;
     control.eduXPSelection = null;
