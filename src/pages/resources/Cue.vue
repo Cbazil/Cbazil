@@ -93,17 +93,18 @@
                             >
                                 {{ mTitle }}
                             </h2>
+                            <!-- Mobile countdown + pause/play — hidden on desktop -->
                             <div
                                 class="md:hidden flex items-center gap-2 shrink-0"
                             >
                                 <span
-                                    class="text-sm font-thin bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                                    class="text-lg mt-0.5 font-thin bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
                                 >
                                     {{ paused ? "––" : countdown + "s" }}
                                 </span>
                                 <span
                                     @click="togglePause"
-                                    class="size-4 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
+                                    class="size-7 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
                                     :style="{
                                         mask: `url('https://api.iconify.design/fa7-solid/${paused ? 'play' : 'pause'}.svg') center/contain no-repeat`,
                                         WebkitMask: `url('https://api.iconify.design/fa7-solid/${paused ? 'play' : 'pause'}.svg') center/contain no-repeat`,
@@ -121,7 +122,7 @@
                     <div class="flex items-center gap-3 mb-4 md:mb-0">
                         <span
                             @click="mobileNavM('prev')"
-                            class="md:hidden size-5 shrink-0 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
+                            class="md:hidden size-9 w-10 h-10 shrink-0 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
                             :style="{
                                 mask: `url('https://api.iconify.design/fa7-solid/angle-left.svg') center/contain no-repeat`,
                                 WebkitMask: `url('https://api.iconify.design/fa7-solid/angle-left.svg') center/contain no-repeat`,
@@ -145,7 +146,7 @@
                         </div>
                         <span
                             @click="mobileNavM('next')"
-                            class="md:hidden size-5 shrink-0 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
+                            class="md:hidden size-9 w-10 h-10 shrink-0 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
                             :style="{
                                 mask: `url('https://api.iconify.design/fa7-solid/angle-right.svg') center/contain no-repeat`,
                                 WebkitMask: `url('https://api.iconify.design/fa7-solid/angle-right.svg') center/contain no-repeat`,
@@ -234,11 +235,14 @@
                         >
                             <span
                                 @click.prevent="manualSelectM(n.title)"
-                                class="group relative z-10 flex flex-col justify-center items-center w-full h-full text-white hover:text-stone-900 cursor-pointer drop-shadow-[0_0_1px_rgba(180,240,255,0.5)] hover:bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100"
-                                :class="{
-                                    'bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100':
-                                        control.mTechSelection === n.title,
-                                }"
+                                class="group relative z-10 flex flex-col justify-center items-center w-full h-full text-white hover:text-stone-900 cursor-pointer drop-shadow-[0_0_1px_rgba(180,240,255,0.5)] hover:bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100 transition-colors duration-300"
+                                :class="
+                                    control.mTechSelection === n.title
+                                        ? navMode === 'item'
+                                            ? 'bg-emerald-500'
+                                            : 'bg-gradient-to-tr from-blue-900 via-sky-200 to-sky-100'
+                                        : ''
+                                "
                             >
                                 <p
                                     class="absolute top-0 left-1"
@@ -431,17 +435,18 @@ watch(
 );
 
 // ── Keyboard navigation ──────────────────────────────────────────────────────
-// Two modes (Hard, no inventory only):
-//   'tab'  — ← → switch Hard ↔ Soft tabs
+// navMode applies only to Hard tab (no inventory):
+//   'tab'  — ← → switch Hard/Soft tabs
 //   'item' — ← → cycle mt items
-// ↓ from tab mode  → enter item mode
+// ↓ from tab mode → item mode
 // ↓ from item mode → fall through to Resources (next page)
-// ↑ from item mode → return to tab mode
-// ↑ from tab mode  → fall through to Resources (prev page)
-// Inventory open   → ← → / ↑ ↓ cycle et (independent of navMode)
+// ↑ from item mode → back to tab mode
+// ↑ from tab mode → fall through to Resources (prev page)
+// Inventory open → ← → cycle et, ↑↓ cycle et up/down (independent of navMode)
 
 const navMode = ref("tab"); // 'tab' | 'item'
 
+// Reset navMode when tab changes
 watch(
     () => control.selectedOption,
     () => {
@@ -473,7 +478,7 @@ const handleKeydown = (e) => {
         }
     }
 
-    // 1-9 — select mt by index (Hard, no inventory, item mode only)
+    // 1-9 — select mt by index (Hard, no inventory, item mode)
     if (tab === "Hard" && !control.openInventory && navMode.value === "item") {
         const num = parseInt(e.key);
         if (!isNaN(num) && num >= 1 && num <= mt.length) {
@@ -491,6 +496,7 @@ const handleKeydown = (e) => {
             e.stopImmediatePropagation();
             e.stopPropagation();
             if (control.openInventory) {
+                // cycle et
                 const idx = et.findIndex(
                     (i) => i.title === control.eTechSelection,
                 );
@@ -500,6 +506,7 @@ const handleKeydown = (e) => {
                         : et[(idx - 1 + et.length) % et.length];
                 control.setETechSelection(next.title);
             } else if (navMode.value === "item") {
+                // cycle mt
                 const idx = mt.findIndex(
                     (i) => i.title === control.mTechSelection,
                 );
@@ -509,7 +516,7 @@ const handleKeydown = (e) => {
                         : mt[(idx - 1 + mt.length) % mt.length];
                 manualSelectM(next.title);
             } else {
-                // tab mode — switch to Soft
+                // tab mode — switch Hard/Soft
                 nextTick(() => {
                     control.selectedOption = "Soft";
                 });
@@ -520,6 +527,7 @@ const handleKeydown = (e) => {
             e.preventDefault();
             e.stopImmediatePropagation();
             e.stopPropagation();
+            // switch back to Hard
             control.selectedOption = "Hard";
             return;
         }
@@ -540,6 +548,7 @@ const handleKeydown = (e) => {
                 return;
             }
             if (navMode.value === "tab") {
+                // enter item mode
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 e.stopPropagation();
@@ -574,6 +583,7 @@ const handleKeydown = (e) => {
                     );
                     return;
                 } else {
+                    // Backspace closes inventory
                     e.preventDefault();
                     e.stopImmediatePropagation();
                     control.toggleInventory();
@@ -582,6 +592,7 @@ const handleKeydown = (e) => {
             }
             if (e.key === "ArrowUp") {
                 if (navMode.value === "item") {
+                    // return to tab mode
                     e.preventDefault();
                     e.stopImmediatePropagation();
                     e.stopPropagation();

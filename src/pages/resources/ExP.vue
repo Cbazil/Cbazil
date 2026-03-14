@@ -160,14 +160,14 @@
                 <template v-for="(x, idx) in workXP" :key="x.company">
                     <div
                         v-if="idx > 0"
-                        class="w-px h-8 bg-gradient-to-b from-sky-700 to-blue-900"
+                        class="w-px h-8 bg-gradient-to-b from-sky-300 to-blie-700"
                     />
                     <div
-                        class="flex items-center justify-center w-36 h-36 cursor-pointer"
+                        class="flex items-center justify-center w-47.5 h-47.5 cursor-pointer"
                         @click="toggleSelectMobile(x, x.company, 'work')"
                     >
                         <div
-                            class="w-24 h-24 p-1.5 mb-3 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
+                            class="w-32 h-32 p-1.5 mb-3 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
                             :style="{ backgroundColor: bgColor(x.bg) }"
                         >
                             <div class="w-full h-full overflow-hidden">
@@ -297,11 +297,11 @@
                         class="w-px h-8 bg-gradient-to-b from-sky-700 to-blue-900"
                     />
                     <div
-                        class="flex items-center justify-center w-36 h-36 cursor-pointer"
+                        class="flex items-center justify-center w-47.5 h-47.5 cursor-pointer"
                         @click="toggleSelectMobile(x, x.institute, 'edu')"
                     >
                         <div
-                            class="w-24 h-24 p-1.5 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
+                            class="w-32 h-32 p-1.5 [transform:rotate(45deg)] bg-[image:var(--background-image-gradient-border)] bg-no-repeat overflow-hidden rounded-sm"
                             :style="{ backgroundColor: bgColor(x.bg) }"
                         >
                             <div class="w-full h-full overflow-hidden">

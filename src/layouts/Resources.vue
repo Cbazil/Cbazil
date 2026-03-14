@@ -4,6 +4,22 @@
             v-if="showOverlay"
             class="relative bg-stone-900 text-white px-4 lg:px-32 2xl:px-58 h-[100dvh] flex flex-col"
         >
+            <!-- Rotate notice — mobile landscape only -->
+            <div class="rotate-notice">
+                <img src="/images/logo.svg" class="w-12 h-12 mb-6" alt="logo" />
+                <p class="text-white text-base font-thin text-center leading-relaxed">
+                    Please rotate your device<br/>to portrait mode
+                </p>
+            </div>
+
+            <!-- Rotate notice: mobile landscape only -->
+            <div class="rotate-notice">
+                <img src="/images/logo.svg" class="w-12 h-12 mb-4" alt="logo" />
+                <p class="text-white font-thin text-center text-base leading-loose">
+                    Please rotate to<br/>portrait mode
+                </p>
+            </div>
+
             <nav
                 class="relative flex flex-row justify-between items-center h-24 md:h-34 shrink-0"
             >
@@ -19,7 +35,7 @@
                 </div>
 
                 <div
-                    class="absolute mt-18 md:mt-0 left-1/2 -translate-x-1/2 w-max flex flex-row items-center"
+                    class="absolute mt-18 md:mt-0 landscape:mt-0 left-1/2 -translate-x-1/2 w-max flex flex-row items-center"
                 >
                     <button
                         @click="selectPrevOption"
@@ -72,13 +88,13 @@
                         icon="line-md:at"
                         @click="linksOpened = true"
                         v-if="!linksOpened"
-                        class="relative md:hidden z-50 text-stone-900 mr-1 mt-2 rounded-full p-1 mb-2 text-3xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
+                        class="relative md:hidden z-50 text-stone-900 mr-1 mt-1 rounded-full p-1 mb-2 text-3xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
                     />
                     <Icon
                         @click="linksOpened = false"
                         v-else
                         icon="line-md:close"
-                        class="relative z-50 text-stone-900 rounded-full p-1 mb-2 ml-1 text-3xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
+                        class="relative z-50 text-stone-900 rounded-full p-1 mb-4 ml-1 text-3xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white"
                     />
 
                     <transition-group
@@ -167,7 +183,7 @@
             </div>
 
             <div
-                class="flex-1 min-h-0 mb-20 overflow-y-auto md:overflow-hidden md:pb-28"
+                class="flex-1 min-h-0 mb-20 landscape:mb-12 overflow-y-auto md:overflow-hidden md:pb-28"
             >
                 <router-view :key="$route.fullPath" />
             </div>
@@ -226,17 +242,17 @@
                 >
                     <span
                         class="font-medium leading-none transition-colors duration-300"
-                        :class="{ 'text-emerald-500': hovering == 'enter' }"
+                        :class="{ 'text-emerald-500': hovering == 'tab' }"
                     >
-                        CONTACT
+                        INFO
                     </span>
                     <button
-                        @mouseover="handleOver('enter')"
+                        @mouseover="handleOver('tab')"
                         @mouseleave="hovering = null"
                         @click="openContact"
                         class="flex items-center justify-center h-7 px-1 mr-2 rounded-sm text-stone-900 cursor-pointer bg-gradient-to-tr from-blue-900 via-sky-200 to-white transition-all duration-300 hover:from-emerald-500 hover:via-emerald-500 hover:to-emerald-500"
                     >
-                        ENTER
+                        TAB
                     </button>
 
                     <span
@@ -260,7 +276,7 @@
 
             <!-- Mobile Footer -->
             <footer
-                class="flex md:hidden flex-col w-[300px] bottom-1.5 absolute left-1/2 -translate-x-1/2"
+                class="flex md:hidden flex-col w-[300px] landscape:w-auto landscape:left-4 landscape:right-4 landscape:translate-x-0 bottom-1.5 absolute left-1/2 -translate-x-1/2 landscape:left-0 landscape:right-0"
             >
                 <section class="relative flex w-full justify-around flex-row">
                     <div
@@ -270,7 +286,7 @@
                     <button
                         v-if="pageNum > 1"
                         @click="handlePrevPage"
-                        class="relative group w-1/4 h-10 pt-2.5"
+                        class="relative group w-1/4 h-10 landscape:h-8 pt-2.5 landscape:pt-1.5"
                     >
                         <div
                             class="absolute inset-0 transition-opacity duration-300 [mask-repeat:no-repeat] [mask-size:16px] [mask-position:center]"
@@ -287,7 +303,7 @@
 
                     <router-link
                         to="/"
-                        class="relative group w-1/4 h-10 pt-2.5"
+                        class="relative group w-1/4 h-10 landscape:h-8 pt-2.5 landscape:pt-1.5"
                     >
                         <button
                             @click="handleClick"
@@ -304,7 +320,7 @@
                     </router-link>
 
                     <!-- Mobile contact button -->
-                    <section class="relative group w-1/4 h-10 pt-2.5">
+                    <section class="relative group w-1/4 h-10 landscape:h-8 pt-2.5 landscape:pt-1.5">
                         <button
                             @click="openContact"
                             class="absolute inset-0 transition-opacity duration-300 [mask-repeat:no-repeat] [mask-size:16px] [mask-position:center]"
@@ -322,7 +338,7 @@
                     <button
                         v-if="pageNum < 5"
                         @click="handleNextPage"
-                        class="relative group w-1/4 h-10 pt-2.5"
+                        class="relative group w-1/4 h-10 landscape:h-8 pt-2.5 landscape:pt-1.5"
                     >
                         <div
                             class="absolute inset-0 transition-opacity duration-300 [mask-repeat:no-repeat] [mask-size:16px] [mask-position:center]"
@@ -427,8 +443,7 @@ const handleKeyPress = (event) => {
     } else if (event.key === "Escape") {
         event.preventDefault();
         router.push("/");
-    } else if (event.key === "Enter") {
-        console.log("Enter");
+    } else if (event.key === "Tab") {
         event.preventDefault();
         control.contactOpen = true;
     }
@@ -503,7 +518,7 @@ const hovering = ref("");
 <style scoped>
 .overlay-enter-active,
 .overlay-leave-active {
-    animation: expand 1.5s forwards;
+    animation: expand 1.2s forwards;
 }
 
 .overlay-enter-from,
@@ -549,5 +564,38 @@ const hovering = ref("");
         transform 260ms cubic-bezier(0.2, 0.9, 0.2, 1),
         opacity 220ms ease;
     transition-delay: calc(var(--i) * 35ms);
+}
+
+.rotate-notice {
+    display: none;
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .rotate-notice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        background: #1c1917;
+    }
+}
+.rotate-notice {
+    display: none;
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .rotate-notice {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        background: #1c1917;
+    }
 }
 </style>

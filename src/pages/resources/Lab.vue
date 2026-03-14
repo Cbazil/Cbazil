@@ -78,15 +78,24 @@
             >
                 <!-- Main large card: WebSenses -->
                 <section
-                    class="relative w-[70%] h-full p-1 rounded-sm overflow-hidden mr-2 bg-[image:var(--background-image-gradient-border)] bg-no-repeat group border-2 border-transparent hover:border-emerald-500 transition-colors duration-300"
+                    class="relative w-[70%] h-full p-1 rounded-sm overflow-hidden mr-2 bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-colors duration-300"
+                    :class="
+                        featuredActive === 'websenses'
+                            ? 'border-2 border-emerald-500'
+                            : 'border-2 border-transparent hover:border-emerald-500'
+                    "
+                    @click="
+                        featuredSel = null;
+                        featuredHover = 'websenses';
+                    "
+                    @mouseenter="featuredHover = 'websenses'"
+                    @mouseleave="featuredHover = null"
                 >
                     <img
                         class="inset-0 w-full h-full object-fill"
                         src="/images/websenses.png"
                         alt="WebSenses"
                     />
-
-                    <!-- Tags: VISIBLE ALWAYS -->
                     <div
                         class="absolute bottom-3 left-0 right-0 flex flex-wrap justify-center gap-2 px-3"
                     >
@@ -94,27 +103,44 @@
                             v-for="tag in featuredCards[0].tags"
                             :key="tag"
                             class="bg-blue-200 text-white rounded-full py-0.5 px-4 text-sm font-medium backdrop-blur-sm"
+                            >{{ tag }}</span
                         >
-                            {{ tag }}
-                        </span>
                     </div>
-
-                    <!-- Overlay -->
                     <div
                         class="absolute inset-0 z-10 flex flex-col justify-center items-center p-3 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
+                        :class="
+                            featuredActive === 'websenses'
+                                ? 'bg-stone-900/80'
+                                : ''
+                        "
                     >
                         <img
                             src="/images/websenses-fi.png"
                             alt="WebSenses"
-                            class="w-16 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            class="w-16 mb-2 transition-opacity duration-300"
+                            :class="
+                                featuredActive === 'websenses'
+                                    ? 'opacity-100'
+                                    : 'opacity-0 group-hover:opacity-100'
+                            "
                         />
                         <h3
-                            class="text-2xl font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center"
+                            class="text-2xl font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent transition-opacity duration-300 text-center"
+                            :class="
+                                featuredActive === 'websenses'
+                                    ? 'opacity-100'
+                                    : 'opacity-0 group-hover:opacity-100'
+                            "
                         >
                             WebSenses
                         </h3>
                         <p
-                            class="text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2"
+                            class="text-white/80 transition-opacity duration-300 mt-2"
+                            :class="
+                                featuredActive === 'websenses'
+                                    ? 'opacity-100'
+                                    : 'opacity-0 group-hover:opacity-100'
+                            "
                         >
                             Digital handbook, enroll to understand frontend
                             development.
@@ -123,7 +149,12 @@
                             href="https://www.websenses.co.za"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-3"
+                            class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm transition-opacity duration-300 mt-3"
+                            :class="
+                                featuredActive === 'websenses'
+                                    ? 'opacity-100'
+                                    : 'opacity-0 group-hover:opacity-100'
+                            "
                         >
                             <Icon icon="mdi:link-variant" class="size-4.5" />
                             Visit www.websenses.co.za
@@ -135,15 +166,24 @@
                 <section class="flex flex-col w-[24%] h-full gap-1">
                     <!-- Card 1: CodeSpace -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group hover:bg-none hover:border-2 hover:border-emerald-500"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-all duration-200"
+                        :class="
+                            featuredActive === 'codespace'
+                                ? 'border-2 border-emerald-500 bg-none'
+                                : 'hover:border-2 hover:border-emerald-500'
+                        "
+                        @click="
+                            featuredSel = null;
+                            featuredHover = 'codespace';
+                        "
+                        @mouseenter="featuredHover = 'codespace'"
+                        @mouseleave="featuredHover = null"
                     >
                         <img
                             class="w-full h-full object-fill"
                             src="/images/codespace.png"
                             alt="CodeSpace"
                         />
-
-                        <!-- Tags: smaller -->
                         <div
                             class="absolute bottom-1.5 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
                         >
@@ -151,35 +191,56 @@
                                 v-for="tag in featuredCards[1].tags"
                                 :key="tag"
                                 class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
+                                >{{ tag }}</span
                             >
-                                {{ tag }}
-                            </span>
                         </div>
-
-                        <!-- Overlay -->
                         <div
                             class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
+                            :class="
+                                featuredActive === 'codespace'
+                                    ? 'bg-stone-900/80'
+                                    : ''
+                            "
                         >
                             <img
                                 src="/images/codespace-fi.png"
                                 alt="CodeSpace"
-                                class="w-8 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                class="w-8 mb-1 transition-opacity duration-300"
+                                :class="
+                                    featuredActive === 'codespace'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             />
                             <h3
-                                class="text-lg font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center"
+                                class="text-lg font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent transition-opacity duration-300 text-center"
+                                :class="
+                                    featuredActive === 'codespace'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             >
                                 CodeSpace
                             </h3>
                             <span
-                                class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1"
+                                class="text-white/80 text-sm transition-opacity duration-300 mt-1"
+                                :class="
+                                    featuredActive === 'codespace'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
+                                >Redesign & Maintenance (2022/25)</span
                             >
-                                Redesign & Maintenance (2022/25)
-                            </span>
                             <a
                                 href="https://www.codespace.co.za"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2"
+                                class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm transition-opacity duration-300 mt-2"
+                                :class="
+                                    featuredActive === 'codespace'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             >
                                 <Icon
                                     icon="mdi:link-variant"
@@ -192,15 +253,24 @@
 
                     <!-- Card 2: MiniUMP -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group hover:border-2 hover:border-emerald-500"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-all duration-200"
+                        :class="
+                            featuredActive === 'miniump'
+                                ? 'border-2 border-emerald-500 bg-none'
+                                : 'hover:border-2 hover:border-emerald-500'
+                        "
+                        @click="
+                            featuredSel = null;
+                            featuredHover = 'miniump';
+                        "
+                        @mouseenter="featuredHover = 'miniump'"
+                        @mouseleave="featuredHover = null"
                     >
                         <img
                             class="w-full h-full object-cover"
                             src="/images/miniump.png"
                             alt="MiniUMP"
                         />
-
-                        <!-- Tags: smaller -->
                         <div
                             class="absolute bottom-1.5 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
                         >
@@ -208,44 +278,69 @@
                                 v-for="tag in featuredCards[2].tags"
                                 :key="tag"
                                 class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
+                                >{{ tag }}</span
                             >
-                                {{ tag }}
-                            </span>
                         </div>
-
-                        <!-- Overlay -->
                         <div
                             class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
+                            :class="
+                                featuredActive === 'miniump'
+                                    ? 'bg-stone-900/80'
+                                    : ''
+                            "
                         >
                             <img
                                 src="/images/miniump-fi.svg"
                                 alt="MiniUMP"
-                                class="w-7 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                class="w-7 mb-1 transition-opacity duration-300"
+                                :class="
+                                    featuredActive === 'miniump'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             />
                             <h3
-                                class="text-lg font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center"
+                                class="text-lg font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent transition-opacity duration-300 text-center"
+                                :class="
+                                    featuredActive === 'miniump'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             >
                                 MiniUMP
                             </h3>
                             <span
-                                class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1"
+                                class="text-white/80 text-sm transition-opacity duration-300 mt-1"
+                                :class="
+                                    featuredActive === 'miniump'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
+                                >Match-Making & Score Keeping</span
                             >
-                                Match-Making & Score Keeping
-                            </span>
                         </div>
                     </div>
 
                     <!-- Card 3: Cbazil -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group hover:border-2 hover:border-emerald-500"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-all duration-200"
+                        :class="
+                            featuredActive === 'cbazil'
+                                ? 'border-2 border-emerald-500 bg-none'
+                                : 'hover:border-2 hover:border-emerald-500'
+                        "
+                        @click="
+                            featuredSel = null;
+                            featuredHover = 'cbazil';
+                        "
+                        @mouseenter="featuredHover = 'cbazil'"
+                        @mouseleave="featuredHover = null"
                     >
                         <img
                             class="w-full h-full object-cover"
                             src="/images/cbazil.png"
                             alt="Cbazil OG"
                         />
-
-                        <!-- Tags: smaller -->
                         <div
                             class="absolute bottom-1.5 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
                         >
@@ -253,35 +348,56 @@
                                 v-for="tag in featuredCards[3].tags"
                                 :key="tag"
                                 class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
+                                >{{ tag }}</span
                             >
-                                {{ tag }}
-                            </span>
                         </div>
-
-                        <!-- Overlay -->
                         <div
                             class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
+                            :class="
+                                featuredActive === 'cbazil'
+                                    ? 'bg-stone-900/80'
+                                    : ''
+                            "
                         >
                             <img
                                 src="/images/cbazil-fi.png"
                                 alt="Cbazil"
-                                class="w-7 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                class="w-7 mb-1 transition-opacity duration-300"
+                                :class="
+                                    featuredActive === 'cbazil'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             />
                             <h3
-                                class="text-lg font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center"
+                                class="text-lg font-semibold bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent transition-opacity duration-300 text-center"
+                                :class="
+                                    featuredActive === 'cbazil'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             >
                                 Cbazil
                             </h3>
                             <span
-                                class="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1"
+                                class="text-white/80 text-sm transition-opacity duration-300 mt-1"
+                                :class="
+                                    featuredActive === 'cbazil'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
+                                >Legacy Portfolio (Older projects)</span
                             >
-                                Legacy Portfolio (Older projects)
-                            </span>
                             <a
                                 href="https://cbazil.vercel.app/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2"
+                                class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm transition-opacity duration-300 mt-2"
+                                :class="
+                                    featuredActive === 'cbazil'
+                                        ? 'opacity-100'
+                                        : 'opacity-0 group-hover:opacity-100'
+                                "
                             >
                                 <Icon
                                     icon="mdi:link-variant"
@@ -294,7 +410,7 @@
                 </section>
             </div>
 
-            <!-- Mobile: same Projects card style, tap opens overlay -->
+            <!-- Mobile -->
             <div class="flex md:hidden flex-col w-full py-6 items-center gap-6">
                 <template v-for="card in featuredCards" :key="card.key">
                     <div
@@ -316,9 +432,8 @@
                                     v-for="tag in card.tags"
                                     :key="tag"
                                     class="bg-blue-200 text-white rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm"
+                                    >{{ tag }}</span
                                 >
-                                    {{ tag }}
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -355,7 +470,6 @@
                                 icon="game-icons:tic-tac-toe"
                             />
                         </button>
-
                         <button
                             class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
                             :class="
@@ -380,7 +494,6 @@
                                 icon="game-icons:hole"
                             />
                         </button>
-
                         <button
                             class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
                             :class="
@@ -406,7 +519,6 @@
                                 icon="game-icons:mailed-fist"
                             />
                         </button>
-
                         <button
                             class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
                             :class="
@@ -431,7 +543,6 @@
                             />
                         </button>
                     </div>
-
                     <button
                         class="p-1 w-12 h-12 flex justify-center rounded-sm items-center bg-no-repeat transition-all duration-200"
                         @click="microOptionsOverlay = true"
@@ -470,7 +581,6 @@
                             >
                                 ✕
                             </button>
-
                             <div
                                 class="flex-1 overflow-y-auto flex flex-col justify-start px-6 mt-6"
                             >
@@ -505,13 +615,13 @@
                                 <div
                                     class="flex flex-row justify-between items-center text-white"
                                 >
-                                    <div>Variant: {{ store.variant }}</div>
+                                    <div>Variant: {{ variant }}</div>
                                     <button
                                         class="cursor-pointer w-8 h-5 rounded-full bg-stone-600 relative transition-colors duration-300"
                                         :class="{
                                             'bg-emerald-500': variantToggle,
                                         }"
-                                        @click="variantToggle = !variantToggle"
+                                        @click="handleChangeVarient"
                                     >
                                         <span
                                             class="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-emerald-500 transition-transform duration-300"
@@ -747,7 +857,8 @@
 </template>
 
 <script setup>
-import { ref, computed, nextTick, onMounted, onUnmounted } from "vue";
+import { ref, computed, nextTick, onMounted, onUnmounted, watch } from "vue";
+import { useLinkover, useBtnClick } from "@/composables/useSound.js";
 import { useControlStore } from "@/stores/main.js";
 import { useTicTacToeStore } from "@/stores/tictactoe.js";
 import TicTacToe from "@/components/games/TicTacToe.vue";
@@ -758,18 +869,26 @@ import Chess from "@/components/games/Chess.vue";
 const control = useControlStore();
 const tictactoe = useTicTacToeStore();
 
-const variant = computed(() => {
-    return tictactoe.variant;
-});
-
+const variant = computed(() => tictactoe.variant);
 const ticTacToeRef = ref(null);
-
 const mobileOverlay = ref(false);
 const mobileSelected = ref(null);
 const turnToggle = computed(() => !tictactoe.playerFirst);
 const variantToggle = ref(false);
 const microHover = ref(null);
 const microOptionsOverlay = ref(false);
+
+// featuredSel  = keyboard selection (null = tab mode, no card highlighted)
+// featuredHover = mouse hover (null when not hovering)
+// featuredActive = what the template uses — hover takes priority over keyboard
+const featuredSel = ref(null);
+const featuredHover = ref(null);
+// featuredActive: if keyboard has a selection, hover is completely ignored
+const featuredActive = computed(() => {
+    if (featuredSel.value !== null) return featuredSel.value;
+    return featuredHover.value;
+});
+const smallCards = ["codespace", "miniump", "cbazil"];
 
 const toggleTurn = () => {
     if (tictactoe.playerFirst) {
@@ -785,7 +904,6 @@ const toggleTurn = () => {
 const setMicroHover = (game) => {
     microHover.value = game;
 };
-
 const clearMicroHover = () => {
     microHover.value = null;
 };
@@ -847,11 +965,154 @@ function openMobileOverlay(card) {
     mobileOverlay.value = true;
 }
 
+const tabs = ["Featured", "Micro"];
+const microGames = [
+    "Tic Tac Toe",
+    "Unlucky Hole",
+    "Rock Paper Scissors",
+    "Chess",
+];
+
+watch(
+    () => control.selectedOption,
+    () => {
+        featuredSel.value = null;
+    },
+);
+
+const handleKeydown = (e) => {
+    const tag = document.activeElement?.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+    const tab = control.selectedOption;
+
+    // Enter — open selected card link
+    if (e.key === "Enter" && tab === "Featured" && featuredSel.value) {
+        const card = featuredCards.find((c) => c.key === featuredSel.value);
+        if (card?.link) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            window.open(card.link, "_blank", "noopener noreferrer");
+        }
+        return;
+    }
+
+    // Tab switching ← →
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        const inFeaturedTabMode =
+            tab === "Featured" && featuredSel.value === null;
+        const inMicroTabMode = tab === "Micro";
+        if (inFeaturedTabMode || inMicroTabMode) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            const idx = tabs.indexOf(tab);
+            const next =
+                e.key === "ArrowRight"
+                    ? tabs[(idx + 1) % tabs.length]
+                    : tabs[(idx - 1 + tabs.length) % tabs.length];
+            control.selectedOption = next;
+            return;
+        }
+
+        // Featured — navigate between large and small cards
+        if (tab === "Featured") {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            if (featuredSel.value === "websenses") {
+                if (e.key === "ArrowRight") featuredSel.value = "codespace";
+            } else if (smallCards.includes(featuredSel.value)) {
+                if (e.key === "ArrowLeft") featuredSel.value = "websenses";
+            }
+            return;
+        }
+    }
+
+    // Arrow Down
+    if (e.key === "ArrowDown") {
+        if (tab === "Featured") {
+            if (featuredSel.value === null) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                featuredSel.value = "websenses";
+                return;
+            }
+            if (featuredSel.value === "websenses") {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                featuredSel.value = "codespace";
+                return;
+            }
+            const idx = smallCards.indexOf(featuredSel.value);
+            if (idx < smallCards.length - 1) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                featuredSel.value = smallCards[idx + 1];
+            }
+            return;
+        }
+
+        if (tab === "Micro") {
+            const idx = microGames.indexOf(control.microGameSelection);
+            if (idx < microGames.length - 1) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                selectMicroGame(microGames[idx + 1]);
+            }
+            return;
+        }
+    }
+
+    // Arrow Up
+    if (e.key === "ArrowUp") {
+        if (tab === "Featured") {
+            if (featuredSel.value === null) return; // fall through to prev page
+            if (featuredSel.value === "websenses") {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                featuredSel.value = null;
+                return;
+            }
+            const idx = smallCards.indexOf(featuredSel.value);
+            if (idx === 0) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                featuredSel.value = "websenses";
+            } else {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                featuredSel.value = smallCards[idx - 1];
+            }
+            return;
+        }
+
+        if (tab === "Micro") {
+            const idx = microGames.indexOf(control.microGameSelection);
+            if (idx === 0) return; // fall through to prev page
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            selectMicroGame(microGames[idx - 1]);
+            return;
+        }
+    }
+};
+
 onMounted(() => {
     control.selectedOption = "Featured";
+    document.addEventListener("keydown", handleKeydown, true);
 });
 
 onUnmounted(() => {
+    document.removeEventListener("keydown", handleKeydown, true);
     control.selectedOption = undefined;
 });
 </script>

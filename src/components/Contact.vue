@@ -286,7 +286,63 @@ const questions = [
 let typingInterval = null;
 
 const handleKeydown = (e) => {
-    if (e.key === "Escape") control.contactOpen = false;
+    // Handle Escape key
+    if (e.key === "Escape") {
+        control.contactOpen = false;
+        return;
+    }
+
+    // Handle Enter key globally when overlay is open
+    // Don't trigger if user is typing in the email input (let them finish typing)
+    // Don't trigger if user is typing in a contenteditable or other input
+    if (e.key === "Enter" && control.contactOpen) {
+        const activeElement = document.activeElement;
+        const isEmailInput = activeElement === document.querySelector('input[type="email"]');
+        const isTextarea = activeElement.tagName === 'TEXTAREA';
+        const isSelect = activeElement.tagName === 'SELECT';
+
+        // If email input is focused, let it handle its own enter (or submit if you prefer)
+        // If textarea is focused, let the user type newlines (or submit if you prefer)
+        // For global enter (when nothing specific is focused), trigger submit
+
+        // If textarea is focused and has content, submit instead of newline
+        if (isTextarea) {
+            e.preventDefault();
+            // Stop typing animation if running
+            if (typingInterval) {
+                clearInterval(typingInterval);
+                typingInterval = null;
+                if (activeQuestion.value) {
+                    message.value = activeQuestion.value;
+                }
+            }
+            handleSubmit();
+            return;
+        }
+
+        // If email input is focused, submit on enter
+        if (isEmailInput) {
+            e.preventDefault();
+            handleSubmit();
+            return;
+        }
+
+        // If select is focused, don't submit (let them select with enter)
+        if (isSelect) {
+            return;
+        }
+
+        // Global enter - focus textarea and submit if there's content, or just submit
+        e.preventDefault();
+        if (typingInterval) {
+            clearInterval(typingInterval);
+            typingInterval = null;
+            if (activeQuestion.value) {
+                message.value = activeQuestion.value;
+            }
+        }
+        handleSubmit();
+    }
 };
 
 onMounted(() => window.addEventListener("keydown", handleKeydown));
@@ -305,9 +361,13 @@ const typeQuestion = (q) => {
     activeQuestion.value = q;
     let i = 0;
     typingInterval = setInterval(() => {
-        message.value += q[i];
-        i++;
-        if (i >= q.length) clearInterval(typingInterval);
+        if (i < q.length) {
+            message.value += q[i];
+            i++;
+        } else {
+            clearInterval(typingInterval);
+            typingInterval = null;
+        }
     }, 35);
 };
 
@@ -366,7 +426,7 @@ const handleFindout = async (question) => {
                         },
                     ],
                 }),
-            },
+            }
         );
 
         const data = await response.json();
@@ -402,19 +462,27 @@ const getResponse = () => {
 };
 
 const handleSubmit = async () => {
+    if (loading.value) return;
+
     if (!validate()) return;
 
     if (type.value === "findout") {
         loading.value = true;
-        const question = message.value;
+        const question = message.value.trim();
+
+        if (!question) {
+            loading.value = false;
+            return;
+        }
+
         conversation.value.push({ question, response: null });
         scrollToBottom();
         message.value = "";
         activeQuestion.value = null;
+
         try {
             const response = await handleFindout(question);
-            conversation.value[conversation.value.length - 1].response =
-                response;
+            conversation.value[conversation.value.length - 1].response = response;
             scrollToBottom();
         } catch (e) {
             conversation.value[conversation.value.length - 1].response =
@@ -464,6 +532,10 @@ const reset = () => {
     emailError.value = "";
     messageError.value = "";
     loading.value = false;
+    if (typingInterval) {
+        clearInterval(typingInterval);
+        typingInterval = null;
+    }
 };
 
 watch(message, (val) => {

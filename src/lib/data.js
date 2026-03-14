@@ -364,7 +364,7 @@ export const eduXP = [
     course: "Web Development (CodeSpace)",
     desc: "I undertook the Web Development bootcamp at Life Choices Academy on the CodeSpace Curriculum, focusing on HTML, CSS, JavaScript, and various libraries.",
     logo: "lifechoices.png",
-    bg: "stone-900",
+    bg: "[#1a1818]",
     scale: 86,
     period: "Aug 2018 - Feb 2019",
   },
