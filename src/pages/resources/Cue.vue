@@ -6,7 +6,7 @@
         >
             <article
                 v-if="control.openInventory"
-                class="relative w-full h-full flex flex-col-reverse md:flex-row md:-mt-10 justify-center md:justify-around items-center md:items-start px-4 sm:px-7 lg:px-14 xl:px-4 pt-10"
+                class="relative w-full h-full flex flex-col-reverse md:flex-row md:-mt-10.5 justify-center md:justify-around items-center md:items-start px-4 sm:px-7 lg:px-14 xl:px-4 pt-10"
             >
                 <section
                     class="w-full max-w-[275px] md:w-[370px] md:max-w-none h-[260px] flex flex-row flex-wrap justify-center rounded-lg p-2"

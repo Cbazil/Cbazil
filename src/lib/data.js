@@ -91,7 +91,7 @@ export const mainTechnologies = [
     title: "Vite",
     icon: "vite",
     description:
-      "I love the performance and build options that vite provides, been using it since it first launched and it never disappoints (Even the betas).",
+      "I love the performance and build options that vite provides, been using it since it first launched and it never disappoints (Even the beta's).",
     tag: "Bundler",
     comfort: 78,
     mastery: 60,
@@ -109,7 +109,7 @@ export const mainTechnologies = [
     title: "Figma",
     icon: "figma",
     description:
-      "Figma is my go design tool, it's been amazing, while I am no expert. I managed at making awesome designs (mockups), I mainly use it for logo design and planning.",
+      "Figma is my go to design tool, it's been amazing, while I am no expert. I managed at making awesome designs (mockups), I mainly use it for logo design and planning.",
     tag: "Design",
     comfort: 72,
     mastery: 60,
@@ -118,7 +118,7 @@ export const mainTechnologies = [
     title: "ThreeJS",
     icon: "threedotjs",
     description:
-      "I am a student of Bruno Simon on his threejs-journey course, I am still learning, but this is definitely a tool I will be using (Big creative plans with it).",
+      "I am a student of Bruno Simon on his threejs-journey course, I am still learning, but this is definitely a tool I will be using (I have big creative plans in mind).",
     tag: "WebGL",
     comfort: 65,
     mastery: 35,

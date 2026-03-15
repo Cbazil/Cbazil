@@ -35,7 +35,7 @@
                                 </h3>
                             </div>
                             <p
-                                class="font-thin text-sm text-gray-300 text-center leading-relaxed mb-4"
+                                class="font-thin text-md text-gray-300 text-center leading-relaxed mb-4"
                             >
                                 {{ mobileSelected.desc }}
                             </p>

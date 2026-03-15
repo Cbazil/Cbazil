@@ -51,7 +51,7 @@
                             <span
                                 v-for="tag in mobileSelected.tags"
                                 :key="tag"
-                                class="bg-blue-200 text-white rounded-full py-0.5 px-3 text-xs font-medium backdrop-blur-sm"
+                                class="bg-gradient-to-tr from-blue-900 via-sky-200 to-white text-stone-900 rounded-full py-0.5 px-3 text-xs"
                             >
                                 {{ tag }}
                             </span>
@@ -97,14 +97,26 @@
                         alt="WebSenses"
                     />
                     <div
-                        class="absolute bottom-3 left-0 right-0 flex flex-wrap justify-center gap-2 px-3"
+                        class="absolute bottom-2.5 left-0 right-0 flex flex-wrap justify-center gap-2 px-3"
                     >
                         <span
                             v-for="tag in featuredCards[0].tags"
                             :key="tag"
-                            class="bg-blue-200 text-white rounded-full py-0.5 px-4 text-sm font-medium backdrop-blur-sm"
-                            >{{ tag }}</span
+                            class="relative inline-flex items-center rounded-full py-0.5 px-4 text-sm font-medium backdrop-blur-sm overflow-hidden"
                         >
+                            <span class="absolute inset-0 rounded-full p-px">
+                                <span
+                                    class="absolute inset-0 rounded-full bg-sky-200 opacity-95"
+                                />
+                            </span>
+                            <span
+                                class="absolute inset-[1px] rounded-full bg-blue-900/40 backdrop-blur-sm"
+                            />
+                            <span
+                                class="relative bg-sky-200 bg-clip-text text-transparent"
+                                >{{ tag }}</span
+                            >
+                        </span>
                     </div>
                     <div
                         class="absolute inset-0 z-10 flex flex-col justify-center items-center p-3 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
@@ -166,11 +178,11 @@
                 <section class="flex flex-col w-[24%] h-full gap-1">
                     <!-- Card 1: CodeSpace -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-all duration-200"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-colors duration-300"
                         :class="
                             featuredActive === 'codespace'
-                                ? 'border-2 border-emerald-500 bg-none'
-                                : 'hover:border-2 hover:border-emerald-500'
+                                ? 'border-2 border-emerald-500'
+                                : 'border-2 border-transparent hover:border-emerald-500'
                         "
                         @click="
                             featuredSel = null;
@@ -180,19 +192,33 @@
                         @mouseleave="featuredHover = null"
                     >
                         <img
-                            class="w-full h-full object-fill"
+                            class="inset-0 w-full h-full object-fill"
                             src="/images/codespace.png"
                             alt="CodeSpace"
                         />
                         <div
-                            class="absolute bottom-1.5 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
+                            class="absolute bottom-1 left-0 right-0 flex flex-wrap justify-center gap-1 px-2"
                         >
                             <span
                                 v-for="tag in featuredCards[1].tags"
                                 :key="tag"
-                                class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
-                                >{{ tag }}</span
+                                class="relative inline-flex items-center rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm overflow-hidden"
                             >
+                                <span
+                                    class="absolute inset-0 rounded-full p-px"
+                                >
+                                    <span
+                                        class="absolute inset-0 rounded-full bg-sky-200 opacity-95"
+                                    />
+                                </span>
+                                <span
+                                    class="absolute inset-[1px] rounded-full bg-blue-900/40 backdrop-blur-sm"
+                                />
+                                <span
+                                    class="relative bg-sky-200 bg-clip-text text-transparent"
+                                    >{{ tag }}</span
+                                >
+                            </span>
                         </div>
                         <div
                             class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
@@ -253,11 +279,11 @@
 
                     <!-- Card 2: MiniUMP -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-all duration-200"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-colors duration-300"
                         :class="
                             featuredActive === 'miniump'
-                                ? 'border-2 border-emerald-500 bg-none'
-                                : 'hover:border-2 hover:border-emerald-500'
+                                ? 'border-2 border-emerald-500'
+                                : 'border-2 border-transparent hover:border-emerald-500'
                         "
                         @click="
                             featuredSel = null;
@@ -267,7 +293,7 @@
                         @mouseleave="featuredHover = null"
                     >
                         <img
-                            class="w-full h-full object-cover"
+                            class="inset-0 w-full h-full object-fill"
                             src="/images/miniump.png"
                             alt="MiniUMP"
                         />
@@ -277,9 +303,23 @@
                             <span
                                 v-for="tag in featuredCards[2].tags"
                                 :key="tag"
-                                class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
-                                >{{ tag }}</span
+                                class="relative inline-flex items-center rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm overflow-hidden"
                             >
+                                <span
+                                    class="absolute inset-0 rounded-full p-px"
+                                >
+                                    <span
+                                        class="absolute inset-0 rounded-full bg-sky-200 opacity-90"
+                                    />
+                                </span>
+                                <span
+                                    class="absolute inset-[1px] rounded-full bg-blue-900/40 backdrop-blur-sm"
+                                />
+                                <span
+                                    class="relative bg-sky-200 bg-clip-text text-transparent"
+                                    >{{ tag }}</span
+                                >
+                            </span>
                         </div>
                         <div
                             class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
@@ -323,11 +363,11 @@
 
                     <!-- Card 3: Cbazil -->
                     <div
-                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-all duration-200"
+                        class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-colors duration-300"
                         :class="
                             featuredActive === 'cbazil'
-                                ? 'border-2 border-emerald-500 bg-none'
-                                : 'hover:border-2 hover:border-emerald-500'
+                                ? 'border-2 border-emerald-500'
+                                : 'border-2 border-transparent hover:border-emerald-500'
                         "
                         @click="
                             featuredSel = null;
@@ -337,7 +377,7 @@
                         @mouseleave="featuredHover = null"
                     >
                         <img
-                            class="w-full h-full object-cover"
+                            class="inset-0 w-full h-full object-fill"
                             src="/images/cbazil.png"
                             alt="Cbazil OG"
                         />
@@ -347,9 +387,23 @@
                             <span
                                 v-for="tag in featuredCards[3].tags"
                                 :key="tag"
-                                class="bg-blue-200 text-white rounded-full py-0.5 px-2 text-xs font-medium backdrop-blur-sm"
-                                >{{ tag }}</span
+                                class="relative inline-flex items-center rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm overflow-hidden"
                             >
+                                <span
+                                    class="absolute inset-0 rounded-full p-px"
+                                >
+                                    <span
+                                        class="absolute inset-0 rounded-full bg-sky-200 opacity-90"
+                                    />
+                                </span>
+                                <span
+                                    class="absolute inset-[1px] rounded-full bg-blue-900/40 backdrop-blur-sm"
+                                />
+                                <span
+                                    class="relative bg-sky-200 bg-clip-text text-transparent"
+                                    >{{ tag }}</span
+                                >
+                            </span>
                         </div>
                         <div
                             class="absolute inset-0 z-10 flex flex-col justify-center items-center p-2 bg-stone-900/0 hover:bg-stone-900/80 transition-all duration-300"
@@ -426,14 +480,29 @@
                                 :alt="card.title"
                             />
                             <div
-                                class="absolute bottom-2 left-0 right-0 flex flex-wrap justify-center gap-1.5 px-3"
+                                class="absolute bottom-1 left-0 right-0 flex flex-wrap justify-center gap-1.5 px-3"
                             >
+                                <!-- Updated to new glassmorphism tag style -->
                                 <span
                                     v-for="tag in card.tags"
                                     :key="tag"
-                                    class="bg-blue-200 text-white rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm"
-                                    >{{ tag }}</span
+                                    class="relative inline-flex items-center rounded-full py-0.5 px-2.5 text-xs font-medium backdrop-blur-sm overflow-hidden"
                                 >
+                                    <span
+                                        class="absolute inset-0 rounded-full p-px"
+                                    >
+                                        <span
+                                            class="absolute inset-0 rounded-full bg-sky-200 opacity-40"
+                                        />
+                                    </span>
+                                    <span
+                                        class="absolute inset-[1px] rounded-full bg-blue-900/40 backdrop-blur-sm"
+                                    />
+                                    <span
+                                        class="relative bg-sky-200 bg-clip-text text-transparent"
+                                        >{{ tag }}</span
+                                    >
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -882,7 +951,7 @@ useHead({
             content:
                 "Cbazil's projects — featured work including WebSenses, CodeSpace and MiniUMP, plus a collection of micro games built for fun.",
         },
-        { property: "og:url", content: "https://www.cbazil.dev/projects" },
+        { property: "og:url", content: "https://cbazil.com/projects" },
         { name: "twitter:card", content: "summary" },
     ],
 });
@@ -1004,10 +1073,8 @@ const handleKeydown = (e) => {
 
     const tab = control.selectedOption;
 
-    // Space — never handle here, always let the wrapper layout handle it
     if (e.key === " ") return;
 
-    // Enter — open selected card link
     if (e.key === "Enter" && tab === "Featured" && featuredSel.value) {
         const card = featuredCards.find((c) => c.key === featuredSel.value);
         if (card?.link) {
@@ -1018,7 +1085,6 @@ const handleKeydown = (e) => {
         return;
     }
 
-    // Tab switching ← →
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         const inFeaturedTabMode =
             tab === "Featured" && featuredSel.value === null;
@@ -1035,8 +1101,6 @@ const handleKeydown = (e) => {
             control.selectedOption = next;
             return;
         }
-
-        // Featured — navigate between large and small cards
         if (tab === "Featured") {
             e.preventDefault();
             e.stopImmediatePropagation();
@@ -1050,7 +1114,6 @@ const handleKeydown = (e) => {
         }
     }
 
-    // Arrow Down
     if (e.key === "ArrowDown") {
         if (tab === "Featured") {
             if (featuredSel.value === null) {
@@ -1076,7 +1139,6 @@ const handleKeydown = (e) => {
             }
             return;
         }
-
         if (tab === "Micro") {
             const idx = microGames.indexOf(control.microGameSelection);
             if (idx < microGames.length - 1) {
@@ -1089,10 +1151,9 @@ const handleKeydown = (e) => {
         }
     }
 
-    // Arrow Up
     if (e.key === "ArrowUp") {
         if (tab === "Featured") {
-            if (featuredSel.value === null) return; // fall through to prev page
+            if (featuredSel.value === null) return;
             if (featuredSel.value === "websenses") {
                 e.preventDefault();
                 e.stopImmediatePropagation();
@@ -1114,10 +1175,9 @@ const handleKeydown = (e) => {
             }
             return;
         }
-
         if (tab === "Micro") {
             const idx = microGames.indexOf(control.microGameSelection);
-            if (idx === 0) return; // fall through to prev page
+            if (idx === 0) return;
             e.preventDefault();
             e.stopImmediatePropagation();
             e.stopPropagation();

@@ -244,7 +244,7 @@
 
         <!-- + O X matrix — slides in from RIGHT, rightmost first -->
         <div
-            class="absolute m-0 p-0 top-27 lg:top-14 right-2 lg:right-32 flex flex-col space-y-0"
+            class="absolute m-0 p-0 top-27 lg:top-15 right-2 lg:right-32 flex flex-col space-y-0"
         >
             <section>
                 <span
@@ -296,23 +296,34 @@
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { useRouter } from "vue-router";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
-import { useHead } from '@unhead/vue'
+import { useHead } from "@unhead/vue";
 
 useHead({
-  title: 'Cbazil | Developer & Innovator',
-  meta: [
-    { name: 'description', content: 'Cbazil – developer and innovator. Explore my bio, skills, experience, blog and projects.' },
+    title: "Cbazil | Developer & Innovator",
+    meta: [
+        {
+            name: "description",
+            content:
+                "Cbazil – developer and innovator. Explore my bio, skills, experience, blog and projects.",
+        },
 
-    { property: 'og:title', content: 'Cbazil | Developer & Innovator' },
-    { property: 'og:description', content: 'Cbazil – developer and innovator. Explore my bio, skills, experience, blog and projects.' },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://www.cbazil.dev' },
+        { property: "og:title", content: "Cbazil | Developer & Innovator" },
+        {
+            property: "og:description",
+            content:
+                "Cbazil – developer and innovator. Explore my bio, skills, experience, blog and projects.",
+        },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://www.cbazil.dev" },
 
-    { name: 'twitter:card', content: 'summary' },
-    { name: 'twitter:title', content: 'Cbazil | Developer & Innovator' },
-    { name: 'twitter:description', content: 'Cbazil – developer and innovator.' }
-  ]
-})
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:title", content: "Cbazil | Developer & Innovator" },
+        {
+            name: "twitter:description",
+            content: "Cbazil – developer and innovator.",
+        },
+    ],
+});
 
 const handleOver = useLinkover();
 const handleClick = useBtnClick();

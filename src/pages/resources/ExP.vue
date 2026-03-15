@@ -97,7 +97,7 @@
                                 </h3>
                             </div>
                             <p
-                                class="font-thin text-xs text-gray-300 text-center mb-2"
+                                class="font-thin text-md text-gray-300 text-center mb-2"
                                 v-if="
                                     control.selectedOption === 'Work'
                                         ? wSelectedPeriod
@@ -110,7 +110,7 @@
                                     ).replace(' - ', ' – ')
                                 "
                             />
-                            <p class="text-sm text-center mb-2">
+                            <p class="text-md text-center mb-2">
                                 {{
                                     control.selectedOption === "Work"
                                         ? wSelectedOccupation
@@ -118,7 +118,7 @@
                                 }}
                             </p>
                             <p
-                                class="font-thin text-xs text-gray-300 text-center leading-relaxed"
+                                class="font-thin text-md text-gray-300 text-center leading-relaxed"
                             >
                                 {{
                                     control.selectedOption === "Work"
