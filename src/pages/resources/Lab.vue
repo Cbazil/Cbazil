@@ -858,6 +858,7 @@
 
 <script setup>
 import { ref, computed, nextTick, onMounted, onUnmounted, watch } from "vue";
+import { useHead } from "@unhead/vue";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
 import { useControlStore } from "@/stores/main.js";
 import { useTicTacToeStore } from "@/stores/tictactoe.js";
@@ -866,6 +867,27 @@ import UnluckyHole from "@/components/games/UnluckyHole.vue";
 import RockPaperScissors from "@/components/games/RockPaperScissors.vue";
 import Chess from "@/components/games/Chess.vue";
 
+// ── SEO ───────────────────────────────────────────────────────────────────────
+useHead({
+    title: "Projects | Cbazil",
+    meta: [
+        {
+            name: "description",
+            content:
+                "Cbazil's projects — featured work including WebSenses, CodeSpace and MiniUMP, plus a collection of micro games built for fun.",
+        },
+        { property: "og:title", content: "Projects | Cbazil" },
+        {
+            property: "og:description",
+            content:
+                "Cbazil's projects — featured work including WebSenses, CodeSpace and MiniUMP, plus a collection of micro games built for fun.",
+        },
+        { property: "og:url", content: "https://www.cbazil.dev/projects" },
+        { name: "twitter:card", content: "summary" },
+    ],
+});
+
+// ── State ─────────────────────────────────────────────────────────────────────
 const control = useControlStore();
 const tictactoe = useTicTacToeStore();
 
@@ -878,12 +900,8 @@ const variantToggle = ref(false);
 const microHover = ref(null);
 const microOptionsOverlay = ref(false);
 
-// featuredSel  = keyboard selection (null = tab mode, no card highlighted)
-// featuredHover = mouse hover (null when not hovering)
-// featuredActive = what the template uses — hover takes priority over keyboard
 const featuredSel = ref(null);
 const featuredHover = ref(null);
-// featuredActive: if keyboard has a selection, hover is completely ignored
 const featuredActive = computed(() => {
     if (featuredSel.value !== null) return featuredSel.value;
     return featuredHover.value;
@@ -985,6 +1003,9 @@ const handleKeydown = (e) => {
     if (tag === "INPUT" || tag === "TEXTAREA") return;
 
     const tab = control.selectedOption;
+
+    // Space — never handle here, always let the wrapper layout handle it
+    if (e.key === " ") return;
 
     // Enter — open selected card link
     if (e.key === "Enter" && tab === "Featured" && featuredSel.value) {

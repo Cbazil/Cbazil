@@ -39,7 +39,9 @@
                             >
                                 {{ mobileSelected.desc }}
                             </p>
-                            <div class="flex flex-wrap justify-center gap-2 mb-5">
+                            <div
+                                class="flex flex-wrap justify-center gap-2 mb-5"
+                            >
                                 <span
                                     v-for="tag in mobileSelected.tags"
                                     :key="tag"
@@ -54,7 +56,10 @@
                                     :href="mobileSelected.link"
                                     target="_blank"
                                 >
-                                    <Icon icon="mdi:link-variant" class="size-4" />
+                                    <Icon
+                                        icon="mdi:link-variant"
+                                        class="size-4"
+                                    />
                                     Go to Article on the medium.com platform
                                 </a>
                             </div>
@@ -65,27 +70,46 @@
         </Teleport>
 
         <!-- ALL -->
-        <section class="block md:flex md:flex-row" v-if="control.selectedOption == 'All'">
+        <section
+            class="block md:flex md:flex-row"
+            v-if="control.selectedOption == 'All'"
+        >
             <article class="w-4/6 hidden md:block">
-                <h2 class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent">
+                <h2
+                    class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                >
                     {{ aSelected }}
                 </h2>
                 <br />
                 <span class="font-thin text-xl pr-20">{{ aDesc }}</span>
                 <br />
                 <ul class="flex inline-flex mt-5" v-for="i of aTags" :key="i">
-                    <li class="mr-2 bg-gradient-to-tr from-blue-900 via-sky-200 to-white text-stone-900 rounded-full py-0.5 px-4">
+                    <li
+                        class="mr-2 bg-gradient-to-tr from-blue-900 via-sky-200 to-white text-stone-900 rounded-full py-0.5 px-4"
+                    >
                         {{ i }}
                     </li>
                 </ul>
                 <br /><br />
-                <a class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline" :href="aLinks" target="_blank">
-                    <Icon icon="mdi:link-variant" class="size-4" /> Go to Article on the medium.com platform
+                <a
+                    class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline"
+                    :href="aLinks"
+                    target="_blank"
+                >
+                    <Icon icon="mdi:link-variant" class="size-4" /> Go to
+                    Article on the medium.com platform
                 </a>
             </article>
-            <article ref="aListEl" class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll">
+            <article
+                ref="aListEl"
+                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll"
+            >
                 <div
-                    :ref="(el) => { if (el) aItemEls[idx] = el; }"
+                    :ref="
+                        (el) => {
+                            if (el) aItemEls[idx] = el;
+                        }
+                    "
                     @click.prevent="selectBlog(i, idx, 'all')"
                     @mouseover="hovering = i.preview"
                     @mouseout="hovering = ''"
@@ -95,14 +119,28 @@
                 >
                     <div
                         class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
-                        :class="hovering == i.preview || aSelected == i.title ? 'hidden' : ''"
+                        :class="
+                            hovering == i.preview || aSelected == i.title
+                                ? 'hidden'
+                                : ''
+                        "
                     />
                     <div
                         class="absolute inset-0 rounded-sm border-2 border-emerald-500 z-10 pointer-events-none"
-                        :class="hovering == i.preview || aSelected == i.title ? 'block' : 'hidden'"
+                        :class="
+                            hovering == i.preview || aSelected == i.title
+                                ? 'block'
+                                : 'hidden'
+                        "
                     />
-                    <img :src="`/images/${i.img}`" :alt="i.preview" class="h-full object-cover rounded-sm" />
-                    <div class="absolute bottom-0 bg-stone-900 left-0 overflow-hidden">
+                    <img
+                        :src="`/images/${i.img}`"
+                        :alt="i.preview"
+                        class="h-full object-cover rounded-sm"
+                    />
+                    <div
+                        class="absolute bottom-0 bg-stone-900 left-0 overflow-hidden"
+                    >
                         <h3
                             class="link text-xl leading-none"
                             :class="[
@@ -118,12 +156,25 @@
             </article>
             <div class="flex flex-col md:hidden w-full py-4 items-center gap-4">
                 <template v-for="(i, idx) of blogs" :key="idx">
-                    <div class="relative w-64 cursor-pointer rounded-sm group" @click="selectBlogMobile(i)">
-                        <div class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat z-10 pointer-events-none" />
+                    <div
+                        class="relative w-64 cursor-pointer rounded-sm group"
+                        @click="selectBlogMobile(i)"
+                    >
+                        <div
+                            class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat z-10 pointer-events-none"
+                        />
                         <div class="relative w-full rounded-sm overflow-hidden">
-                            <img :src="`/images/${i.img}`" :alt="i.preview" class="w-full object-cover block" />
-                            <div class="absolute bottom-0 left-0 bg-stone-900 overflow-hidden">
-                                <h3 class="link text-base leading-none bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent">
+                            <img
+                                :src="`/images/${i.img}`"
+                                :alt="i.preview"
+                                class="w-full object-cover block"
+                            />
+                            <div
+                                class="absolute bottom-0 left-0 bg-stone-900 overflow-hidden"
+                            >
+                                <h3
+                                    class="link text-base leading-none bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                                >
                                     {{ i.preview.replace(" ", ".") }}
                                 </h3>
                             </div>
@@ -134,27 +185,46 @@
         </section>
 
         <!-- FRONTEND -->
-        <section class="block md:flex md:flex-row" v-if="control.selectedOption == 'Frontend'">
+        <section
+            class="block md:flex md:flex-row"
+            v-if="control.selectedOption == 'Frontend'"
+        >
             <article class="w-4/6 hidden md:block">
-                <h2 class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent">
+                <h2
+                    class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                >
                     {{ fSelected }}
                 </h2>
                 <br />
                 <span class="font-thin text-xl pr-20">{{ fDesc }}</span>
                 <br />
                 <ul class="flex inline-flex mt-5" v-for="i of fTags" :key="i">
-                    <li class="mr-2 bg-gradient-to-tr from-blue-900 via-sky-200 to-white text-stone-900 rounded-full py-0.5 px-4">
+                    <li
+                        class="mr-2 bg-gradient-to-tr from-blue-900 via-sky-200 to-white text-stone-900 rounded-full py-0.5 px-4"
+                    >
                         {{ i }}
                     </li>
                 </ul>
                 <br /><br />
-                <a class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline" :href="fLinks" target="_blank">
-                    <Icon icon="mdi:link-variant" class="size-4" /> Go to Article on the medium.com platform
+                <a
+                    class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline"
+                    :href="fLinks"
+                    target="_blank"
+                >
+                    <Icon icon="mdi:link-variant" class="size-4" /> Go to
+                    Article on the medium.com platform
                 </a>
             </article>
-            <article ref="fListEl" class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll">
+            <article
+                ref="fListEl"
+                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll"
+            >
                 <div
-                    :ref="(el) => { if (el) fItemEls[idx] = el; }"
+                    :ref="
+                        (el) => {
+                            if (el) fItemEls[idx] = el;
+                        }
+                    "
                     @click.prevent="selectBlog(i, idx, 'frontend')"
                     @mouseover="hovering = i.preview"
                     @mouseout="hovering = ''"
@@ -164,14 +234,28 @@
                 >
                     <div
                         class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
-                        :class="hovering == i.preview || fSelected == i.title ? 'hidden' : ''"
+                        :class="
+                            hovering == i.preview || fSelected == i.title
+                                ? 'hidden'
+                                : ''
+                        "
                     />
                     <div
                         class="absolute inset-0 rounded-sm border-2 border-emerald-500 z-10 pointer-events-none"
-                        :class="hovering == i.preview || fSelected == i.title ? 'block' : 'hidden'"
+                        :class="
+                            hovering == i.preview || fSelected == i.title
+                                ? 'block'
+                                : 'hidden'
+                        "
                     />
-                    <img :src="`/images/${i.img}`" :alt="i.preview" class="h-full object-cover rounded-sm" />
-                    <div class="absolute bottom-0 bg-stone-900 left-0 overflow-hidden">
+                    <img
+                        :src="`/images/${i.img}`"
+                        :alt="i.preview"
+                        class="h-full object-cover rounded-sm"
+                    />
+                    <div
+                        class="absolute bottom-0 bg-stone-900 left-0 overflow-hidden"
+                    >
                         <h3
                             class="link text-xl leading-none"
                             :class="[
@@ -187,12 +271,25 @@
             </article>
             <div class="flex flex-col md:hidden w-full py-4 items-center gap-4">
                 <template v-for="(i, idx) of frontendBlogs" :key="idx">
-                    <div class="relative w-64 cursor-pointer rounded-sm group" @click="selectBlogMobile(i)">
-                        <div class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat z-10 pointer-events-none" />
+                    <div
+                        class="relative w-64 cursor-pointer rounded-sm group"
+                        @click="selectBlogMobile(i)"
+                    >
+                        <div
+                            class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat z-10 pointer-events-none"
+                        />
                         <div class="relative w-full rounded-sm overflow-hidden">
-                            <img :src="`/images/${i.img}`" :alt="i.preview" class="w-full object-cover block" />
-                            <div class="absolute bottom-0 left-0 bg-stone-900 overflow-hidden">
-                                <h3 class="link text-base leading-none bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent">
+                            <img
+                                :src="`/images/${i.img}`"
+                                :alt="i.preview"
+                                class="w-full object-cover block"
+                            />
+                            <div
+                                class="absolute bottom-0 left-0 bg-stone-900 overflow-hidden"
+                            >
+                                <h3
+                                    class="link text-base leading-none bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                                >
                                     {{ i.preview.replace(" ", ".") }}
                                 </h3>
                             </div>
@@ -203,27 +300,46 @@
         </section>
 
         <!-- BACKEND -->
-        <section class="block md:flex md:flex-row" v-if="control.selectedOption == 'Backend'">
+        <section
+            class="block md:flex md:flex-row"
+            v-if="control.selectedOption == 'Backend'"
+        >
             <article class="w-4/6 hidden md:block">
-                <h2 class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent">
+                <h2
+                    class="hl text-2xl bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                >
                     {{ bSelected }}
                 </h2>
                 <br />
                 <span class="font-thin text-xl pr-20">{{ bDesc }}</span>
                 <br />
                 <ul class="flex inline-flex mt-5" v-for="i of bTags" :key="i">
-                    <li class="mr-2 bg-gradient-to-tr from-blue-900 via-sky-200 to-white text-stone-900 rounded-full py-0.5 px-4">
+                    <li
+                        class="mr-2 bg-gradient-to-tr from-blue-900 via-sky-200 to-white text-stone-900 rounded-full py-0.5 px-4"
+                    >
                         {{ i }}
                     </li>
                 </ul>
                 <br /><br />
-                <a class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline" :href="bLinks" target="_blank">
-                    <Icon icon="mdi:link-variant" class="size-4" /> Go to Article on the medium.com platform
+                <a
+                    class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline"
+                    :href="bLinks"
+                    target="_blank"
+                >
+                    <Icon icon="mdi:link-variant" class="size-4" /> Go to
+                    Article on the medium.com platform
                 </a>
             </article>
-            <article ref="bListEl" class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll">
+            <article
+                ref="bListEl"
+                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll"
+            >
                 <div
-                    :ref="(el) => { if (el) bItemEls[idx] = el; }"
+                    :ref="
+                        (el) => {
+                            if (el) bItemEls[idx] = el;
+                        }
+                    "
                     @click.prevent="selectBlog(i, idx, 'backend')"
                     @mouseover="hovering = i.preview"
                     @mouseout="hovering = ''"
@@ -233,14 +349,28 @@
                 >
                     <div
                         class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
-                        :class="hovering == i.preview || bSelected == i.title ? 'hidden' : ''"
+                        :class="
+                            hovering == i.preview || bSelected == i.title
+                                ? 'hidden'
+                                : ''
+                        "
                     />
                     <div
                         class="absolute inset-0 rounded-sm border-2 border-emerald-500 z-10 pointer-events-none"
-                        :class="hovering == i.preview || bSelected == i.title ? 'block' : 'hidden'"
+                        :class="
+                            hovering == i.preview || bSelected == i.title
+                                ? 'block'
+                                : 'hidden'
+                        "
                     />
-                    <img :src="`/images/${i.img}`" :alt="i.preview" class="h-full object-cover rounded-sm" />
-                    <div class="absolute bottom-0 bg-stone-900 left-0 overflow-hidden">
+                    <img
+                        :src="`/images/${i.img}`"
+                        :alt="i.preview"
+                        class="h-full object-cover rounded-sm"
+                    />
+                    <div
+                        class="absolute bottom-0 bg-stone-900 left-0 overflow-hidden"
+                    >
                         <h3
                             class="link text-xl leading-none"
                             :class="[
@@ -256,12 +386,25 @@
             </article>
             <div class="flex flex-col md:hidden w-full py-4 items-center gap-4">
                 <template v-for="(i, idx) of backendBlogs" :key="idx">
-                    <div class="relative w-64 cursor-pointer rounded-sm group" @click="selectBlogMobile(i)">
-                        <div class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat z-10 pointer-events-none" />
+                    <div
+                        class="relative w-64 cursor-pointer rounded-sm group"
+                        @click="selectBlogMobile(i)"
+                    >
+                        <div
+                            class="absolute inset-0 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat z-10 pointer-events-none"
+                        />
                         <div class="relative w-full rounded-sm overflow-hidden">
-                            <img :src="`/images/${i.img}`" :alt="i.preview" class="w-full object-cover block" />
-                            <div class="absolute bottom-0 left-0 bg-stone-900 overflow-hidden">
-                                <h3 class="link text-base leading-none bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent">
+                            <img
+                                :src="`/images/${i.img}`"
+                                :alt="i.preview"
+                                class="w-full object-cover block"
+                            />
+                            <div
+                                class="absolute bottom-0 left-0 bg-stone-900 overflow-hidden"
+                            >
+                                <h3
+                                    class="link text-base leading-none bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
+                                >
                                     {{ i.preview.replace(" ", ".") }}
                                 </h3>
                             </div>
@@ -275,16 +418,40 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
+import { useHead } from "@unhead/vue";
 import { useControlStore } from "@/stores/main.js";
 import { blogs } from "@/lib/data.js";
 
+// ── SEO ───────────────────────────────────────────────────────────────────────
+useHead({
+    title: "Blog | Cbazil",
+    meta: [
+        {
+            name: "description",
+            content:
+                "Cbazil's blog — articles on frontend and backend development published on Medium, covering Vue, React, Node and more.",
+        },
+        { property: "og:title", content: "Blog | Cbazil" },
+        {
+            property: "og:description",
+            content:
+                "Cbazil's blog — articles on frontend and backend development published on Medium, covering Vue, React, Node and more.",
+        },
+        { property: "og:url", content: "https://www.cbazil.dev/blog" },
+        { name: "twitter:card", content: "summary" },
+    ],
+});
+
+// ── State ─────────────────────────────────────────────────────────────────────
 const control = useControlStore();
 const hovering = ref("");
 
 const mobileOverlay = ref(false);
 const mobileSelected = ref(null);
 
-const frontendBlogs = computed(() => blogs.filter((b) => b.type === "frontend"));
+const frontendBlogs = computed(() =>
+    blogs.filter((b) => b.type === "frontend"),
+);
 const backendBlogs = computed(() => blogs.filter((b) => b.type === "backend"));
 
 const aSelected = ref(null);
@@ -329,8 +496,18 @@ const applyBlog = (blog, type) => {
 const selectBlog = (i, idx, type) => {
     applyBlog(i, type);
     nextTick(() => {
-        const listEl = type === "all" ? aListEl.value : type === "frontend" ? fListEl.value : bListEl.value;
-        const itemEls = type === "all" ? aItemEls.value : type === "frontend" ? fItemEls.value : bItemEls.value;
+        const listEl =
+            type === "all"
+                ? aListEl.value
+                : type === "frontend"
+                  ? fListEl.value
+                  : bListEl.value;
+        const itemEls =
+            type === "all"
+                ? aItemEls.value
+                : type === "frontend"
+                  ? fItemEls.value
+                  : bItemEls.value;
         const el = itemEls[idx];
         if (el && listEl) {
             listEl.scrollTo({ top: el.offsetTop - 136, behavior: "smooth" });
@@ -343,17 +520,14 @@ const selectBlogMobile = (blog) => {
     mobileOverlay.value = true;
 };
 
-// ── Keyboard navigation ──────────────────────────────────────────────────────
-// ← → always switch tabs
-// ↓   cycle to next blog (first ↓ goes to blog[1] since blog[0] already selected)
-// ↑   cycle to prev blog; at blog[0] fall through to Resources (prev page)
-
+// ── Keyboard navigation ───────────────────────────────────────────────────────
 const tabs = ["All", "Frontend", "Backend"];
 
 const currentList = () => {
     const tab = control.selectedOption;
     if (tab === "All") return { list: blogs, type: "all" };
-    if (tab === "Frontend") return { list: frontendBlogs.value, type: "frontend" };
+    if (tab === "Frontend")
+        return { list: frontendBlogs.value, type: "frontend" };
     return { list: backendBlogs.value, type: "backend" };
 };
 
@@ -368,7 +542,10 @@ const handleKeydown = (e) => {
     const tag = document.activeElement?.tagName;
     if (tag === "INPUT" || tag === "TEXTAREA") return;
 
-    // ── Enter — open current blog link ──────────────────────────────────────
+    // Space — never handle here, always let the wrapper layout handle it
+    if (e.key === " ") return;
+
+    // Enter — open current blog link
     if (e.key === "Enter") {
         const { list } = currentList();
         const blog = list.find((b) => b.title === currentSelected());
@@ -380,20 +557,21 @@ const handleKeydown = (e) => {
         return;
     }
 
-    // ── Arrow Left / Right — switch tabs ────────────────────────────────────
+    // Arrow Left / Right — switch tabs
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         e.preventDefault();
         e.stopImmediatePropagation();
         e.stopPropagation();
         const idx = tabs.indexOf(control.selectedOption);
-        const next = e.key === "ArrowRight"
-            ? tabs[(idx + 1) % tabs.length]
-            : tabs[(idx - 1 + tabs.length) % tabs.length];
+        const next =
+            e.key === "ArrowRight"
+                ? tabs[(idx + 1) % tabs.length]
+                : tabs[(idx - 1 + tabs.length) % tabs.length];
         control.selectedOption = next;
         return;
     }
 
-    // ── Arrow Down — next blog ───────────────────────────────────────────────
+    // Arrow Down — next blog
     if (e.key === "ArrowDown") {
         const { list, type } = currentList();
         const idx = list.findIndex((b) => b.title === currentSelected());
@@ -403,11 +581,11 @@ const handleKeydown = (e) => {
             e.stopPropagation();
             selectBlog(list[idx + 1], idx + 1, type);
         }
-        // at last blog — fall through to Resources (next page)
+        // at last blog — fall through to wrapper (next page)
         return;
     }
 
-    // ── Arrow Up — prev blog or fall through ─────────────────────────────────
+    // Arrow Up — prev blog or fall through
     if (e.key === "ArrowUp") {
         const { list, type } = currentList();
         const idx = list.findIndex((b) => b.title === currentSelected());
@@ -417,7 +595,7 @@ const handleKeydown = (e) => {
             e.stopPropagation();
             selectBlog(list[idx - 1], idx - 1, type);
         }
-        // at first blog (idx === 0) — fall through to Resources (prev page)
+        // at first blog — fall through to wrapper (prev page)
         return;
     }
 };

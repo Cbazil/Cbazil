@@ -319,6 +319,7 @@
 
 <script setup>
 import { ref, onMounted, watch, onUnmounted, nextTick } from "vue";
+import { useHead } from "@unhead/vue";
 import { useControlStore } from "@/stores/main.js";
 import {
     extraTechnologies as et,
@@ -326,6 +327,27 @@ import {
     softSkills as ss,
 } from "@/lib/data.js";
 
+// ── SEO ───────────────────────────────────────────────────────────────────────
+useHead({
+    title: "Skills | Cbazil",
+    meta: [
+        {
+            name: "description",
+            content:
+                "Explore Cbazil's technical and soft skills — from Vue, React and modern web technologies to planning, coaching and communication.",
+        },
+        { property: "og:title", content: "Skills | Cbazil" },
+        {
+            property: "og:description",
+            content:
+                "Explore Cbazil's technical and soft skills — from Vue, React and modern web technologies to planning, coaching and communication.",
+        },
+        { property: "og:url", content: "https://www.cbazil.dev/skills" },
+        { name: "twitter:card", content: "summary" },
+    ],
+});
+
+// ── State ─────────────────────────────────────────────────────────────────────
 const control = useControlStore();
 
 const skillsRoot = ref(null);
@@ -347,7 +369,7 @@ const handleOver = (val) => {
     hovering.value = val;
 };
 
-// ── Sync helpers ─────────────────────────────────────────────────────────────
+// ── Sync helpers ──────────────────────────────────────────────────────────────
 
 const syncM = (title) => {
     const item = mt.find((i) => i.title === title);
@@ -369,7 +391,7 @@ const syncE = (title) => {
     eTag.value = item.tag;
 };
 
-// ── Auto-cycle (mt, 15s) ─────────────────────────────────────────────────────
+// ── Auto-cycle (mt, 15s) ──────────────────────────────────────────────────────
 
 let autoTimer = null;
 let tickTimer = null;
@@ -434,19 +456,9 @@ watch(
     },
 );
 
-// ── Keyboard navigation ──────────────────────────────────────────────────────
-// navMode applies only to Hard tab (no inventory):
-//   'tab'  — ← → switch Hard/Soft tabs
-//   'item' — ← → cycle mt items
-// ↓ from tab mode → item mode
-// ↓ from item mode → fall through to Resources (next page)
-// ↑ from item mode → back to tab mode
-// ↑ from tab mode → fall through to Resources (prev page)
-// Inventory open → ← → cycle et, ↑↓ cycle et up/down (independent of navMode)
-
+// ── Keyboard navigation ───────────────────────────────────────────────────────
 const navMode = ref("tab"); // 'tab' | 'item'
 
-// Reset navMode when tab changes
 watch(
     () => control.selectedOption,
     () => {
@@ -459,6 +471,9 @@ const handleKeydown = (e) => {
     if (tag === "INPUT" || tag === "TEXTAREA") return;
 
     const tab = control.selectedOption;
+
+    // Space — never handle here, always let the wrapper layout handle it
+    if (e.key === " ") return;
 
     // P — toggle pause (always)
     if (e.key === "p" || e.key === "P") {
@@ -489,14 +504,13 @@ const handleKeydown = (e) => {
         }
     }
 
-    // ── Arrow Left / Right ───────────────────────────────────────────────────
+    // ── Arrow Left / Right ────────────────────────────────────────────────────
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         if (tab === "Hard") {
             e.preventDefault();
             e.stopImmediatePropagation();
             e.stopPropagation();
             if (control.openInventory) {
-                // cycle et
                 const idx = et.findIndex(
                     (i) => i.title === control.eTechSelection,
                 );
@@ -506,7 +520,6 @@ const handleKeydown = (e) => {
                         : et[(idx - 1 + et.length) % et.length];
                 control.setETechSelection(next.title);
             } else if (navMode.value === "item") {
-                // cycle mt
                 const idx = mt.findIndex(
                     (i) => i.title === control.mTechSelection,
                 );
@@ -516,7 +529,6 @@ const handleKeydown = (e) => {
                         : mt[(idx - 1 + mt.length) % mt.length];
                 manualSelectM(next.title);
             } else {
-                // tab mode — switch Hard/Soft
                 nextTick(() => {
                     control.selectedOption = "Soft";
                 });
@@ -527,15 +539,14 @@ const handleKeydown = (e) => {
             e.preventDefault();
             e.stopImmediatePropagation();
             e.stopPropagation();
-            // switch back to Hard
             control.selectedOption = "Hard";
             return;
         }
         return;
     }
 
-    // ── Arrow Down / Space ───────────────────────────────────────────────────
-    if (e.key === "ArrowDown" || e.key === " ") {
+    // ── Arrow Down ────────────────────────────────────────────────────────────
+    if (e.key === "ArrowDown") {
         if (tab === "Hard") {
             if (control.openInventory) {
                 e.preventDefault();
@@ -548,14 +559,13 @@ const handleKeydown = (e) => {
                 return;
             }
             if (navMode.value === "tab") {
-                // enter item mode
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 e.stopPropagation();
                 navMode.value = "item";
                 return;
             }
-            // item mode — fall through to Resources (next page)
+            // item mode — fall through to wrapper (next page)
             return;
         }
         if (tab === "Soft") {
@@ -567,7 +577,7 @@ const handleKeydown = (e) => {
         return;
     }
 
-    // ── Arrow Up / Backspace ─────────────────────────────────────────────────
+    // ── Arrow Up / Backspace ──────────────────────────────────────────────────
     if (e.key === "ArrowUp" || e.key === "Backspace") {
         if (tab === "Hard") {
             if (control.openInventory) {
@@ -583,7 +593,6 @@ const handleKeydown = (e) => {
                     );
                     return;
                 } else {
-                    // Backspace closes inventory
                     e.preventDefault();
                     e.stopImmediatePropagation();
                     control.toggleInventory();
@@ -592,27 +601,26 @@ const handleKeydown = (e) => {
             }
             if (e.key === "ArrowUp") {
                 if (navMode.value === "item") {
-                    // return to tab mode
                     e.preventDefault();
                     e.stopImmediatePropagation();
                     e.stopPropagation();
                     navMode.value = "tab";
                     return;
                 }
-                // tab mode — fall through to Resources (prev page)
+                // tab mode — fall through to wrapper (prev page)
                 return;
             }
-            // Backspace — fall through to Resources → Bio
+            // Backspace — fall through to wrapper
             return;
         }
         if (tab === "Soft") {
-            // fall through to Resources → Bio
+            // fall through to wrapper
             return;
         }
     }
 };
 
-// ── Lifecycle ────────────────────────────────────────────────────────────────
+// ── Lifecycle ─────────────────────────────────────────────────────────────────
 
 onMounted(() => {
     const getMItem = mt.find((i) => i.title == control.mTechSelection);

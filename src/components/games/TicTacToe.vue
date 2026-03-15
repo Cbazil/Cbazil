@@ -77,7 +77,7 @@
                 <!-- 1st or 2nd button -->
                 <button
                     @click="handleTurnToggle"
-                    class="px-2 py-2 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat hover:opacity-80 transition-opacity text-white font-semibold"
+                    class="px-2 cursor-pointer py-2 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat hover:opacity-80 transition-opacity text-white font-semibold"
                 >
                     {{ nextTurnOrder === "first" ? "1st" : "2nd" }}
                 </button>
@@ -85,7 +85,7 @@
                 <!-- Reset button with arrow icon -->
                 <button
                     @click="handleReset"
-                    class="p-2 rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat hover:opacity-80 transition-opacity"
+                    class="p-2 cursor-pointer rounded-sm bg-[image:var(--background-image-gradient-border)] bg-no-repeat hover:opacity-80 transition-opacity"
                 >
                     <Icon icon="mdi:circle-arrows" class="w-6 h-6 text-white" />
                 </button>

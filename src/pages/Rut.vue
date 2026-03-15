@@ -296,6 +296,23 @@
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { useRouter } from "vue-router";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'Cbazil | Developer & Innovator',
+  meta: [
+    { name: 'description', content: 'Cbazil – developer and innovator. Explore my bio, skills, experience, blog and projects.' },
+
+    { property: 'og:title', content: 'Cbazil | Developer & Innovator' },
+    { property: 'og:description', content: 'Cbazil – developer and innovator. Explore my bio, skills, experience, blog and projects.' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://www.cbazil.dev' },
+
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:title', content: 'Cbazil | Developer & Innovator' },
+    { name: 'twitter:description', content: 'Cbazil – developer and innovator.' }
+  ]
+})
 
 const handleOver = useLinkover();
 const handleClick = useBtnClick();

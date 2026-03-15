@@ -169,7 +169,7 @@
                                         <option value="findout">
                                             Find out
                                         </option>
-                                        <option value="email">Email</option>
+                                        <!-- <option value="email">Email</option> -->
                                         <option value="resume">Resume</option>
                                     </select>
                                 </div>

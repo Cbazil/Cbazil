@@ -412,9 +412,31 @@ import {
     onMounted,
     onUnmounted,
 } from "vue";
+import { useHead } from "@unhead/vue";
 import { useControlStore } from "@/stores/main.js";
 import { workXP, eduXP } from "@/lib/data.js";
 
+// ── SEO ───────────────────────────────────────────────────────────────────────
+useHead({
+    title: "Experience | Cbazil",
+    meta: [
+        {
+            name: "description",
+            content:
+                "Cbazil's work and education history — a timeline of roles, companies and qualifications that shaped a developer and innovator.",
+        },
+        { property: "og:title", content: "Experience | Cbazil" },
+        {
+            property: "og:description",
+            content:
+                "Cbazil's work and education history — a timeline of roles, companies and qualifications that shaped a developer and innovator.",
+        },
+        { property: "og:url", content: "https://www.cbazil.dev/experience" },
+        { name: "twitter:card", content: "summary" },
+    ],
+});
+
+// ── State ─────────────────────────────────────────────────────────────────────
 const control = useControlStore();
 const scrollEl = ref(null);
 const diamondEls = reactive({});
@@ -512,7 +534,6 @@ const toggleSelect = (item, key, type) => {
 
         container.scrollTo({ left: clampedScroll, behavior: "smooth" });
 
-        // Use scrollend if supported, fallback to timeout
         const onScrollEnd = () => {
             syncPos(key);
             selectingInProgress = false;
@@ -578,10 +599,7 @@ const selectDefault = (tabVal) => {
     });
 };
 
-// ── Keyboard navigation ──────────────────────────────────────────────────────
-// Two modes: 'tab' (← → switch tabs) | 'item' (← → cycle items within tab)
-// ↓ enters item mode, ↑ returns to tab mode (or falls through if already in tab mode)
-
+// ── Keyboard navigation ───────────────────────────────────────────────────────
 const navMode = ref("tab");
 
 const handleKeydown = (e) => {
@@ -591,7 +609,9 @@ const handleKeydown = (e) => {
     const tab = control.selectedOption;
     const isWork = tab === "Work";
 
-    // ArrowDown — enter item mode (fall through if already in item mode → next page)
+    // Space — never handle here, always let the wrapper layout handle it
+    if (e.key === " ") return;
+
     if (e.key === "ArrowDown") {
         if (navMode.value === "tab") {
             e.preventDefault();
@@ -602,7 +622,6 @@ const handleKeydown = (e) => {
         return;
     }
 
-    // ArrowUp — return to tab mode, or fall through to Resources (prev page)
     if (e.key === "ArrowUp") {
         if (navMode.value === "item") {
             e.preventDefault();
@@ -611,7 +630,6 @@ const handleKeydown = (e) => {
             navMode.value = "tab";
             return;
         }
-        // tab mode — fall through to Resources
         return;
     }
 
@@ -622,10 +640,8 @@ const handleKeydown = (e) => {
     e.stopPropagation();
 
     if (navMode.value === "tab") {
-        // Switch between Work and Education
         control.selectedOption = isWork ? "Education" : "Work";
     } else {
-        // Cycle items within current tab
         const list = isWork ? workXP : eduXP;
         const currentKey = isWork
             ? control.workXPSelection
@@ -646,7 +662,7 @@ const handleKeydown = (e) => {
     }
 };
 
-// ── Lifecycle ────────────────────────────────────────────────────────────────
+// ── Lifecycle ─────────────────────────────────────────────────────────────────
 
 watch(
     () => control.selectedOption,

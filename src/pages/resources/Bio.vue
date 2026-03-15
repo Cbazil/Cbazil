@@ -330,10 +330,32 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import { useHead } from "@unhead/vue";
 import { useControlStore } from "@/stores/main.js";
 import { useLinkover, useBtnClick } from "@/composables/useSound.js";
 import { personalItems, professionItems } from "@/lib/data.js";
 
+// ── SEO ───────────────────────────────────────────────────────────────────────
+useHead({
+    title: "Bio | Cbazil",
+    meta: [
+        {
+            name: "description",
+            content:
+                "Learn about Cbazil — a developer and innovator passionate about building software, planning with purpose, and coaching others to grow.",
+        },
+        { property: "og:title", content: "Bio | Cbazil" },
+        {
+            property: "og:description",
+            content:
+                "Learn about Cbazil — a developer and innovator passionate about building software, planning with purpose, and coaching others to grow.",
+        },
+        { property: "og:url", content: "https://www.cbazil.dev/about" },
+        { name: "twitter:card", content: "summary" },
+    ],
+});
+
+// ── State ─────────────────────────────────────────────────────────────────────
 const control = useControlStore();
 
 const personalSelect = ref("");
@@ -347,8 +369,9 @@ const handleClick = useBtnClick();
 
 // Ordered item lists for keyboard nav
 const professionKeys = professionItems.map((i) => i.title); // ['Develop','Plan','Coach']
-const personalKeys = personalItems.map((i) => i.title);     // ['Gaming','Music','Badminton']
+const personalKeys = personalItems.map((i) => i.title); // ['Gaming','Music','Badminton']
 
+// ── Handlers ──────────────────────────────────────────────────────────────────
 const handleSelect = (type, opt) => {
     handleClick();
     if (type === "Personal") {
@@ -378,26 +401,29 @@ const handleLeave = () => {
     if (!personalClicked.value) personalSelect.value = "";
 };
 
-// ── Keyboard navigation ──────────────────────────────────────────────────────
-// We emit a custom event so Resources.vue can decide whether to let the
-// ArrowDown/ArrowUp bubble up to its own page-navigation handler.
-// Strategy: the Bio component captures keydown on the window during its
-// lifetime and calls event.stopImmediatePropagation() when it handles the key
-// itself, preventing the Resources layout handler from also firing.
-
+// ── Keyboard navigation ───────────────────────────────────────────────────────
 const handleKeydown = (e) => {
     const tab = control.selectedOption; // 'Profession' | 'Personal'
+
+    // Space — never handle here, always let the wrapper layout handle it
+    if (e.key === " ") return;
 
     // Left / Right — cycle items within active tab
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         const keys = tab === "Profession" ? professionKeys : personalKeys;
-        const clicked = tab === "Profession" ? professionClicked.value : personalClicked.value;
+        const clicked =
+            tab === "Profession"
+                ? professionClicked.value
+                : personalClicked.value;
         if (!clicked) return; // no item selected yet, let Resources handle tabs
 
         e.preventDefault();
         e.stopImmediatePropagation();
 
-        const current = tab === "Profession" ? professionSelect.value : personalSelect.value;
+        const current =
+            tab === "Profession"
+                ? professionSelect.value
+                : personalSelect.value;
         const idx = keys.indexOf(current);
         const next =
             e.key === "ArrowRight"
@@ -408,69 +434,60 @@ const handleKeydown = (e) => {
         return;
     }
 
-    // Down arrow
-    if (e.key === "ArrowDown" || e.key === " ") {
+    // ArrowDown — select first item if none selected, otherwise let wrapper handle
+    if (e.key === "ArrowDown") {
         if (tab === "Profession") {
             if (!professionClicked.value) {
-                // First down: select first profession item
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 handleSelect("Profession", professionKeys[0]);
-                return;
             }
-            // Already on an item — let Resources handle (go next page)
+            // item already selected — let wrapper go to next page
             return;
         }
 
         if (tab === "Personal") {
             if (!personalClicked.value) {
-                // First down on personal: select first personal item
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 handleSelect("Personal", personalKeys[0]);
-                return;
             }
-            // Already on an item — let Resources handle (go next page)
+            // item already selected — let wrapper go to next page
             return;
         }
     }
 
-    // Up arrow
+    // ArrowUp / Backspace — deselect item or switch tab, let wrapper handle if nothing to close
     if (e.key === "ArrowUp" || e.key === "Backspace") {
         if (tab === "Profession") {
             if (professionClicked.value) {
-                // Deselect item, stay on Profession
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 handleCloseProfession();
-                return;
             }
-            // No item selected — let Resources handle (go prev page / home)
+            // nothing selected — let wrapper go to prev page / home
             return;
         }
 
         if (tab === "Personal") {
             if (personalClicked.value) {
-                // Deselect item, stay on Personal
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 handleClosePersonal();
-                return;
             } else {
-                // Switch back up to Profession tab
+                // switch back up to Profession tab
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 handleClick();
                 control.selectedOption = "Profession";
-                return;
             }
+            return;
         }
     }
 };
 
 onMounted(() => {
     control.selectedOption = "Profession";
-    // Use capture phase so we fire before Resources' keydown listener
     window.addEventListener("keydown", handleKeydown, true);
 });
 
