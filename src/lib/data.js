@@ -136,7 +136,7 @@ export const mainTechnologies = [
     title: "Astro",
     icon: "astro",
     description:
-      "Astro is currently the SSR choice for me, it allows me to be flexible in the scene that I can use this with Vue and React if needed.",
+      "Astro is currently the SSR choice for me, it allows me to be flexible in the sense that I can use this with Vue and React if needed.",
     tag: "SSR",
     comfort: 52,
     mastery: 38,
@@ -305,7 +305,7 @@ export const workXP = [
   {
     company: "Life Choices",
     occupation: "Web Applications Developer Team Lead",
-    desc: "I built web applications at life choices, and I also mentored the interns at become profient developers, having found some learnership skills along the way.",
+    desc: "I built web applications at life choices, and I also mentored the interns at becoming profient developers, having found some learnership skills along the way.",
     logo: "lifechoices.png",
     bg: "stone-900",
     scale: 86,
