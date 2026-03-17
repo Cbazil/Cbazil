@@ -175,7 +175,7 @@
                     class="text-lg mt-15 md:mt-0 sm:text-xl xl:text-2xl font-thin! pt-2"
                 >
                     I am introverted by nature, I have been said to have this
-                    silent confident, where I communicate when needed. I love
+                    silent confidence, where I communicate when needed. I love
                     being creative and having some friendly competition. I enjoy
                     hiking, badminton, music, chess, yu-gi-oh and online video
                     games. I value honesty and the love for passions and goals
