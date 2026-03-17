@@ -443,7 +443,7 @@
                                 >Legacy Portfolio (Older projects)</span
                             >
                             <a
-                                href="https://cbazil.vercel.app/"
+                                href="https://cbazil.netlify.app/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="inline-flex items-center gap-1 text-emerald-500 cursor-pointer underline text-sm transition-opacity duration-300 mt-2"
@@ -457,7 +457,7 @@
                                     icon="mdi:link-variant"
                                     class="size-3.5"
                                 />
-                                Visit cbazil.vercel.app
+                                Visit cbazil.netlify.app
                             </a>
                         </div>
                     </div>
@@ -1042,8 +1042,8 @@ const featuredCards = [
         description: "Legacy Portfolio Site (Older projects)",
         image: "/images/cbazil.png",
         tags: ["App", "Portfolio"],
-        link: "https://cbazil.vercel.app/",
-        linkLabel: "Visit cbazil.vercel.app",
+        link: "https://cbazil.netlify.app/",
+        linkLabel: "Visit cbazil.netlify.app",
     },
 ];
 
