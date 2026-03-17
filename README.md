@@ -1,7 +1,7 @@
 # Cbazil | Developer & Innovator
 
 ## Bio
-My name is Chad Bazil Bosch, I am a very passionate individual who seeks to solve and build exciting software. I primarily code in JavaScript, I am also open to anything in the extent of full-stack development, and therefore I consider myself a Software Engineer. I am a hardworking and honest man, who loves solving problems in very unique, simple and practical ways where the intention is to deliver on all task given. I am well experienced in VueJS, who has also taught common standards like React and Next.js to numerous aspiring developers since 2020. I aspire to share my ideas, put the work in and contribute to any cause I can align with.
+My name is Chad Bazil Bosch, I am a very passionate individual who seeks to solve and build exciting software. I primarily code in JavaScript, I am also open to anything in the extent of full-stack development, and therefore I consider myself a Software Engineer. I am a hardworking and honest man, who loves solving problems in very unique, simple and practical ways where the intention is to deliver on all tasks given. I am well experienced in VueJS, who has also taught common standards like React and Next.js to numerous aspiring developers since 2020. I aspire to share my ideas, put the work in and contribute to any cause I can align with.
 
 <p>
   <a href="https://www.medium.com/@cbazil" style="text-decoration: none;" target="_blank">

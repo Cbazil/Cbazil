@@ -378,8 +378,8 @@ const syncM = (title) => {
     mTitle.value = item.title;
     mDesc.value = item.description;
     mTag.value = item.tag;
-    comfort.value = item.comfort;
-    mastery.value = item.mastery;
+    comfort.value = item.comfort ?? 0;
+    mastery.value = item.mastery ?? 0;
 };
 
 const syncE = (title) => {
@@ -389,6 +389,8 @@ const syncE = (title) => {
     eTitle.value = item.title;
     eDesc.value = item.description;
     eTag.value = item.tag;
+    comfort.value = item.comfort ?? 0;
+    mastery.value = item.mastery ?? 0;
 };
 
 // ── Auto-cycle (mt, 15s) ──────────────────────────────────────────────────────
