@@ -65,7 +65,7 @@
             >
               {{ eTitle }}
             </h2>
-            <h3 class="text-md text-center font-thin">
+            <h3 class="base text-md text-center font-thin">
               {{ eDesc }}
             </h3>
           </div>

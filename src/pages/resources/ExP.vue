@@ -147,7 +147,7 @@
             </h3>
             <span class="text-lg">{{ wSelectedOccupation }}</span>
             <br />
-            <span class="font-thin text-md">{{ wSelectedDesc }}</span>
+            <span class="base font-thin text-md">{{ wSelectedDesc }}</span>
           </div>
         </div>
       </div>
@@ -272,7 +272,7 @@
             </h3>
             <span class="text-lg">{{ eSelectedOccupation }}</span>
             <br />
-            <span class="font-thin text-md">{{ eSelectedDesc }}</span>
+            <span class="base font-thin text-md">{{ eSelectedDesc }}</span>
           </div>
         </div>
       </div>

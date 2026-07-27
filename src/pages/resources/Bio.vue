@@ -22,7 +22,7 @@
               <h3 class="hl text-lg text-lg">Develop</h3>
             </div>
             <br />
-            <h3 class="font-thin">
+            <h3 class="base font-thin">
               Building Software is a huge drive for me, having the ability be
               creative and contribute at solving problems.
             </h3>
@@ -52,7 +52,7 @@
               <h3 class="hl text-lg text-lg">Plan</h3>
             </div>
             <br />
-            <h3 class="font-thin!">
+            <h3 class="base font-thin!">
               Planning in anything is key to success, mapping out the
               fundamentals is what I follow.
             </h3>
@@ -82,7 +82,7 @@
               <h3 class="hl text-lg text-lg">Coach</h3>
             </div>
             <br />
-            <h3 class="font-thin!">
+            <h3 class="base font-thin!">
               I have plenty experience in teaching and mentoring others. I love
               seeing growth in individuals and teams.
             </h3>
@@ -100,7 +100,7 @@
       </div>
       <div class="w-full md:w-1/2">
         <br />
-        <h3 class="text-lg mt-10 md:mt-0 sm:text-xl xl:text-2xl font-thin!">
+        <h3 class="base text-lg mt-10 md:mt-0 sm:text-xl xl:text-2xl font-thin!">
           As a developer, I aim to build, solve and resolve. I innovate by
           keeping things simple, effective and relatively close to standard
           approaches. I am very client & MVP focused, meeting their needs and
@@ -158,7 +158,7 @@
     >
       <div class="w-full md:w-1/2">
         <h3
-          class="text-lg mt-15 md:mt-0 sm:text-xl xl:text-2xl font-thin! pt-2"
+          class="base text-lg mt-15 md:mt-0 sm:text-xl xl:text-2xl font-thin! pt-2"
         >
           I am introverted by nature, I have been said to have this silent
           confidence, where I communicate when needed. I love being creative and

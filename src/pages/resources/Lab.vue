@@ -235,7 +235,7 @@
                 CodeSpace
               </h3>
               <span
-                class="text-white/80 text-sm transition-opacity duration-300 mt-1"
+                class="base text-white/80 text-sm transition-opacity duration-300 mt-1"
                 :class="
                   featuredActive === 'codespace'
                     ? 'opacity-100'
@@ -313,7 +313,7 @@
                 MiniFixrer
               </h3>
               <span
-                class="text-white/80 text-sm transition-opacity duration-300 mt-1"
+                class="base text-white/80 text-sm transition-opacity duration-300 mt-1"
                 :class="
                   featuredActive === 'minifixr'
                     ? 'opacity-100'
@@ -405,7 +405,7 @@
                 Cbazil
               </h3>
               <span
-                class="text-white/80 text-sm transition-opacity duration-300 mt-1"
+                class="base text-white/80 text-sm transition-opacity duration-300 mt-1"
                 :class="
                   featuredActive === 'cbazil'
                     ? 'opacity-100'

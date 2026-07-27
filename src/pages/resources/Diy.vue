@@ -76,7 +76,7 @@
           {{ aSelected }}
         </h2>
         <br />
-        <span class="font-thin text-xl pr-20">{{ aDesc }}</span>
+        <span class="base font-thin text-xl pr-20">{{ aDesc }}</span>
         <br />
         <ul class="flex inline-flex mt-5" v-for="i of aTags" :key="i">
           <li
@@ -185,7 +185,7 @@
           {{ fSelected }}
         </h2>
         <br />
-        <span class="font-thin text-xl pr-20">{{ fDesc }}</span>
+        <span class="base font-thin text-xl pr-20">{{ fDesc }}</span>
         <br />
         <ul class="flex inline-flex mt-5" v-for="i of fTags" :key="i">
           <li
@@ -294,7 +294,7 @@
           {{ bSelected }}
         </h2>
         <br />
-        <span class="font-thin text-xl pr-20">{{ bDesc }}</span>
+        <span class="base font-thin text-xl pr-20">{{ bDesc }}</span>
         <br />
         <ul class="flex inline-flex mt-5" v-for="i of bTags" :key="i">
           <li

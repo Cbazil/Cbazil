@@ -21,7 +21,7 @@
             class="w-10 h-10 lg:w-17 lg:h-17 2xl:w-28 2xl:h-28 mr-0.5 lg:mr-3 -mt-[2px] sm:mt-1 lg:-mt-0.5"
             alt="Ice Cold Phoenix Image"
           />
-          Cb@z!l
+          <span class="ml-1.5 mt-0.25">Cb@z!l</span>
         </h1>
       </router-link>
 
@@ -181,13 +181,13 @@
     <div
       ref="binaryRef"
       v-show="showBinary"
-      class="absolute m-0 ml-0.5 p-0 bottom-67 left-[3.5px] sm:bottom-26 lg:bottom-14 sm:left-12 lg:left-32 flex flex-row sm:flex-col space-y-0 space-x-1 sm:space-x-0"
+      class="absolute m-0 ml-0.5 p-0 bottom-67 left-[3.5px] sm:bottom-26 lg:bottom-14 sm:left-12 lg:left-32 flex flex-row sm:flex-col space-y-0 space-x-0.5 sm:space-x-0"
     >
       <section class="flex flex-col sm:flex-row space-y-2 space-x-4">
         <span
           v-for="(n, i) in 8"
           :key="'one-' + i"
-          class="text-sky-300 text-sm font-thin"
+          class="text-sky-300 text-sm font-thin w-2.5 text-center"
           :class="mounted ? 'char-up-mobile' : 'opacity-0'"
           :style="mounted ? `animation-delay: ${900 + i * 100}ms` : 'opacity:0'"
           >1</span
@@ -195,7 +195,7 @@
         <span
           v-for="(n, i) in 5"
           :key="'one-lg-' + i"
-          class="text-sky-300 text-sm font-thin hidden lg:block"
+          class="text-sky-300 text-sm font-thin w-2.5 text-center hidden lg:block"
           :class="mounted ? 'char-up-mobile' : 'opacity-0'"
           :style="
             mounted ? `animation-delay: ${900 + (i + 8) * 100}ms` : 'opacity:0'
@@ -207,7 +207,7 @@
         <span
           v-for="(n, i) in 8"
           :key="'zero-' + i"
-          class="text-sky-200 text-sm font-thin"
+          class="text-sky-200 text-sm font-thin w-2.5 text-center"
           :class="mounted ? 'char-up-mobile' : 'opacity-0'"
           :style="
             mounted ? `animation-delay: ${900 + 80 + i * 100}ms` : 'opacity:0'
@@ -217,7 +217,7 @@
         <span
           v-for="(n, i) in 5"
           :key="'zero-lg-' + i"
-          class="text-sky-200 text-sm font-thin hidden lg:block"
+          class="text-sky-200 text-sm font-thin w-2.5 text-center hidden lg:block"
           :class="mounted ? 'char-up-mobile' : 'opacity-0'"
           :style="
             mounted
@@ -233,7 +233,7 @@
     <div
       ref="matrixRef"
       v-show="showMatrix"
-      class="absolute m-0 p-0 top-21 lg:top-9 right-2 lg:right-32 grid grid-cols-[repeat(13,auto)] gap-x-4 px-2"
+      class="absolute m-0 p-0 top-21 lg:top-12 right-2 lg:right-32 grid grid-cols-[repeat(13,auto)] gap-x-4 px-2"
     >
       <span
         v-for="(n, i) in 13"
