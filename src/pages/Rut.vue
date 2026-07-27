@@ -132,7 +132,7 @@
 
     <!-- DEVELOPER / INNOVATOR -->
     <div
-      class="absolute bottom-5 right-6 sm:relative sm:bottom-auto sm:right-auto flex justify-center items-center mt-20 space-x-2 sm:space-x-4 w-1/9 overflow-hidden"
+      class="absolute bottom-5 right-6 sm:relative sm:bottom-auto sm:right-auto flex justify-center items-center mt-20 space-x-2 sm:space-x-4 w-auto sm:w-1/9"
     >
       <div
         class="flex flex-col items-center"
@@ -396,11 +396,10 @@ function overlaps(a, b, shrinkA = 0, shrinkB = 0) {
 
 function checkOverlap() {
   showMatrix.value =
-    !overlaps(matrixRef.value, portraitRef.value, 0, -50) &&
+    !overlaps(matrixRef.value, portraitRef.value, 0, -15) &&
     !overlaps(matrixRef.value, headerRef.value, 0, 20);
   showBinary.value =
     !overlaps(binaryRef.value, navList.value, 0, 60) &&
-    !overlaps(binaryRef.value, portraitRef.value, 0, -50) &&
     !overlaps(binaryRef.value, headerRef.value, 0, 20);
 }
 
