@@ -186,7 +186,7 @@
 
         <!-- Binary 1s and 0s — mobile: both slide up. Desktop: slide from left -->
         <div
-            class="absolute m-0 p-0 bottom-70 left-[3.5px] sm:bottom-26 lg:bottom-14 sm:left-12 lg:left-32 flex flex-row sm:flex-col space-y-0"
+            class="absolute m-0 p-0 bottom-70 left-[3.5px] sm:bottom-26 lg:bottom-6 sm:left-12 lg:left-32 flex flex-row sm:flex-col space-y-0"
         >
             <section class="flex flex-col sm:flex-row space-y-2 space-x-4">
                 <span
@@ -244,7 +244,7 @@
 
         <!-- + O X matrix — slides in from RIGHT, rightmost first -->
         <div
-            class="absolute m-0 p-0 top-27 lg:top-15 right-2 lg:right-32 flex flex-col space-y-0"
+            class="absolute m-0 p-0 top-27 lg:top-8 right-2 lg:right-32 flex flex-col space-y-0"
         >
             <section>
                 <span
