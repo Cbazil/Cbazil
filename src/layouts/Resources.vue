@@ -2,7 +2,7 @@
     <transition name="overlay">
         <div
             v-if="showOverlay"
-            class="relative bg-stone-900 text-white px-4 lg:px-32 2xl:px-58 h-[100dvh] flex flex-col"
+            class="relative bg-stone-900 text-white px-4 lg:px-[var(--res-pad-lg)] 2xl:px-[var(--res-pad-xl)] h-[100dvh] flex flex-col"
         >
             <!-- Rotate notice — mobile landscape only -->
             <div class="rotate-notice">
@@ -21,7 +21,7 @@
             </div>
 
             <nav
-                class="relative flex flex-row justify-between items-center h-24 md:h-34 shrink-0"
+                class="relative flex flex-row justify-between items-center h-24 md:h-[var(--res-nav-h)] shrink-0"
             >
                 <div
                     class="flex flex-row items-center bg-gradient-to-tr from-blue-900 via-sky-200 to-white bg-clip-text text-transparent"
@@ -183,14 +183,14 @@
             </div>
 
             <div
-                class="flex-1 min-h-0 mb-20 landscape:mb-12 overflow-y-auto md:overflow-hidden md:pb-28"
+                class="flex-1 min-h-0 mb-[var(--res-mb)] landscape:mb-12 overflow-y-auto md:overflow-hidden md:pb-[var(--res-content-pb)]"
             >
                 <router-view :key="$route.fullPath" />
             </div>
 
             <!-- Desktop Footer -->
             <footer
-                class="hidden md:flex flex-col absolute bottom-6 md:bottom-14 left-0 w-full px-6 lg:px-32 2xl:px-58 md:flex-row items-center justify-between gap-6"
+                class="hidden md:flex flex-col absolute bottom-6 md:bottom-[var(--res-footer-bottom)] left-0 w-full px-6 lg:px-32 2xl:px-58 md:flex-row items-center justify-between gap-6"
             >
                 <section
                     class="flex flex-1 items-center gap-1 text-white font-medium justify-center md:justify-start"
@@ -231,11 +231,11 @@
                     </span>
                 </section>
 
-                <p
+                <div
                     class="flex-1 text-center whitespace-nowrap opacity-70 leading-none"
                 >
                     &copy; 2026 Built by Cbazil
-                </p>
+                </div>
 
                 <section
                     class="flex flex-1 gap-1 items-center justify-center md:justify-end"
@@ -353,9 +353,9 @@
                         </div>
                     </button>
                 </section>
-                <p class="text-center text-sm text-white opacity-70">
+                <div class="text-center text-sm text-white opacity-70">
                     &copy; 2026 Built by Cbazil
-                </p>
+                </div>
             </footer>
             <Contact
                 v-if="control.contactOpen"

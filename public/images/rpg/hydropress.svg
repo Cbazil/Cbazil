@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Hydropress">
+    <defs>
+        <radialGradient id="hpGlow" cx="50%" cy="48%" r="58%">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
+            <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.16"/>
+            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="hpSkin" x1="0" y1="0" x2="0.35" y2="1">
+            <stop offset="0%" stop-color="#eaf7ff"/>
+            <stop offset="42%" stop-color="#a5dcf7"/>
+            <stop offset="100%" stop-color="#2f6fae"/>
+        </linearGradient>
+        <linearGradient id="hpCuff" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2f6fae"/>
+            <stop offset="100%" stop-color="#173a63"/>
+        </linearGradient>
+    </defs>
+
+    <circle cx="256" cy="250" r="240" fill="url(#hpGlow)"/>
+
+    <!-- cuff at top -->
+    <path fill="url(#hpCuff)" stroke="#173a63" stroke-width="10" stroke-linejoin="round"
+        d="M156 12 L356 12 L344 90 L168 90 Z"/>
+    <rect fill="#bfe6fb" x="180" y="26" width="152" height="15" rx="7.5"/>
+    <rect fill="#8fd0f2" x="188" y="50" width="136" height="11" rx="5.5" opacity="0.7"/>
+
+    <!-- tall downward fist, back of hand facing viewer, 5 finger-sized knuckles at the bottom -->
+    <path fill="url(#hpSkin)" stroke="#173a63" stroke-width="10" stroke-linejoin="round"
+        d="M116 134 Q116 62 188 62 L324 62 Q396 62 396 134 L396 266
+        A 28 28 0 0 1 340 266
+        A 28 28 0 0 1 284 266
+        A 28 28 0 0 1 228 266
+        A 28 28 0 0 1 172 266
+        A 28 28 0 0 1 116 266 Z"/>
+
+    <!-- upper shading near the cuff -->
+    <path fill="#5e9fce" opacity="0.45"
+        d="M116 134 Q116 62 188 62 L324 62 Q396 62 396 134 L396 158 L116 158 Z"/>
+
+    <!-- top sheen under the cuff -->
+    <rect fill="#ffffff" x="132" y="108" width="248" height="7" rx="3.5" opacity="0.7"/>
+
+    <!-- folded-finger crease near the knuckle edge -->
+    <rect fill="#bfe6fb" x="132" y="226" width="248" height="14" rx="7"/>
+    <rect fill="#ffffff" x="132" y="226" width="144" height="6" rx="3" opacity="0.8"/>
+
+    <!-- thumb tucked along the side -->
+    <rect fill="#bfe6fb" stroke="#173a63" stroke-width="8" x="122" y="158" width="48" height="24" rx="12"/>
+</svg>

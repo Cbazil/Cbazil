@@ -65,3 +65,29 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgba(156, 163, 175, 0.5) rgba(0, 0, 0, 0.3);
 }
+
+:root {
+  --res-nav-h: 8.5rem;
+  --res-content-pb: 7rem;
+  --res-footer-bottom: 3.5rem;
+  --res-mb: 5rem;
+  --res-pad-lg: 8rem;   /* lg:px-32 */
+  --res-pad-xl: 14.5rem; /* 2xl:px-58 */
+
+  --exp-top-h: 35dvh;
+  --exp-bot-h: 64dvh;
+}
+
+@media (max-height: 700px) and (min-width: 768px) {
+  :root {
+    --res-nav-h: 4.5rem;
+    --res-content-pb: 3.5rem;
+    --res-footer-bottom: 1.75rem;
+    --res-mb: 2.5rem;
+    --res-pad-lg: 6.8rem;   /* 15% less */
+    --res-pad-xl: 12.325rem; /* 15% less */
+
+    --exp-top-h: 41dvh;
+    --exp-bot-h: 40dvh;
+  }
+}

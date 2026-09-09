@@ -102,7 +102,7 @@
             </article>
             <article
                 ref="aListEl"
-                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll"
+                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll diy-list-h"
             >
                 <div
                     :ref="
@@ -217,7 +217,7 @@
             </article>
             <article
                 ref="fListEl"
-                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll"
+                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll diy-list-h"
             >
                 <div
                     :ref="
@@ -332,7 +332,7 @@
             </article>
             <article
                 ref="bListEl"
-                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll"
+                class="hidden md:block w-2/6 h-[62dvh] 2xl:h-[70dvh] overflow-y-scroll diy-list-h"
             >
                 <div
                     :ref="
@@ -622,5 +622,11 @@ onUnmounted(() => {
 .overlay-fade-enter-from,
 .overlay-fade-leave-to {
     opacity: 0;
+}
+
+@media (max-height: 700px) and (min-width: 768px) {
+    .diy-list-h {
+        height: 72dvh !important;
+    }
 }
 </style>

@@ -158,7 +158,7 @@
 
             <nav class="w-full mt-auto xl:mt-5">
                 <section
-                    class="flex flex-col px-4 sm:px-8 md:flex-row justify-center mb-3 relative z-0 gap-2 w-full max-w-lg mx-auto md:max-w-none"
+                    class="flex flex-col px-4 sm:px-8 md:flex-row justify-center mb-3 relative z-0 gap-2 w-full max-w-lg mx-auto md:max-w-none exp-pct-bars"
                 >
                     <div
                         class="w-full md:w-3/10 lg:w-4/11 xl:w-3/11 h-7 mx-auto md:mx-1 relative md:skew-x-[-14deg] [transform:translateZ(0)]"
@@ -226,12 +226,12 @@
                         P
                     </button>
                     <div
-                        class="w-full max-w-[280px] sm:max-w-[320px] md:w-full md:max-w-none mt-6 md:mt-auto flex flex-wrap justify-center gap-2 mx-auto"
+                        class="w-full max-w-[280px] sm:max-w-[320px] md:w-full md:max-w-none mt-6 md:mt-auto flex flex-wrap justify-center gap-2 mx-auto skill-grid"
                     >
                         <div
                             v-for="(n, idx) of mt"
                             :key="idx"
-                            class="w-18 h-18 sm:w-24 sm:h-24 md:w-14 md:h-14 lg:w-18 lg:h-18 2xl:w-24 2xl:h-24 rounded-sm cursor-pointer bg-[image:var(--background-image-gradient-border)] bg-no-repeat"
+                            class="w-18 h-18 sm:w-24 sm:h-24 md:w-14 md:h-14 lg:w-18 lg:h-18 2xl:w-24 2xl:h-24 rounded-sm cursor-pointer bg-[image:var(--background-image-gradient-border)] bg-no-repeat skill-cell"
                         >
                             <span
                                 @click.prevent="manualSelectM(n.title)"
@@ -661,3 +661,18 @@ onUnmounted(() => {
     control.eTechSelection = "ReactJS";
 });
 </script>
+
+<style scoped>
+@media (max-height: 700px) and (min-width: 768px) {
+    .skill-grid {
+        gap: 0.5rem !important;
+    }
+    .skill-cell {
+        width: 4rem !important;
+        height: 4rem !important;
+    }
+    .exp-pct-bars {
+        margin-top: 0.5rem !important;
+    }
+}
+</style>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Fire">
+    <defs>
+        <radialGradient id="fireGlow" cx="50%" cy="50%" r="58%">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5"/>
+            <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="fireFinger" x1="0" y1="0" x2="1" y2="0.25">
+            <stop offset="0%" stop-color="#bfe6fb"/>
+            <stop offset="50%" stop-color="#6db2e0"/>
+            <stop offset="100%" stop-color="#2f6fae"/>
+        </linearGradient>
+        <linearGradient id="fireThumb" x1="1" y1="0" x2="0" y2="0.25">
+            <stop offset="0%" stop-color="#bfe6fb"/>
+            <stop offset="100%" stop-color="#3b7cb5"/>
+        </linearGradient>
+        <linearGradient id="fireHand" x1="0" y1="0" x2="0.35" y2="1">
+            <stop offset="0%" stop-color="#eaf7ff"/>
+            <stop offset="42%" stop-color="#a5dcf7"/>
+            <stop offset="100%" stop-color="#2f6fae"/>
+        </linearGradient>
+        <linearGradient id="fireCuff" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2f6fae"/>
+            <stop offset="100%" stop-color="#173a63"/>
+        </linearGradient>
+    </defs>
+
+    <circle cx="256" cy="280" r="240" fill="url(#fireGlow)"/>
+
+    <!-- pinky, shortest, leaning in from the right -->
+    <path fill="none" stroke="#173a63" stroke-width="38" stroke-linecap="round"
+        d="M284 336 C 290 258 286 176 268 108"/>
+    <path fill="none" stroke="#4a90c4" stroke-width="20" stroke-linecap="round"
+        d="M284 336 C 290 258 286 176 268 108"/>
+
+    <!-- ring finger -->
+    <path fill="none" stroke="#173a63" stroke-width="42" stroke-linecap="round"
+        d="M258 334 C 256 252 260 164 262 102"/>
+    <path fill="none" stroke="#4a90c4" stroke-width="24" stroke-linecap="round"
+        d="M258 334 C 256 252 260 164 262 102"/>
+    <path fill="none" stroke="#8fd0f2" stroke-width="6" stroke-linecap="round" opacity="0.7"
+        d="M246 172 Q 258 180 270 172"/>
+
+    <!-- middle finger, tallest -->
+    <path fill="none" stroke="#173a63" stroke-width="44" stroke-linecap="round"
+        d="M230 332 C 222 250 226 158 250 100"/>
+    <path fill="none" stroke="#4a90c4" stroke-width="26" stroke-linecap="round"
+        d="M230 332 C 222 250 226 158 250 100"/>
+    <path fill="none" stroke="#8fd0f2" stroke-width="6" stroke-linecap="round" opacity="0.75"
+        d="M218 166 Q 230 174 242 166"/>
+
+    <!-- index finger arcing up the left side -->
+    <path fill="none" stroke="#173a63" stroke-width="46" stroke-linecap="round"
+        d="M202 330 C 184 250 198 156 234 106"/>
+    <path fill="none" stroke="url(#fireFinger)" stroke-width="30" stroke-linecap="round"
+        d="M202 330 C 184 250 198 156 234 106"/>
+    <path fill="none" stroke="#8fd0f2" stroke-width="7" stroke-linecap="round" opacity="0.85"
+        d="M192 240 Q 206 248 220 242"/>
+    <path fill="none" stroke="#8fd0f2" stroke-width="6" stroke-linecap="round" opacity="0.75"
+        d="M208 160 Q 220 168 230 160"/>
+
+    <!-- thumb rising on the near side to the same tip cluster -->
+    <path fill="none" stroke="#173a63" stroke-width="48" stroke-linecap="round"
+        d="M326 344 C 330 260 306 162 264 108"/>
+    <path fill="none" stroke="url(#fireThumb)" stroke-width="30" stroke-linecap="round"
+        d="M326 344 C 330 260 306 162 264 108"/>
+    <rect fill="#ffffff" x="300" y="214" width="8" height="32" rx="4" opacity="0.75" transform="rotate(8 304 230)"/>
+
+    <!-- shine where all five fingertips kiss -->
+    <circle cx="251" cy="101" r="9" fill="#ffffff" opacity="0.9"/>
+
+    <!-- fist seen from the side -->
+    <path fill="url(#fireHand)" stroke="#173a63" stroke-width="10"
+        d="M166 322 Q166 314 174 314 L338 314 Q346 314 346 322 L356 420 Q358 452 326 452 L186 452 Q154 452 156 420 Z"/>
+    <path fill="#5e9fce" opacity="0.5"
+        d="M157 408 L355 408 L356 420 Q358 452 326 452 L186 452 Q154 452 156 420 Z"/>
+
+    <!-- single crease where the fingers leave the fist -->
+    <rect fill="#bfe6fb" x="182" y="322" width="148" height="10" rx="5"/>
+    <rect fill="#ffffff" x="182" y="322" width="90" height="4" rx="2" opacity="0.8"/>
+
+    <!-- cuff -->
+    <path fill="url(#fireCuff)" stroke="#173a63" stroke-width="10" stroke-linejoin="round"
+        d="M170 500 L342 500 L334 452 L178 452 Z"/>
+    <rect fill="#bfe6fb" x="182" y="462" width="148" height="15" rx="7.5"/>
+</svg>

@@ -5,7 +5,7 @@
             class="flex flex-col-reverse md:flex-row"
         >
             <div
-                class="relative w-full md:w-1/2 flex -mt-5 h-[64dvh] xl:h-[70dvh] flex-col"
+                class="relative w-full md:w-1/2 flex -mt-5 h-[64dvh] xl:h-[70dvh] flex-col bio-prof-col"
             >
                 <div
                     class="relative w-full md:w-1/2 h-1/3 transform mt-15 md:mt-0"
@@ -228,7 +228,7 @@
                 </div>
             </div>
             <div
-                class="relative w-full md:w-1/2 flex h-[60dvh] xl:h-[70dvh] flex-col md:overflow-hidden"
+                class="relative w-full md:w-1/2 flex h-[60dvh] xl:h-[70dvh] flex-col md:overflow-hidden bio-pers-col"
             >
                 <div
                     class="relative w-full md:w-1/2 h-1/3 flex flex-col mt-10 md:mt-15 md:mr-10 md:self-end"
@@ -496,3 +496,67 @@ onUnmounted(() => {
     control.selectedOption = undefined;
 });
 </script>
+
+<style scoped>
+/* Short desktop viewports only: scale the illustration columns down so the
+   hand-tuned desktop arrangement keeps its exact proportions when less
+   vertical room is available. Tall screens are untouched. */
+@media (max-height: 700px) and (min-width: 768px) {
+    .bio-prof-col,
+    .bio-pers-col {
+        zoom: 0.9;
+    }
+
+    /* let the bottom-most illustrations drop into the freed space below
+       instead of being clipped at the column edge */
+    .bio-pers-col {
+        overflow: visible !important;
+    }
+
+    /* headset (all-3 view): 35px higher than its tuned spot, and 20px further
+       left (matches the +20px base left margin being zeroed) */
+    .bio-prof-col > div:nth-child(3):not(:has(.h-full)) img {
+        margin-top: -35px !important;
+        margin-left: 0px !important;
+    }
+
+    /* handbook/book (all-3 view): 20px further left than its tuned spot */
+    .bio-prof-col > div:nth-child(2):not(:has(.h-full)) img {
+        margin-left: -80px !important;
+    }
+
+    /* badminton (bottom of the personal column): a bit lower */
+    .bio-pers-col > div:nth-child(3):not(:has(.h-full)) img {
+        margin-top: 8dvh !important;
+    }
+
+    @layer utilities {
+        /* expanded ("singular") view: only the illustrations that were cut
+           on the top (Laptop, Coach, Gaming) are pushed down. Music and
+           Badminton keep their own tuned downward margins — overriding
+           those moved them the wrong way. Lives in the utilities layer so
+           it beats Tailwind's important margin utilities. */
+        .bio-prof-col > div.h-full img,
+        .bio-pers-col > div:nth-child(1).h-full img {
+            margin-top: 8dvh !important;
+        }
+
+        /* Plan/book expanded: drop down 10% and shift left strictly 20% over
+           its tuned position */
+        .bio-prof-col > div:nth-child(2).h-full img {
+            margin-top: 10dvh !important;
+            margin-left: -216px !important;
+        }
+
+        /* Music & Badminton expanded: a bit lower than their tuned spot
+           (the expanded cell is a centered flex row, so margin-top is
+           halved visually — hence the bigger bump) */
+        .bio-pers-col > div:nth-child(2).h-full img {
+            margin-top: 180px !important;
+        }
+        .bio-pers-col > div:nth-child(3).h-full img {
+            margin-top: 260px !important;
+        }
+    }
+}
+</style>

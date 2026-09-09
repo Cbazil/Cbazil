@@ -134,8 +134,8 @@
 
         <!-- WORK -->
         <div v-if="control.selectedOption === 'Work'">
-            <div class="w-full h-[35dvh] hidden md:flex flex-row justify-end">
-                <div class="flex items-center w-5/9 h-full">
+            <div class="w-full h-[var(--exp-top-h)] hidden md:flex flex-row justify-end">
+                <div class="flex items-center w-5/9 h-full exp-desc-col">
                     <span
                         class="font-thin text-center mt-10"
                         v-if="wSelectedPeriod"
@@ -199,10 +199,10 @@
 
             <div
                 ref="scrollEl"
-                class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[64dvh] scrollbar-hide"
+                class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[var(--exp-bot-h)] scrollbar-hide"
                 @wheel.prevent="handleWheel"
             >
-                <div class="flex items-start pt-5 px-10 min-w-max">
+                <div class="flex items-start pt-5 px-10 min-w-max exp-timeline-content">
                     <div
                         class="w-24 h-px bg-gradient-to-r from-sky-200 to-blue-900 mt-10 shrink-0"
                     />
@@ -268,8 +268,8 @@
 
         <!-- EDUCATION -->
         <div v-if="control.selectedOption === 'Education'">
-            <div class="w-full h-[35dvh] hidden md:flex flex-row justify-end">
-                <div class="flex items-center w-5/9 h-full">
+            <div class="w-full h-[var(--exp-top-h)] hidden md:flex flex-row justify-end">
+                <div class="flex items-center w-5/9 h-full exp-desc-col">
                     <span
                         class="font-thin text-center mt-10"
                         v-if="eSelectedPeriod"
@@ -333,10 +333,10 @@
 
             <div
                 ref="scrollEl"
-                class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[64dvh] scrollbar-hide"
+                class="hidden md:block overflow-x-scroll overflow-y-hidden w-full h-[var(--exp-bot-h)] scrollbar-hide"
                 @wheel.prevent="handleWheel"
             >
-                <div class="flex items-start pt-5 px-10 min-w-max">
+                <div class="flex items-start pt-5 px-10 min-w-max exp-timeline-content">
                     <div
                         class="w-24 h-px bg-gradient-to-r from-sky-200 to-blue-900 mt-10 shrink-0"
                     />
@@ -745,5 +745,14 @@ onUnmounted(() => {
 .overlay-fade-enter-from,
 .overlay-fade-leave-to {
     opacity: 0;
+}
+
+@media (max-height: 700px) and (min-width: 768px) {
+    .exp-timeline-content {
+        padding-top: 2.5rem !important;
+    }
+    .exp-desc-col {
+        width: 58.3% !important;
+    }
 }
 </style>

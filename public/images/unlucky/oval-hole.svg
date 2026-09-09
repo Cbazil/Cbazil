@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!--
+    Sideways oval hole — game-icons style flat glyph.
+    Uses fill="currentColor" so it themes like the Iconify micro-game icons
+    (text-sky-200 idle / text-emerald-500 selected in the Lab UI).
+    The hole interior is a true transparent cutout (fill-rule evenodd).
+  -->
+  <path
+    fill="currentColor"
+    fill-rule="evenodd"
+    d="M 20 256
+       a 236 148 0 1 0 472 0
+       a 236 148 0 1 0 -472 0
+       Z
+       M 92 244
+       a 164 92 0 1 0 328 0
+       a 164 92 0 1 0 -328 0
+       Z"
+  />
+
+  <!-- far inner wall of the hole: solid crescent hugging the top of the cutout -->
+  <path
+    fill="currentColor"
+    d="M 118 216
+       a 150 78 0 0 1 276 0
+       a 164 92 0 0 0 -276 0
+       Z"
+  />
+
+  <!-- small debris chips around the rim -->
+  <circle cx="64" cy="428" r="14" fill="currentColor"/>
+  <circle cx="448" cy="428" r="12" fill="currentColor"/>
+  <circle cx="256" cy="464" r="10" fill="currentColor"/>
+  <circle cx="28" cy="150" r="9" fill="currentColor"/>
+  <circle cx="486" cy="162" r="8" fill="currentColor"/>
+</svg>

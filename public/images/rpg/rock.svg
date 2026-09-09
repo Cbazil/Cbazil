@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Rock">
+    <defs>
+        <radialGradient id="rockGlow" cx="50%" cy="50%" r="58%">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
+            <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.16"/>
+            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="rockSkin" x1="0" y1="0" x2="0.35" y2="1">
+            <stop offset="0%" stop-color="#eaf7ff"/>
+            <stop offset="42%" stop-color="#a5dcf7"/>
+            <stop offset="100%" stop-color="#2f6fae"/>
+        </linearGradient>
+        <linearGradient id="rockThumb" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#cfeafc"/>
+            <stop offset="100%" stop-color="#6db2e0"/>
+        </linearGradient>
+        <linearGradient id="rockCuff" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2f6fae"/>
+            <stop offset="100%" stop-color="#173a63"/>
+        </linearGradient>
+    </defs>
+
+    <circle cx="256" cy="262" r="240" fill="url(#rockGlow)"/>
+
+    <g transform="translate(117 6) rotate(90 256 256)">
+
+    <!-- slim cuff peeking below the big fist -->
+    <path fill="url(#rockCuff)" stroke="#173a63" stroke-width="10" stroke-linejoin="round"
+        d="M150 500 L362 500 L352 448 L160 448 Z"/>
+    <rect fill="#bfe6fb" x="166" y="464" width="180" height="15" rx="7.5"/>
+
+    <!-- tall fist, knuckle ridge flowing up from both sides to a center peak -->
+    <path fill="url(#rockSkin)" stroke="#173a63" stroke-width="10" stroke-linejoin="round"
+        d="M116 296 L116 378 Q116 450 188 450 L324 450 Q396 450 396 378 L396 296
+        A 32 32 0 0 0 340 270
+        A 32 32 0 0 0 284 254
+        A 32 32 0 0 0 228 254
+        A 32 32 0 0 0 172 270
+        A 32 32 0 0 0 116 296 Z"/>
+
+    <!-- lower fist shading -->
+    <path fill="#5e9fce" opacity="0.55"
+        d="M116 356 L396 356 L396 378 Q396 450 324 450 L188 450 Q116 450 116 378 Z"/>
+
+    <!-- per-knuckle shine dots along the flowing ridge -->
+    <circle fill="#d9f1fd" opacity="0.9" cx="144" cy="280" r="8"/>
+    <circle fill="#d9f1fd" opacity="0.9" cx="200" cy="266" r="8"/>
+    <circle fill="#ffffff" opacity="0.95" cx="256" cy="258" r="9"/>
+    <circle fill="#d9f1fd" opacity="0.9" cx="312" cy="266" r="8"/>
+    <circle fill="#d9f1fd" opacity="0.9" cx="368" cy="280" r="8"/>
+    <rect fill="#ffffff" x="130" y="356" width="252" height="7" rx="3.5" opacity="0.75"/>
+
+    <!-- finger crease above the thumb -->
+    <rect fill="#bfe6fb" x="132" y="326" width="248" height="14" rx="7"/>
+    <rect fill="#ffffff" x="132" y="326" width="144" height="6" rx="3" opacity="0.8"/>
+
+    <!-- thumb wrapped across -->
+    <rect fill="url(#rockThumb)" stroke="#173a63" stroke-width="10" x="122" y="366" width="268" height="54" rx="27"/>
+    <rect fill="#ffffff" x="136" y="375" width="196" height="11" rx="5.5" opacity="0.8"/>
+
+    </g>
+</svg>

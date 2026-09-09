@@ -74,7 +74,7 @@
 
         <article v-if="control.selectedOption === 'Featured'">
             <div
-                class="hidden md:flex flex-row justify-center h-[62dvh] w-full"
+                class="hidden md:flex flex-row justify-center h-[62dvh] w-full lab-featured-h"
             >
                 <!-- Main large card: WebSenses -->
                 <section
@@ -175,7 +175,7 @@
                 </section>
 
                 <!-- Smaller cards column -->
-                <section class="flex flex-col w-[24%] h-full gap-1">
+                <section class="flex flex-col w-[24%] h-full gap-1 lab-small-col">
                     <!-- Card 1: CodeSpace -->
                     <div
                         class="relative w-full p-0.5 rounded-sm h-1/3 overflow-hidden bg-[image:var(--background-image-gradient-border)] bg-no-repeat group transition-colors duration-300"
@@ -620,7 +620,7 @@
                     </button>
                 </div>
 
-                <div class="w-full flex justify-center min-h-[56dvh]">
+                <div class="w-full flex justify-center min-h-[56dvh] lab-micro-min-h">
                     <TicTacToe
                         v-if="control.microGameSelection === 'Tic Tac Toe'"
                         ref="ticTacToeRef"
@@ -707,7 +707,7 @@
             </div>
 
             <!-- Desktop -->
-            <div class="relative hidden md:flex flex-row h-[62dvh] w-full">
+            <div class="relative hidden md:flex flex-row h-[62dvh] w-full lab-micro-h">
                 <section class="w-1/4">
                     <div
                         class="flex flex-row items-center gap-2 cursor-pointer"
@@ -1206,5 +1206,18 @@ onUnmounted(() => {
 .overlay-fade-enter-from,
 .overlay-fade-leave-to {
     opacity: 0;
+}
+
+@media (max-height: 700px) and (min-width: 768px) {
+    .lab-featured-h,
+    .lab-micro-h {
+        height: 72dvh !important;
+    }
+    .lab-micro-min-h {
+        min-height: 66dvh !important;
+    }
+    .lab-small-col {
+        width: 27% !important;
+    }
 }
 </style>

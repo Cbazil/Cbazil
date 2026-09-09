@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!--
+    Game-over skull and crossbones — semi side view (mainly front face), 2.5D style.
+    Still themed like the micro icons: fill="currentColor".
+    Depth is faked with stepped "extrusion" layers at reduced opacity
+    (dimmer = shadow side), so it stays themeable on any background.
+    Eye sockets / nasal cavity / tooth gaps remain true transparent cutouts.
+  -->
+  <defs>
+    <!-- one classic double-knob bone, drawn horizontally centered on origin -->
+    <g id="bone">
+      <rect x="-110" y="-14" width="220" height="28" rx="14" fill="currentColor"/>
+      <circle cx="-110" cy="-17" r="16" fill="currentColor"/>
+      <circle cx="-110" cy="17" r="16" fill="currentColor"/>
+      <circle cx="110" cy="-17" r="16" fill="currentColor"/>
+      <circle cx="110" cy="17" r="16" fill="currentColor"/>
+    </g>
+  </defs>
+
+  <!-- crossed bones, tucked under the skull (drawn first so the jaw overlaps them) -->
+  <use href="#bone" transform="translate(256 386) rotate(20)"/>
+  <use href="#bone" transform="translate(256 386) rotate(-20)"/>
+
+  <g transform="translate(85 4) scale(0.68)">
+    <g transform="translate(0 14)">
+      <!-- deep extrusion (furthest side plane) -->
+      <path fill="currentColor" opacity="0.2" transform="translate(50 0)"
+        d="M 228 38
+           C 332 38 390 105 390 235
+           C 388 262 384 285 372 310
+           C 364 328 356 338 352 352
+           L 352 436
+           L 316 436 L 316 404 L 305 404 L 305 436
+           L 269 436 L 269 404 L 258 404 L 258 436
+           L 222 436 L 222 404 L 211 404 L 211 436
+           L 175 436 L 175 404 L 164 404 L 164 436
+           L 128 436
+           L 122 396
+           C 116 370 106 350 96 322
+           C 68 292 62 264 62 235
+           C 62 105 124 38 228 38
+           Z"/>
+
+      <!-- mid extrusion (near side plane) -->
+      <path fill="currentColor" opacity="0.45" transform="translate(25 0)"
+        d="M 228 38
+           C 332 38 390 105 390 235
+           C 388 262 384 285 372 310
+           C 364 328 356 338 352 352
+           L 352 436
+           L 316 436 L 316 404 L 305 404 L 305 436
+           L 269 436 L 269 404 L 258 404 L 258 436
+           L 222 436 L 222 404 L 211 404 L 211 436
+           L 175 436 L 175 404 L 164 404 L 164 436
+           L 128 436
+           L 122 396
+           C 116 370 106 350 96 322
+           C 68 292 62 264 62 235
+           C 62 105 124 38 228 38
+           Z"/>
+
+      <!-- front face with transparent cutouts -->
+      <path fill="currentColor" fill-rule="evenodd"
+        d="M 228 38
+           C 332 38 390 105 390 235
+           C 388 262 384 285 372 310
+           C 364 328 356 338 352 352
+           L 352 436
+           L 316 436 L 316 404 L 305 404 L 305 436
+           L 269 436 L 269 404 L 258 404 L 258 436
+           L 222 436 L 222 404 L 211 404 L 211 436
+           L 175 436 L 175 404 L 164 404 L 164 436
+           L 128 436
+           L 122 396
+           C 116 370 106 350 96 322
+           C 68 292 62 264 62 235
+           C 62 105 124 38 228 38
+           Z
+           M 104 245
+           a 44 40 0 1 0 88 0
+           a 44 40 0 1 0 -88 0
+           Z
+           M 252 245
+           a 38 40 0 1 0 76 0
+           a 38 40 0 1 0 -76 0
+           Z
+           M 210 292
+           C 200 310 190 330 190 342
+           C 190 352 202 356 210 350
+           C 218 356 230 352 230 342
+           C 230 330 220 310 210 292
+           Z"/>
+
+      <!-- top-left sheen on the cranium -->
+      <ellipse cx="168" cy="128" rx="62" ry="30" fill="#ffffff" opacity="0.2"
+               transform="rotate(-24 168 128)"/>
+    </g>
+  </g>
+</svg>
